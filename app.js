@@ -1,0 +1,239 @@
+/* DK Lineup Maker UI */
+(() => {
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const fmt$ = n => "$" + n.toLocaleString();
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem("dklm_" + k); return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem("dklm_" + k, JSON.stringify(v)); } catch {} },
+  };
+
+  let slate, players = [], vegas = {}, gameOf = {};
+  let S; // per-week state
+  let lineups = [];
+  let sort = { key: "adj", dir: -1 }, posF = "ALL";
+
+  function freshState() {
+    return { edits: {}, locked: [], excluded: [], exposure: {}, teamScores: {}, teamMins: {}, scenarios: {}, scenPick: [] };
+  }
+  const save = () => store.set("state_" + slate.draftGroupId, S);
+
+  // ---------- projections with predictions ----------
+  function teamFactor(p, scores) {
+    if (p.pos === "DST") {
+      const g = gameOf[p.team]; if (!g) return 1;
+      const oppV = g.implied[p.opp], oppM = scores[p.opp];
+      if (oppM == null || oppV == null) return 1;
+      return Math.max(0.15, 1 - 0.045 * (oppM - oppV));
+    }
+    const v = p.implied, m = scores[p.team];
+    if (m == null || !v) return 1;
+    return Math.max(0, Math.pow(Math.max(m, 0) / v, 0.9));
+  }
+  function adjusted(p, st = S) {
+    if (st.edits[p.id] != null) { const e = +st.edits[p.id]; return { adj: e, ceil: p.proj ? e * p.ceil / p.proj : e * 1.6 }; }
+    const f = teamFactor(p, st.teamScores);
+    return { adj: Math.round(p.proj * f * 100) / 100, ceil: Math.round(p.ceil * f * 100) / 100 };
+  }
+
+  // ---------- load ----------
+  async function load() {
+    const r = await fetch("data/slate.json?v=" + Date.now());
+    slate = await r.json();
+    players = slate.players;
+    slate.games.forEach(g => { vegas[g.away] = g; vegas[g.home] = g; });
+    gameOf = vegas;
+    S = Object.assign(freshState(), store.get("state_" + slate.draftGroupId, {}));
+    const upd = new Date(slate.updated);
+    $("#slateMeta").textContent = `NFL ${slate.season} · Week ${slate.week} main slate · ${slate.games.length} games · ${players.length} players · updated ${upd.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" })}`;
+    $("#sources").textContent = "Sources: " + slate.sources.join(" · ");
+    bindSettings(); renderGames(); renderPlayers(); renderScen(); renderValue();
+  }
+
+  // ---------- settings ----------
+  function bindSettings() {
+    const saved = store.get("settings", {});
+    const ids = ["optN", "optMinSal", "optUnique", "optExp", "optRand", "optCeil", "optStack", "optStackRB", "optBB", "optDst", "optTEFlex", "optMaxTeam"];
+    ids.forEach(id => {
+      const el = $("#" + id);
+      if (saved[id] != null) el.type === "checkbox" ? (el.checked = saved[id]) : (el.value = saved[id]);
+      el.addEventListener("input", () => { saved[id] = el.type === "checkbox" ? el.checked : el.value; store.set("settings", saved); outs(); });
+    });
+    const outs = () => {
+      $("#nOut").textContent = $("#optN").value;
+      $("#minSalOut").textContent = fmt$(+$("#optMinSal").value);
+      $("#expOut").textContent = $("#optExp").value + "%";
+      $("#randOut").textContent = $("#optRand").value + "%";
+    };
+    outs();
+  }
+  function readOpts() {
+    return {
+      n: +$("#optN").value, minSalary: +$("#optMinSal").value, minUnique: +$("#optUnique").value,
+      maxExposure: +$("#optExp").value / 100, randomness: +$("#optRand").value / 100, useCeiling: +$("#optCeil").value,
+      stackCount: +$("#optStack").value, stackRB: $("#optStackRB").checked, bringBack: $("#optBB").checked,
+      noOffVsDst: $("#optDst").checked, allowTEFlex: $("#optTEFlex").checked, maxPerTeam: +$("#optMaxTeam").value,
+    };
+  }
+
+  // ---------- games ----------
+  function renderGames() {
+    const g = $("#gamesGrid"); g.innerHTML = "";
+    for (const gm of slate.games) {
+      const kick = players.find(p => p.game === `${gm.away}@${gm.home}`)?.kickoff?.split(" ").slice(1).join(" ") || "";
+      const div = document.createElement("div"); div.className = "game";
+      div.innerHTML = `<div class="meta">${gm.away} @ ${gm.home} · ${kick} · O/U ${gm.total} · ${gm.fav} -${gm.spread}</div>` +
+        [gm.away, gm.home].map(t => {
+          const v = gm.implied[t], m = S.teamScores[t];
+          const cls = m == null ? "" : m > v ? "up" : m < v ? "down" : "";
+          return `<div class="team"><b>${t}</b><span class="vg">Vegas ${v} <span class="${cls}">${m != null && m !== v ? (m > v ? "▲" : "▼") : ""}</span></span>
+            <input type="number" step="0.5" min="0" data-team="${t}" value="${m ?? v}" title="Your predicted points">
+            <select data-min="${t}" title="Min players from ${t}">${[0, 1, 2, 3, 4].map(n => `<option value="${n}" ${+(S.teamMins[t] || 0) === n ? "selected" : ""}>${n ? "Min " + n : "Any"}</option>`).join("")}</select></div>`;
+        }).join("");
+      g.appendChild(div);
+    }
+    g.querySelectorAll("input[data-team]").forEach(inp => inp.addEventListener("change", () => {
+      const t = inp.dataset.team, v = vegas[t].implied[t], val = parseFloat(inp.value);
+      if (isNaN(val) || val === v) delete S.teamScores[t]; else S.teamScores[t] = val;
+      save(); renderGames(); renderPlayers(); renderValue();
+    }));
+    g.querySelectorAll("select[data-min]").forEach(sel => sel.addEventListener("change", () => {
+      const n = +sel.value; if (n) S.teamMins[sel.dataset.min] = n; else delete S.teamMins[sel.dataset.min]; save();
+    }));
+  }
+  $("#resetGames").onclick = () => { S.teamScores = {}; S.teamMins = {}; save(); renderGames(); renderPlayers(); renderValue(); };
+
+  // ---------- players ----------
+  function renderPlayers() {
+    const q = $("#search").value.trim().toLowerCase(), hide = $("#hideZero").checked;
+    const locked = new Set(S.locked), excl = new Set(S.excluded);
+    let rows = players.map(p => { const a = adjusted(p); return Object.assign({}, p, a, { value: a.adj / (p.salary / 1000) }); })
+      .filter(p => (posF === "ALL" || p.pos === posF) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase() === q) && (!hide || p.adj > 0 || locked.has(p.id)));
+    rows.sort((a, b) => { const x = a[sort.key], y = b[sort.key]; return (typeof x === "string" ? x.localeCompare(y) : x - y) * sort.dir; });
+    rows = rows.slice(0, 400);
+    $("#ptable tbody").innerHTML = rows.map(p => `
+      <tr class="${locked.has(p.id) ? "locked" : ""} ${excl.has(p.id) ? "excluded" : ""}" data-id="${p.id}">
+        <td><button class="ic lk ${locked.has(p.id) ? "on" : ""}" title="Lock">🔒</button><button class="ic x ${excl.has(p.id) ? "on" : ""}" title="Exclude">✕</button></td>
+        <td>${p.name}</td><td><span class="pos ${p.pos}">${p.pos}</span></td><td>${p.team}</td><td class="muted">${p.home ? "vs" : "@"} ${p.opp}</td>
+        <td class="num">${fmt$(p.salary)}</td>
+        <td class="num"><input class="edit ${S.edits[p.id] != null ? "edited" : ""}" type="number" step="0.1" value="${p.adj.toFixed(1)}"></td>
+        <td class="num">${p.value.toFixed(2)}</td><td class="num muted">${p.ceil.toFixed(1)}</td>
+        <td><input class="exp" type="number" min="0" max="100" step="5" placeholder="def" value="${S.exposure[p.id] != null ? Math.round(S.exposure[p.id] * 100) : ""}"></td>
+        <td class="note">${p.note || (p.status ? "DK: " + p.status : "")}</td>
+      </tr>`).join("");
+  }
+  $("#ptable tbody").addEventListener("click", e => {
+    const tr = e.target.closest("tr"); if (!tr) return; const id = +tr.dataset.id;
+    const tog = (arr, other) => { const i = S[arr].indexOf(id); if (i >= 0) S[arr].splice(i, 1); else { S[arr].push(id); S[other] = S[other].filter(x => x !== id); } };
+    if (e.target.classList.contains("lk")) { tog("locked", "excluded"); save(); renderPlayers(); }
+    if (e.target.classList.contains("x")) { tog("excluded", "locked"); save(); renderPlayers(); }
+  });
+  $("#ptable tbody").addEventListener("change", e => {
+    const tr = e.target.closest("tr"); const id = +tr.dataset.id;
+    if (e.target.classList.contains("edit")) {
+      const p = players.find(x => x.id === id), v = parseFloat(e.target.value);
+      const auto = adjusted(p, Object.assign({}, S, { edits: {} })).adj;
+      if (isNaN(v) || Math.abs(v - auto) < 0.05) delete S.edits[id]; else S.edits[id] = v;
+    }
+    if (e.target.classList.contains("exp")) {
+      const v = parseFloat(e.target.value); if (isNaN(v)) delete S.exposure[id]; else S.exposure[id] = Math.min(100, Math.max(0, v)) / 100;
+    }
+    save(); renderPlayers(); renderValue();
+  });
+  $("#search").addEventListener("input", renderPlayers);
+  $("#hideZero").addEventListener("change", renderPlayers);
+  $$("#posFilter button").forEach(b => b.onclick = () => { $$("#posFilter button").forEach(x => x.classList.remove("active")); b.classList.add("active"); posF = b.dataset.pos; renderPlayers(); });
+  $$("#ptable th[data-sort]").forEach(th => th.onclick = () => { const k = th.dataset.sort; sort = { key: k, dir: sort.key === k ? -sort.dir : (["name", "pos", "team"].includes(k) ? 1 : -1) }; renderPlayers(); });
+  $("#clearLocks").onclick = () => { S.locked = []; S.excluded = []; S.edits = {}; S.exposure = {}; save(); renderPlayers(); renderValue(); };
+
+  // ---------- value board ----------
+  function renderValue() {
+    const html = ["QB", "RB", "WR", "TE", "DST"].map(pos => {
+      const top = players.filter(p => p.pos === pos).map(p => Object.assign({}, p, adjusted(p))).filter(p => p.adj > 0)
+        .sort((a, b) => b.adj / b.salary - a.adj / a.salary).slice(0, 6);
+      return `<div class="vb"><h4><span class="pos ${pos}">${pos}</span> best value</h4>${top.map(p => `<div><span>${p.name} <span class="muted">${p.team}</span></span><span>${fmt$(p.salary)} · ${p.adj.toFixed(1)}</span></div>`).join("")}</div>`;
+    }).join("");
+    $("#valueBoard").innerHTML = html;
+  }
+
+  // ---------- scenarios ----------
+  function renderScen() {
+    const names = Object.keys(S.scenarios);
+    $("#scenList").innerHTML = names.length ? names.map(n => `<div class="scen" data-n="${encodeURIComponent(n)}">
+      <input type="checkbox" class="pick" ${S.scenPick.includes(n) ? "checked" : ""} title="Include in build"><span>${n.replace(/</g, "&lt;")}</span>
+      <button class="ghost ld">Load</button><button class="ghost del">Delete</button></div>`).join("") +
+      `<p class="muted small">Checked scenarios split the lineup count between them when you build. None checked = current predictions only.</p>`
+      : `<p class="muted small">No saved scenarios yet.</p>`;
+  }
+  $("#saveScen").onclick = () => {
+    const n = $("#scenName").value.trim() || `Scenario ${Object.keys(S.scenarios).length + 1}`;
+    S.scenarios[n] = { teamScores: { ...S.teamScores }, teamMins: { ...S.teamMins }, edits: { ...S.edits } };
+    if (!S.scenPick.includes(n)) S.scenPick.push(n);
+    $("#scenName").value = ""; save(); renderScen();
+  };
+  $("#scenList").addEventListener("click", e => {
+    const row = e.target.closest(".scen"); if (!row) return; const n = decodeURIComponent(row.dataset.n);
+    if (e.target.classList.contains("ld")) { Object.assign(S, JSON.parse(JSON.stringify(S.scenarios[n]))); save(); renderGames(); renderPlayers(); renderValue(); }
+    if (e.target.classList.contains("del")) { delete S.scenarios[n]; S.scenPick = S.scenPick.filter(x => x !== n); save(); renderScen(); }
+    if (e.target.classList.contains("pick")) { S.scenPick = e.target.checked ? [...new Set([...S.scenPick, n])] : S.scenPick.filter(x => x !== n); save(); }
+  });
+
+  // ---------- build ----------
+  $("#buildBtn").onclick = async () => {
+    const base = readOpts();
+    const runs = S.scenPick.filter(n => S.scenarios[n]).map(n => ({ name: n, st: Object.assign({}, S, S.scenarios[n]) }));
+    if (!runs.length) runs.push({ name: null, st: S });
+    const btn = $("#buildBtn"), bar = $("#progress"), msg = $("#buildMsg");
+    btn.disabled = true; bar.classList.remove("hidden"); msg.textContent = "Optimizing…";
+    const all = []; const t0 = performance.now();
+    let doneCount = 0;
+    for (let i = 0; i < runs.length; i++) {
+      const n = Math.floor(base.n / runs.length) + (i < base.n % runs.length ? 1 : 0); if (!n) continue;
+      const pool = players.map(p => { const a = adjusted(p, runs[i].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
+      const opts = Object.assign({}, base, {
+        n, locked: new Set(S.locked), excluded: new Set(S.excluded), exposure: S.exposure, teamMins: runs[i].st.teamMins || {},
+        prev: all.map(L => L.players.map(p => p.id)),
+      });
+      const res = await DKOpt.optimizeAsync(pool, opts, window.solver, k => {
+        $("#progress div").style.width = ((doneCount + k) / base.n * 100) + "%";
+        msg.textContent = `Lineup ${doneCount + k} of ${base.n}${runs[i].name ? " · " + runs[i].name : ""}`;
+      });
+      res.lineups.forEach(L => L.scenario = runs[i].name);
+      all.push(...res.lineups); doneCount += n;
+    }
+    lineups = all;
+    btn.disabled = false; bar.classList.add("hidden");
+    msg.textContent = lineups.length ? `Built ${lineups.length} lineup${lineups.length > 1 ? "s" : ""} in ${((performance.now() - t0) / 1000).toFixed(1)}s` :
+      "No valid lineups — loosen locks, team minimums or the min salary.";
+    renderLineups();
+    if (lineups.length) switchTab("lineups");
+  };
+
+  function renderLineups() {
+    $("#lineupCount").textContent = lineups.length;
+    $("#dlCsv").disabled = !lineups.length; $("#copyCsv").disabled = !lineups.length; $("#csvBox").hidden = true;
+    const slots = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
+    $("#lineups").innerHTML = lineups.map((L, i) => `<div class="lu"><div class="hd">#${i + 1} ${L.scenario ? `<span>${L.scenario}</span>` : ""}<span>${fmt$(L.salary)} · ${L.proj.toFixed(1)} pts</span></div>
+      ${L.players.map((p, j) => `<div class="pl"><span class="pos ${slots[j]}">${slots[j]}</span><span>${p.name} <span class="muted small">${p.team}</span></span><span class="s">${fmt$(p.salary)}</span><span class="p">${(+p.proj).toFixed(1)}</span></div>`).join("")}</div>`).join("");
+    const cnt = {}; lineups.forEach(L => L.players.forEach(p => cnt[p.id] = (cnt[p.id] || 0) + 1));
+    const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 30);
+    $("#exposure").innerHTML = lineups.length > 1 ? "<b class='small' style='width:100%'>Exposure</b>" + top.map(([id, c]) => `<span class="e">${players.find(p => p.id === +id).name} ${Math.round(c / lineups.length * 100)}%</span>`).join("") : "";
+  }
+  $("#dlCsv").onclick = () => {
+    const blob = new Blob([DKOpt.toCSV(lineups)], { type: "text/csv" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `DK_NFL_W${slate.week}_lineups.csv`; a.click();
+  };
+
+  $("#copyCsv").onclick = async () => {
+    const txt = DKOpt.toCSV(lineups), box = $("#csvBox"), b = $("#copyCsv");
+    box.value = txt; box.hidden = false;
+    try { await navigator.clipboard.writeText(txt); b.textContent = "Copied!"; }
+    catch { box.select(); b.textContent = "Selected — press Ctrl/Cmd+C"; }
+    setTimeout(() => b.textContent = "Copy CSV", 2500);
+  };
+
+  // ---------- tabs ----------
+  function switchTab(t) { $$("#tabs button").forEach(b => b.classList.toggle("active", b.dataset.tab === t)); $$(".tab").forEach(s => s.classList.toggle("active", s.id === "tab-" + t)); }
+  $$("#tabs button").forEach(b => b.onclick = () => switchTab(b.dataset.tab));
+
+  load().catch(e => { $("#slateMeta").textContent = "Could not load data/slate.json — " + e.message; });
+})();

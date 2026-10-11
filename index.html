@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DK Lineup Maker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <h1>DK Lineup Maker</h1>
+    <span id="slateMeta" class="muted">Loading slate…</span>
+  </div>
+  <nav id="tabs">
+    <button data-tab="build" class="active">Build</button>
+    <button data-tab="games">Game Predictions</button>
+    <button data-tab="players">Players</button>
+    <button data-tab="lineups">Lineups <span id="lineupCount" class="pill">0</span></button>
+  </nav>
+</header>
+
+<main>
+  <!-- BUILD -->
+  <section id="tab-build" class="tab active">
+    <div class="grid2">
+      <div class="card">
+        <h2>Lineup settings</h2>
+        <label>Number of lineups <output id="nOut">20</output>
+          <input type="range" id="optN" min="1" max="150" value="20"></label>
+        <label>Min salary used <output id="minSalOut">$49,000</output>
+          <input type="range" id="optMinSal" min="40000" max="50000" step="100" value="49000"></label>
+        <label>Min unique players between lineups
+          <select id="optUnique"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+        <label>Default max exposure per player <output id="expOut">60%</output>
+          <input type="range" id="optExp" min="10" max="100" step="5" value="60"></label>
+        <label>Randomness (variety) <output id="randOut">15%</output>
+          <input type="range" id="optRand" min="0" max="40" value="15"></label>
+        <label>Projection target
+          <select id="optCeil">
+            <option value="0">Median — cash games (50/50, double-up)</option>
+            <option value="0.35" selected>Balanced</option>
+            <option value="0.7">Ceiling — big GPP tournaments</option>
+          </select></label>
+      </div>
+      <div class="card">
+        <h2>Stacking & rules</h2>
+        <label>Stack QB with pass catchers
+          <select id="optStack"><option value="0">No stack</option><option value="1" selected>QB + 1</option><option value="2">QB + 2</option><option value="3">QB + 3</option></select></label>
+        <label class="chk"><input type="checkbox" id="optStackRB"> Count RBs in the QB stack</label>
+        <label class="chk"><input type="checkbox" id="optBB"> Bring-back (1+ player from QB's opponent)</label>
+        <label class="chk"><input type="checkbox" id="optDst" checked> Never play offense against my DST</label>
+        <label class="chk"><input type="checkbox" id="optTEFlex" checked> Allow TE in FLEX</label>
+        <label>Max players from one team
+          <select id="optMaxTeam"><option>3</option><option selected>4</option><option>5</option><option value="8">No limit</option></select></label>
+        <h3>Prediction scenarios</h3>
+        <p class="muted small">Save different game predictions (e.g. "Lions shootout", "Bengals blowout") and build across several at once.</p>
+        <div class="row">
+          <input id="scenName" placeholder="Scenario name">
+          <button id="saveScen" class="ghost">Save current</button>
+        </div>
+        <div id="scenList"></div>
+      </div>
+    </div>
+    <div class="buildbar">
+      <button id="buildBtn" class="primary">Build lineups</button>
+      <div id="progress" class="progress hidden"><div></div></div>
+      <span id="buildMsg" class="muted"></span>
+    </div>
+    <div class="card">
+      <h2>Top projected values</h2>
+      <div id="valueBoard" class="valueboard"></div>
+    </div>
+  </section>
+
+  <!-- GAMES -->
+  <section id="tab-games" class="tab">
+    <div class="card">
+      <h2>Your game predictions</h2>
+      <p class="muted small">Type the score you think each team will put up. Vegas implied totals are filled in. Raising a team's score boosts its players' projections; it also lowers the opposing DST. "Min" forces at least that many players from a team into every lineup.</p>
+      <div class="row"><button id="resetGames" class="ghost">Reset to Vegas</button></div>
+      <div id="gamesGrid" class="games"></div>
+    </div>
+  </section>
+
+  <!-- PLAYERS -->
+  <section id="tab-players" class="tab">
+    <div class="card">
+      <div class="filters">
+        <input id="search" placeholder="Search player or team">
+        <div class="seg" id="posFilter">
+          <button data-pos="ALL" class="active">All</button><button data-pos="QB">QB</button><button data-pos="RB">RB</button>
+          <button data-pos="WR">WR</button><button data-pos="TE">TE</button><button data-pos="DST">DST</button>
+        </div>
+        <label class="chk"><input type="checkbox" id="hideZero" checked> Hide 0-pt</label>
+        <button id="clearLocks" class="ghost">Clear locks/excludes/edits</button>
+      </div>
+      <div class="tablewrap">
+        <table id="ptable">
+          <thead><tr>
+            <th></th><th data-sort="name">Player</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th>
+            <th data-sort="salary">Salary</th><th data-sort="adj">Proj</th><th data-sort="value">Pts/$1K</th><th data-sort="ceil">Ceil</th>
+            <th>Max exp</th><th>Note</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted small">🔒 lock = in every lineup · ✕ exclude = never used · Click a projection to edit it.</p>
+    </div>
+  </section>
+
+  <!-- LINEUPS -->
+  <section id="tab-lineups" class="tab">
+    <div class="card">
+      <div class="row between">
+        <h2>Lineups</h2>
+        <div class="row">
+          <button id="copyCsv" class="ghost" disabled>Copy CSV</button>
+          <button id="dlCsv" class="primary" disabled>Download DK upload CSV</button>
+        </div>
+      </div>
+      <p class="muted small">Upload on DraftKings: Lineups → Upload Lineups → pick this CSV. FLEX is set to your latest-kickoff flex player so late swap stays open.</p>
+      <textarea id="csvBox" class="csvbox" readonly hidden></textarea>
+      <div id="exposure" class="exposure"></div>
+      <div id="lineups" class="lineups"></div>
+    </div>
+  </section>
+</main>
+<footer class="muted small">
+  <span id="sources"></span><br>
+  Projections are estimates, not guarantees. Play responsibly — 1-800-GAMBLER.
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/javascript-lp-solver@0.4.24/prod/solver.js"></script>
+<script src="optimizer.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
