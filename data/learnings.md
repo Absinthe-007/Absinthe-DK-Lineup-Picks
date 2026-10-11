@@ -24,3 +24,4 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
   - Primetime (SNF BAL@ATL + MNF BUF@LAR): must plays Bijan, Josh Allen, Puka. Sleepers Falcons DST vs Huntley, Colby Parkinson (Ferguson IR), Keon Coleman (Palmer OUT), Blake Corum, Kyle Pitts, Khalil Shakir. Fades Flowers, Henry, Ravens DST.
   - Early only: must plays Swift, Chase Brown, Maye, Braelon Allen. Afternoon/Turbo: Gibbs, Brissett, McBride (sleepers J. Williams, E. Wilson, Shaheed, Barner, Tre' Harris, Sutton).
   - Key news: Lamar OUT (Huntley starts), Charbonnet OUT, Nick Bosa OUT, Joshua Palmer OUT, Terrance Ferguson IR, DJ Moore Q.
+- 11:40 ET actives: Jefferson, Jeanty, Chase, Higgins ACTIVE; Addison INACTIVE -> Hockenson added as sleeper; Gesicki and Mike Washington Jr. dropped from Early sleepers.

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T14:50:14Z",
+  "updated": "2026-10-11T15:40:49Z",
   "week": 5,
   "sources": [
     "4for4",
@@ -161,6 +161,13 @@
         "pos": "WR",
         "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
         "boom": "medium"
+      },
+      {
+        "name": "T.J. Hockenson",
+        "team": "MIN",
+        "pos": "TE",
+        "why": "$4,800; Jordan Addison INACTIVE (CBS, 11:37 ET) - Hockenson is the No. 2 target behind Jefferson in a 41.5 total.",
+        "boom": "medium"
       }
     ],
     "stacks": [
@@ -187,7 +194,7 @@
         "why": "Not expected to play (Schefter)"
       }
     ],
-    "notes": "DET-ARI (54.5) is 7+ pts higher than any other main-slate game, so the core lives there. Sunday AM news: Dowdle unlikely -> Warren up; McConkey out -> Tre' Harris; Charbonnet out -> Emanuel Wilson; Stevenson, Keenan Allen, Kamara, Tate expected to play; Jeanty 'hopeful' (GTD) and Jefferson/Addison test pregame - recheck 11:30 ET actives."
+    "notes": "DET-ARI (54.5) is 7+ pts higher than any other main-slate game, so the core lives there. Sunday AM news: Dowdle unlikely -> Warren up; McConkey out -> Tre' Harris; Charbonnet out -> Emanuel Wilson; Stevenson, Keenan Allen, Kamara, Tate expected to play; Jeanty 'hopeful' (GTD) and Jefferson/Addison test pregame - recheck 11:30 ET actives. | 11:40 ET actives: Jefferson, Jeanty, Chase, Higgins ACTIVE; Addison INACTIVE."
   },
   "slates": {
     "154468": {
@@ -318,6 +325,13 @@
           "pos": "WR",
           "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
           "boom": "medium"
+        },
+        {
+          "name": "T.J. Hockenson",
+          "team": "MIN",
+          "pos": "TE",
+          "why": "$4,800; Jordan Addison INACTIVE (CBS, 11:37 ET) - Hockenson is the No. 2 target behind Jefferson in a 41.5 total.",
+          "boom": "medium"
         }
       ],
       "stacks": [
@@ -344,7 +358,7 @@
           "why": "Not expected to play (Schefter)"
         }
       ],
-      "notes": "DET-ARI (54.5) is 7+ pts higher than any other main-slate game, so the core lives there. Sunday AM news: Dowdle unlikely -> Warren up; McConkey out -> Tre' Harris; Charbonnet out -> Emanuel Wilson; Stevenson, Keenan Allen, Kamara, Tate expected to play; Jeanty 'hopeful' (GTD) and Jefferson/Addison test pregame - recheck 11:30 ET actives."
+      "notes": "DET-ARI (54.5) is 7+ pts higher than any other main-slate game, so the core lives there. Sunday AM news: Dowdle unlikely -> Warren up; McConkey out -> Tre' Harris; Charbonnet out -> Emanuel Wilson; Stevenson, Keenan Allen, Kamara, Tate expected to play; Jeanty 'hopeful' (GTD) and Jefferson/Addison test pregame - recheck 11:30 ET actives. | 11:40 ET actives: Jefferson, Jeanty, Chase, Higgins ACTIVE; Addison INACTIVE."
     },
     "154469": {
       "mustPlays": [
@@ -435,13 +449,6 @@
           "boom": "medium"
         },
         {
-          "name": "Mike Gesicki",
-          "team": "CIN",
-          "pos": "TE",
-          "why": "$4,100; target share jumps 9.7% -> 14.3% if Higgins sits; MIA allows 3rd-most TE yds (FantasyLabs).",
-          "boom": "medium"
-        },
-        {
           "name": "Bears",
           "team": "CHI",
           "pos": "DST",
@@ -449,17 +456,17 @@
           "boom": "medium"
         },
         {
-          "name": "Mike Washington Jr.",
-          "team": "LV",
-          "pos": "RB",
-          "why": "$4,200; lead back if Jeanty sits (GTD, 'hopeful').",
-          "boom": "high"
-        },
-        {
           "name": "Antonio Williams",
           "team": "WAS",
           "pos": "WR",
           "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
+          "boom": "medium"
+        },
+        {
+          "name": "T.J. Hockenson",
+          "team": "MIN",
+          "pos": "TE",
+          "why": "$4,800; Jordan Addison INACTIVE (CBS, 11:37 ET) - Hockenson is the No. 2 target behind Jefferson in a 41.5 total.",
           "boom": "medium"
         }
       ],
@@ -476,13 +483,9 @@
         {
           "name": "Rico Dowdle",
           "why": "Unlikely to play"
-        },
-        {
-          "name": "Ashton Jeanty",
-          "why": "GTD - only if active"
         }
       ],
-      "notes": "No DET-ARI here; CIN (25.2) and NE/CHI (24.5) lead. Check 11:30 ET actives for Jeanty, Jefferson, Addison, Chase/Higgins."
+      "notes": "11:40 ET actives: Chase, Higgins, Jefferson, Jeanty ACTIVE; Addison INACTIVE (Hockenson up). No DET-ARI here; CIN (25.2) and NE/CHI (24.5) lead."
     },
     "154470": {
       "mustPlays": [
@@ -612,6 +615,13 @@
           "pos": "WR",
           "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
           "boom": "medium"
+        },
+        {
+          "name": "T.J. Hockenson",
+          "team": "MIN",
+          "pos": "TE",
+          "why": "$4,800; Jordan Addison INACTIVE (CBS, 11:37 ET) - Hockenson is the No. 2 target behind Jefferson in a 41.5 total.",
+          "boom": "medium"
         }
       ],
       "stacks": [
@@ -647,7 +657,7 @@
           "why": "$8,000, 3-pt road dog with a backup QB - game script risk"
         }
       ],
-      "notes": "13 games incl. SNF/MNF. Two 54.5 totals: DET-ARI and BUF-LAR. Cheap DST: Falcons $2,400 vs Huntley."
+      "notes": "13 games incl. SNF/MNF. Two 54.5 totals: DET-ARI and BUF-LAR. Cheap DST: Falcons $2,400 vs Huntley. | 11:40 ET actives: Jefferson, Jeanty, Chase, Higgins ACTIVE; Addison INACTIVE."
     },
     "154471": {
       "mustPlays": [

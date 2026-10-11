@@ -54,10 +54,6 @@
       "mult": 0,
       "note": "Not expected to play (foot) - Schefter Sun AM"
     },
-    "Ashton Jeanty": {
-      "mult": 0.65,
-      "note": "GTD (foot/ankle) - Rapoport Sun AM: 'hopeful' to play; check 11:30 ET actives"
-    },
     "Rico Dowdle": {
       "mult": 0.1,
       "note": "Unlikely to play (toe/foot) - Schefter Sun AM; Warren bell-cow"
@@ -65,26 +61,6 @@
     "Jaylen Wright": {
       "mult": 0.6,
       "note": "GTD (foot) - Ollie Gordon benefits"
-    },
-    "Justin Jefferson": {
-      "mult": 0.85,
-      "note": "Q (ankle) - pregame workout decides (Rapoport); confirm 11:30 ET"
-    },
-    "Jordan Addison": {
-      "mult": 0.75,
-      "note": "Q (hamstring) - pregame workout decides (Rapoport)"
-    },
-    "Ja'Marr Chase": {
-      "mult": 0.97,
-      "note": "Q (concussion), full Fri practice; cleared protocol pending"
-    },
-    "Tee Higgins": {
-      "mult": 0.95,
-      "note": "Q (groin/neck), full Fri practice; Bengals TBD"
-    },
-    "Terry McLaurin": {
-      "mult": 0.75,
-      "note": "Game-time decision (CBS 9:40am ET)"
     },
     "Rhamondre Stevenson": {
       "mult": 1,
@@ -169,6 +145,30 @@
     "Jeremiyah Love": {
       "mult": 0.9,
       "note": "Limited (ankle) all week; expected to play with capped upside"
+    },
+    "Ashton Jeanty": {
+      "mult": 0.95,
+      "note": "ACTIVE (not on Raiders inactive list) - ankle/foot, slight workload risk"
+    },
+    "Jordan Addison": {
+      "mult": 0,
+      "note": "INACTIVE (hamstring) - CBS 11:37 ET"
+    },
+    "Justin Jefferson": {
+      "mult": 1,
+      "note": "ACTIVE (ankle) - CBS 11:37 ET; Addison out = more targets"
+    },
+    "Ja'Marr Chase": {
+      "mult": 1,
+      "note": "Playing - passed concussion protocol (Schefter)"
+    },
+    "Tee Higgins": {
+      "mult": 1,
+      "note": "Playing (Schefter)"
+    },
+    "Terry McLaurin": {
+      "mult": 0.9,
+      "note": "Game-time decision trending active (CBS tracker)"
     }
   },
   "boosts": {
@@ -187,10 +187,6 @@
     "Pierre Strong": {
       "mult": 1.1,
       "note": "Brooks out"
-    },
-    "Mike Washington": {
-      "mult": 1.1,
-      "note": "Jeanty GTD ('hopeful') - big if Jeanty sits"
     },
     "Ollie Gordon": {
       "mult": 1.1,
@@ -303,7 +299,16 @@
       "mult": 1,
       "note": "$2,900; ~10 DK pts/gm last 3, 3rd-best sack rate (8.6%); Packers without Josh Jacobs (DK N",
       "ceil_mult": 1.15
+    },
+    "Mike Washington": {
+      "mult": 0.85,
+      "note": "Jeanty active - back to RB2"
+    },
+    "T.J. Hockenson": {
+      "mult": 1.1,
+      "note": "Addison inactive - more targets",
+      "ceil_mult": 1.15
     }
   },
-  "updated": "2026-10-11T14:50:14Z"
+  "updated": "2026-10-11T15:40:49Z"
 }
