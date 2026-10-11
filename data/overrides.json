@@ -1,5 +1,5 @@
 {
-  "_note": "Manual research layer. 'mult' multiplies the blended projection (0 = out). Updated from Rotowire/Footballguys/ESPN/Stokastic injury + news reports. Edit freely.",
+  "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; optional 'team' restricts the match. Updated by the scheduled research runs.",
   "week": 5,
   "players": {
     "Caleb Williams": {
@@ -67,8 +67,8 @@
       "note": "GTD (foot) - Ollie Gordon benefits"
     },
     "Justin Jefferson": {
-      "mult": 0.75,
-      "note": "Questionable (ankle) - team hopeful"
+      "mult": 0.9,
+      "note": "Q (ankle) - expected to return per FantasyPros/DK Network; confirm at inactives"
     },
     "Jordan Addison": {
       "mult": 0.85,
@@ -87,8 +87,8 @@
       "note": "Q (hamstring) - appears probable"
     },
     "Rhamondre Stevenson": {
-      "mult": 1,
-      "note": "Q - says he's ready"
+      "mult": 0.9,
+      "note": "Q (knee) - limited practice; Henderson smash if he sits"
     },
     "Alvin Kamara": {
       "mult": 1,
@@ -121,6 +121,30 @@
     "Charlie Kolar": {
       "mult": 0.7,
       "note": "Q (forearm)"
+    },
+    "Lamar Jackson": {
+      "mult": 0,
+      "note": "OUT (ankle) - Tyler Huntley starts"
+    },
+    "Jordan Mason": {
+      "mult": 0,
+      "note": "OUT - Aaron Jones lead back"
+    },
+    "Zay Flowers": {
+      "mult": 0.9,
+      "note": "Q (foot) - expected to play"
+    },
+    "Saquon Barkley": {
+      "mult": 0,
+      "note": "OUT (hamstring)"
+    },
+    "DeVonta Smith": {
+      "mult": 0,
+      "note": "OUT (hamstring)"
+    },
+    "Pat Bryant": {
+      "mult": 0,
+      "note": "OUT (IR ankle)"
     }
   },
   "boosts": {
@@ -151,6 +175,19 @@
     "Tre' Harris": {
       "mult": 1.08,
       "note": "Johnston/Thompson out, McConkey doubtful"
+    },
+    "Aaron Jones Sr.": {
+      "mult": 1.05,
+      "note": "Mason out - 108 scrimmage yds/gm in his absence"
+    },
+    "Michael Wilson": {
+      "mult": 1.05,
+      "note": "94% route rate, 30 targets in 2 games; DET allows most WR pts"
+    },
+    "Jacoby Brissett": {
+      "mult": 1.06,
+      "note": "DET allows most DK pts to QBs; consensus cash lock"
     }
-  }
+  },
+  "updated": "2026-10-11T04:45Z"
 }
