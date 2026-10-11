@@ -1,25 +1,34 @@
-# Absinthe DK Lineup Picks - Learnings
+# DK Lineup Picks — Learnings
 
-Living knowledge base for the research runs. Standing rules are edited in place each week; graded weeks get a "### Why" note once `data/history/w<N>/results.json` exists (auto-graded Tuesdays).
+Knowledge base for Claude's research runs. Standing rules are edited in place; each week gets a pre-game line and, once graded, a "### Why" note.
 
 ## Standing rules (edit, don't just append)
 
-1. **Highest-total game owns the core.** When one game is 7+ points above the rest (Wk5: DET-ARI 54.5 vs next 47.5), must plays come from it - but pair the chalk QB/TE with at least one low-owned piece of the same game (WR2/WR3) for GPP leverage.
-2. **Late-week depth-chart changes are the best sleeper source.** A starter ruled out/deactivated Sat-Sun (trades, IR moves, "not expected to play" reports) leaves a cheap backup whose salary never adjusted. Check Rapoport/Schefter/Fowler Sunday-morning reports and the Footballguys gameday feed before locking.
-3. **Cheap QB vs the worst pass defense is a cash lock** (Wk5 Brissett $5,500 vs DET allowing 31.1 DK/gm to QBs). Verify with DK-points-allowed + passing TDs allowed.
-4. **GTD stars:** keep at mult ~0.9 until 11:30 ET inactives unless a reporter says "expected to play"; "not expected to play" = mult 0.1; "unlikely" = 0.15; true GTD with pregame workout = 0.5 and boost the backup.
-5. **Weather:** showers alone = small pass downgrade; 15+ mph sustained wind or heavy rain = fade deep passing games, boost RBs/DSTs.
-6. **Source accuracy:** no graded data yet - weight Sleeper and ESPN projections equally; revisit once `data/history/source_accuracy.json` exists.
-7. **Must plays must fit:** check total salary of must plays leaves >= ~$3,500 per remaining slot.
-8. **Check article dates.** Search results often surface prior-season articles with the same title (Wk5 2026: an Athlon "Week 5" lineup piece was 2025 content). Confirm the season before using a number.
+1. **Start where the points are.** Build the core from the highest game total / implied team totals; a game 7+ points above the rest gets most of the must plays.
+2. **Late news beats projections.** A Sunday-morning "unlikely"/"not expected to play" (Schefter/Rapoport/Fowler) is treated as OUT for the starter (mult 0-0.15) and a boost for the direct backup (1.08-1.15). "Hopeful"/GTD = mult ~0.6.
+3. **Backup QB = boost the opposing DST and RB, cap the receivers.** When a starting QB is out, bump the opposing DST (1.15+), the opponent's lead RB (positive script), and trim the backup's WR/TE (0.88-0.92).
+4. **Depleted WR rooms create cheap boom WRs.** When 2+ receivers are out, the next man up under $4,500 is a sleeper (ceil_mult 1.2).
+5. **Must plays must fit together** with realistic fill-ins under $50K. Validate with an ILP before publishing; 3-4 must plays max.
+6. **Sleepers need a concrete path to a ceiling:** a role change, a depth-chart opening, a high total, or TD regression (high aDOT/red-zone looks with 0 TDs). Prefer ~10% owned or lower.
+7. **Check dates.** Search results often surface prior-season articles with the same week number (e.g., 2025 Week 5 weather and Athlon sleepers). Verify the year and the opponent before using a source.
+
+## Source notes
+
+- Sunday-morning NFL.com "injuries to monitor" (Rapoport/Schefter/Fowler) was the best single late-news source.
+- FantasyLabs leverage and DK Network chalk/GPP articles are free and give ownership context. 4for4 and Fantasy Footballers are mostly paywalled.
+- No graded results yet (data/history/ not created). Once results.json and source_accuracy.json exist, weight sources by accuracy.
+
+## Infrastructure gaps (as of 2026-10-11)
+
+- The site does not yet render or force `sleepers` from picks.json, and build_data.py ignores `ceil_mult`. There is no "Build max points" button and no data/history grading. The data is written in the expected format so it works once those features land.
 
 ## Weekly log
 
-### Week 5 (2026-10-11) - pre-game (written ~10:45 ET Sunday)
-- No graded history yet (first logged week; learnings.md created this run).
-- Key Sunday news: Marvin Harrison Jr. inactive (trade pending) -> ARI targets concentrate on M. Wilson / McBride, Kendrick Bourne becomes WR2. Josh Jacobs OUT -> MarShawn Lloyd lead back. Addison not expected to play; Jefferson expected to play. Dowdle unlikely -> Warren. Stevenson, Kamara, K. Allen expected to play. Slayton OUT. McConkey not expected. Jeanty true GTD. Chase/Higgins TBD at time of writing.
-- **Main must plays:** Gibbs, Brissett, McBride, Michael Wilson ($28,200 combined).
-- **Main core:** St. Brown, Swift, Warren, Chase Brown, LaPorta, Goff.
-- **Main sleepers:** Kendrick Bourne (high), MarShawn Lloyd (high), Isaac TeSlaa (high), Jameis Winston, Malachi Fields, Roschon Johnson, Rome Odunze, Greg Dulcich.
-- **Early must plays:** Maye, Swift, Chase Brown, Warren. **Afternoon/Turbo:** same must plays as Main. **Primetime must plays:** Allen, Bijan, Nacua, Kyren Williams; sleeper Keon Coleman (Palmer out, Moore Q).
-- To grade Tuesday: did the MHJ-trade beneficiaries (Bourne/Wilson) and Jacobs-out beneficiary (Lloyd) boom? Did the 54.5-total chalk game deliver vs. the field?
+### 2026 Week 5
+
+- **Pre-game (2026-10-11, Sun ~10:45 ET):**
+  - Main: must plays Gibbs, Brissett, McBride, St. Brown. Core: Warren (Dowdle unlikely), Braelon Allen, Swift, M. Wilson, LaPorta, Goff. Sleepers: Jameson Williams (high), Emanuel Wilson (high, Charbonnet out), Tre' Harris (high, LAC WRs out), Judkins, Sutton, Roman Wilson, Odunze, Bo Nix.
+  - Primetime (SNF BAL@ATL + MNF BUF@LAR): must plays Bijan, Josh Allen, Puka. Sleepers: Falcons DST vs Huntley (high), Colby Parkinson (high, Ferguson IR), Keon Coleman, Corum, Pitts, Shakir. Fades: Flowers, Henry, Ravens DST.
+  - Early only: must plays Swift, Chase Brown, Maye, Braelon Allen. Afternoon/Turbo: Gibbs, Brissett, McBride.
+  - Key news: Lamar OUT (Huntley), Dowdle unlikely, McConkey not expected to play, Charbonnet OUT, Palmer OUT, Ferguson IR, Nick Bosa OUT. Jeanty hopeful (GTD). Jefferson/Addison work out pregame.
+- **Graded:** pending (Tuesday).
