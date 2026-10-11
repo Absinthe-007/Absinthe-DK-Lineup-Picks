@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11T04:45:00Z",
+  "updated": "2026-10-11T14:55:00Z",
   "week": 5,
   "sources": [
     "FantasyLabs",
@@ -13,7 +13,9 @@
     "Fantasy Six Pack",
     "ESPN",
     "Sleeper/Rotowire projections",
-    "Vegas lines"
+    "Vegas lines",
+    "NFL.com (Rapoport/Schefter/Fowler)",
+    "Yahoo Sports"
   ],
   "default": {
     "mustPlays": [
@@ -93,7 +95,7 @@
         "why": "GTD foot/ankle, DNP Friday - pivot to Mike Washington Jr. if out"
       }
     ],
-    "notes": "Lions-Cardinals (54.5) is 8 points higher than any other game, so the core lives there. Check inactives at 11:30am ET: Jeanty, Jefferson, Chase/Higgins, Stevenson, Dowdle."
+    "notes": "Lions-Cardinals (54.5) is 8 points higher than any other game, so the core lives there. Check inactives at 11:30am ET: Jeanty, Jefferson, Chase/Higgins, Stevenson, Dowdle. | Sun 10:55 ET update: Dowdle unlikely (Schefter) -> Jaylen Warren boosted; McConkey not expected to play -> Tre' Harris up; Stevenson expected to play; Jeanty truly 50/50 (pregame workout, Hemby elevated); Jefferson & Addison pregame workouts."
   },
   "slates": {}
 }

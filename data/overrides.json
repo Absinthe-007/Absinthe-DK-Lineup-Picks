@@ -51,28 +51,28 @@
       "note": "OUT (ankle)"
     },
     "Ladd McConkey": {
-      "mult": 0.25,
-      "note": "Did not practice, 'week-to-week' - likely out"
+      "mult": 0,
+      "note": "Schefter (Sun AM): not expected to play (foot)"
     },
     "Ashton Jeanty": {
       "mult": 0.5,
-      "note": "GTD (ankle/foot) - DNP Friday; have a backup"
+      "note": "Rapoport: hopeful but not definite, pregame workout; LV elevated Roman Hemby - true GTD, confirm at 11:30 ET inactives"
     },
     "Rico Dowdle": {
-      "mult": 0.75,
-      "note": "GTD (toe)"
+      "mult": 0.2,
+      "note": "Schefter (Sun AM): unlikely to play (toe) - Jaylen Warren lead back"
     },
     "Jaylen Wright": {
       "mult": 0.6,
       "note": "GTD (foot) - Ollie Gordon benefits"
     },
     "Justin Jefferson": {
-      "mult": 0.9,
-      "note": "Q (ankle) - expected to return per FantasyPros/DK Network; confirm at inactives"
+      "mult": 0.85,
+      "note": "Q (ankle) - pregame workout decides (Rapoport); confirm at inactives"
     },
     "Jordan Addison": {
-      "mult": 0.85,
-      "note": "Questionable (hamstring)"
+      "mult": 0.75,
+      "note": "Q (hamstring) - pregame workout decides (Rapoport)"
     },
     "Ja'Marr Chase": {
       "mult": 1,
@@ -87,20 +87,20 @@
       "note": "Q (hamstring) - appears probable"
     },
     "Rhamondre Stevenson": {
-      "mult": 0.9,
-      "note": "Q (knee) - limited practice; Henderson smash if he sits"
+      "mult": 1,
+      "note": "Rapoport (Sun AM): expected to play (knee)"
     },
     "Alvin Kamara": {
       "mult": 1,
-      "note": "Q (back) - expected to play"
+      "note": "Rapoport: expected to play (back)"
     },
     "Keenan Allen": {
       "mult": 1,
-      "note": "Full practice Friday"
+      "note": "Fowler: expected to play (groin)"
     },
     "Carnell Tate": {
       "mult": 1,
-      "note": "Coach: good to go"
+      "note": "Fowler: trending toward playing (back)"
     },
     "Tim Patrick": {
       "mult": 0.8,
@@ -131,8 +131,8 @@
       "note": "OUT - Aaron Jones lead back"
     },
     "Zay Flowers": {
-      "mult": 0.9,
-      "note": "Q (foot) - expected to play"
+      "mult": 1,
+      "note": "Schefter: expected to play (foot)"
     },
     "Saquon Barkley": {
       "mult": 0,
@@ -173,8 +173,8 @@
       "note": "Wright GTD"
     },
     "Tre' Harris": {
-      "mult": 1.08,
-      "note": "Johnston/Thompson out, McConkey doubtful"
+      "mult": 1.1,
+      "note": "McConkey not expected to play + Johnston/Thompson out - top LAC target (Footballguys)"
     },
     "Aaron Jones Sr.": {
       "mult": 1.05,
@@ -187,7 +187,12 @@
     "Jacoby Brissett": {
       "mult": 1.06,
       "note": "DET allows most DK pts to QBs; consensus cash lock"
+    },
+    "Jaylen Warren": {
+      "mult": 1.12,
+      "ceil_mult": 1.1,
+      "note": "Dowdle unlikely (Schefter) - Footballguys: top-10 RB if Dowdle sits"
     }
   },
-  "updated": "2026-10-11T04:45Z"
+  "updated": "2026-10-11T14:55Z"
 }
