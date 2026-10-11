@@ -8,7 +8,9 @@ Sources (all public):
   * ESPN scoreboard (Vegas spread / total -> implied team totals)
   * data/overrides.json (manual injury/news research layer)
 
-Usage: python3 scripts/build_data.py [--week N] [--draft-group ID]
+Usage: python3 scripts/build_data.py [--week N]   (week auto-detected from Sleeper if omitted)
+Builds every upcoming DraftKings NFL Classic slate into data/slates/<draftGroupId>.json + data/slates/index.json,
+and keeps data/slate.json as the default (main) slate.
 """
 import argparse, csv, io, json, math, re, sys, unicodedata, urllib.request
 from datetime import datetime, timezone
@@ -39,15 +41,21 @@ def p_over(mean, threshold, sd):
     return 1 - phi((threshold - mean) / sd)
 
 # ---------- DraftKings ----------
-def find_main_group():
+def classic_groups():
     lobby = get("https://www.draftkings.com/lobby/getcontests?sport=NFL")
-    groups = [g for g in lobby["DraftGroups"] if g.get("GameTypeId") == 1 and g.get("ContestTypeId") == 21]
-    groups.sort(key=lambda g: (g["StartDateEst"][:10], -(g.get("DraftGroupTag") == "Featured"), -g["GameCount"]))
-    # main slate = earliest date, Featured, no suffix
-    for g in groups:
-        if g.get("DraftGroupTag") == "Featured" and not (g.get("ContestStartTimeSuffix") or "").strip():
-            return g["DraftGroupId"]
-    return groups[0]["DraftGroupId"]
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    out = []
+    for g in lobby["DraftGroups"]:
+        if g.get("GameTypeId") != 1 or g.get("ContestTypeId") != 21 or g.get("GameCount", 0) < 2:
+            continue
+        start = datetime.fromisoformat(g["StartDateEst"].split(".")[0])
+        if (start - now).days > 6:
+            continue
+        suffix = (g.get("ContestStartTimeSuffix") or "").strip().strip("()") or "Main"
+        out.append(dict(id=g["DraftGroupId"], name=suffix, start=g["StartDateEst"][:16], games=g["GameCount"],
+                        featured=g.get("DraftGroupTag") == "Featured"))
+    out.sort(key=lambda g: (g["start"], g["name"] != "Main", -g["games"]))
+    return out
 
 def dk_players(dg):
     txt = get(f"https://www.draftkings.com/lineup/getavailableplayerscsv?contestTypeId=21&draftGroupId={dg}", as_json=False)
@@ -69,11 +77,10 @@ def dk_from_stats(s, pos):
     g = lambda k: float(s.get(k) or 0)
     if pos == "DEF":
         pa = g("pts_allow")
-        # expected points-allowed score via a rough distribution around the mean (sd ~ 9)
         bands = [(0, 0.5, 10), (0.5, 6.5, 7), (6.5, 13.5, 4), (13.5, 20.5, 1), (20.5, 27.5, 0), (27.5, 34.5, -1), (34.5, 99, -4)]
         sd = 9.0
         pa_pts = sum(pts * (phi((hi - pa) / sd) - phi((lo - pa) / sd)) for lo, hi, pts in bands)
-        pa_pts += 10 * phi((0 - pa) / sd)  # tail below zero counts as shutout
+        pa_pts += 10 * phi((0 - pa) / sd)
         return (g("sack") + 2 * g("int") + 2 * g("fum_rec") + 6 * (g("def_td") + g("st_td")) +
                 2 * g("safe") + 2 * g("blk_kick") + pa_pts)
     pts = (0.04 * g("pass_yd") + 4 * g("pass_td") - g("pass_int") +
@@ -86,18 +93,22 @@ def dk_from_stats(s, pos):
     return pts
 
 def sleeper_proj(week):
+    """Returns {(name|DST, team, game_date): pts} and {(team, game_date): week}."""
     url = (f"https://api.sleeper.app/projections/nfl/{SEASON}/{week}?season_type=regular"
            "&position%5B%5D=QB&position%5B%5D=RB&position%5B%5D=WR&position%5B%5D=TE&position%5B%5D=DEF")
-    out = {}
+    out, team_week = {}, {}
     for r in get(url):
         p = r.get("player") or {}
         pos = p.get("position")
         team = tm(r.get("team") or p.get("team") or "")
         if not pos or not team: continue
+        date = r.get("date") or ""
+        team_week[(team, date)] = week
         pts = dk_from_stats(r.get("stats") or {}, pos)
-        key = ("DST", team) if pos == "DEF" else (norm(f"{p.get('first_name','')} {p.get('last_name','')}"), team)
+        key = ("DST" if pos == "DEF" else norm(f"{p.get('first_name','')} {p.get('last_name','')}"), team, date)
         out[key] = round(pts, 2)
-    return out
+        out.setdefault((key[0], team, f"W{week}"), round(pts, 2))
+    return out, team_week
 
 # ---------- ESPN ----------
 ESPN_TEAMS = {1:"ATL",2:"BUF",3:"CHI",4:"CIN",5:"CLE",6:"DAL",7:"DEN",8:"DET",9:"GB",10:"TEN",11:"IND",12:"KC",13:"LV",14:"LAR",
@@ -117,10 +128,7 @@ def espn_proj(week):
         proj = next((s.get("appliedTotal") for s in p.get("stats", [])
                      if s.get("scoringPeriodId") == week and s.get("statSourceId") == 1 and s.get("statSplitTypeId") == 1), None)
         if proj is None: continue
-        if p.get("defaultPositionId") == 16:
-            out[("DST", team)] = proj
-        else:
-            out[(norm(p["fullName"]), team)] = proj
+        out[("DST" if p.get("defaultPositionId") == 16 else norm(p["fullName"]), team, week)] = proj
     return out
 
 def vegas(dates):
@@ -143,27 +151,26 @@ def vegas(dates):
                                     implied={h: round(fav_tot if fav == h else dog_tot, 1), a: round(fav_tot if fav == a else dog_tot, 1)})
     return games
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--week", type=int, required=True)
-    ap.add_argument("--draft-group", type=int)
-    a = ap.parse_args()
-    dg = a.draft_group or find_main_group()
-    print("draft group", dg, file=sys.stderr)
+def current_week():
+    try:
+        st = get("https://api.sleeper.app/v1/state/nfl")
+        return int(st.get("week") or st.get("display_week"))
+    except Exception:
+        return None
+
+def build_slate(group, sl, team_week, es, adj, week):
+    dg = group["id"]
     players = dk_players(dg)
-    try: sl = sleeper_proj(a.week)
-    except Exception as e: print("sleeper failed", e, file=sys.stderr); sl = {}
-    try: es = espn_proj(a.week)
-    except Exception as e: print("espn failed", e, file=sys.stderr); es = {}
     dates = sorted({datetime.strptime(p["kickoff"].split()[0], "%m/%d/%Y").strftime("%Y%m%d") for p in players})
     games = vegas(dates)
-    ov = json.loads((ROOT / "data/overrides.json").read_text())
-    adj = {norm(k): v for k, v in {**ov.get("players", {}), **ov.get("boosts", {})}.items()}
-
     matched = {"sleeper": 0, "espn": 0}
     for p in players:
-        key = ("DST", p["team"]) if p["pos"] == "DST" else (norm(p["name"]), p["team"])
-        s, e = sl.get(key), es.get(key)
+        gdate = datetime.strptime(p["kickoff"].split()[0], "%m/%d/%Y").strftime("%Y-%m-%d")
+        who = "DST" if p["pos"] == "DST" else norm(p["name"])
+        wk = team_week.get((p["team"], gdate), week)
+        s = sl.get((who, p["team"], gdate))
+        if s is None: s = sl.get((who, p["team"], f"W{wk}"))
+        e = es.get((who, p["team"], wk))
         if s is not None: matched["sleeper"] += 1
         if e is not None:
             matched["espn"] += 1
@@ -179,22 +186,64 @@ def main():
         if p["status"] in ("O", "IR", "D", "OUT", "PUP", "SUS", "NFI"):
             mult, note = 0.0, f"DK status {p['status']}"
         o = adj.get(norm(p["name"]))
-        if o: mult, note = mult * o["mult"] if p["status"] not in ("O", "IR") else 0.0, o.get("note", note)
+        if o and (not o.get("team") or o["team"] == p["team"]):
+            if o.get("proj") is not None and p["status"] not in ("O", "IR"):
+                proj = float(o["proj"])  # researched projection override
+            mult = mult * o.get("mult", 1.0) if p["status"] not in ("O", "IR") else 0.0
+            note = o.get("note", note)
         p["proj"] = round(proj * mult, 2)
         p["note"] = note
-        # ceiling: position-based volatility
         vol = {"QB": 0.45, "RB": 0.6, "WR": 0.75, "TE": 0.75, "DST": 0.8}[p["pos"]]
         p["ceil"] = round(p["proj"] * (1 + vol), 2)
         g = games.get(p["game"])
         p["implied"] = g["implied"].get(p["team"]) if g else None
+    return dict(updated=datetime.now(timezone.utc).isoformat(timespec="minutes"), week=week, season=SEASON,
+                draftGroupId=dg, slateName=group["name"], start=group["start"],
+                games=[games[k] for k in sorted({p["game"] for p in players}) if k in games],
+                players=sorted(players, key=lambda p: -p["proj"]), matched=matched,
+                sources=["DraftKings salary CSV", "Sleeper/Rotowire projections", "ESPN Fantasy projections",
+                         "ESPN/Vegas lines", "Claude's multi-site injury, news & DFS research (overrides.json, picks.json)"])
 
-    slate = dict(updated=datetime.now(timezone.utc).isoformat(timespec="minutes"), week=a.week, season=SEASON,
-                 draftGroupId=dg, games=[games[k] for k in sorted({p["game"] for p in players}) if k in games],
-                 players=sorted(players, key=lambda p: -p["proj"]), matched=matched,
-                 sources=["DraftKings salary CSV", "Sleeper/Rotowire projections", "ESPN Fantasy projections",
-                          "ESPN/Vegas lines", "Rotowire, Footballguys, ESPN, Stokastic injury & DFS news (overrides.json)"])
-    (ROOT / "data/slate.json").write_text(json.dumps(slate, separators=(",", ":")))
-    print(f"{len(players)} players, matched {matched}, {len(slate['games'])} games", file=sys.stderr)
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--week", type=int)
+    ap.add_argument("--draft-group", type=int, action="append", help="limit to these draft group IDs")
+    a = ap.parse_args()
+    week = a.week or current_week()
+    if not week: sys.exit("could not detect NFL week; pass --week")
+    groups = classic_groups()
+    if a.draft_group: groups = [g for g in groups if g["id"] in a.draft_group]
+    if not groups: sys.exit("no upcoming DraftKings Classic slates found")
+    sl, team_week, es = {}, {}, {}
+    for w in (week, week + 1):
+        try:
+            s1, t1 = sleeper_proj(w); sl.update(s1); team_week.update(t1)
+        except Exception as e: print("sleeper failed", w, e, file=sys.stderr)
+        try: es.update(espn_proj(w))
+        except Exception as e: print("espn failed", w, e, file=sys.stderr)
+    ov = json.loads((ROOT / "data/overrides.json").read_text())
+    adj = {norm(k): v for k, v in {**ov.get("players", {}), **ov.get("boosts", {})}.items()}
+    outdir = ROOT / "data/slates"; outdir.mkdir(parents=True, exist_ok=True)
+    index = []
+    for g in groups:
+        try:
+            slate = build_slate(g, sl, team_week, es, adj, week)
+        except Exception as e:
+            print("slate failed", g, e, file=sys.stderr); continue
+        if not slate["players"]:
+            print(f"{g['name']} ({g['id']}): no players yet, skipped", file=sys.stderr); continue
+        (outdir / f"{g['id']}.json").write_text(json.dumps(slate, separators=(",", ":")))
+        index.append(dict(g, players=len(slate["players"]), matched=slate["matched"]))
+        print(f"{g['name']} ({g['id']}): {len(slate['players'])} players, matched {slate['matched']}", file=sys.stderr)
+        if g["id"] == next((x["id"] for x in groups if x["name"] == "Main"), None):
+            (ROOT / "data/slate.json").write_text(json.dumps(slate, separators=(",", ":")))
+    # default = first upcoming Main slate, else first slate
+    default = next((i["id"] for i in index if i["name"] == "Main"), index[0]["id"] if index else None)
+    keep = {f"{i['id']}.json" for i in index}
+    for f in outdir.glob("*.json"):
+        if f.name != "index.json" and f.name not in keep: f.unlink()
+    (outdir / "index.json").write_text(json.dumps(dict(updated=datetime.now(timezone.utc).isoformat(timespec="minutes"),
+                                                       week=week, default=default, slates=index), indent=1))
 
 if __name__ == "__main__":
     main()
