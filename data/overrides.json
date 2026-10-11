@@ -1,0 +1,156 @@
+{
+  "_note": "Manual research layer. 'mult' multiplies the blended projection (0 = out). Updated from Rotowire/Footballguys/ESPN/Stokastic injury + news reports. Edit freely.",
+  "week": 5,
+  "players": {
+    "Caleb Williams": {
+      "mult": 0,
+      "note": "Hamstring - won't start; Tyson Bagent starts"
+    },
+    "Kyle Monangai": {
+      "mult": 0,
+      "note": "OUT (thumb/toe) - Swift/Roschon Johnson up"
+    },
+    "Breece Hall": {
+      "mult": 0,
+      "note": "OUT (quad) - Braelon Allen lead back"
+    },
+    "Chris Brooks": {
+      "mult": 0,
+      "note": "OUT (ankle)"
+    },
+    "Stefon Diggs": {
+      "mult": 0,
+      "note": "OUT (hamstring)"
+    },
+    "Quentin Johnston": {
+      "mult": 0,
+      "note": "OUT (chest)"
+    },
+    "Brenen Thompson": {
+      "mult": 0,
+      "note": "OUT (quad)"
+    },
+    "Michael Pittman Jr.": {
+      "mult": 0,
+      "note": "OUT (foot)"
+    },
+    "Jalen Nailor": {
+      "mult": 0,
+      "note": "OUT (concussion)"
+    },
+    "Mack Hollins": {
+      "mult": 0,
+      "note": "OUT (calf)"
+    },
+    "Adonai Mitchell": {
+      "mult": 0,
+      "note": "OUT (finger)"
+    },
+    "Caleb Douglas": {
+      "mult": 0,
+      "note": "OUT (ankle)"
+    },
+    "Ladd McConkey": {
+      "mult": 0.25,
+      "note": "Did not practice, 'week-to-week' - likely out"
+    },
+    "Ashton Jeanty": {
+      "mult": 0.5,
+      "note": "GTD (ankle/foot) - DNP Friday; have a backup"
+    },
+    "Rico Dowdle": {
+      "mult": 0.75,
+      "note": "GTD (toe)"
+    },
+    "Jaylen Wright": {
+      "mult": 0.6,
+      "note": "GTD (foot) - Ollie Gordon benefits"
+    },
+    "Justin Jefferson": {
+      "mult": 0.75,
+      "note": "Questionable (ankle) - team hopeful"
+    },
+    "Jordan Addison": {
+      "mult": 0.85,
+      "note": "Questionable (hamstring)"
+    },
+    "Ja'Marr Chase": {
+      "mult": 1,
+      "note": "Q (concussion) but full practice Friday"
+    },
+    "Tee Higgins": {
+      "mult": 1,
+      "note": "Q (groin/neck) but full practice Friday"
+    },
+    "Terry McLaurin": {
+      "mult": 0.95,
+      "note": "Q (hamstring) - appears probable"
+    },
+    "Rhamondre Stevenson": {
+      "mult": 1,
+      "note": "Q - says he's ready"
+    },
+    "Alvin Kamara": {
+      "mult": 1,
+      "note": "Q (back) - expected to play"
+    },
+    "Keenan Allen": {
+      "mult": 1,
+      "note": "Full practice Friday"
+    },
+    "Carnell Tate": {
+      "mult": 1,
+      "note": "Coach: good to go"
+    },
+    "Tim Patrick": {
+      "mult": 0.8,
+      "note": "Q (groin) - limited all week"
+    },
+    "Darius Slayton": {
+      "mult": 0.8,
+      "note": "Q (knee)"
+    },
+    "George Holani": {
+      "mult": 0.7,
+      "note": "Q (ribs/knee)"
+    },
+    "Colbie Young": {
+      "mult": 0.6,
+      "note": "Q (knee)"
+    },
+    "Charlie Kolar": {
+      "mult": 0.7,
+      "note": "Q (forearm)"
+    }
+  },
+  "boosts": {
+    "Tyson Bagent": {
+      "mult": 1,
+      "note": "Starting for Caleb Williams"
+    },
+    "D'Andre Swift": {
+      "mult": 1.08,
+      "note": "Monangai out - bigger share"
+    },
+    "Braelon Allen": {
+      "mult": 1.08,
+      "note": "Hall out - lead back"
+    },
+    "Pierre Strong": {
+      "mult": 1.1,
+      "note": "Brooks out"
+    },
+    "Mike Washington": {
+      "mult": 1.15,
+      "note": "Jeanty GTD"
+    },
+    "Ollie Gordon": {
+      "mult": 1.1,
+      "note": "Wright GTD"
+    },
+    "Tre' Harris": {
+      "mult": 1.08,
+      "note": "Johnston/Thompson out, McConkey doubtful"
+    }
+  }
+}
