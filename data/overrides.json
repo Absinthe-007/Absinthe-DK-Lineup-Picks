@@ -1,5 +1,5 @@
 {
-  "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; optional 'team' restricts the match. Updated by the scheduled research runs.",
+  "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; 'ceil_mult' raises a sleeper ceiling; optional 'team' restricts the match.",
   "week": 5,
   "players": {
     "Caleb Williams": {
@@ -52,15 +52,15 @@
     },
     "Ladd McConkey": {
       "mult": 0,
-      "note": "Not expected to play per Schefter (Sun AM)"
+      "note": "Not expected to play (foot) - Schefter Sun AM"
     },
     "Ashton Jeanty": {
-      "mult": 0.5,
-      "note": "Game-time decision per Rapoport (Sun AM) - pivot Mike Washington Jr."
+      "mult": 0.65,
+      "note": "GTD (foot/ankle) - Rapoport Sun AM: 'hopeful' to play; check 11:30 ET actives"
     },
     "Rico Dowdle": {
-      "mult": 0.2,
-      "note": "Unlikely to play per Schefter (Sun AM) - Jaylen Warren lead back"
+      "mult": 0.1,
+      "note": "Unlikely to play (toe/foot) - Schefter Sun AM; Warren bell-cow"
     },
     "Jaylen Wright": {
       "mult": 0.6,
@@ -68,27 +68,27 @@
     },
     "Justin Jefferson": {
       "mult": 0.85,
-      "note": "Game-time decision - pregame workout (Rapoport). Check 11:30 ET inactives"
+      "note": "Q (ankle) - pregame workout decides (Rapoport); confirm 11:30 ET"
     },
     "Jordan Addison": {
-      "mult": 0.8,
-      "note": "Game-time decision - pregame workout (Rapoport)"
+      "mult": 0.75,
+      "note": "Q (hamstring) - pregame workout decides (Rapoport)"
     },
     "Ja'Marr Chase": {
-      "mult": 1,
-      "note": "Q (concussion) but full practice Friday"
+      "mult": 0.97,
+      "note": "Q (concussion), full Fri practice; cleared protocol pending"
     },
     "Tee Higgins": {
-      "mult": 1,
-      "note": "Q (groin/neck) but full practice Friday"
+      "mult": 0.95,
+      "note": "Q (groin/neck), full Fri practice; Bengals TBD"
     },
     "Terry McLaurin": {
       "mult": 0.75,
       "note": "Game-time decision (CBS 9:40am ET)"
     },
     "Rhamondre Stevenson": {
-      "mult": 0.95,
-      "note": "Playing per Rapoport (Sun AM); may cede some work to Henderson"
+      "mult": 1,
+      "note": "Expected to play (knee) - Rapoport Sun AM"
     },
     "Alvin Kamara": {
       "mult": 1,
@@ -96,11 +96,11 @@
     },
     "Keenan Allen": {
       "mult": 1,
-      "note": "Playing per Fowler (Sun AM)"
+      "note": "Expected to play (groin) - Fowler Sun AM"
     },
     "Carnell Tate": {
       "mult": 1,
-      "note": "Trending toward playing (Fowler)"
+      "note": "Trending toward playing (back) - Fowler Sun AM"
     },
     "Tim Patrick": {
       "mult": 0.8,
@@ -111,8 +111,8 @@
       "note": "Q (knee)"
     },
     "George Holani": {
-      "mult": 0.7,
-      "note": "Q (ribs/knee)"
+      "mult": 0.6,
+      "note": "Q (ribs/knee); Emanuel Wilson leads SEA backfield"
     },
     "Colbie Young": {
       "mult": 0.6,
@@ -122,17 +122,13 @@
       "mult": 0.7,
       "note": "Q (forearm)"
     },
-    "Lamar Jackson": {
-      "mult": 0,
-      "note": "OUT (ankle) - Tyler Huntley starts"
-    },
     "Jordan Mason": {
       "mult": 0,
       "note": "OUT - Aaron Jones lead back"
     },
     "Zay Flowers": {
-      "mult": 0.9,
-      "note": "Q (foot) - expected to play"
+      "mult": 0.88,
+      "note": "Expected to play (foot) but Tyler Huntley at QB caps passing volume"
     },
     "Saquon Barkley": {
       "mult": 0,
@@ -145,6 +141,30 @@
     "Pat Bryant": {
       "mult": 0,
       "note": "OUT (IR ankle)"
+    },
+    "Mark Andrews": {
+      "mult": 0.92,
+      "note": "Huntley starting - lower pass volume"
+    },
+    "Zach Charbonnet": {
+      "mult": 0,
+      "note": "OUT (knee) - Seahawks final report"
+    },
+    "Joshua Palmer": {
+      "mult": 0,
+      "note": "OUT (shoulder) - Bills final report"
+    },
+    "DJ Moore": {
+      "mult": 0.8,
+      "note": "Q (shoulder) for MNF"
+    },
+    "Terrance Ferguson": {
+      "mult": 0,
+      "note": "IR (ankle) - Parkinson starting TE"
+    },
+    "Lamar Jackson": {
+      "mult": 0,
+      "note": "OUT (ankle) - Tyler Huntley starts SNF"
     },
     "Jeremiyah Love": {
       "mult": 0.9,
@@ -169,17 +189,17 @@
       "note": "Brooks out"
     },
     "Mike Washington": {
-      "mult": 1.15,
-      "note": "Jeanty GTD"
+      "mult": 1.1,
+      "note": "Jeanty GTD ('hopeful') - big if Jeanty sits"
     },
     "Ollie Gordon": {
       "mult": 1.1,
       "note": "Wright GTD"
     },
     "Tre' Harris": {
-      "mult": 1.12,
-      "note": "McConkey out + Johnston/Thompson out - WR1 role",
-      "ceil_mult": 1.25
+      "mult": 1.1,
+      "note": "Johnston, Thompson, McConkey all out - near every-down WR",
+      "ceil_mult": 1.2
     },
     "Aaron Jones Sr.": {
       "mult": 1.05,
@@ -195,31 +215,83 @@
     },
     "Jaylen Warren": {
       "mult": 1.1,
-      "note": "Dowdle unlikely to play - bell-cow role (FTN 30% owned, top RB value >$6K per Stokastic)"
+      "note": "Dowdle unlikely - full workload vs IND"
+    },
+    "Emanuel Wilson": {
+      "mult": 1.12,
+      "note": "Charbonnet OUT - lead back vs SF w/o Nick Bosa",
+      "ceil_mult": 1.2
     },
     "Jameson Williams": {
-      "mult": 1,
-      "note": "~6% owned in the 54.5-total game; 91% route rate and team-high 5 targets of 20+ yards vs t",
+      "mult": 1.05,
+      "note": "14.6 aDOT vs ARI (8.6 YPA allowed, worst); ~6% owned",
       "ceil_mult": 1.25
     },
+    "Roman Wilson": {
+      "mult": 1.05,
+      "note": "Pittman out - WR2 snaps",
+      "ceil_mult": 1.15
+    },
     "Quinshon Judkins": {
-      "mult": 1,
-      "note": "~5% owned; Jets allow the 4th-most rushing yards to RBs and gave up 400+ yards and 5 TDs t",
-      "ceil_mult": 1.25
+      "mult": 1.05,
+      "note": "NYJ allow 4th-most rush yds to RBs; ~5% owned",
+      "ceil_mult": 1.15
+    },
+    "Courtland Sutton": {
+      "mult": 1.05,
+      "note": "Payton takes play-calling; 0 TDs so far (regression)",
+      "ceil_mult": 1.2
+    },
+    "Falcons": {
+      "mult": 1.18,
+      "note": "DST vs Tyler Huntley (Lamar out); $2,400",
+      "ceil_mult": 1.25,
+      "team": "ATL"
+    },
+    "Colby Parkinson": {
+      "mult": 1.25,
+      "note": "Ferguson on IR - starting TE at $2,900",
+      "ceil_mult": 1.2
+    },
+    "Keon Coleman": {
+      "mult": 1.08,
+      "note": "Palmer OUT, Moore Q - more snaps in 54.5 total",
+      "ceil_mult": 1.2
+    },
+    "Khalil Shakir": {
+      "mult": 1.05,
+      "note": "Palmer OUT - slot volume up"
+    },
+    "Blake Corum": {
+      "mult": 1.1,
+      "note": "Taking a large share of LAR carries (ATS.io)",
+      "ceil_mult": 1.15
+    },
+    "Bijan Robinson": {
+      "mult": 1.04,
+      "note": "BAL starting backup QB - positive ATL script"
+    },
+    "Rashid Shaheed": {
+      "mult": 1.05,
+      "note": "Big-play WR3; SF without Nick Bosa",
+      "ceil_mult": 1.2
+    },
+    "Sam Darnold": {
+      "mult": 1.03,
+      "note": "SF missing Nick Bosa (knee/calf)"
+    },
+    "Jaxon Smith-Njigba": {
+      "mult": 1.02,
+      "note": "SF missing Nick Bosa"
+    },
+    "Kyle Pitts Sr.": {
+      "mult": 1.05,
+      "note": "$3,700 TE in SNF; ceiling at cheap price",
+      "ceil_mult": 1.15
     },
     "Rome Odunze": {
       "mult": 1,
       "note": "Targets up every week (3→7), 89% snaps, 20.6% target share; GB allows 31.9 DK pts/gm to WR",
-      "ceil_mult": 1.15
-    },
-    "Courtland Sutton": {
-      "mult": 1,
-      "note": "$4,600 - cheapest since 2021; 7 red-zone targets and no TD yet; Payton taking over play-ca",
-      "ceil_mult": 1.25
-    },
-    "Roman Wilson": {
-      "mult": 1,
-      "note": "$3,700 punt with Pittman out; top punt candidate (Footballguys); in the max-points lineup.",
       "ceil_mult": 1.15
     },
     "Antonio Williams": {
@@ -233,5 +305,5 @@
       "ceil_mult": 1.15
     }
   },
-  "updated": "2026-10-11T14:30Z"
+  "updated": "2026-10-11T14:50:14Z"
 }

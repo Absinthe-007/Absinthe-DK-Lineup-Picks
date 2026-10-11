@@ -1,26 +1,37 @@
 {
-  "updated": "2026-10-11T14:20:00Z",
+  "updated": "2026-10-11T14:50:14Z",
   "week": 5,
   "sources": [
-    "FantasyLabs",
-    "FantasyPros",
-    "RotoWire",
-    "FTN",
-    "DraftKings Network",
-    "Stokastic",
-    "Forbes",
-    "Footballguys",
-    "Fantasy Six Pack",
-    "ESPN",
-    "Sleeper/Rotowire projections",
-    "Vegas lines",
-    "NFL.com Sunday pregame injury report (Rapoport/Schefter/Fowler)",
-    "CBS inactives tracker",
-    "Fantasy Alarm",
+    "4for4",
+    "ATS.io (MNF props)",
+    "Buffalo Wdown",
+    "CBS Sports",
     "CBS Sports projections",
-    "FantasyLabs leverage picks",
+    "CBS inactives tracker",
     "DK Network GPP + Millionaire + sleepers",
-    "Footballguys GPP Domination"
+    "DraftKings Network",
+    "DraftKings Network (chalk + GPP articles)",
+    "ESPN",
+    "FTN",
+    "Fantasy Alarm",
+    "Fantasy Footballers",
+    "Fantasy Six Pack",
+    "FantasyLabs",
+    "FantasyLabs (leverage picks)",
+    "FantasyLabs leverage picks",
+    "FantasyPros",
+    "Footballguys",
+    "Footballguys GPP Domination",
+    "Forbes",
+    "NBC Sports/Rotoworld",
+    "NFL.com (Rapoport/Schefter/Fowler Sunday AM injury updates)",
+    "NFL.com Sunday pregame injury report (Rapoport/Schefter/Fowler)",
+    "RotoWire",
+    "Sleeper/ESPN projections",
+    "Sleeper/Rotowire projections",
+    "Stokastic",
+    "Team sites (49ers, Seahawks, Rams, Bills final injury reports)",
+    "Vegas lines"
   ],
   "default": {
     "mustPlays": [
@@ -28,28 +39,46 @@
         "name": "Jahmyr Gibbs",
         "team": "DET",
         "pos": "RB",
-        "why": "Leads NFL in touches & TDs, ~30 DK pts/gm, top projection on the slate in the 54.5-total game. Every source has him #1."
+        "why": "Leads NFL in touches & TDs (~30 DK pts/gm); DET 30.0 implied, highest on slate; 27.9 blended proj, #1 at RB on Sleeper/ESPN/DK avg."
       },
       {
         "name": "Jacoby Brissett",
         "team": "ARI",
         "pos": "QB",
-        "why": "$5,500 for a QB facing the defense allowing the most DK pts to QBs (28.9/gm). Cash lock per FantasyLabs, FantasyPros, Footballguys; FTN's top GPP QB by ROI."
-      },
-      {
-        "name": "Amon-Ra St. Brown",
-        "team": "DET",
-        "pos": "WR",
-        "why": "Top point-per-dollar WR (RotoWire), FTN's #1 WR by ROI; Arizona ranks last in yards per attempt."
+        "why": "$5,500 vs DET, which allows the most DK pts to QBs (28.9/gm); 19.6 proj = 3.6x value; consensus cash QB (FantasyLabs, FantasyPros, DK Network)."
       },
       {
         "name": "Trey McBride",
         "team": "ARI",
         "pos": "TE",
-        "why": "7+ catches every game; Detroit allows the most DK pts to TEs (28.4). Stacks with Brissett."
+        "why": "10+ targets every game (DK Network); DET allows most DK pts to TEs (28.4/gm); 18.7 proj, top TE by 0.8 pts. Stacks with Brissett."
+      },
+      {
+        "name": "Amon-Ra St. Brown",
+        "team": "DET",
+        "pos": "WR",
+        "why": "21.9 proj in the 54.5 total; ARI allows 8.6 YPA (worst in NFL, FantasyLabs); top WR point-per-dollar on RotoWire."
       }
     ],
     "core": [
+      {
+        "name": "Jaylen Warren",
+        "team": "PIT",
+        "pos": "RB",
+        "why": "Rico Dowdle unlikely (Schefter, Sun AM) - bell-cow role vs IND at $6,700."
+      },
+      {
+        "name": "Braelon Allen",
+        "team": "NYJ",
+        "pos": "RB",
+        "why": "Breece Hall OUT; 94% snaps last week; $5,400."
+      },
+      {
+        "name": "D'Andre Swift",
+        "team": "CHI",
+        "pos": "RB",
+        "why": "Monangai OUT; GB allows 2nd-most DK pts to RBs."
+      },
       {
         "name": "Michael Wilson",
         "team": "ARI",
@@ -57,118 +86,910 @@
         "why": "93.9% route rate, 30 targets in 2 games; DET allows 2nd-most DK pts to WRs."
       },
       {
-        "name": "Braelon Allen",
-        "team": "NYJ",
-        "pos": "RB",
-        "why": "Breece Hall out; played 94% of snaps last week. Best RB under $6K (rain risk)."
-      },
-      {
-        "name": "Jaylen Warren",
-        "team": "PIT",
-        "pos": "RB",
-        "why": "Rico Dowdle unlikely to play (Schefter, Sun AM) - Warren gets the backfield; Stokastic's best pts/$ RB above $6K."
-      },
-      {
-        "name": "D'Andre Swift",
-        "team": "CHI",
-        "pos": "RB",
-        "why": "Monangai out; GB allows 2nd-most DK pts to RBs."
-      },
-      {
         "name": "Sam LaPorta",
         "team": "DET",
         "pos": "TE",
-        "why": "ARI allows 3rd-most to TEs; ~1/3 of McBride's ownership (leverage)."
+        "why": "ARI allows 3rd-most to TEs; ~1/3 of McBride's ownership."
       },
       {
         "name": "Jared Goff",
         "team": "DET",
         "pos": "QB",
-        "why": "GPP pivot from Brissett: same shootout, ARI allowed 11 pass TDs."
+        "why": "GPP pivot off Brissett: 22.5 proj, 14% owned (Fantasy Footballers), ARI allowed 11 pass TDs."
       }
     ],
-    "stacks": [
-      "Brissett + McBride + M. Wilson w/ Gibbs/St. Brown bring-back",
-      "Goff + St. Brown + LaPorta w/ McBride bring-back",
-      "Bears/Packers pivot: Love + Watson/Kraft w/ Swift"
-    ],
-    "fades": [
-      {
-        "name": "Jaxon Smith-Njigba",
-        "why": "$8,800 in a tough SF matchup; St. Brown projects similar for $900 less (RotoWire)"
-      },
-      {
-        "name": "Garrett Wilson",
-        "why": "Overowned vs optimal in a 39.5 total (Stokastic)"
-      },
-      {
-        "name": "Ashton Jeanty",
-        "why": "GTD foot/ankle, DNP Friday - pivot to Mike Washington Jr. if out"
-      },
-      {
-        "name": "Rico Dowdle",
-        "why": "Unlikely to play (Schefter)"
-      }
-    ],
-    "notes": "Sunday AM update: McConkey out (Tre' Harris up), Dowdle unlikely (Warren up), Stevenson/Kamara/K. Allen playing, Jefferson/Addison/McLaurin/Jeanty are game-time decisions - check 11:30am ET inactives. Lions-Cardinals (54.5) is still the core game.",
     "sleepers": [
       {
         "name": "Jameson Williams",
         "team": "DET",
         "pos": "WR",
-        "why": "~6% owned in the 54.5-total game; 91% route rate and team-high 5 targets of 20+ yards vs the defense allowing the most yards per pass (FantasyLabs, DK Network). One deep TD away from 25+.",
+        "why": "~6% owned (FantasyLabs) in the 54.5-total game; 14.6 aDOT vs the NFL's worst YPA defense (8.6). Zero-to-multi-TD range; DK Network's preferred bring-back.",
         "boom": "high"
       },
       {
-        "name": "Quinshon Judkins",
-        "team": "CLE",
+        "name": "Emanuel Wilson",
+        "team": "SEA",
         "pos": "RB",
-        "why": "~5% owned; Jets allow the 4th-most rushing yards to RBs and gave up 400+ yards and 5 TDs to backs the last two games (FantasyLabs, DK Network).",
-        "boom": "high"
-      },
-      {
-        "name": "Rome Odunze",
-        "team": "CHI",
-        "pos": "WR",
-        "why": "Targets up every week (3→7), 89% snaps, 20.6% target share; GB allows 31.9 DK pts/gm to WRs (FantasyPros, DK Network).",
-        "boom": "medium"
-      },
-      {
-        "name": "Courtland Sutton",
-        "team": "DEN",
-        "pos": "WR",
-        "why": "$4,600 - cheapest since 2021; 7 red-zone targets and no TD yet; Payton taking over play-calling vs a LAC defense allowing 7.4 YPA (FantasyLabs).",
+        "why": "Zach Charbonnet OUT (knee) and Holani Q - lead back at $5,300 with SF missing Nick Bosa; 12.7 proj before the bump.",
         "boom": "high"
       },
       {
         "name": "Tre' Harris",
         "team": "LAC",
         "pos": "WR",
-        "why": "$4,100 and now the Chargers' WR1 with McConkey, Johnston and Thompson all out (Schefter, Footballguys).",
+        "why": "$4,100 and Johnston, Thompson AND McConkey are all out (Schefter: McConkey not expected to play) - near every-down role for a team down 3.5 at home.",
         "boom": "high"
+      },
+      {
+        "name": "Quinshon Judkins",
+        "team": "CLE",
+        "pos": "RB",
+        "why": "~5% owned (FantasyLabs); 14.8 carries/gm, Jets allow 4th-most rush yds to RBs; DK Network expects 18+ touches.",
+        "boom": "medium"
+      },
+      {
+        "name": "Courtland Sutton",
+        "team": "DEN",
+        "pos": "WR",
+        "why": "$4,600, single-digit owned; Sean Payton takes over play-calling vs LAC (7th-most YPA allowed, 7.4); 0 TDs so far = overdue (FantasyLabs).",
+        "boom": "medium"
       },
       {
         "name": "Roman Wilson",
         "team": "PIT",
         "pos": "WR",
-        "why": "$3,700 punt with Pittman out; top punt candidate (Footballguys); in the max-points lineup.",
+        "why": "$3,700 WR2 with Michael Pittman Jr. out; 10.0 proj (2.7x value).",
+        "boom": "medium"
+      },
+      {
+        "name": "Rome Odunze",
+        "team": "CHI",
+        "pos": "WR",
+        "why": "$4,700, rising snap & target share; GB allows heavy WR production (DK Network GPP).",
+        "boom": "medium"
+      },
+      {
+        "name": "Bo Nix",
+        "team": "DEN",
+        "pos": "QB",
+        "why": "$5,600; Payton calling plays for the first time this season vs LAC (7.4 YPA allowed); rushing floor, single-digit owned stack with Sutton/Waddle.",
         "boom": "medium"
       },
       {
         "name": "Antonio Williams",
         "team": "WAS",
         "pos": "WR",
-        "why": "$3,800 rookie: 12 catches on 19 targets; Diggs out and McLaurin a game-time decision (DK Network Millionaire picks).",
-        "boom": "medium"
-      },
-      {
-        "name": "Bears",
-        "team": "CHI",
-        "pos": "DST",
-        "why": "$2,900; ~10 DK pts/gm last 3, 3rd-best sack rate (8.6%); Packers without Josh Jacobs (DK Network).",
+        "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
         "boom": "medium"
       }
-    ]
+    ],
+    "stacks": [
+      "Brissett + McBride + M. Wilson w/ Gibbs/St. Brown bring-back",
+      "Goff + St. Brown + J. Williams w/ McBride bring-back",
+      "Nix + Sutton (+Waddle) low-owned, w/ Tre' Harris bring-back",
+      "Love + Watson w/ Swift (CHI-GB 47.5)"
+    ],
+    "fades": [
+      {
+        "name": "Jaxon Smith-Njigba",
+        "why": "$8,800; St. Brown projects similar for $900 less (RotoWire)"
+      },
+      {
+        "name": "Garrett Wilson",
+        "why": "Overowned vs optimal in a 38.5 total (Stokastic)"
+      },
+      {
+        "name": "Rico Dowdle",
+        "why": "Unlikely to play (Schefter) - Warren instead"
+      },
+      {
+        "name": "Ladd McConkey",
+        "why": "Not expected to play (Schefter)"
+      }
+    ],
+    "notes": "DET-ARI (54.5) is 7+ pts higher than any other main-slate game, so the core lives there. Sunday AM news: Dowdle unlikely -> Warren up; McConkey out -> Tre' Harris; Charbonnet out -> Emanuel Wilson; Stevenson, Keenan Allen, Kamara, Tate expected to play; Jeanty 'hopeful' (GTD) and Jefferson/Addison test pregame - recheck 11:30 ET actives."
   },
-  "slates": {}
+  "slates": {
+    "154468": {
+      "mustPlays": [
+        {
+          "name": "Jahmyr Gibbs",
+          "team": "DET",
+          "pos": "RB",
+          "why": "Leads NFL in touches & TDs (~30 DK pts/gm); DET 30.0 implied, highest on slate; 27.9 blended proj, #1 at RB on Sleeper/ESPN/DK avg."
+        },
+        {
+          "name": "Jacoby Brissett",
+          "team": "ARI",
+          "pos": "QB",
+          "why": "$5,500 vs DET, which allows the most DK pts to QBs (28.9/gm); 19.6 proj = 3.6x value; consensus cash QB (FantasyLabs, FantasyPros, DK Network)."
+        },
+        {
+          "name": "Trey McBride",
+          "team": "ARI",
+          "pos": "TE",
+          "why": "10+ targets every game (DK Network); DET allows most DK pts to TEs (28.4/gm); 18.7 proj, top TE by 0.8 pts. Stacks with Brissett."
+        },
+        {
+          "name": "Amon-Ra St. Brown",
+          "team": "DET",
+          "pos": "WR",
+          "why": "21.9 proj in the 54.5 total; ARI allows 8.6 YPA (worst in NFL, FantasyLabs); top WR point-per-dollar on RotoWire."
+        }
+      ],
+      "core": [
+        {
+          "name": "Jaylen Warren",
+          "team": "PIT",
+          "pos": "RB",
+          "why": "Rico Dowdle unlikely (Schefter, Sun AM) - bell-cow role vs IND at $6,700."
+        },
+        {
+          "name": "Braelon Allen",
+          "team": "NYJ",
+          "pos": "RB",
+          "why": "Breece Hall OUT; 94% snaps last week; $5,400."
+        },
+        {
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "pos": "RB",
+          "why": "Monangai OUT; GB allows 2nd-most DK pts to RBs."
+        },
+        {
+          "name": "Michael Wilson",
+          "team": "ARI",
+          "pos": "WR",
+          "why": "93.9% route rate, 30 targets in 2 games; DET allows 2nd-most DK pts to WRs."
+        },
+        {
+          "name": "Sam LaPorta",
+          "team": "DET",
+          "pos": "TE",
+          "why": "ARI allows 3rd-most to TEs; ~1/3 of McBride's ownership."
+        },
+        {
+          "name": "Jared Goff",
+          "team": "DET",
+          "pos": "QB",
+          "why": "GPP pivot off Brissett: 22.5 proj, 14% owned (Fantasy Footballers), ARI allowed 11 pass TDs."
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Jameson Williams",
+          "team": "DET",
+          "pos": "WR",
+          "why": "~6% owned (FantasyLabs) in the 54.5-total game; 14.6 aDOT vs the NFL's worst YPA defense (8.6). Zero-to-multi-TD range; DK Network's preferred bring-back.",
+          "boom": "high"
+        },
+        {
+          "name": "Emanuel Wilson",
+          "team": "SEA",
+          "pos": "RB",
+          "why": "Zach Charbonnet OUT (knee) and Holani Q - lead back at $5,300 with SF missing Nick Bosa; 12.7 proj before the bump.",
+          "boom": "high"
+        },
+        {
+          "name": "Tre' Harris",
+          "team": "LAC",
+          "pos": "WR",
+          "why": "$4,100 and Johnston, Thompson AND McConkey are all out (Schefter: McConkey not expected to play) - near every-down role for a team down 3.5 at home.",
+          "boom": "high"
+        },
+        {
+          "name": "Quinshon Judkins",
+          "team": "CLE",
+          "pos": "RB",
+          "why": "~5% owned (FantasyLabs); 14.8 carries/gm, Jets allow 4th-most rush yds to RBs; DK Network expects 18+ touches.",
+          "boom": "medium"
+        },
+        {
+          "name": "Courtland Sutton",
+          "team": "DEN",
+          "pos": "WR",
+          "why": "$4,600, single-digit owned; Sean Payton takes over play-calling vs LAC (7th-most YPA allowed, 7.4); 0 TDs so far = overdue (FantasyLabs).",
+          "boom": "medium"
+        },
+        {
+          "name": "Roman Wilson",
+          "team": "PIT",
+          "pos": "WR",
+          "why": "$3,700 WR2 with Michael Pittman Jr. out; 10.0 proj (2.7x value).",
+          "boom": "medium"
+        },
+        {
+          "name": "Rome Odunze",
+          "team": "CHI",
+          "pos": "WR",
+          "why": "$4,700, rising snap & target share; GB allows heavy WR production (DK Network GPP).",
+          "boom": "medium"
+        },
+        {
+          "name": "Bo Nix",
+          "team": "DEN",
+          "pos": "QB",
+          "why": "$5,600; Payton calling plays for the first time this season vs LAC (7.4 YPA allowed); rushing floor, single-digit owned stack with Sutton/Waddle.",
+          "boom": "medium"
+        },
+        {
+          "name": "Antonio Williams",
+          "team": "WAS",
+          "pos": "WR",
+          "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Brissett + McBride + M. Wilson w/ Gibbs/St. Brown bring-back",
+        "Goff + St. Brown + J. Williams w/ McBride bring-back",
+        "Nix + Sutton (+Waddle) low-owned, w/ Tre' Harris bring-back",
+        "Love + Watson w/ Swift (CHI-GB 47.5)"
+      ],
+      "fades": [
+        {
+          "name": "Jaxon Smith-Njigba",
+          "why": "$8,800; St. Brown projects similar for $900 less (RotoWire)"
+        },
+        {
+          "name": "Garrett Wilson",
+          "why": "Overowned vs optimal in a 38.5 total (Stokastic)"
+        },
+        {
+          "name": "Rico Dowdle",
+          "why": "Unlikely to play (Schefter) - Warren instead"
+        },
+        {
+          "name": "Ladd McConkey",
+          "why": "Not expected to play (Schefter)"
+        }
+      ],
+      "notes": "DET-ARI (54.5) is 7+ pts higher than any other main-slate game, so the core lives there. Sunday AM news: Dowdle unlikely -> Warren up; McConkey out -> Tre' Harris; Charbonnet out -> Emanuel Wilson; Stevenson, Keenan Allen, Kamara, Tate expected to play; Jeanty 'hopeful' (GTD) and Jefferson/Addison test pregame - recheck 11:30 ET actives."
+    },
+    "154469": {
+      "mustPlays": [
+        {
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "pos": "RB",
+          "why": "19.6 proj at $6,200 (3.2x); Monangai OUT, GB allows 2nd-most DK pts to RBs; DK Network chalk."
+        },
+        {
+          "name": "Chase Brown",
+          "team": "CIN",
+          "pos": "RB",
+          "why": "MIA allowed an NFL-high 4 receiving TDs to RBs (DK Network); 17.6 proj, CIN 25.2 implied, highest on the early slate."
+        },
+        {
+          "name": "Drake Maye",
+          "team": "NE",
+          "pos": "QB",
+          "why": "Home fav vs LV (NE 24.5 implied), rushing upside, Raiders pass D vulnerable (DK Network GPP); 18.7 proj."
+        },
+        {
+          "name": "Braelon Allen",
+          "team": "NYJ",
+          "pos": "RB",
+          "why": "Hall OUT, 94% of snaps last week; 15.3 proj at $5,400 (2.8x)."
+        }
+      ],
+      "core": [
+        {
+          "name": "Jaylen Warren",
+          "team": "PIT",
+          "pos": "RB",
+          "why": "Dowdle unlikely (Schefter) - full workload."
+        },
+        {
+          "name": "Joe Burrow",
+          "team": "CIN",
+          "pos": "QB",
+          "why": "20.9 proj; highest implied team total on the early slate."
+        },
+        {
+          "name": "Ja'Marr Chase",
+          "team": "CIN",
+          "pos": "WR",
+          "why": "Full practice Friday; 20.8 proj."
+        },
+        {
+          "name": "Romeo Doubs",
+          "team": "NE",
+          "pos": "WR",
+          "why": "Maye stack piece at $5,000."
+        },
+        {
+          "name": "Christian Watson",
+          "team": "GB",
+          "pos": "WR",
+          "why": "Downfield role, 16.4 proj."
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Quinshon Judkins",
+          "team": "CLE",
+          "pos": "RB",
+          "why": "~5% owned (FantasyLabs); 14.8 carries/gm, Jets allow 4th-most rush yds to RBs; DK Network expects 18+ touches.",
+          "boom": "medium"
+        },
+        {
+          "name": "Roman Wilson",
+          "team": "PIT",
+          "pos": "WR",
+          "why": "$3,700 WR2 with Michael Pittman Jr. out; 10.0 proj (2.7x value).",
+          "boom": "medium"
+        },
+        {
+          "name": "Rome Odunze",
+          "team": "CHI",
+          "pos": "WR",
+          "why": "$4,700, rising snap & target share; GB allows heavy WR production (DK Network GPP).",
+          "boom": "medium"
+        },
+        {
+          "name": "Malik Washington",
+          "team": "MIA",
+          "pos": "WR",
+          "why": "$4,600, 11.2 proj; MIA will chase as 7-pt dogs.",
+          "boom": "medium"
+        },
+        {
+          "name": "Mike Gesicki",
+          "team": "CIN",
+          "pos": "TE",
+          "why": "$4,100; target share jumps 9.7% -> 14.3% if Higgins sits; MIA allows 3rd-most TE yds (FantasyLabs).",
+          "boom": "medium"
+        },
+        {
+          "name": "Bears",
+          "team": "CHI",
+          "pos": "DST",
+          "why": "$2,900; top-3 sack rate, GB missing its starting RB (DK Network GPP).",
+          "boom": "medium"
+        },
+        {
+          "name": "Mike Washington Jr.",
+          "team": "LV",
+          "pos": "RB",
+          "why": "$4,200; lead back if Jeanty sits (GTD, 'hopeful').",
+          "boom": "high"
+        },
+        {
+          "name": "Antonio Williams",
+          "team": "WAS",
+          "pos": "WR",
+          "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Burrow + Chase + Higgins/Gesicki w/ Malik Washington bring-back",
+        "Maye + Doubs/Henry w/ Bowers bring-back",
+        "Love + Watson + Golden w/ Swift"
+      ],
+      "fades": [
+        {
+          "name": "Garrett Wilson",
+          "why": "Overowned in a 38.5 total"
+        },
+        {
+          "name": "Rico Dowdle",
+          "why": "Unlikely to play"
+        },
+        {
+          "name": "Ashton Jeanty",
+          "why": "GTD - only if active"
+        }
+      ],
+      "notes": "No DET-ARI here; CIN (25.2) and NE/CHI (24.5) lead. Check 11:30 ET actives for Jeanty, Jefferson, Addison, Chase/Higgins."
+    },
+    "154470": {
+      "mustPlays": [
+        {
+          "name": "Jahmyr Gibbs",
+          "team": "DET",
+          "pos": "RB",
+          "why": "Leads NFL in touches & TDs (~30 DK pts/gm); DET 30.0 implied, highest on slate; 27.9 blended proj, #1 at RB on Sleeper/ESPN/DK avg."
+        },
+        {
+          "name": "Jacoby Brissett",
+          "team": "ARI",
+          "pos": "QB",
+          "why": "$5,500 vs DET, which allows the most DK pts to QBs (28.9/gm); 19.6 proj = 3.6x value; consensus cash QB (FantasyLabs, FantasyPros, DK Network)."
+        },
+        {
+          "name": "Trey McBride",
+          "team": "ARI",
+          "pos": "TE",
+          "why": "10+ targets every game (DK Network); DET allows most DK pts to TEs (28.4/gm); 18.7 proj, top TE by 0.8 pts. Stacks with Brissett."
+        }
+      ],
+      "core": [
+        {
+          "name": "Amon-Ra St. Brown",
+          "team": "DET",
+          "pos": "WR",
+          "why": "21.9 proj in the 54.5 total; ARI allows 8.6 YPA (worst in NFL, FantasyLabs); top WR point-per-dollar on RotoWire."
+        },
+        {
+          "name": "Bijan Robinson",
+          "team": "ATL",
+          "pos": "RB",
+          "why": "25.2 proj, top on slate; ATL favored by 3 vs a Ravens team starting Tyler Huntley (Lamar OUT) = run-heavy positive script."
+        },
+        {
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "22.2 proj in the 54.5 game; healthy and coming off a big Week 4; Bills without DL Ed Oliver."
+        },
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "Top QB proj (23.0) in the 54.5 MNF game."
+        },
+        {
+          "name": "Jaylen Warren",
+          "team": "PIT",
+          "pos": "RB",
+          "why": "Rico Dowdle unlikely (Schefter, Sun AM) - bell-cow role vs IND at $6,700."
+        },
+        {
+          "name": "Braelon Allen",
+          "team": "NYJ",
+          "pos": "RB",
+          "why": "Breece Hall OUT; 94% snaps last week; $5,400."
+        },
+        {
+          "name": "D'Andre Swift",
+          "team": "CHI",
+          "pos": "RB",
+          "why": "Monangai OUT; GB allows 2nd-most DK pts to RBs."
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Jameson Williams",
+          "team": "DET",
+          "pos": "WR",
+          "why": "~6% owned (FantasyLabs) in the 54.5-total game; 14.6 aDOT vs the NFL's worst YPA defense (8.6). Zero-to-multi-TD range; DK Network's preferred bring-back.",
+          "boom": "high"
+        },
+        {
+          "name": "Emanuel Wilson",
+          "team": "SEA",
+          "pos": "RB",
+          "why": "Zach Charbonnet OUT (knee) and Holani Q - lead back at $5,300 with SF missing Nick Bosa; 12.7 proj before the bump.",
+          "boom": "high"
+        },
+        {
+          "name": "Tre' Harris",
+          "team": "LAC",
+          "pos": "WR",
+          "why": "$4,100 and Johnston, Thompson AND McConkey are all out (Schefter: McConkey not expected to play) - near every-down role for a team down 3.5 at home.",
+          "boom": "high"
+        },
+        {
+          "name": "Falcons",
+          "team": "ATL",
+          "pos": "DST",
+          "why": "$2,400 DST facing Tyler Huntley (Lamar Jackson OUT); 4for4 expects BAL passing game to drop off sharply.",
+          "boom": "high"
+        },
+        {
+          "name": "Colby Parkinson",
+          "team": "LAR",
+          "pos": "TE",
+          "why": "$2,900 and now the starting TE with Terrance Ferguson on IR, in the 54.5-total MNF game.",
+          "boom": "high"
+        },
+        {
+          "name": "Keon Coleman",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "Joshua Palmer OUT, DJ Moore Q (shoulder) - more routes for the big-play WR in a 54.5 total, $4,600.",
+          "boom": "medium"
+        },
+        {
+          "name": "Quinshon Judkins",
+          "team": "CLE",
+          "pos": "RB",
+          "why": "~5% owned (FantasyLabs); 14.8 carries/gm, Jets allow 4th-most rush yds to RBs; DK Network expects 18+ touches.",
+          "boom": "medium"
+        },
+        {
+          "name": "Roman Wilson",
+          "team": "PIT",
+          "pos": "WR",
+          "why": "$3,700 WR2 with Michael Pittman Jr. out; 10.0 proj (2.7x value).",
+          "boom": "medium"
+        },
+        {
+          "name": "Antonio Williams",
+          "team": "WAS",
+          "pos": "WR",
+          "why": "$3,800 rookie: 12 catches on 19 targets; Diggs OUT and McLaurin a game-time decision (DK Network).",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Brissett + McBride + M. Wilson w/ Gibbs/St. Brown bring-back",
+        "Goff + St. Brown + J. Williams w/ McBride bring-back",
+        "Nix + Sutton (+Waddle) low-owned, w/ Tre' Harris bring-back",
+        "Love + Watson w/ Swift (CHI-GB 47.5)",
+        "Allen + Coleman w/ Puka (MNF)"
+      ],
+      "fades": [
+        {
+          "name": "Jaxon Smith-Njigba",
+          "why": "$8,800; St. Brown projects similar for $900 less (RotoWire)"
+        },
+        {
+          "name": "Garrett Wilson",
+          "why": "Overowned vs optimal in a 38.5 total (Stokastic)"
+        },
+        {
+          "name": "Rico Dowdle",
+          "why": "Unlikely to play (Schefter) - Warren instead"
+        },
+        {
+          "name": "Ladd McConkey",
+          "why": "Not expected to play (Schefter)"
+        },
+        {
+          "name": "Zay Flowers",
+          "why": "$7,000 with Tyler Huntley at QB"
+        },
+        {
+          "name": "Derrick Henry",
+          "why": "$8,000, 3-pt road dog with a backup QB - game script risk"
+        }
+      ],
+      "notes": "13 games incl. SNF/MNF. Two 54.5 totals: DET-ARI and BUF-LAR. Cheap DST: Falcons $2,400 vs Huntley."
+    },
+    "154471": {
+      "mustPlays": [
+        {
+          "name": "Jahmyr Gibbs",
+          "team": "DET",
+          "pos": "RB",
+          "why": "Leads NFL in touches & TDs (~30 DK pts/gm); DET 30.0 implied, highest on slate; 27.9 blended proj, #1 at RB on Sleeper/ESPN/DK avg."
+        },
+        {
+          "name": "Jacoby Brissett",
+          "team": "ARI",
+          "pos": "QB",
+          "why": "$5,500 vs DET, which allows the most DK pts to QBs (28.9/gm); 19.6 proj = 3.6x value; consensus cash QB (FantasyLabs, FantasyPros, DK Network)."
+        },
+        {
+          "name": "Trey McBride",
+          "team": "ARI",
+          "pos": "TE",
+          "why": "10+ targets every game (DK Network); DET allows most DK pts to TEs (28.4/gm); 18.7 proj, top TE by 0.8 pts. Stacks with Brissett."
+        }
+      ],
+      "core": [
+        {
+          "name": "Amon-Ra St. Brown",
+          "team": "DET",
+          "pos": "WR",
+          "why": "21.9 proj in the 54.5 total; ARI allows 8.6 YPA (worst in NFL, FantasyLabs); top WR point-per-dollar on RotoWire."
+        },
+        {
+          "name": "Michael Wilson",
+          "team": "ARI",
+          "pos": "WR",
+          "why": "30 targets in 2 games."
+        },
+        {
+          "name": "Jaxon Smith-Njigba",
+          "team": "SEA",
+          "pos": "WR",
+          "why": "24.4 proj; SF missing Bosa - fine on a 3-game slate."
+        },
+        {
+          "name": "George Kittle",
+          "team": "SF",
+          "pos": "TE",
+          "why": "Healthy, 13.8 proj at $5,200."
+        },
+        {
+          "name": "Sam LaPorta",
+          "team": "DET",
+          "pos": "TE",
+          "why": "ARI allows 3rd-most to TEs."
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Jameson Williams",
+          "team": "DET",
+          "pos": "WR",
+          "why": "~6% owned (FantasyLabs) in the 54.5-total game; 14.6 aDOT vs the NFL's worst YPA defense (8.6). Zero-to-multi-TD range; DK Network's preferred bring-back.",
+          "boom": "high"
+        },
+        {
+          "name": "Emanuel Wilson",
+          "team": "SEA",
+          "pos": "RB",
+          "why": "Zach Charbonnet OUT (knee) and Holani Q - lead back at $5,300 with SF missing Nick Bosa; 12.7 proj before the bump.",
+          "boom": "high"
+        },
+        {
+          "name": "Tre' Harris",
+          "team": "LAC",
+          "pos": "WR",
+          "why": "$4,100 and Johnston, Thompson AND McConkey are all out (Schefter: McConkey not expected to play) - near every-down role for a team down 3.5 at home.",
+          "boom": "high"
+        },
+        {
+          "name": "Courtland Sutton",
+          "team": "DEN",
+          "pos": "WR",
+          "why": "$4,600, single-digit owned; Sean Payton takes over play-calling vs LAC (7th-most YPA allowed, 7.4); 0 TDs so far = overdue (FantasyLabs).",
+          "boom": "medium"
+        },
+        {
+          "name": "Rashid Shaheed",
+          "team": "SEA",
+          "pos": "WR",
+          "why": "$4,000 deep threat; SF without Nick Bosa means more time to throw; one long TD = 4x.",
+          "boom": "medium"
+        },
+        {
+          "name": "AJ Barner",
+          "team": "SEA",
+          "pos": "TE",
+          "why": "$3,200 TE in a 46.5 total; red-zone role.",
+          "boom": "medium"
+        },
+        {
+          "name": "Bo Nix",
+          "team": "DEN",
+          "pos": "QB",
+          "why": "$5,600; Payton calling plays for the first time this season vs LAC (7.4 YPA allowed); rushing floor, single-digit owned stack with Sutton/Waddle.",
+          "boom": "medium"
+        },
+        {
+          "name": "Broncos",
+          "team": "DEN",
+          "pos": "DST",
+          "why": "$3,200 vs a LAC offense missing Johnston, Thompson and McConkey; LAC 19.0 implied.",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Brissett + McBride + M. Wilson w/ Gibbs",
+        "Goff + St. Brown + J. Williams w/ McBride",
+        "Darnold + JSN + Shaheed w/ Kittle",
+        "Nix + Sutton w/ Tre' Harris"
+      ],
+      "fades": [
+        {
+          "name": "Omarion Hampton",
+          "why": "10.9 proj at $6,000 in a 19.0 implied total"
+        }
+      ],
+      "notes": "3-game slate: DET-ARI 54.5, SF-SEA 46.5, DEN-LAC 41.5. Get different via SEA (Charbonnet out, Bosa out) or DEN (Payton calling plays)."
+    },
+    "154472": {
+      "mustPlays": [
+        {
+          "name": "Jahmyr Gibbs",
+          "team": "DET",
+          "pos": "RB",
+          "why": "Leads NFL in touches & TDs (~30 DK pts/gm); DET 30.0 implied, highest on slate; 27.9 blended proj, #1 at RB on Sleeper/ESPN/DK avg."
+        },
+        {
+          "name": "Jacoby Brissett",
+          "team": "ARI",
+          "pos": "QB",
+          "why": "$5,500 vs DET, which allows the most DK pts to QBs (28.9/gm); 19.6 proj = 3.6x value; consensus cash QB (FantasyLabs, FantasyPros, DK Network)."
+        },
+        {
+          "name": "Trey McBride",
+          "team": "ARI",
+          "pos": "TE",
+          "why": "10+ targets every game (DK Network); DET allows most DK pts to TEs (28.4/gm); 18.7 proj, top TE by 0.8 pts. Stacks with Brissett."
+        }
+      ],
+      "core": [
+        {
+          "name": "Amon-Ra St. Brown",
+          "team": "DET",
+          "pos": "WR",
+          "why": "21.9 proj in the 54.5 total; ARI allows 8.6 YPA (worst in NFL, FantasyLabs); top WR point-per-dollar on RotoWire."
+        },
+        {
+          "name": "Jaxon Smith-Njigba",
+          "team": "SEA",
+          "pos": "WR",
+          "why": "24.4 proj, SF without Bosa."
+        },
+        {
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "pos": "RB",
+          "why": "18.8 proj, healthy."
+        },
+        {
+          "name": "Michael Wilson",
+          "team": "ARI",
+          "pos": "WR",
+          "why": "30 targets in 2 games."
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Jameson Williams",
+          "team": "DET",
+          "pos": "WR",
+          "why": "~6% owned (FantasyLabs) in the 54.5-total game; 14.6 aDOT vs the NFL's worst YPA defense (8.6). Zero-to-multi-TD range; DK Network's preferred bring-back.",
+          "boom": "high"
+        },
+        {
+          "name": "Emanuel Wilson",
+          "team": "SEA",
+          "pos": "RB",
+          "why": "Zach Charbonnet OUT (knee) and Holani Q - lead back at $5,300 with SF missing Nick Bosa; 12.7 proj before the bump.",
+          "boom": "high"
+        },
+        {
+          "name": "Rashid Shaheed",
+          "team": "SEA",
+          "pos": "WR",
+          "why": "$4,000 deep threat; SF without Nick Bosa means more time to throw; one long TD = 4x.",
+          "boom": "medium"
+        },
+        {
+          "name": "AJ Barner",
+          "team": "SEA",
+          "pos": "TE",
+          "why": "$3,200 TE in a 46.5 total; red-zone role.",
+          "boom": "medium"
+        },
+        {
+          "name": "Jeremiyah Love",
+          "team": "ARI",
+          "pos": "RB",
+          "why": "$6,100 lead ARI back in a 54.5 total; low-owned next to Gibbs.",
+          "boom": "medium"
+        },
+        {
+          "name": "Seahawks",
+          "team": "SEA",
+          "pos": "DST",
+          "why": "$2,800 at home; SEA's defense held SF in check in their last meeting (ESPN).",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Brissett + McBride + M. Wilson w/ Gibbs",
+        "Goff + St. Brown + J. Williams w/ McBride",
+        "Darnold + JSN w/ Kittle"
+      ],
+      "fades": [],
+      "notes": "2 games only: DET-ARI (54.5) and SF-SEA (46.5)."
+    },
+    "154473": {
+      "mustPlays": [
+        {
+          "name": "Bijan Robinson",
+          "team": "ATL",
+          "pos": "RB",
+          "why": "25.2 proj, top on slate; ATL favored by 3 vs a Ravens team starting Tyler Huntley (Lamar OUT) = run-heavy positive script."
+        },
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "54.5 total MNF; ATS.io model makes Allen anytime TD +5.6% edge; 23.0 proj, top QB."
+        },
+        {
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "22.2 proj in the 54.5 game; healthy and coming off a big Week 4; Bills without DL Ed Oliver."
+        }
+      ],
+      "core": [
+        {
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "pos": "QB",
+          "why": "ATS.io model: passing yds OVER 275 (+4.8% edge)."
+        },
+        {
+          "name": "Kyren Williams",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "19.8 proj but Corum cutting into carries."
+        },
+        {
+          "name": "Drake London",
+          "team": "ATL",
+          "pos": "WR",
+          "why": "17.4 proj, ATL's alpha."
+        },
+        {
+          "name": "Davante Adams",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "16.9 proj, red-zone role."
+        },
+        {
+          "name": "James Cook III",
+          "team": "BUF",
+          "pos": "RB",
+          "why": "16.8 proj in the 54.5 total."
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Falcons",
+          "team": "ATL",
+          "pos": "DST",
+          "why": "$2,400 DST facing Tyler Huntley (Lamar Jackson OUT); 4for4 expects BAL passing game to drop off sharply.",
+          "boom": "high"
+        },
+        {
+          "name": "Colby Parkinson",
+          "team": "LAR",
+          "pos": "TE",
+          "why": "$2,900 and now the starting TE with Terrance Ferguson on IR, in the 54.5-total MNF game.",
+          "boom": "high"
+        },
+        {
+          "name": "Keon Coleman",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "Joshua Palmer OUT, DJ Moore Q (shoulder) - more routes for the big-play WR in a 54.5 total, $4,600.",
+          "boom": "medium"
+        },
+        {
+          "name": "Blake Corum",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "$4,900; taking a large share of Rams carries (ATS.io model leans Kyren rush UNDER), 54.5 total.",
+          "boom": "medium"
+        },
+        {
+          "name": "Kyle Pitts Sr.",
+          "team": "ATL",
+          "pos": "TE",
+          "why": "$3,700 TE in SNF; Falcons favored vs backup-QB Ravens.",
+          "boom": "medium"
+        },
+        {
+          "name": "Khalil Shakir",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "$5,000; Palmer OUT - slot volume.",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Allen + Coleman/Shakir w/ Puka bring-back",
+        "Stafford + Puka + Adams w/ Allen or Cook",
+        "Bijan + Falcons DST (Huntley game)"
+      ],
+      "fades": [
+        {
+          "name": "Zay Flowers",
+          "why": "$7,000 with Tyler Huntley at QB"
+        },
+        {
+          "name": "Derrick Henry",
+          "why": "$8,000, 3-pt road dog with a backup QB - game script risk"
+        },
+        {
+          "name": "Ravens",
+          "why": "DST $3,300 on the road vs Bijan"
+        }
+      ],
+      "notes": "SNF BAL@ATL (43.5) + MNF BUF@LAR (54.5). Lamar OUT, Huntley starts. Bills: Palmer OUT, Moore Q. Rams: Ferguson on IR, Parkinson starts."
+    }
+  }
 }
