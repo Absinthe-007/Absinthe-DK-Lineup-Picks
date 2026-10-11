@@ -97,3 +97,8 @@ footer{text-align:center;padding:20px 16px 40px}
 .picknote{white-space:pre-line;font-size:13px;margin:8px 0 0}
 .lu.must{border-color:var(--warn)}
 .lu .tag{font-size:11px;color:var(--warn);font-weight:700}
+body.maxmode #optStack, body.maxmode #optStackRB, body.maxmode #optBB, body.maxmode #optDst, body.maxmode #optMaxTeam,
+body.maxmode #optMust, body.maxmode #optRand, body.maxmode #optExp, body.maxmode #optMinSal, body.maxmode #optUnique, body.maxmode #optCeil{opacity:.4}
+.star.sleeper{color:var(--DST)}
+.chip.boom{background:color-mix(in srgb,var(--DST) 25%,var(--chip));font-size:11px;padding:1px 8px;margin-left:6px}
+body.maxmode #optSleep{opacity:.4}

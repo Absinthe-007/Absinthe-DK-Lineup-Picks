@@ -32,6 +32,12 @@
     <div class="grid2">
       <div class="card">
         <h2>Lineup settings</h2>
+        <label>Build mode
+          <select id="optMode">
+            <option value="custom">My settings: stacks, Claude's must plays, variety</option>
+            <option value="max">Max points: highest projected lineups, no other rules</option>
+          </select></label>
+        <p id="maxNote" class="muted small" hidden>Max points ignores stacking, must plays, team limits, randomness and exposure caps. Lineup #1 is the single highest-projected lineup under $50,000; the rest follow in order. Your game predictions, locks and excludes still apply.</p>
         <label>Number of lineups <output id="nOut">20</output>
           <input type="range" id="optN" min="1" max="150" value="20"></label>
         <label>Min salary used <output id="minSalOut">$49,000</output>
@@ -42,6 +48,8 @@
           <input type="range" id="optExp" min="10" max="100" step="5" value="60"></label>
         <label>Randomness (variety) <output id="randOut">15%</output>
           <input type="range" id="optRand" min="0" max="40" value="15"></label>
+        <label>Claude's sleepers per lineup (after the must-play lineups) <output id="sleepOut">1</output>
+          <input type="range" id="optSleep" min="0" max="3" value="1"></label>
         <label>Lock Claude's must plays into the first <output id="mustOut">3</output> lineups
           <input type="range" id="optMust" min="0" max="150" value="3"></label>
         <label>Projection target
@@ -72,6 +80,7 @@
     </div>
     <div class="buildbar">
       <button id="buildBtn" class="primary">Build lineups</button>
+      <button id="maxBtn" class="ghost" title="Build the highest-projected lineups, ignoring all other rules">Build max points</button>
       <div id="progress" class="progress hidden"><div></div></div>
       <span id="buildMsg" class="muted"></span>
     </div>

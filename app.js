@@ -7,7 +7,7 @@
     set(k, v) { try { localStorage.setItem("dklm_" + k, JSON.stringify(v)); } catch {} },
   };
 
-  let slate, players = [], vegas = {}, gameOf = {}, slateIndex = null, picksAll = null, picks = null, mustIds = [], coreIds = [];
+  let slate, players = [], vegas = {}, gameOf = {}, slateIndex = null, picksAll = null, picks = null, mustIds = [], coreIds = [], sleeperIds = [];
   let S; // per-week state
   let lineups = [];
   let sort = { key: "adj", dir: -1 }, posF = "ALL";
@@ -78,13 +78,14 @@
            (ref.pos === "DST" ? players.find(x => x.pos === "DST" && x.team === ref.team) : null);
   }
   function resolvePicks() {
-    picks = null; mustIds = []; coreIds = [];
+    picks = null; mustIds = []; coreIds = []; sleeperIds = [];
     if (!picksAll) return;
     const sl = picksAll.slates || {};
     picks = sl[String(slate.draftGroupId)] || sl[slate.slateName] || picksAll.default || null;
     if (!picks) return;
     mustIds = (picks.mustPlays || []).map(findPlayer).filter(p => p && p.proj > 0).map(p => p.id);
     coreIds = (picks.core || []).map(findPlayer).filter(Boolean).map(p => p.id);
+    sleeperIds = (picks.sleepers || []).map(findPlayer).filter(p => p && p.proj > 0).map(p => p.id);
   }
   function renderPicks() {
     const card = $("#picksCard");
@@ -97,10 +98,11 @@
         <div><b>${p ? p.name : ref.name}</b> <span class="muted small">${p ? p.team + (p.home ? " vs " : " @ ") + p.opp : ref.team || ""}</span>${tag || ""}<div class="why">${ref.why || ""}</div></div>
         <span class="sal">${p ? fmt$(p.salary) + " · " + adjusted(p).adj.toFixed(1) : "not on slate"}</span></div>`;
     };
-    const must = picks.mustPlays || [], core = picks.core || [], fades = picks.fades || [], stacks = picks.stacks || [];
+    const must = picks.mustPlays || [], core = picks.core || [], fades = picks.fades || [], stacks = picks.stacks || [], sleepers = picks.sleepers || [];
     $("#picksBody").innerHTML =
       (must.length ? `<h3>Must plays · locked into lineups 1–${$("#optMust").value}</h3>` + must.map(r => row(r)).join("") : "") +
       (core.length ? `<h3>Core plays</h3>` + core.map(r => row(r)).join("") : "") +
+      (sleepers.length ? `<h3>Sleepers & boom candidates · at least ${$("#optSleep").value} per lineup after the must plays</h3>` + sleepers.map(r => row(r, r.boom ? ' <span class="chip boom">boom ' + r.boom + '</span>' : "")).join("") : "") +
       (stacks.length ? `<h3>Stacks</h3><div class="chips">${stacks.map(x => `<span class="chip">${x}</span>`).join("")}</div>` : "") +
       (fades.length ? `<h3>Fades</h3><div class="chips">${fades.map(x => `<span class="chip fade" title="${(x.why || "").replace(/"/g, "&quot;")}">${x.name || x}</span>`).join("")}</div>` : "") +
       (picks.notes ? `<p class="picknote">${picks.notes.replace(/</g, "&lt;")}</p>` : "");
@@ -111,7 +113,7 @@
   function bindSettings() {
     if (settingsBound) return; settingsBound = true;
     const saved = store.get("settings", {});
-    const ids = ["optMust", "optN", "optMinSal", "optUnique", "optExp", "optRand", "optCeil", "optStack", "optStackRB", "optBB", "optDst", "optTEFlex", "optMaxTeam"];
+    const ids = ["optMode", "optSleep", "optMust", "optN", "optMinSal", "optUnique", "optExp", "optRand", "optCeil", "optStack", "optStackRB", "optBB", "optDst", "optTEFlex", "optMaxTeam"];
     ids.forEach(id => {
       const el = $("#" + id);
       if (saved[id] != null) el.type === "checkbox" ? (el.checked = saved[id]) : (el.value = saved[id]);
@@ -123,11 +125,19 @@
       $("#expOut").textContent = $("#optExp").value + "%";
       $("#randOut").textContent = $("#optRand").value + "%";
       $("#mustOut").textContent = $("#optMust").value;
+      $("#sleepOut").textContent = $("#optSleep").value;
+      const isMax = $("#optMode").value === "max";
+      $("#maxNote").hidden = !isMax; document.body.classList.toggle("maxmode", isMax);
       if (picks) renderPicks();
     };
     outs();
   }
   function readOpts() {
+    if ($("#optMode").value === "max") {
+      // Pure max points: maximize total projection under the cap, nothing else
+      return { n: +$("#optN").value, minSalary: 0, minUnique: 1, maxExposure: 1, randomness: 0, useCeiling: 0,
+        stackCount: 0, stackRB: false, bringBack: false, noOffVsDst: false, allowTEFlex: true, maxPerTeam: 8, max: true };
+    }
     return {
       n: +$("#optN").value, minSalary: +$("#optMinSal").value, minUnique: +$("#optUnique").value,
       maxExposure: +$("#optExp").value / 100, randomness: +$("#optRand").value / 100, useCeiling: +$("#optCeil").value,
@@ -174,7 +184,7 @@
     $("#ptable tbody").innerHTML = rows.map(p => `
       <tr class="${locked.has(p.id) ? "locked" : ""} ${excl.has(p.id) ? "excluded" : ""}" data-id="${p.id}">
         <td><button class="ic lk ${locked.has(p.id) ? "on" : ""}" title="Lock">🔒</button><button class="ic x ${excl.has(p.id) ? "on" : ""}" title="Exclude">✕</button></td>
-        <td>${p.name}${mustIds.includes(p.id) ? '<span class="star" title="Claude must play">★</span>' : coreIds.includes(p.id) ? '<span class="star" title="Claude core play">☆</span>' : ""}</td><td><span class="pos ${p.pos}">${p.pos}</span></td><td>${p.team}</td><td class="muted">${p.home ? "vs" : "@"} ${p.opp}</td>
+        <td>${p.name}${mustIds.includes(p.id) ? '<span class="star" title="Claude must play">★</span>' : coreIds.includes(p.id) ? '<span class="star" title="Claude core play">☆</span>' : sleeperIds.includes(p.id) ? '<span class="star sleeper" title="Claude sleeper / boom pick">✦</span>' : ""}</td><td><span class="pos ${p.pos}">${p.pos}</span></td><td>${p.team}</td><td class="muted">${p.home ? "vs" : "@"} ${p.opp}</td>
         <td class="num">${fmt$(p.salary)}</td>
         <td class="num"><input class="edit ${S.edits[p.id] != null ? "edited" : ""}" type="number" step="0.1" value="${p.adj.toFixed(1)}"></td>
         <td class="num">${p.value.toFixed(2)}</td><td class="num muted">${p.ceil.toFixed(1)}</td>
@@ -239,16 +249,19 @@
   });
 
   // ---------- build ----------
+  $("#maxBtn").onclick = () => {
+    const m = $("#optMode"); m.value = "max"; m.dispatchEvent(new Event("input")); $("#buildBtn").click();
+  };
   $("#buildBtn").onclick = async () => {
     const base = readOpts();
-    const runs = S.scenPick.filter(n => S.scenarios[n]).map(n => ({ name: n, st: Object.assign({}, S, S.scenarios[n]) }));
+    const runs = base.max ? [] : S.scenPick.filter(n => S.scenarios[n]).map(n => ({ name: n, st: Object.assign({}, S, S.scenarios[n]) }));
     if (!runs.length) runs.push({ name: null, st: S });
     const btn = $("#buildBtn"), bar = $("#progress"), msg = $("#buildMsg");
-    btn.disabled = true; bar.classList.remove("hidden"); msg.textContent = "Optimizing…";
+    btn.disabled = true; $("#maxBtn").disabled = true; bar.classList.remove("hidden"); msg.textContent = "Optimizing…";
     const all = []; const t0 = performance.now();
     let doneCount = 0;
     // Phase A: Claude's must plays locked into the first N lineups
-    let mustN = Math.min(+$("#optMust").value, base.n);
+    let mustN = base.max ? 0 : Math.min(+$("#optMust").value, base.n);
     let must = mustIds.filter(id => !S.excluded.includes(id));
     if (mustN > 0 && must.length) {
       const pool = players.map(p => { const a = adjusted(p, runs[0].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
@@ -266,19 +279,28 @@
     for (let i = 0; i < runs.length && remaining > 0; i++) {
       const n = Math.floor(remaining / runs.length) + (i < remaining % runs.length ? 1 : 0); if (!n) continue;
       const pool = players.map(p => { const a = adjusted(p, runs[i].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
+      const sleepMin = base.max ? 0 : +$("#optSleep").value;
+      const sleepSet = new Set(sleeperIds.filter(id => !S.excluded.includes(id)));
       const opts = Object.assign({}, base, {
-        n, locked: new Set(S.locked), excluded: new Set(S.excluded), exposure: S.exposure, teamMins: runs[i].st.teamMins || {},
+        n, locked: new Set(S.locked), excluded: new Set(S.excluded), exposure: base.max ? {} : S.exposure, teamMins: base.max ? {} : runs[i].st.teamMins || {},
         prev: all.map(L => L.players.map(p => p.id)),
+        groupMins: sleepMin && sleepSet.size ? [{ ids: sleepSet, min: sleepMin }] : [],
       });
-      const res = await DKOpt.optimizeAsync(pool, opts, window.solver, k => {
+      const prog = k => {
         $("#progress div").style.width = ((doneCount + k) / base.n * 100) + "%";
         msg.textContent = `Lineup ${doneCount + k} of ${base.n}${runs[i].name ? " · " + runs[i].name : ""}`;
-      });
-      res.lineups.forEach(L => L.scenario = runs[i].name);
+      };
+      let res = await DKOpt.optimizeAsync(pool, opts, window.solver, prog);
+      if (res.lineups.length < n && opts.groupMins.length) { // sleepers couldn't fit every lineup: fill the rest without that rule
+        const more = await DKOpt.optimizeAsync(pool, Object.assign({}, opts, { n: n - res.lineups.length, groupMins: [],
+          prev: [...opts.prev, ...res.lineups.map(L => L.players.map(p => p.id))] }), window.solver, prog);
+        res = { lineups: [...res.lineups, ...more.lineups] };
+      }
+      res.lineups.forEach(L => { L.scenario = runs[i].name; L.maxMode = !!base.max; });
       all.push(...res.lineups); doneCount += n;
     }
     lineups = all;
-    btn.disabled = false; bar.classList.add("hidden");
+    btn.disabled = false; $("#maxBtn").disabled = false; bar.classList.add("hidden");
     msg.textContent = lineups.length ? `Built ${lineups.length} lineup${lineups.length > 1 ? "s" : ""} in ${((performance.now() - t0) / 1000).toFixed(1)}s` :
       "No valid lineups — loosen locks, team minimums or the min salary.";
     renderLineups();
@@ -289,7 +311,7 @@
     $("#lineupCount").textContent = lineups.length;
     $("#dlCsv").disabled = !lineups.length; $("#copyCsv").disabled = !lineups.length; $("#csvBox").hidden = true;
     const slots = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
-    $("#lineups").innerHTML = lineups.map((L, i) => `<div class="lu ${L.must ? "must" : ""}"><div class="hd">#${i + 1} ${L.must ? `<span class="tag">★ Claude's must plays</span>` : ""}${L.scenario ? `<span>${L.scenario}</span>` : ""}<span>${fmt$(L.salary)} · ${L.proj.toFixed(1)} pts</span></div>
+    $("#lineups").innerHTML = lineups.map((L, i) => `<div class="lu ${L.must ? "must" : ""}"><div class="hd">#${i + 1} ${L.must ? `<span class="tag">★ Claude's must plays</span>` : ""}${L.maxMode && i === 0 ? `<span class="tag">Max points</span>` : ""}${L.scenario ? `<span>${L.scenario}</span>` : ""}<span>${fmt$(L.salary)} · ${L.proj.toFixed(1)} pts</span></div>
       ${L.players.map((p, j) => `<div class="pl"><span class="pos ${slots[j]}">${slots[j]}</span><span>${p.name} <span class="muted small">${p.team}</span></span><span class="s">${fmt$(p.salary)}</span><span class="p">${(+p.proj).toFixed(1)}</span></div>`).join("")}</div>`).join("");
     const cnt = {}; lineups.forEach(L => L.players.forEach(p => cnt[p.id] = (cnt[p.id] || 0) + 1));
     const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 30);

@@ -15,6 +15,12 @@ DraftKings NFL **Classic** ($50K cap) lineup optimizer. Static site — runs on 
 ## Claude's picks & must plays
 `data/picks.json` holds Claude's researched **must plays**, core plays, stacks and fades. The app shows them on the Build tab and locks the must plays into (at least) the first 3 lineups — adjustable with the "Lock Claude's must plays" slider.
 
+## Sleepers & boom picks
+`picks.json` also lists Claude's **sleepers** (low-owned players with "game of their life" upside). They get a ceiling bump (`ceil_mult` in `overrides.json`), a ✦ in the player table, and the app puts at least one in every lineup after the must-play lineups (slider).
+
+## Learning loop
+Every refresh saves a pre-lock snapshot of each slate and Claude's picks in `data/history/w<week>/`. Each Tuesday `scripts/grade.py` scores the week with actual DK points: max-points lineup vs. hindsight optimal, must plays / sleepers / fades, the week's boom players, and each projection source's error. Sources are re-weighted automatically by accuracy, and `data/learnings.md` collects the lessons Claude's research runs use next time.
+
 ## Slates
 Every upcoming DraftKings **Classic** slate (Main, Sun–Mon, Early, Afternoon, Primetime, Mon–Thu, Thu–…) is built into `data/slates/` — pick one from the dropdown at the top.
 

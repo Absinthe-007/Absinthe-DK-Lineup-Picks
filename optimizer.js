@@ -14,13 +14,14 @@
 
   // pool: [{id,pos,team,opp,salary,pts}] ; opts: see defaults
   function prune(pool, opts) {
-    const keep = { QB: 24, RB: 45, WR: 70, TE: 24, DST: 18 };
+    const keep = opts.max ? { QB: 40, RB: 70, WR: 100, TE: 40, DST: 32 } : { QB: 24, RB: 45, WR: 70, TE: 24, DST: 18 };
     const out = [];
     for (const pos of Object.keys(keep)) {
       const ps = pool.filter(p => p.pos === pos && p.pts > 0);
       const byPts = [...ps].sort((a, b) => b.pts - a.pts).slice(0, keep[pos]);
       const byVal = [...ps].sort((a, b) => b.pts / b.salary - a.pts / a.salary).slice(0, Math.ceil(keep[pos] / 2));
-      const set = new Set([...byPts, ...byVal, ...ps.filter(p => opts.locked.has(p.id) || opts.teamMins[p.team])]);
+      const inGroup = p => (opts.groupMins || []).some(g => g.ids.has(p.id));
+      const set = new Set([...byPts, ...byVal, ...ps.filter(p => opts.locked.has(p.id) || opts.teamMins[p.team] || inGroup(p))]);
       out.push(...set);
     }
     return out;
@@ -77,6 +78,13 @@
       const c = "tmin_" + t; constraints[c] = { min: n };
       byTeam[t].filter(p => p.pos !== "DST").forEach(m => add(m, c, 1));
     }
+    // group minimums (e.g. at least N of Claude's sleepers)
+    (opts.groupMins || []).forEach((g, gi) => {
+      const members = pool.filter(p => g.ids.has(p.id));
+      if (!g.min || !members.length) return;
+      const c = "grp_" + gi; constraints[c] = { min: Math.min(g.min, members.length) };
+      members.forEach(m => add(m, c, 1));
+    });
     // uniqueness vs previous lineups
     prevLineups.forEach((L, i) => {
       const c = "u" + i; constraints[c] = { max: 9 - opts.minUnique };
