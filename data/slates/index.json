@@ -1,0 +1,79 @@
+{
+ "updated": "2026-10-11T04:35+00:00",
+ "week": 5,
+ "default": 154468,
+ "slates": [
+  {
+   "id": 154468,
+   "name": "Main",
+   "start": "2026-10-11T13:00",
+   "games": 11,
+   "featured": true,
+   "players": 587,
+   "matched": {
+    "sleeper": 566,
+    "espn": 397
+   }
+  },
+  {
+   "id": 154470,
+   "name": "Sun-Mon",
+   "start": "2026-10-11T13:00",
+   "games": 13,
+   "featured": false,
+   "players": 685,
+   "matched": {
+    "sleeper": 663,
+    "espn": 463
+   }
+  },
+  {
+   "id": 154469,
+   "name": "Early Only",
+   "start": "2026-10-11T13:00",
+   "games": 8,
+   "featured": false,
+   "players": 425,
+   "matched": {
+    "sleeper": 409,
+    "espn": 287
+   }
+  },
+  {
+   "id": 154471,
+   "name": "Afternoon Only",
+   "start": "2026-10-11T16:05",
+   "games": 3,
+   "featured": true,
+   "players": 162,
+   "matched": {
+    "sleeper": 156,
+    "espn": 110
+   }
+  },
+  {
+   "id": 154472,
+   "name": "Afternoon Turbo",
+   "start": "2026-10-11T16:25",
+   "games": 2,
+   "featured": false,
+   "players": 109,
+   "matched": {
+    "sleeper": 105,
+    "espn": 74
+   }
+  },
+  {
+   "id": 154473,
+   "name": "Primetime",
+   "start": "2026-10-11T20:20",
+   "games": 2,
+   "featured": false,
+   "players": 97,
+   "matched": {
+    "sleeper": 97,
+    "espn": 66
+   }
+  }
+ ]
+}
