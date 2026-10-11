@@ -1,0 +1,34 @@
+name: Refresh slate data
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "NFL week number"
+        required: true
+  schedule:
+    # Thu/Sat 15:00 UTC and Sun 15:30 UTC (before 1pm ET kickoffs)
+    - cron: "0 15 * * 4,6"
+    - cron: "30 15 * * 0"
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Work out week
+        id: wk
+        run: |
+          if [ -n "${{ github.event.inputs.week }}" ]; then echo "week=${{ github.event.inputs.week }}" >> $GITHUB_OUTPUT;
+          else python3 -c "import json;print('week=%d'%(json.load(open('data/slate.json'))['week']))" >> $GITHUB_OUTPUT; fi
+      - name: Build data
+        run: python3 scripts/build_data.py --week ${{ steps.wk.outputs.week }}
+      - name: Commit
+        run: |
+          git config user.name "slate-bot"
+          git config user.email "slate-bot@users.noreply.github.com"
+          git add data/slate.json
+          git diff --cached --quiet || git commit -m "Refresh slate data (week ${{ steps.wk.outputs.week }})"
+          git push
