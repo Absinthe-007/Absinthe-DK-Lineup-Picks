@@ -11,6 +11,7 @@
 <header>
   <div class="brand">
     <h1>DK Lineup Maker</h1>
+    <select id="slatePick" class="slatepick" aria-label="DraftKings slate"></select>
     <span id="slateMeta" class="muted">Loading slate…</span>
   </div>
   <nav id="tabs">
@@ -24,6 +25,10 @@
 <main>
   <!-- BUILD -->
   <section id="tab-build" class="tab active">
+    <div class="card picks" id="picksCard" hidden>
+      <div class="row between"><h2>Claude's picks</h2><span id="picksUpdated" class="muted small"></span></div>
+      <div id="picksBody"></div>
+    </div>
     <div class="grid2">
       <div class="card">
         <h2>Lineup settings</h2>
@@ -37,6 +42,8 @@
           <input type="range" id="optExp" min="10" max="100" step="5" value="60"></label>
         <label>Randomness (variety) <output id="randOut">15%</output>
           <input type="range" id="optRand" min="0" max="40" value="15"></label>
+        <label>Lock Claude's must plays into the first <output id="mustOut">3</output> lineups
+          <input type="range" id="optMust" min="0" max="150" value="3"></label>
         <label>Projection target
           <select id="optCeil">
             <option value="0">Median — cash games (50/50, double-up)</option>

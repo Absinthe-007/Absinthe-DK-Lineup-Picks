@@ -7,7 +7,7 @@
     set(k, v) { try { localStorage.setItem("dklm_" + k, JSON.stringify(v)); } catch {} },
   };
 
-  let slate, players = [], vegas = {}, gameOf = {};
+  let slate, players = [], vegas = {}, gameOf = {}, slateIndex = null, picksAll = null, picks = null, mustIds = [], coreIds = [];
   let S; // per-week state
   let lineups = [];
   let sort = { key: "adj", dir: -1 }, posF = "ALL";
@@ -36,23 +36,82 @@
   }
 
   // ---------- load ----------
+  const getJSON = async url => { const r = await fetch(url + "?v=" + Date.now()); if (!r.ok) throw new Error(url + " " + r.status); return r.json(); };
   async function load() {
-    const r = await fetch("data/slate.json?v=" + Date.now());
-    slate = await r.json();
-    players = slate.players;
+    try { slateIndex = await getJSON("data/slates/index.json"); } catch { slateIndex = null; }
+    try { picksAll = await getJSON("data/picks.json"); } catch { picksAll = null; }
+    const sel = $("#slatePick");
+    if (slateIndex && slateIndex.slates.length) {
+      sel.innerHTML = slateIndex.slates.map(x => {
+        const d = new Date(x.start + ":00-04:00");
+        return `<option value="${x.id}">${x.name} · ${x.games} games · ${d.toLocaleDateString([], { weekday: "short" })} ${d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</option>`;
+      }).join("");
+      const saved = store.get("slate", null);
+      sel.value = slateIndex.slates.some(x => x.id === saved) ? saved : slateIndex.default;
+      sel.onchange = () => { store.set("slate", +sel.value); loadSlate(+sel.value); };
+      await loadSlate(+sel.value);
+    } else {
+      sel.hidden = true;
+      await loadSlate(null);
+    }
+  }
+  async function loadSlate(id) {
+    slate = id ? await getJSON(`data/slates/${id}.json`) : await getJSON("data/slate.json");
+    players = slate.players; vegas = {};
     slate.games.forEach(g => { vegas[g.away] = g; vegas[g.home] = g; });
     gameOf = vegas;
     S = Object.assign(freshState(), store.get("state_" + slate.draftGroupId, {}));
+    lineups = []; renderLineups();
     const upd = new Date(slate.updated);
-    $("#slateMeta").textContent = `NFL ${slate.season} · Week ${slate.week} main slate · ${slate.games.length} games · ${players.length} players · updated ${upd.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" })}`;
+    $("#slateMeta").textContent = `NFL ${slate.season} · Week ${slate.week} · ${slate.slateName || "Main"} slate · ${slate.games.length} games · ${players.length} players · updated ${upd.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" })}`;
     $("#sources").textContent = "Sources: " + slate.sources.join(" · ");
-    bindSettings(); renderGames(); renderPlayers(); renderScen(); renderValue();
+    resolvePicks();
+    bindSettings(); renderGames(); renderPlayers(); renderScen(); renderValue(); renderPicks();
+  }
+
+  // ---------- Claude's picks ----------
+  const nm = s => (s || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9 ]/g, "").replace(/\b(jr|sr|ii|iii|iv)\b/g, "").replace(/\s+/g, " ").trim();
+  function findPlayer(ref) {
+    if (ref.id) { const p = players.find(x => x.id === ref.id); if (p) return p; }
+    const n = nm(ref.name);
+    return players.find(x => nm(x.name) === n && (!ref.team || x.team === ref.team)) ||
+           (ref.pos === "DST" ? players.find(x => x.pos === "DST" && x.team === ref.team) : null);
+  }
+  function resolvePicks() {
+    picks = null; mustIds = []; coreIds = [];
+    if (!picksAll) return;
+    const sl = picksAll.slates || {};
+    picks = sl[String(slate.draftGroupId)] || sl[slate.slateName] || picksAll.default || null;
+    if (!picks) return;
+    mustIds = (picks.mustPlays || []).map(findPlayer).filter(p => p && p.proj > 0).map(p => p.id);
+    coreIds = (picks.core || []).map(findPlayer).filter(Boolean).map(p => p.id);
+  }
+  function renderPicks() {
+    const card = $("#picksCard");
+    if (!picks) { card.hidden = true; return; }
+    card.hidden = false;
+    $("#picksUpdated").textContent = picksAll.updated ? "Researched " + new Date(picksAll.updated).toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" }) : "";
+    const row = (ref, tag) => {
+      const p = findPlayer(ref);
+      return `<div class="pickrow"><span class="pos ${p ? p.pos : ref.pos || "FLEX"}">${p ? p.pos : ref.pos || "?"}</span>
+        <div><b>${p ? p.name : ref.name}</b> <span class="muted small">${p ? p.team + (p.home ? " vs " : " @ ") + p.opp : ref.team || ""}</span>${tag || ""}<div class="why">${ref.why || ""}</div></div>
+        <span class="sal">${p ? fmt$(p.salary) + " · " + adjusted(p).adj.toFixed(1) : "not on slate"}</span></div>`;
+    };
+    const must = picks.mustPlays || [], core = picks.core || [], fades = picks.fades || [], stacks = picks.stacks || [];
+    $("#picksBody").innerHTML =
+      (must.length ? `<h3>Must plays · locked into lineups 1–${$("#optMust").value}</h3>` + must.map(r => row(r)).join("") : "") +
+      (core.length ? `<h3>Core plays</h3>` + core.map(r => row(r)).join("") : "") +
+      (stacks.length ? `<h3>Stacks</h3><div class="chips">${stacks.map(x => `<span class="chip">${x}</span>`).join("")}</div>` : "") +
+      (fades.length ? `<h3>Fades</h3><div class="chips">${fades.map(x => `<span class="chip fade" title="${(x.why || "").replace(/"/g, "&quot;")}">${x.name || x}</span>`).join("")}</div>` : "") +
+      (picks.notes ? `<p class="picknote">${picks.notes.replace(/</g, "&lt;")}</p>` : "");
   }
 
   // ---------- settings ----------
+  let settingsBound = false;
   function bindSettings() {
+    if (settingsBound) return; settingsBound = true;
     const saved = store.get("settings", {});
-    const ids = ["optN", "optMinSal", "optUnique", "optExp", "optRand", "optCeil", "optStack", "optStackRB", "optBB", "optDst", "optTEFlex", "optMaxTeam"];
+    const ids = ["optMust", "optN", "optMinSal", "optUnique", "optExp", "optRand", "optCeil", "optStack", "optStackRB", "optBB", "optDst", "optTEFlex", "optMaxTeam"];
     ids.forEach(id => {
       const el = $("#" + id);
       if (saved[id] != null) el.type === "checkbox" ? (el.checked = saved[id]) : (el.value = saved[id]);
@@ -63,6 +122,8 @@
       $("#minSalOut").textContent = fmt$(+$("#optMinSal").value);
       $("#expOut").textContent = $("#optExp").value + "%";
       $("#randOut").textContent = $("#optRand").value + "%";
+      $("#mustOut").textContent = $("#optMust").value;
+      if (picks) renderPicks();
     };
     outs();
   }
@@ -113,7 +174,7 @@
     $("#ptable tbody").innerHTML = rows.map(p => `
       <tr class="${locked.has(p.id) ? "locked" : ""} ${excl.has(p.id) ? "excluded" : ""}" data-id="${p.id}">
         <td><button class="ic lk ${locked.has(p.id) ? "on" : ""}" title="Lock">🔒</button><button class="ic x ${excl.has(p.id) ? "on" : ""}" title="Exclude">✕</button></td>
-        <td>${p.name}</td><td><span class="pos ${p.pos}">${p.pos}</span></td><td>${p.team}</td><td class="muted">${p.home ? "vs" : "@"} ${p.opp}</td>
+        <td>${p.name}${mustIds.includes(p.id) ? '<span class="star" title="Claude must play">★</span>' : coreIds.includes(p.id) ? '<span class="star" title="Claude core play">☆</span>' : ""}</td><td><span class="pos ${p.pos}">${p.pos}</span></td><td>${p.team}</td><td class="muted">${p.home ? "vs" : "@"} ${p.opp}</td>
         <td class="num">${fmt$(p.salary)}</td>
         <td class="num"><input class="edit ${S.edits[p.id] != null ? "edited" : ""}" type="number" step="0.1" value="${p.adj.toFixed(1)}"></td>
         <td class="num">${p.value.toFixed(2)}</td><td class="num muted">${p.ceil.toFixed(1)}</td>
@@ -186,8 +247,24 @@
     btn.disabled = true; bar.classList.remove("hidden"); msg.textContent = "Optimizing…";
     const all = []; const t0 = performance.now();
     let doneCount = 0;
-    for (let i = 0; i < runs.length; i++) {
-      const n = Math.floor(base.n / runs.length) + (i < base.n % runs.length ? 1 : 0); if (!n) continue;
+    // Phase A: Claude's must plays locked into the first N lineups
+    let mustN = Math.min(+$("#optMust").value, base.n);
+    let must = mustIds.filter(id => !S.excluded.includes(id));
+    if (mustN > 0 && must.length) {
+      const pool = players.map(p => { const a = adjusted(p, runs[0].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
+      while (must.length) {
+        const opts = Object.assign({}, base, { n: mustN, locked: new Set([...S.locked, ...must]), excluded: new Set(S.excluded),
+          exposure: S.exposure, teamMins: runs[0].st.teamMins || {}, maxExposure: 1, prev: [] });
+        const res = await DKOpt.optimizeAsync(pool, opts, window.solver, k => {
+          $("#progress div").style.width = (k / base.n * 100) + "%"; msg.textContent = `Lineup ${k} of ${base.n} · must plays`;
+        });
+        if (res.lineups.length) { res.lineups.forEach(L => L.must = true); all.push(...res.lineups); doneCount = res.lineups.length; break; }
+        must = must.slice(0, -1); // couldn't fit them all: drop the lowest-priority must play and retry
+      }
+    }
+    const remaining = base.n - doneCount;
+    for (let i = 0; i < runs.length && remaining > 0; i++) {
+      const n = Math.floor(remaining / runs.length) + (i < remaining % runs.length ? 1 : 0); if (!n) continue;
       const pool = players.map(p => { const a = adjusted(p, runs[i].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
       const opts = Object.assign({}, base, {
         n, locked: new Set(S.locked), excluded: new Set(S.excluded), exposure: S.exposure, teamMins: runs[i].st.teamMins || {},
@@ -212,7 +289,7 @@
     $("#lineupCount").textContent = lineups.length;
     $("#dlCsv").disabled = !lineups.length; $("#copyCsv").disabled = !lineups.length; $("#csvBox").hidden = true;
     const slots = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
-    $("#lineups").innerHTML = lineups.map((L, i) => `<div class="lu"><div class="hd">#${i + 1} ${L.scenario ? `<span>${L.scenario}</span>` : ""}<span>${fmt$(L.salary)} · ${L.proj.toFixed(1)} pts</span></div>
+    $("#lineups").innerHTML = lineups.map((L, i) => `<div class="lu ${L.must ? "must" : ""}"><div class="hd">#${i + 1} ${L.must ? `<span class="tag">★ Claude's must plays</span>` : ""}${L.scenario ? `<span>${L.scenario}</span>` : ""}<span>${fmt$(L.salary)} · ${L.proj.toFixed(1)} pts</span></div>
       ${L.players.map((p, j) => `<div class="pl"><span class="pos ${slots[j]}">${slots[j]}</span><span>${p.name} <span class="muted small">${p.team}</span></span><span class="s">${fmt$(p.salary)}</span><span class="p">${(+p.proj).toFixed(1)}</span></div>`).join("")}</div>`).join("");
     const cnt = {}; lineups.forEach(L => L.players.forEach(p => cnt[p.id] = (cnt[p.id] || 0) + 1));
     const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 30);
@@ -220,7 +297,7 @@
   }
   $("#dlCsv").onclick = () => {
     const blob = new Blob([DKOpt.toCSV(lineups)], { type: "text/csv" });
-    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `DK_NFL_W${slate.week}_lineups.csv`; a.click();
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `DK_NFL_W${slate.week}_${(slate.slateName || "Main").replace(/\W+/g, "")}_lineups.csv`; a.click();
   };
 
   $("#copyCsv").onclick = async () => {

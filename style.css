@@ -84,3 +84,16 @@ td input.exp{width:56px;padding:3px;margin:0}
 footer{text-align:center;padding:20px 16px 40px}
 .csvbox{width:100%;height:120px;margin-bottom:12px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px;font:12px ui-monospace,monospace}
 [hidden]{display:none!important}
+.slatepick{width:auto;margin:0;padding:4px 8px;font-weight:600}
+.picks{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.picks h3{margin:12px 0 6px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.pickrow{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:8px;align-items:start;padding:6px 0;border-bottom:1px solid var(--line)}
+.pickrow .why{color:var(--muted);font-size:12px;white-space:normal}
+.pickrow .sal{font-variant-numeric:tabular-nums;color:var(--muted);font-size:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--chip);border-radius:99px;padding:3px 10px;font-size:12px}
+.chip.fade{color:var(--bad)}
+.star{color:var(--warn);margin-left:4px}
+.picknote{white-space:pre-line;font-size:13px;margin:8px 0 0}
+.lu.must{border-color:var(--warn)}
+.lu .tag{font-size:11px;color:var(--warn);font-weight:700}
