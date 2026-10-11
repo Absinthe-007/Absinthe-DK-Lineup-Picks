@@ -19,6 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/128 Safari/537.36"}
 SEASON = 2026
+# Projection-source weights (renormalized per player over the sources that have him)
+SOURCE_WEIGHTS = {"sleeper": 0.28, "espn": 0.2, "fantasypros": 0.27, "cbs": 0.15, "dkavg": 0.10}
 
 def get(url, headers=None, as_json=True):
     req = urllib.request.Request(url, headers={**UA, **(headers or {})})
@@ -151,6 +153,115 @@ def vegas(dates):
                                     implied={h: round(fav_tot if fav == h else dog_tot, 1), a: round(fav_tot if fav == a else dog_tot, 1)})
     return games
 
+
+# ---------- FantasyPros (expert consensus) & CBS Sports ----------
+TEAM_NAMES = {"Arizona":"ARI","Atlanta":"ATL","Baltimore":"BAL","Buffalo":"BUF","Carolina":"CAR","Chicago":"CHI","Cincinnati":"CIN",
+    "Cleveland":"CLE","Dallas":"DAL","Denver":"DEN","Detroit":"DET","Green Bay":"GB","Houston":"HOU","Indianapolis":"IND",
+    "Jacksonville":"JAX","Kansas City":"KC","Las Vegas":"LV","L.A. Chargers":"LAC","Los Angeles Chargers":"LAC","L.A. Rams":"LAR",
+    "Los Angeles Rams":"LAR","Miami":"MIA","Minnesota":"MIN","New England":"NE","New Orleans":"NO","N.Y. Giants":"NYG",
+    "New York Giants":"NYG","N.Y. Jets":"NYJ","New York Jets":"NYJ","Philadelphia":"PHI","Pittsburgh":"PIT","San Francisco":"SF",
+    "Seattle":"SEA","Tampa Bay":"TB","Tennessee":"TEN","Washington":"WAS"}
+def team_from_name(n):
+    n = n.strip()
+    for k in sorted(TEAM_NAMES, key=len, reverse=True):
+        if n.startswith(k): return TEAM_NAMES[k]
+    return None
+
+def _read_tables(url):
+    import pandas as pd
+    html = get(url, as_json=False)
+    return pd.read_html(io.StringIO(html))
+
+def _num(v):
+    try: return float(v)
+    except Exception: return 0.0
+
+def fantasypros_proj(week):
+    """FantasyPros expert-consensus stat projections -> DK points. {(name|DST, team, week): pts}"""
+    out = {}
+    cols = {  # (group, label) -> sleeper-style stat key
+        "qb": {("PASSING","YDS"):"pass_yd", ("PASSING","TDS"):"pass_td", ("PASSING","INTS"):"pass_int",
+               ("RUSHING","YDS"):"rush_yd", ("RUSHING","TDS"):"rush_td", ("MISC","FL"):"fum_lost"},
+        "rb": {("RUSHING","YDS"):"rush_yd", ("RUSHING","TDS"):"rush_td", ("RECEIVING","REC"):"rec",
+               ("RECEIVING","YDS"):"rec_yd", ("RECEIVING","TDS"):"rec_td", ("MISC","FL"):"fum_lost"},
+        "wr": {("RECEIVING","REC"):"rec", ("RECEIVING","YDS"):"rec_yd", ("RECEIVING","TDS"):"rec_td",
+               ("RUSHING","YDS"):"rush_yd", ("RUSHING","TDS"):"rush_td", ("MISC","FL"):"fum_lost"},
+        "te": {("RECEIVING","REC"):"rec", ("RECEIVING","YDS"):"rec_yd", ("RECEIVING","TDS"):"rec_td", ("MISC","FL"):"fum_lost"},
+    }
+    for pos, cmap in cols.items():
+        t = _read_tables(f"https://www.fantasypros.com/nfl/projections/{pos}.php?week={week}&scoring=PPR")[0]
+        for _, row in t.iterrows():
+            raw = str(row[t.columns[0]]).strip()
+            m = re.match(r"(.+?)\s+([A-Z]{2,3})$", raw)
+            if not m: continue
+            stats = {}
+            for c in t.columns:
+                k = cmap.get((c[0], c[1])) if isinstance(c, tuple) else None
+                if k: stats[k] = _num(row[c])
+            out[(norm(m.group(1)), tm(m.group(2)), week)] = round(dk_from_stats(stats, pos.upper()), 2)
+    t = _read_tables(f"https://www.fantasypros.com/nfl/projections/dst.php?week={week}&scoring=PPR")[0]
+    for _, row in t.iterrows():
+        team = team_from_name(str(row["Player"]))
+        if not team: continue
+        stats = {"sack": _num(row["SACK"]), "int": _num(row["INT"]), "fum_rec": _num(row["FR"]), "def_td": _num(row["TD"]),
+                 "safe": _num(row["SAFETY"]), "pts_allow": _num(row["PA"])}
+        out[("DST", team, week)] = round(dk_from_stats(stats, "DEF"), 2)
+    return out
+
+def cbs_proj(week):
+    """CBS Sports weekly stat projections -> DK points. {(name, team, week): pts}"""
+    out = {}
+    keymap = {"QB": [("yds  Passing", "pass_yd"), ("td  Touchdow", "pass_td"), ("int  Interce", "pass_int"),
+                     ("yds  Rushing", "rush_yd"), ("td  Rushing", "rush_td"), ("fl  Fumbles", "fum_lost")],
+              "RB": [("yds  Rushing", "rush_yd"), ("td  Rushing", "rush_td"), ("rec  Recepti", "rec"),
+                     ("yds  Receivi", "rec_yd"), ("td  Receivi", "rec_td"), ("fl  Fumbles", "fum_lost")]}
+    keymap["WR"] = keymap["TE"] = keymap["RB"]
+    for pos in ("QB", "RB", "WR", "TE"):
+        t = _read_tables(f"https://www.cbssports.com/fantasy/football/stats/{pos}/{SEASON}/{week}/projections/ppr/")[0]
+        labels = {c: c[1] for c in t.columns}
+        for _, row in t.iterrows():
+            raw = re.sub(r"\s+", " ", str(row[t.columns[0]])).strip()
+            m = re.match(r".*?\b(QB|RB|WR|TE) ([A-Z]{2,3}) (.+?) (QB|RB|WR|TE) ([A-Z]{2,3})$", raw)
+            if not m: continue
+            stats = {}
+            for c, lab in labels.items():
+                for prefix, key in keymap[pos]:
+                    if lab.startswith(prefix) and key not in stats:
+                        stats[key] = _num(row[c])
+            out[(norm(m.group(3)), tm(m.group(5)), week)] = round(dk_from_stats(stats, pos), 2)
+    return out
+
+def tuned_weights():
+    """Re-weight sources by measured accuracy (data/history/source_accuracy.json, written by grade.py).
+    Weight ~ 1/MAE^2, blended 50/50 with the defaults once a source has 150+ graded players."""
+    w = dict(SOURCE_WEIGHTS)
+    try:
+        acc = json.loads((ROOT / "data/history/source_accuracy.json").read_text())["sources"]
+    except Exception:
+        return w
+    inv = {k: 1 / max(v["mae"], 0.5) ** 2 for k, v in acc.items() if k in w and v.get("n", 0) >= 150}
+    if len(inv) >= 2:
+        tot_def = sum(SOURCE_WEIGHTS[k] for k in inv); tot_inv = sum(inv.values())
+        for k in inv: w[k] = 0.5 * SOURCE_WEIGHTS[k] + 0.5 * tot_def * inv[k] / tot_inv
+    return w
+
+def archive(slate, picks_path, week):
+    """Keep a slim pre-lock snapshot of each slate + Claude's picks so grade.py can learn from results."""
+    try:
+        start = datetime.fromisoformat(slate["start"])
+        from zoneinfo import ZoneInfo
+        if datetime.now(ZoneInfo("America/New_York")).replace(tzinfo=None) >= start:
+            return  # slate already locked: keep the last pre-lock snapshot
+    except Exception:
+        pass
+    d = ROOT / f"data/history/w{week}"; d.mkdir(parents=True, exist_ok=True)
+    keep = ("id", "name", "team", "pos", "salary", "proj", "ceil", "src", "status", "game")
+    slim = dict({k: slate[k] for k in ("draftGroupId", "slateName", "start", "week", "updated")},
+                players=[{k: p.get(k) for k in keep} for p in slate["players"] if p["proj"] > 0 or p["salary"] >= 4000])
+    (d / f"slate-{slate['draftGroupId']}.json").write_text(json.dumps(slim, separators=(",", ":")))
+    if picks_path.exists():
+        (d / "picks.json").write_text(picks_path.read_text())
+
 def current_week():
     try:
         st = get("https://api.sleeper.app/v1/state/nfl")
@@ -158,12 +269,14 @@ def current_week():
     except Exception:
         return None
 
-def build_slate(group, sl, team_week, es, adj, week):
+def build_slate(group, sl, team_week, es, adj, week, fp=None, cb=None):
+    fp, cb = fp or {}, cb or {}
+    W = tuned_weights()
     dg = group["id"]
     players = dk_players(dg)
     dates = sorted({datetime.strptime(p["kickoff"].split()[0], "%m/%d/%Y").strftime("%Y%m%d") for p in players})
     games = vegas(dates)
-    matched = {"sleeper": 0, "espn": 0}
+    matched = {"sleeper": 0, "espn": 0, "fantasypros": 0, "cbs": 0}
     for p in players:
         gdate = datetime.strptime(p["kickoff"].split()[0], "%m/%d/%Y").strftime("%Y-%m-%d")
         who = "DST" if p["pos"] == "DST" else norm(p["name"])
@@ -176,12 +289,18 @@ def build_slate(group, sl, team_week, es, adj, week):
             matched["espn"] += 1
             if p["pos"] != "DST":  # ESPN PPR -> add expected DK yardage bonuses (scaled)
                 e = e * 1.04
+        f = fp.get((who, p["team"], wk)); c = cb.get((who, p["team"], wk))
+        if f is not None: matched["fantasypros"] += 1
+        if c is not None: matched["cbs"] += 1
+        # weighted blend of every projection source we could reach (weights renormalize if a source is missing)
         srcs, wts = [], []
-        if s is not None: srcs.append(s); wts.append(0.5)
-        if e is not None: srcs.append(e); wts.append(0.35)
-        if p["dkavg"] > 0 and srcs: srcs.append(p["dkavg"]); wts.append(0.15)
+        if s is not None: srcs.append(s); wts.append(W["sleeper"])
+        if e is not None: srcs.append(e); wts.append(W["espn"])
+        if f is not None: srcs.append(f); wts.append(W["fantasypros"])
+        if c is not None: srcs.append(c); wts.append(W["cbs"])
+        if p["dkavg"] > 0 and srcs: srcs.append(p["dkavg"]); wts.append(W["dkavg"])
         proj = sum(x * w for x, w in zip(srcs, wts)) / sum(wts) if wts else 0.0
-        p["src"] = {"sleeper": s, "espn": round(e, 2) if e is not None else None, "dkavg": p["dkavg"]}
+        p["src"] = {"sleeper": s, "espn": round(e, 2) if e is not None else None, "fantasypros": f, "cbs": c, "dkavg": p["dkavg"]}
         mult, note = 1.0, ""
         if p["status"] in ("O", "IR", "D", "OUT", "PUP", "SUS", "NFI"):
             mult, note = 0.0, f"DK status {p['status']}"
@@ -194,7 +313,7 @@ def build_slate(group, sl, team_week, es, adj, week):
         p["proj"] = round(proj * mult, 2)
         p["note"] = note
         vol = {"QB": 0.45, "RB": 0.6, "WR": 0.75, "TE": 0.75, "DST": 0.8}[p["pos"]]
-        p["ceil"] = round(p["proj"] * (1 + vol), 2)
+        p["ceil"] = round(p["proj"] * (1 + vol) * (o.get("ceil_mult", 1.0) if o else 1.0), 2)  # boom/sleeper ceiling bump
         g = games.get(p["game"])
         p["implied"] = g["implied"].get(p["team"]) if g else None
     return dict(updated=datetime.now(timezone.utc).isoformat(timespec="minutes"), week=week, season=SEASON,
@@ -202,6 +321,7 @@ def build_slate(group, sl, team_week, es, adj, week):
                 games=[games[k] for k in sorted({p["game"] for p in players}) if k in games],
                 players=sorted(players, key=lambda p: -p["proj"]), matched=matched,
                 sources=["DraftKings salary CSV", "Sleeper/Rotowire projections", "ESPN Fantasy projections",
+                         "FantasyPros expert consensus", "CBS Sports projections",
                          "ESPN/Vegas lines", "Claude's multi-site injury, news & DFS research (overrides.json, picks.json)"])
 
 def main():
@@ -214,8 +334,12 @@ def main():
     groups = classic_groups()
     if a.draft_group: groups = [g for g in groups if g["id"] in a.draft_group]
     if not groups: sys.exit("no upcoming DraftKings Classic slates found")
-    sl, team_week, es = {}, {}, {}
+    sl, team_week, es, fp, cb = {}, {}, {}, {}, {}
     for w in (week, week + 1):
+        try: fp.update(fantasypros_proj(w))
+        except Exception as e: print("fantasypros failed", w, e, file=sys.stderr)
+        try: cb.update(cbs_proj(w))
+        except Exception as e: print("cbs failed", w, e, file=sys.stderr)
         try:
             s1, t1 = sleeper_proj(w); sl.update(s1); team_week.update(t1)
         except Exception as e: print("sleeper failed", w, e, file=sys.stderr)
@@ -227,13 +351,14 @@ def main():
     index = []
     for g in groups:
         try:
-            slate = build_slate(g, sl, team_week, es, adj, week)
+            slate = build_slate(g, sl, team_week, es, adj, week, fp, cb)
         except Exception as e:
             print("slate failed", g, e, file=sys.stderr); continue
         if not slate["players"]:
             print(f"{g['name']} ({g['id']}): no players yet, skipped", file=sys.stderr); continue
         (outdir / f"{g['id']}.json").write_text(json.dumps(slate, separators=(",", ":")))
         index.append(dict(g, players=len(slate["players"]), matched=slate["matched"]))
+        archive(slate, ROOT / "data/picks.json", week)
         print(f"{g['name']} ({g['id']}): {len(slate['players'])} players, matched {slate['matched']}", file=sys.stderr)
         if g["id"] == next((x["id"] for x in groups if x["name"] == "Main"), None):
             (ROOT / "data/slate.json").write_text(json.dumps(slate, separators=(",", ":")))
