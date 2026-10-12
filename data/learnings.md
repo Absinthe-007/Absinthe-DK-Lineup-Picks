@@ -15,6 +15,8 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - Must plays must fit one valid lineup with realistic fill-ins: validate with an ILP before publishing; 3-4 max.
 - Check article dates: searches often surface prior-season pieces with the same week number (e.g. 2025 Week 5 weather, Athlon sleepers). Verify year and opponent.
 - Concurrent research runs overwrite each other (last commit wins). Before uploading, re-read data/picks.json and data/overrides.json from main and merge, never blind-replace; keep per-slate entries under "slates".
+- overrides.json applies to every slate (matched by name), so prior-week injury/boost notes leak into the next week's slates. Each run: drop finished-week entries and rewrite notes that cite last week's opponent; give later-week slates a stub picks entry instead of letting a stale "default" apply.
+- Anytime-TD prices are a fast tiebreaker for must plays: shortest-priced RB/QB in the highest total are the floor anchors.
 
 ## Week 5 (2026) — pre-game notes
 - Core: Lions–Cardinals 54.5 total. Must plays Gibbs, Brissett, St. Brown, McBride.
@@ -25,3 +27,4 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
   - Early only: must plays Swift, Chase Brown, Maye, Braelon Allen. Afternoon/Turbo: Gibbs, Brissett, McBride (sleepers J. Williams, E. Wilson, Shaheed, Barner, Tre' Harris, Sutton).
   - Key news: Lamar OUT (Huntley starts), Charbonnet OUT, Nick Bosa OUT, Joshua Palmer OUT, Terrance Ferguson IR, DJ Moore Q.
 - 11:40 ET actives: Jefferson, Jeanty, Chase, Higgins ACTIVE; Addison INACTIVE -> Hockenson added as sleeper; Gesicki and Mike Washington Jr. dropped from Early sleepers.
+- Mon 10/12 (Mon-Thu slate 154520: MNF BUF@LAR 54.5 + TNF SEA@DEN 41.5): must plays Josh Allen, Kyren Williams, Puka Nacua, Keon Coleman. Core Stafford, Adams, Higbee, E. Wilson, Shakir, Dobbins. Sleepers Kincaid (high), Shaheed (high), Ty Johnson, Higbee, Sutton, Engram, Broncos DST, Kupp. Fades Corum, Parkinson, RJ Harvey, DJ Moore (Q shoulder), Darnold. News: Palmer OUT, Ed Oliver OUT, Moore Q; Charbonnet not playing W6.
