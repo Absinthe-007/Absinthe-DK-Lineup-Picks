@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T16:28+00:00",
+ "updated": "2026-10-12T16:30+00:00",
  "week": 5,
  "default": 154941,
  "slates": [
@@ -15,7 +15,7 @@
     "sleeper": 100,
     "espn": 69,
     "fantasypros": 45,
-    "cbs": 50,
+    "cbs": 51,
     "numberfire": 35,
     "dff": 27,
     "props": 33
@@ -33,7 +33,7 @@
     "sleeper": 502,
     "espn": 354,
     "fantasypros": 167,
-    "cbs": 269,
+    "cbs": 268,
     "numberfire": 0,
     "dff": 0,
     "props": 0
