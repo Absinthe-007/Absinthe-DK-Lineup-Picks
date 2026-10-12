@@ -1,4 +1,4 @@
-/* DK NFL Classic optimizer core. Works in browser (window.DKOpt) and Node (module.exports).
+/* DK NFL Classic + Showdown Captain Mode optimizer core. Works in browser (window.DKOpt) and Node (module.exports).
    Requires javascript-lp-solver as `solver`. */
 (function (root) {
   const CAP = 50000;
@@ -153,11 +153,114 @@
     }
   }
 
+  // ---------- Showdown Captain Mode: 1 CPT (1.5x pts, cptSalary) + 5 FLEX, any position, both teams ----------
+  function buildShowdownModel(pool, opts, prevLineups) {
+    const constraints = { salary: { max: CAP, min: opts.minSalary }, cpt: { equal: 1 }, flex: { equal: 5 } };
+    const variables = {}, binaries = {}, byTeam = {};
+    for (const p of pool) (byTeam[p.team] = byTeam[p.team] || []).push(p);
+    const add = (name, c, coef) => { variables[name][c] = (variables[name][c] || 0) + coef; };
+    const both = (p, c, coef) => ["c" + p.id, "f" + p.id].forEach(n => { if (variables[n]) add(n, c, coef); });
+    for (const p of pool) {
+      const one = "one_" + p.id; constraints[one] = { max: 1 };
+      const canCpt = opts.lockedCpt.has(p.id) || !(opts.noKDstCpt && (p.pos === "K" || p.pos === "DST"));
+      if (canCpt) { variables["c" + p.id] = { pts: Math.round(p.pts * 150) / 100, salary: p.cptSalary || Math.round(p.salary * 1.5), cpt: 1, [one]: 1 }; binaries["c" + p.id] = 1; }
+      if (!opts.lockedCpt.has(p.id)) { variables["f" + p.id] = { pts: p.pts, salary: p.salary, flex: 1, [one]: 1 }; binaries["f" + p.id] = 1; }
+      if (opts.locked.has(p.id) || opts.lockedCpt.has(p.id)) constraints[one] = { equal: 1 };
+    }
+    // at least one player from each team, optional max from one team
+    for (const t of Object.keys(byTeam)) {
+      const c = "tm_" + t; constraints[c] = { min: 1, max: Math.min(5, opts.maxPerTeam || 5) };
+      byTeam[t].forEach(p => both(p, c, 1));
+    }
+    // QB at CPT -> at least one of his pass catchers
+    if (opts.cptQbStack) {
+      for (const q of pool.filter(p => p.pos === "QB" && variables["c" + p.id])) {
+        const c = "qs_" + q.id; constraints[c] = { min: 0 };
+        (byTeam[q.team] || []).filter(p => p.pos === "WR" || p.pos === "TE").forEach(m => both(m, c, 1)); add("c" + q.id, c, -1);
+      }
+    }
+    if (opts.noOffVsDst) {
+      for (const d of pool.filter(p => p.pos === "DST")) {
+        const c = "dst_" + d.id; constraints[c] = { max: 5 };
+        (byTeam[d.opp] || []).filter(p => p.pos !== "DST").forEach(m => both(m, c, 1)); both(d, c, 5);
+      }
+    }
+    for (const [t, n] of Object.entries(opts.teamMins || {})) {
+      if (!n || !byTeam[t]) continue;
+      const c = "tmin_" + t; constraints[c] = { min: n }; byTeam[t].forEach(p => both(p, c, 1));
+    }
+    (opts.groupMins || []).forEach((g, gi) => {
+      const members = pool.filter(p => g.ids.has(p.id));
+      if (!g.min || !members.length) return;
+      const c = "grp_" + gi; constraints[c] = { min: Math.min(g.min, members.length) };
+      members.forEach(m => g.cptIds && g.cptIds.has(m.id) ? variables["c" + m.id] && add("c" + m.id, c, 1) : both(m, c, 1)); // CPT-slot picks count only as Captain
+    });
+    prevLineups.forEach((L, i) => {
+      const c = "u" + i; constraints[c] = { max: 6 - opts.minUnique };
+      L.forEach(id => ["c" + id, "f" + id].forEach(n => { if (variables[n]) variables[n][c] = 1; }));
+    });
+    return { optimize: "pts", opType: "max", constraints, variables, binaries };
+  }
+
+  function* showdownIter(allPlayers, opts, solver) {
+    opts = Object.assign({ n: 20, minSalary: 0, minUnique: 1, maxExposure: 1, randomness: 0, maxPerTeam: 5, useCeiling: 0,
+      noKDstCpt: true, cptQbStack: true, noOffVsDst: false, locked: new Set(), lockedCpt: new Set(), excluded: new Set(),
+      exposure: {}, teamMins: {} }, opts);
+    const isLocked = id => opts.locked.has(id) || opts.lockedCpt.has(id);
+    const base = allPlayers.filter(p => !opts.excluded.has(p.id) && (p.proj > 0 || isLocked(p.id)));
+    const counts = {}, lineups = [], prev = (opts.prev || []).map(x => x);
+    let fails = 0;
+    for (let k = 0; k < opts.n && fails < 3; k++) {
+      const pool = base.filter(p => {
+        const cap = opts.exposure[p.id] != null ? opts.exposure[p.id] : opts.maxExposure;
+        return isLocked(p.id) || (counts[p.id] || 0) < Math.max(1, Math.round(cap * opts.n)) || cap >= 1;
+      }).map(p => {
+        let pts = p.proj * (1 - opts.useCeiling) + (p.ceil || p.proj) * opts.useCeiling;
+        if (opts.randomness > 0) pts *= Math.max(0, 1 + opts.randomness * gauss());
+        return Object.assign({}, p, { pts: Math.round(pts * 100) / 100 });
+      });
+      const res = solver.Solve(buildShowdownModel(pool, opts, prev));
+      if (!res.feasible) { fails++; k--; if (opts.randomness === 0 && fails) break; continue; }
+      const sel = Object.keys(res).filter(v => /^[cf]\d+$/.test(v) && res[v] > 0.5);
+      const cptId = sel.filter(v => v[0] === "c").map(v => +v.slice(1)), flexIds = sel.filter(v => v[0] === "f").map(v => +v.slice(1));
+      if (cptId.length !== 1 || flexIds.length !== 5) { fails++; k--; continue; }
+      const find = id => allPlayers.find(p => p.id === id);
+      const cp = find(cptId[0]);
+      const cpt = Object.assign({}, cp, { cpt: true, salary: cp.cptSalary || Math.round(cp.salary * 1.5), proj: Math.round(cp.proj * 150) / 100,
+        ceil: Math.round((cp.ceil || cp.proj) * 150) / 100 });
+      const flex = flexIds.map(find).sort((a, b) => b.salary - a.salary);
+      const ps = [cpt, ...flex], ids = [cptId[0], ...flexIds];
+      prev.push(ids); ids.forEach(id => counts[id] = (counts[id] || 0) + 1);
+      lineups.push({ showdown: true, players: ps, salary: ps.reduce((s, p) => s + p.salary, 0), proj: Math.round(ps.reduce((s, p) => s + p.proj, 0) * 100) / 100,
+        ceil: Math.round(ps.reduce((s, p) => s + (p.ceil || p.proj), 0) * 10) / 10 });
+      yield { lineups, counts, done: false };
+    }
+    return { lineups, counts, done: true };
+  }
+
+  function optimizeShowdown(allPlayers, opts, solver) {
+    const it = showdownIter(allPlayers, opts, solver); let r;
+    do { r = it.next(); } while (!r.done);
+    return r.value;
+  }
+
+  async function optimizeShowdownAsync(allPlayers, opts, solver, onProgress) {
+    const it = showdownIter(allPlayers, opts, solver); let r;
+    while (true) {
+      r = it.next();
+      if (r.done) return r.value;
+      if (onProgress) onProgress(r.value.lineups.length);
+      await new Promise(res => setTimeout(res, 0));
+    }
+  }
+
   function toCSV(lineups) {
+    if (lineups.length && lineups[0].showdown) // DK upload: CPT column takes the player's Captain ID
+      return ["CPT,FLEX,FLEX,FLEX,FLEX,FLEX", ...lineups.map(L => L.players.map(p => p.cpt ? p.cptId : p.id).join(","))].join("\n");
     const head = "QB,RB,RB,WR,WR,WR,TE,FLEX,DST";
     return [head, ...lineups.map(L => L.players.map(p => p.id).join(","))].join("\n");
   }
 
-  const api = { optimize, optimizeAsync, toCSV, kickTime, CAP, ROSTER };
+  const api = { optimize, optimizeAsync, optimizeShowdown, optimizeShowdownAsync, toCSV, kickTime, CAP, ROSTER };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.DKOpt = api;
 })(typeof window !== "undefined" ? window : globalThis);

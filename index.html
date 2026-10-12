@@ -37,7 +37,7 @@
             <option value="custom">My settings: stacks, Claude's must plays, variety</option>
             <option value="max">Max points: highest projected lineups, no other rules</option>
           </select></label>
-        <p id="maxNote" class="muted small" hidden>Max points ignores stacking, must plays, team limits, randomness and exposure caps. Lineup #1 is the single highest-projected lineup under $50,000; the rest follow in order. Your game predictions, locks and excludes still apply.</p>
+        <p id="maxNote" class="muted small" hidden>Max points ignores stacking, must plays, team limits, randomness and exposure caps. Lineup #1 is the single highest-projected lineup under $50,000; the rest follow in order. Your game predictions, locks and excludes still apply.<span class="sd-only"> Showdown: Captain scores 1.5x and costs his CPT salary; both teams required.</span></p>
         <label>Number of lineups <output id="nOut">20</output>
           <input type="range" id="optN" min="1" max="150" value="20"></label>
         <label>Min salary used <output id="minSalOut">$49,000</output>
@@ -61,6 +61,14 @@
       </div>
       <div class="card">
         <h2>Stacking & rules</h2>
+        <div class="sd-only">
+          <label class="chk"><input type="checkbox" id="optSdNoKDst" checked> No K or DST at Captain</label>
+          <label class="chk"><input type="checkbox" id="optSdQbStack" checked> Captain QB needs 1+ of his WR/TE</label>
+          <label class="chk"><input type="checkbox" id="optSdDst"> Never play offense against my DST</label>
+          <label>Max players from one team
+            <select id="optSdMaxTeam"><option>3</option><option>4</option><option selected>5</option></select></label>
+        </div>
+        <div class="classic-only">
         <label>Stack QB with pass catchers
           <select id="optStack"><option value="0">No stack</option><option value="1" selected>QB + 1</option><option value="2">QB + 2</option><option value="3">QB + 3</option></select></label>
         <label class="chk"><input type="checkbox" id="optStackRB"> Count RBs in the QB stack</label>
@@ -69,6 +77,7 @@
         <label class="chk"><input type="checkbox" id="optTEFlex" checked> Allow TE in FLEX</label>
         <label>Max players from one team
           <select id="optMaxTeam"><option>3</option><option selected>4</option><option>5</option><option value="8">No limit</option></select></label>
+        </div>
         <h3>Prediction scenarios</h3>
         <p class="muted small">Save different game predictions (e.g. "Lions shootout", "Bengals blowout") and build across several at once.</p>
         <div class="row">
@@ -107,7 +116,7 @@
         <input id="search" placeholder="Search player or team">
         <div class="seg" id="posFilter">
           <button data-pos="ALL" class="active">All</button><button data-pos="QB">QB</button><button data-pos="RB">RB</button>
-          <button data-pos="WR">WR</button><button data-pos="TE">TE</button><button data-pos="DST">DST</button>
+          <button data-pos="WR">WR</button><button data-pos="TE">TE</button><button data-pos="DST">DST</button><button data-pos="K" class="sd-only">K</button>
         </div>
         <label class="chk"><input type="checkbox" id="hideZero" checked> Hide 0-pt</label>
         <button id="clearLocks" class="ghost">Clear locks/excludes/edits</button>
@@ -116,13 +125,13 @@
         <table id="ptable">
           <thead><tr>
             <th></th><th data-sort="name">Player</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th>
-            <th data-sort="salary">Salary</th><th data-sort="adj">Proj</th><th data-sort="value">Pts/$1K</th><th data-sort="ceil">Ceil</th>
+            <th data-sort="salary">Salary</th><th data-sort="cptSalary" class="sd-only">CPT $</th><th data-sort="adj">Proj</th><th data-sort="value">Pts/$1K</th><th data-sort="ceil">Ceil</th>
             <th>Max exp</th><th>Note</th>
           </tr></thead>
           <tbody></tbody>
         </table>
       </div>
-      <p class="muted small">🔒 lock = in every lineup · ✕ exclude = never used · Click a projection to edit it.</p>
+      <p class="muted small">🔒 lock = in every lineup<span class="sd-only"> · C = lock as Captain (1.5x pts, CPT salary)</span> · ✕ exclude = never used · Click a projection to edit it.</p>
     </div>
   </section>
 
@@ -136,7 +145,8 @@
           <button id="dlCsv" class="primary" disabled>Download DK upload CSV</button>
         </div>
       </div>
-      <p class="muted small">Upload on DraftKings: Lineups → Upload Lineups → pick this CSV. FLEX is set to your latest-kickoff flex player so late swap stays open.</p>
+      <p class="muted small classic-only">Upload on DraftKings: Lineups → Upload Lineups → pick this CSV. FLEX is set to your latest-kickoff flex player so late swap stays open.</p>
+      <p class="muted small sd-only">Upload on DraftKings: Lineups → Upload Lineups → pick this CSV (Showdown contest). Columns are CPT, FLEX ×5 with each Captain's CPT ID.</p>
       <textarea id="csvBox" class="csvbox" readonly hidden></textarea>
       <div id="exposure" class="exposure"></div>
       <div id="lineups" class="lineups"></div>

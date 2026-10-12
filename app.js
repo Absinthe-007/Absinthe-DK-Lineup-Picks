@@ -8,12 +8,13 @@
   };
 
   let slate, players = [], vegas = {}, gameOf = {}, slateIndex = null, picksAll = null, picks = null, mustIds = [], coreIds = [], sleeperIds = [];
+  let isSD = false, cptPickIds = new Set(); // showdown slate; Claude's picks tagged "slot": "CPT"
   let S; // per-week state
   let lineups = [];
   let sort = { key: "adj", dir: -1 }, posF = "ALL";
 
   function freshState() {
-    return { edits: {}, locked: [], excluded: [], exposure: {}, teamScores: {}, teamMins: {}, scenarios: {}, scenPick: [] };
+    return { edits: {}, locked: [], lockedCpt: [], excluded: [], exposure: {}, teamScores: {}, teamMins: {}, scenarios: {}, scenPick: [] };
   }
   const save = () => store.set("state_" + slate.draftGroupId, S);
 
@@ -42,10 +43,13 @@
     try { picksAll = await getJSON("data/picks.json"); } catch { picksAll = null; }
     const sel = $("#slatePick");
     if (slateIndex && slateIndex.slates.length) {
-      sel.innerHTML = slateIndex.slates.map(x => {
-        const d = new Date(x.start + ":00-04:00");
-        return `<option value="${x.id}">${x.name} · ${x.games} games · ${d.toLocaleDateString([], { weekday: "short" })} ${d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</option>`;
-      }).join("");
+      const opt = x => {
+        const d = new Date(x.start + ":00-04:00"), when = `${d.toLocaleDateString([], { weekday: "short" })} ${d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
+        return `<option value="${x.id}">${x.name} · ${x.type === "showdown" ? "Showdown" : x.games + " games"} · ${when}</option>`;
+      };
+      const cl = slateIndex.slates.filter(x => x.type !== "showdown"), sd = slateIndex.slates.filter(x => x.type === "showdown");
+      sel.innerHTML = sd.length ? `<optgroup label="Classic">${cl.map(opt).join("")}</optgroup><optgroup label="Showdown · single game">${sd.map(opt).join("")}</optgroup>`
+        : cl.map(opt).join("");
       const saved = store.get("slate", null);
       sel.value = slateIndex.slates.some(x => x.id === saved) ? saved : slateIndex.default;
       sel.onchange = () => { store.set("slate", +sel.value); loadSlate(+sel.value); };
@@ -58,12 +62,14 @@
   async function loadSlate(id) {
     slate = id ? await getJSON(`data/slates/${id}.json`) : await getJSON("data/slate.json");
     players = slate.players; vegas = {};
+    isSD = slate.type === "showdown"; document.body.classList.toggle("showdown", isSD);
+    if (!isSD && posF === "K") { posF = "ALL"; $$("#posFilter button").forEach(b => b.classList.toggle("active", b.dataset.pos === "ALL")); }
     slate.games.forEach(g => { vegas[g.away] = g; vegas[g.home] = g; });
     gameOf = vegas;
     S = Object.assign(freshState(), store.get("state_" + slate.draftGroupId, {}));
     lineups = []; renderLineups();
     const upd = new Date(slate.updated);
-    $("#slateMeta").textContent = `NFL ${slate.season} · Week ${slate.week} · ${slate.slateName || "Main"} slate · ${slate.games.length} games · ${players.length} players · updated ${upd.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" })}`;
+    $("#slateMeta").textContent = `NFL ${slate.season} · Week ${slate.week} · ${slate.slateName || "Main"} ${isSD ? "Showdown (Captain Mode)" : "slate · " + slate.games.length + " games"} · ${players.length} players · updated ${upd.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" })}`;
     $("#sources").textContent = "Sources: " + slate.sources.join(" · ");
     resolvePicks();
     bindSettings(); renderGames(); renderPlayers(); renderScen(); renderValue(); renderPicks();
@@ -78,7 +84,7 @@
            (ref.pos === "DST" ? players.find(x => x.pos === "DST" && x.team === ref.team) : null);
   }
   function resolvePicks() {
-    picks = null; mustIds = []; coreIds = []; sleeperIds = [];
+    picks = null; mustIds = []; coreIds = []; sleeperIds = []; cptPickIds = new Set();
     if (!picksAll) return;
     const sl = picksAll.slates || {};
     picks = sl[String(slate.draftGroupId)] || sl[slate.slateName] || picksAll.default || null;
@@ -86,6 +92,7 @@
     mustIds = (picks.mustPlays || []).map(findPlayer).filter(p => p && p.proj > 0).map(p => p.id);
     coreIds = (picks.core || []).map(findPlayer).filter(Boolean).map(p => p.id);
     sleeperIds = (picks.sleepers || []).map(findPlayer).filter(p => p && p.proj > 0).map(p => p.id);
+    if (isSD) [...(picks.mustPlays || []), ...(picks.sleepers || [])].filter(r => r.slot === "CPT").map(findPlayer).forEach(p => p && cptPickIds.add(p.id));
   }
   function renderPicks() {
     const card = $("#picksCard");
@@ -95,8 +102,8 @@
     const row = (ref, tag) => {
       const p = findPlayer(ref);
       return `<div class="pickrow"><span class="pos ${p ? p.pos : ref.pos || "FLEX"}">${p ? p.pos : ref.pos || "?"}</span>
-        <div><b>${p ? p.name : ref.name}</b> <span class="muted small">${p ? p.team + (p.home ? " vs " : " @ ") + p.opp : ref.team || ""}</span>${tag || ""}<div class="why">${ref.why || ""}</div></div>
-        <span class="sal">${p ? fmt$(p.salary) + " · " + adjusted(p).adj.toFixed(1) : "not on slate"}</span></div>`;
+        <div><b>${p ? p.name : ref.name}</b> <span class="muted small">${p ? p.team + (p.home ? " vs " : " @ ") + p.opp : ref.team || ""}</span>${isSD && ref.slot === "CPT" ? ' <span class="pos CPT">CPT</span>' : ""}${tag || ""}<div class="why">${ref.why || ""}</div></div>
+        <span class="sal">${p ? fmt$(isSD && ref.slot === "CPT" ? p.cptSalary : p.salary) + " · " + adjusted(p).adj.toFixed(1) : "not on slate"}</span></div>`;
     };
     const must = picks.mustPlays || [], core = picks.core || [], fades = picks.fades || [], stacks = picks.stacks || [], sleepers = picks.sleepers || [];
     $("#picksBody").innerHTML =
@@ -113,7 +120,8 @@
   function bindSettings() {
     if (settingsBound) return; settingsBound = true;
     const saved = store.get("settings", {});
-    const ids = ["optMode", "optSleep", "optMust", "optN", "optMinSal", "optUnique", "optExp", "optRand", "optCeil", "optStack", "optStackRB", "optBB", "optDst", "optTEFlex", "optMaxTeam"];
+    const ids = ["optMode", "optSleep", "optMust", "optN", "optMinSal", "optUnique", "optExp", "optRand", "optCeil", "optStack", "optStackRB", "optBB", "optDst", "optTEFlex", "optMaxTeam",
+      "optSdNoKDst", "optSdQbStack", "optSdDst", "optSdMaxTeam"];
     ids.forEach(id => {
       const el = $("#" + id);
       if (saved[id] != null) el.type === "checkbox" ? (el.checked = saved[id]) : (el.value = saved[id]);
@@ -133,6 +141,14 @@
     outs();
   }
   function readOpts() {
+    if (isSD) {
+      if ($("#optMode").value === "max") // pure max points under DK Showdown rules only
+        return { n: +$("#optN").value, minSalary: 0, minUnique: 1, maxExposure: 1, randomness: 0, useCeiling: 0, maxPerTeam: 5,
+          noKDstCpt: false, cptQbStack: false, noOffVsDst: false, max: true };
+      return { n: +$("#optN").value, minSalary: +$("#optMinSal").value, minUnique: +$("#optUnique").value,
+        maxExposure: +$("#optExp").value / 100, randomness: +$("#optRand").value / 100, useCeiling: +$("#optCeil").value,
+        maxPerTeam: +$("#optSdMaxTeam").value, noKDstCpt: $("#optSdNoKDst").checked, cptQbStack: $("#optSdQbStack").checked, noOffVsDst: $("#optSdDst").checked };
+    }
     if ($("#optMode").value === "max") {
       // Pure max points: maximize total projection under the cap, nothing else
       return { n: +$("#optN").value, minSalary: 0, minUnique: 1, maxExposure: 1, randomness: 0, useCeiling: 0,
@@ -176,16 +192,16 @@
   // ---------- players ----------
   function renderPlayers() {
     const q = $("#search").value.trim().toLowerCase(), hide = $("#hideZero").checked;
-    const locked = new Set(S.locked), excl = new Set(S.excluded);
+    const locked = new Set(S.locked), lockedCpt = new Set(S.lockedCpt || []), excl = new Set(S.excluded);
     let rows = players.map(p => { const a = adjusted(p); return Object.assign({}, p, a, { value: a.adj / (p.salary / 1000) }); })
       .filter(p => (posF === "ALL" || p.pos === posF) && (!q || p.name.toLowerCase().includes(q) || p.team.toLowerCase() === q) && (!hide || p.adj > 0 || locked.has(p.id)));
     rows.sort((a, b) => { const x = a[sort.key], y = b[sort.key]; return (typeof x === "string" ? x.localeCompare(y) : x - y) * sort.dir; });
     rows = rows.slice(0, 400);
     $("#ptable tbody").innerHTML = rows.map(p => `
-      <tr class="${locked.has(p.id) ? "locked" : ""} ${excl.has(p.id) ? "excluded" : ""}" data-id="${p.id}">
-        <td><button class="ic lk ${locked.has(p.id) ? "on" : ""}" title="Lock">🔒</button><button class="ic x ${excl.has(p.id) ? "on" : ""}" title="Exclude">✕</button></td>
-        <td>${p.name}${mustIds.includes(p.id) ? '<span class="star" title="Claude must play">★</span>' : coreIds.includes(p.id) ? '<span class="star" title="Claude core play">☆</span>' : sleeperIds.includes(p.id) ? '<span class="star sleeper" title="Claude sleeper / boom pick">✦</span>' : ""}</td><td><span class="pos ${p.pos}">${p.pos}</span></td><td>${p.team}</td><td class="muted">${p.home ? "vs" : "@"} ${p.opp}</td>
-        <td class="num">${fmt$(p.salary)}</td>
+      <tr class="${locked.has(p.id) ? "locked" : ""} ${lockedCpt.has(p.id) ? "cptlock" : ""} ${excl.has(p.id) ? "excluded" : ""}" data-id="${p.id}">
+        <td><button class="ic lk ${locked.has(p.id) ? "on" : ""}" title="Lock">🔒</button><button class="ic cp sd-only ${lockedCpt.has(p.id) ? "on" : ""}" title="Lock as Captain">C</button><button class="ic x ${excl.has(p.id) ? "on" : ""}" title="Exclude">✕</button></td>
+        <td>${p.name}${cptPickIds.has(p.id) ? ' <span class="pos CPT" title="Claude: play him at Captain">CPT</span>' : ""}${mustIds.includes(p.id) ? '<span class="star" title="Claude must play">★</span>' : coreIds.includes(p.id) ? '<span class="star" title="Claude core play">☆</span>' : sleeperIds.includes(p.id) ? '<span class="star sleeper" title="Claude sleeper / boom pick">✦</span>' : ""}</td><td><span class="pos ${p.pos}">${p.pos}</span></td><td>${p.team}</td><td class="muted">${p.home ? "vs" : "@"} ${p.opp}</td>
+        <td class="num">${fmt$(p.salary)}</td>${isSD ? `<td class="num muted">${fmt$(p.cptSalary || 0)}</td>` : ""}
         <td class="num"><input class="edit ${S.edits[p.id] != null ? "edited" : ""}" type="number" step="0.1" value="${p.adj.toFixed(1)}"></td>
         <td class="num">${p.value.toFixed(2)}</td><td class="num muted">${p.ceil.toFixed(1)}</td>
         <td><input class="exp" type="number" min="0" max="100" step="5" placeholder="def" value="${S.exposure[p.id] != null ? Math.round(S.exposure[p.id] * 100) : ""}"></td>
@@ -194,9 +210,11 @@
   }
   $("#ptable tbody").addEventListener("click", e => {
     const tr = e.target.closest("tr"); if (!tr) return; const id = +tr.dataset.id;
-    const tog = (arr, other) => { const i = S[arr].indexOf(id); if (i >= 0) S[arr].splice(i, 1); else { S[arr].push(id); S[other] = S[other].filter(x => x !== id); } };
-    if (e.target.classList.contains("lk")) { tog("locked", "excluded"); save(); renderPlayers(); }
-    if (e.target.classList.contains("x")) { tog("excluded", "locked"); save(); renderPlayers(); }
+    S.lockedCpt = S.lockedCpt || [];
+    const tog = (arr, ...others) => { const i = S[arr].indexOf(id); if (i >= 0) S[arr].splice(i, 1); else { S[arr].push(id); others.forEach(o => S[o] = S[o].filter(x => x !== id)); } };
+    if (e.target.classList.contains("lk")) { tog("locked", "excluded", "lockedCpt"); save(); renderPlayers(); }
+    if (e.target.classList.contains("cp")) { tog("lockedCpt", "excluded", "locked"); save(); renderPlayers(); }
+    if (e.target.classList.contains("x")) { tog("excluded", "locked", "lockedCpt"); save(); renderPlayers(); }
   });
   $("#ptable tbody").addEventListener("change", e => {
     const tr = e.target.closest("tr"); const id = +tr.dataset.id;
@@ -214,11 +232,11 @@
   $("#hideZero").addEventListener("change", renderPlayers);
   $$("#posFilter button").forEach(b => b.onclick = () => { $$("#posFilter button").forEach(x => x.classList.remove("active")); b.classList.add("active"); posF = b.dataset.pos; renderPlayers(); });
   $$("#ptable th[data-sort]").forEach(th => th.onclick = () => { const k = th.dataset.sort; sort = { key: k, dir: sort.key === k ? -sort.dir : (["name", "pos", "team"].includes(k) ? 1 : -1) }; renderPlayers(); });
-  $("#clearLocks").onclick = () => { S.locked = []; S.excluded = []; S.edits = {}; S.exposure = {}; save(); renderPlayers(); renderValue(); };
+  $("#clearLocks").onclick = () => { S.locked = []; S.lockedCpt = []; S.excluded = []; S.edits = {}; S.exposure = {}; save(); renderPlayers(); renderValue(); };
 
   // ---------- value board ----------
   function renderValue() {
-    const html = ["QB", "RB", "WR", "TE", "DST"].map(pos => {
+    const html = (isSD ? ["QB", "RB", "WR", "TE", "K", "DST"] : ["QB", "RB", "WR", "TE", "DST"]).map(pos => {
       const top = players.filter(p => p.pos === pos).map(p => Object.assign({}, p, adjusted(p))).filter(p => p.adj > 0)
         .sort((a, b) => b.adj / b.salary - a.adj / a.salary).slice(0, 6);
       return `<div class="vb"><h4><span class="pos ${pos}">${pos}</span> best value</h4>${top.map(p => `<div><span>${p.name} <span class="muted">${p.team}</span></span><span>${fmt$(p.salary)} · ${p.adj.toFixed(1)}</span></div>`).join("")}</div>`;
@@ -260,15 +278,18 @@
     btn.disabled = true; $("#maxBtn").disabled = true; bar.classList.remove("hidden"); msg.textContent = "Optimizing…";
     const all = []; const t0 = performance.now();
     let doneCount = 0;
+    const OPT = isSD ? DKOpt.optimizeShowdownAsync : DKOpt.optimizeAsync;
+    const sdLocks = ids => isSD ? { locked: new Set([...S.locked, ...ids.filter(id => !cptPickIds.has(id))]),
+      lockedCpt: new Set([...(S.lockedCpt || []), ...ids.filter(id => cptPickIds.has(id))]) } : { locked: new Set([...S.locked, ...ids]) };
     // Phase A: Claude's must plays locked into the first N lineups
     let mustN = base.max ? 0 : Math.min(+$("#optMust").value, base.n);
     let must = mustIds.filter(id => !S.excluded.includes(id));
     if (mustN > 0 && must.length) {
       const pool = players.map(p => { const a = adjusted(p, runs[0].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
       while (must.length) {
-        const opts = Object.assign({}, base, { n: mustN, locked: new Set([...S.locked, ...must]), excluded: new Set(S.excluded),
+        const opts = Object.assign({}, base, sdLocks(must), { n: mustN, excluded: new Set(S.excluded),
           exposure: S.exposure, teamMins: runs[0].st.teamMins || {}, maxExposure: 1, prev: [] });
-        const res = await DKOpt.optimizeAsync(pool, opts, window.solver, k => {
+        const res = await OPT(pool, opts, window.solver, k => {
           $("#progress div").style.width = (k / base.n * 100) + "%"; msg.textContent = `Lineup ${k} of ${base.n} · must plays`;
         });
         if (res.lineups.length) { res.lineups.forEach(L => L.must = true); all.push(...res.lineups); doneCount = res.lineups.length; break; }
@@ -281,18 +302,18 @@
       const pool = players.map(p => { const a = adjusted(p, runs[i].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
       const sleepMin = base.max ? 0 : +$("#optSleep").value;
       const sleepSet = new Set(sleeperIds.filter(id => !S.excluded.includes(id)));
-      const opts = Object.assign({}, base, {
-        n, locked: new Set(S.locked), excluded: new Set(S.excluded), exposure: base.max ? {} : S.exposure, teamMins: base.max ? {} : runs[i].st.teamMins || {},
+      const opts = Object.assign({}, base, sdLocks([]), {
+        n, excluded: new Set(S.excluded), exposure: base.max ? {} : S.exposure, teamMins: base.max ? {} : runs[i].st.teamMins || {},
         prev: all.map(L => L.players.map(p => p.id)),
-        groupMins: sleepMin && sleepSet.size ? [{ ids: sleepSet, min: sleepMin }] : [],
+        groupMins: sleepMin && sleepSet.size ? [{ ids: sleepSet, min: sleepMin, cptIds: cptPickIds }] : [],
       });
       const prog = k => {
         $("#progress div").style.width = ((doneCount + k) / base.n * 100) + "%";
         msg.textContent = `Lineup ${doneCount + k} of ${base.n}${runs[i].name ? " · " + runs[i].name : ""}`;
       };
-      let res = await DKOpt.optimizeAsync(pool, opts, window.solver, prog);
+      let res = await OPT(pool, opts, window.solver, prog);
       if (res.lineups.length < n && opts.groupMins.length) { // sleepers couldn't fit every lineup: fill the rest without that rule
-        const more = await DKOpt.optimizeAsync(pool, Object.assign({}, opts, { n: n - res.lineups.length, groupMins: [],
+        const more = await OPT(pool, Object.assign({}, opts, { n: n - res.lineups.length, groupMins: [],
           prev: [...opts.prev, ...res.lineups.map(L => L.players.map(p => p.id))] }), window.solver, prog);
         res = { lineups: [...res.lineups, ...more.lineups] };
       }
@@ -311,8 +332,9 @@
     $("#lineupCount").textContent = lineups.length;
     $("#dlCsv").disabled = !lineups.length; $("#copyCsv").disabled = !lineups.length; $("#csvBox").hidden = true;
     const slots = ["QB", "RB", "RB", "WR", "WR", "WR", "TE", "FLEX", "DST"];
+    const slot = (L, p, j) => L.showdown ? (p.cpt ? "CPT" : "FLEX") : slots[j];
     $("#lineups").innerHTML = lineups.map((L, i) => `<div class="lu ${L.must ? "must" : ""}"><div class="hd">#${i + 1} ${L.must ? `<span class="tag">★ Claude's must plays</span>` : ""}${L.maxMode && i === 0 ? `<span class="tag">Max points</span>` : ""}${L.scenario ? `<span>${L.scenario}</span>` : ""}<span>${fmt$(L.salary)} · ${L.proj.toFixed(1)} pts</span></div>
-      ${L.players.map((p, j) => `<div class="pl"><span class="pos ${slots[j]}">${slots[j]}</span><span>${p.name} <span class="muted small">${p.team}</span></span><span class="s">${fmt$(p.salary)}</span><span class="p">${(+p.proj).toFixed(1)}</span></div>`).join("")}</div>`).join("");
+      ${L.players.map((p, j) => `<div class="pl"><span class="pos ${slot(L, p, j)}">${slot(L, p, j)}</span><span>${p.name} <span class="muted small">${L.showdown ? p.pos + " " : ""}${p.team}${p.cpt ? " · 1.5x" : ""}</span></span><span class="s">${fmt$(p.salary)}</span><span class="p">${(+p.proj).toFixed(1)}</span></div>`).join("")}</div>`).join("");
     const cnt = {}; lineups.forEach(L => L.players.forEach(p => cnt[p.id] = (cnt[p.id] || 0) + 1));
     const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 30);
     $("#exposure").innerHTML = lineups.length > 1 ? "<b class='small' style='width:100%'>Exposure</b>" + top.map(([id, c]) => `<span class="e">${players.find(p => p.id === +id).name} ${Math.round(c / lineups.length * 100)}%</span>`).join("") : "";

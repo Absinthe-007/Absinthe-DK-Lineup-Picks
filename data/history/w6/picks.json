@@ -1,0 +1,334 @@
+{
+  "updated": "2026-10-12T15:50:58Z",
+  "week": 5,
+  "sources": [
+    "NBC Sports/Rotoworld",
+    "FantasyPros",
+    "Covers",
+    "DraftKings Network",
+    "CBS Sports/SportsLine",
+    "RotoBaller",
+    "ESPN",
+    "Yahoo Sports",
+    "Buffalo Bills official",
+    "Turf Show Times",
+    "Athlon Sports",
+    "RotoWire",
+    "Field Gulls",
+    "SI.com"
+  ],
+  "default": {
+    "mustPlays": [
+      {
+        "name": "Josh Allen",
+        "team": "BUF",
+        "pos": "QB",
+        "why": "Highest TD floor on slate: scored in every game, 12 rush TDs in 9 indoor games, 6 inside-5 carries (Covers); -120 anytime TD; 54.5 total, BUF implied 25.5."
+      },
+      {
+        "name": "Kyren Williams",
+        "team": "LAR",
+        "pos": "RB",
+        "why": "Shortest anytime TD price on the board (-165 DK, -195 Fanatics); 82% snaps, 16-5 carries over Corum, 7 RZ carries to 0; BUF allowed 6 RB TDs (DK Network/Covers)."
+      },
+      {
+        "name": "Puka Nacua",
+        "team": "LAR",
+        "pos": "WR",
+        "why": "9-125 in W4 return from groin; -125 TD; BUF allow 3rd-most receiving yds (RotoBaller); LAR implied 29."
+      },
+      {
+        "name": "Keon Coleman",
+        "team": "BUF",
+        "pos": "WR",
+        "why": "$4,600 with Palmer OUT and Moore Q (DNP Thu/Fri): 6-116-1 on 7 tgts after Moore left W4; LAR allowed 6 WR TDs, 0 RB TDs (DK Network)."
+      }
+    ],
+    "core": [
+      {
+        "name": "Matthew Stafford",
+        "team": "LAR",
+        "pos": "QB",
+        "why": "Pivot QB: BUF allow 3rd-most receiving yds; Ed Oliver OUT for BUF D."
+      },
+      {
+        "name": "Davante Adams",
+        "team": "LAR",
+        "pos": "WR",
+        "why": "+100 TD; 8-195 and 7-137 in W2-3."
+      },
+      {
+        "name": "Tyler Higbee",
+        "team": "LAR",
+        "pos": "TE",
+        "why": "76% routes, 6 tgts last game; 26% TD price vs Parkinson's <=2 tgts (Covers)."
+      },
+      {
+        "name": "Emanuel Wilson",
+        "team": "SEA",
+        "pos": "RB",
+        "why": "TNF: Charbonnet out (Macdonald), Price IR - lead back, 21 carries W4."
+      },
+      {
+        "name": "Khalil Shakir",
+        "team": "BUF",
+        "pos": "WR",
+        "why": "Palmer OUT - slot volume."
+      },
+      {
+        "name": "J.K. Dobbins",
+        "team": "DEN",
+        "pos": "RB",
+        "why": "Out-snapped Harvey 32-23 W5, 18-68-1."
+      }
+    ],
+    "sleepers": [
+      {
+        "name": "Dalton Kincaid",
+        "team": "BUF",
+        "pos": "TE",
+        "why": "12 rec/200+ yds in W1-2 then 3 rec in 2 games; Buffalo leaning into TE sets with Palmer out/Moore Q; 2.85x TD (Covers). Low-owned after cold stretch.",
+        "boom": "high"
+      },
+      {
+        "name": "Rashid Shaheed",
+        "team": "SEA",
+        "pos": "WR",
+        "why": "$3,900 deep threat in a game nobody will stack; one long TD = slate-winning value.",
+        "boom": "high"
+      },
+      {
+        "name": "Ty Johnson",
+        "team": "BUF",
+        "pos": "RB",
+        "why": "$4,100; 40% routes, hurry-up back if BUF trails a 3.5-pt favorite; fair TD ~16% (THE BLITZ).",
+        "boom": "medium"
+      },
+      {
+        "name": "Tyler Higbee",
+        "team": "LAR",
+        "pos": "TE",
+        "why": "$3,300 with 76% routes vs Parkinson; 26% TD price in 54.5 total.",
+        "boom": "medium"
+      },
+      {
+        "name": "Courtland Sutton",
+        "team": "DEN",
+        "pos": "WR",
+        "why": "$4,900 WR1, first TD W5; contrarian side of TNF.",
+        "boom": "medium"
+      },
+      {
+        "name": "Evan Engram",
+        "team": "DEN",
+        "pos": "TE",
+        "why": "$3,000; led DEN with 4-55 W5.",
+        "boom": "medium"
+      },
+      {
+        "name": "Broncos",
+        "team": "DEN",
+        "pos": "DST",
+        "why": "$2,700 vs a SEA offense with 4 turnovers (Darnold 2 INT) in W5; DEN D won the game late.",
+        "boom": "medium"
+      },
+      {
+        "name": "Cooper Kupp",
+        "team": "SEA",
+        "pos": "WR",
+        "why": "$3,600; 4th-down target role, cheap piece if JSN draws coverage.",
+        "boom": "medium"
+      }
+    ],
+    "stacks": [
+      "Josh Allen + Keon Coleman + Shakir, bring back Puka/Kyren (BUF passing volume with Palmer out)",
+      "Stafford + Puka + Adams/Higbee, bring back Coleman or Kincaid",
+      "TNF SEA@DEN (41.5) as one-offs: E. Wilson, Dobbins, Broncos DST; JSN only as a leverage pivot off Puka"
+    ],
+    "fades": [
+      {
+        "name": "Blake Corum",
+        "why": "Out-carried 16-5 by Kyren, 0 RZ carries in 2 weeks"
+      },
+      {
+        "name": "Colby Parkinson",
+        "why": "Never above 2 targets; Higbee owns the routes"
+      },
+      {
+        "name": "RJ Harvey",
+        "why": "37% snaps W5, 3 carries for 7 yds"
+      },
+      {
+        "name": "DJ Moore",
+        "why": "Q shoulder, DNP Thu/Fri - risk of in-game exit; play Coleman instead"
+      },
+      {
+        "name": "Sam Darnold",
+        "why": "4 turnovers W5, road short week vs DEN D"
+      }
+    ],
+    "notes": "Mon-Thu slate = MNF BUF@LAR (54.5, LAR -3.5) + TNF SEA@DEN (41.5). MNF is where the points are; TNF players lock at 8:15 ET tonight, so TNF statuses can still change (Charbonnet already ruled out). DJ Moore is a true GTD - check Bills inactives ~6:45 ET; if he's OUT, Coleman/Shakir/Kincaid all bump again. Ed Oliver OUT for BUF D."
+  },
+  "slates": {
+    "154520": {
+      "mustPlays": [
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "Highest TD floor on slate: scored in every game, 12 rush TDs in 9 indoor games, 6 inside-5 carries (Covers); -120 anytime TD; 54.5 total, BUF implied 25.5."
+        },
+        {
+          "name": "Kyren Williams",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "Shortest anytime TD price on the board (-165 DK, -195 Fanatics); 82% snaps, 16-5 carries over Corum, 7 RZ carries to 0; BUF allowed 6 RB TDs (DK Network/Covers)."
+        },
+        {
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "9-125 in W4 return from groin; -125 TD; BUF allow 3rd-most receiving yds (RotoBaller); LAR implied 29."
+        },
+        {
+          "name": "Keon Coleman",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "$4,600 with Palmer OUT and Moore Q (DNP Thu/Fri): 6-116-1 on 7 tgts after Moore left W4; LAR allowed 6 WR TDs, 0 RB TDs (DK Network)."
+        }
+      ],
+      "core": [
+        {
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "pos": "QB",
+          "why": "Pivot QB: BUF allow 3rd-most receiving yds; Ed Oliver OUT for BUF D."
+        },
+        {
+          "name": "Davante Adams",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "+100 TD; 8-195 and 7-137 in W2-3."
+        },
+        {
+          "name": "Tyler Higbee",
+          "team": "LAR",
+          "pos": "TE",
+          "why": "76% routes, 6 tgts last game; 26% TD price vs Parkinson's <=2 tgts (Covers)."
+        },
+        {
+          "name": "Emanuel Wilson",
+          "team": "SEA",
+          "pos": "RB",
+          "why": "TNF: Charbonnet out (Macdonald), Price IR - lead back, 21 carries W4."
+        },
+        {
+          "name": "Khalil Shakir",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "Palmer OUT - slot volume."
+        },
+        {
+          "name": "J.K. Dobbins",
+          "team": "DEN",
+          "pos": "RB",
+          "why": "Out-snapped Harvey 32-23 W5, 18-68-1."
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Dalton Kincaid",
+          "team": "BUF",
+          "pos": "TE",
+          "why": "12 rec/200+ yds in W1-2 then 3 rec in 2 games; Buffalo leaning into TE sets with Palmer out/Moore Q; 2.85x TD (Covers). Low-owned after cold stretch.",
+          "boom": "high"
+        },
+        {
+          "name": "Rashid Shaheed",
+          "team": "SEA",
+          "pos": "WR",
+          "why": "$3,900 deep threat in a game nobody will stack; one long TD = slate-winning value.",
+          "boom": "high"
+        },
+        {
+          "name": "Ty Johnson",
+          "team": "BUF",
+          "pos": "RB",
+          "why": "$4,100; 40% routes, hurry-up back if BUF trails a 3.5-pt favorite; fair TD ~16% (THE BLITZ).",
+          "boom": "medium"
+        },
+        {
+          "name": "Tyler Higbee",
+          "team": "LAR",
+          "pos": "TE",
+          "why": "$3,300 with 76% routes vs Parkinson; 26% TD price in 54.5 total.",
+          "boom": "medium"
+        },
+        {
+          "name": "Courtland Sutton",
+          "team": "DEN",
+          "pos": "WR",
+          "why": "$4,900 WR1, first TD W5; contrarian side of TNF.",
+          "boom": "medium"
+        },
+        {
+          "name": "Evan Engram",
+          "team": "DEN",
+          "pos": "TE",
+          "why": "$3,000; led DEN with 4-55 W5.",
+          "boom": "medium"
+        },
+        {
+          "name": "Broncos",
+          "team": "DEN",
+          "pos": "DST",
+          "why": "$2,700 vs a SEA offense with 4 turnovers (Darnold 2 INT) in W5; DEN D won the game late.",
+          "boom": "medium"
+        },
+        {
+          "name": "Cooper Kupp",
+          "team": "SEA",
+          "pos": "WR",
+          "why": "$3,600; 4th-down target role, cheap piece if JSN draws coverage.",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Josh Allen + Keon Coleman + Shakir, bring back Puka/Kyren (BUF passing volume with Palmer out)",
+        "Stafford + Puka + Adams/Higbee, bring back Coleman or Kincaid",
+        "TNF SEA@DEN (41.5) as one-offs: E. Wilson, Dobbins, Broncos DST; JSN only as a leverage pivot off Puka"
+      ],
+      "fades": [
+        {
+          "name": "Blake Corum",
+          "why": "Out-carried 16-5 by Kyren, 0 RZ carries in 2 weeks"
+        },
+        {
+          "name": "Colby Parkinson",
+          "why": "Never above 2 targets; Higbee owns the routes"
+        },
+        {
+          "name": "RJ Harvey",
+          "why": "37% snaps W5, 3 carries for 7 yds"
+        },
+        {
+          "name": "DJ Moore",
+          "why": "Q shoulder, DNP Thu/Fri - risk of in-game exit; play Coleman instead"
+        },
+        {
+          "name": "Sam Darnold",
+          "why": "4 turnovers W5, road short week vs DEN D"
+        }
+      ],
+      "notes": "Mon-Thu slate = MNF BUF@LAR (54.5, LAR -3.5) + TNF SEA@DEN (41.5). MNF is where the points are; TNF players lock at 8:15 ET tonight, so TNF statuses can still change (Charbonnet already ruled out). DJ Moore is a true GTD - check Bills inactives ~6:45 ET; if he's OUT, Coleman/Shakir/Kincaid all bump again. Ed Oliver OUT for BUF D."
+    },
+    "154941": {
+      "mustPlays": [],
+      "core": [],
+      "sleepers": [],
+      "stacks": [],
+      "fades": [],
+      "notes": "Week 6 Main (Sun 10/18): preliminary - full research and picks come in the Sunday 10 AM CT run. Week 5 picks removed so they don't apply here."
+    }
+  }
+}

@@ -1,40 +1,52 @@
 #!/usr/bin/env python3
 """Build data/slate.json for the DK Lineup Maker.
 
-Sources (all public):
+Sources (all public, no login / API key):
   * DraftKings lobby + official salary CSV (salaries, player IDs, game info, injury tags)
   * Sleeper projections API (Rotowire stat-line projections) -> converted to DK scoring
   * ESPN Fantasy projections (PPR) + estimated DK bonuses
+  * FantasyPros expert consensus (ECR rank-to-points), CBS Sports stat projections
+  * numberFire / FanDuel Research stat projections, DailyFantasyFuel DraftKings projections
+  * DraftKings Sportsbook player props via ESPN (yardage / reception / TD / kicking lines -> DK points)
   * ESPN scoreboard (Vegas spread / total -> implied team totals)
   * data/overrides.json (manual injury/news research layer)
 
 Usage: python3 scripts/build_data.py [--week N]   (week auto-detected from Sleeper if omitted)
-Builds every upcoming DraftKings NFL Classic slate into data/slates/<draftGroupId>.json + data/slates/index.json,
-and keeps data/slate.json as the default (main) slate.
+Builds every upcoming DraftKings NFL Classic and Showdown slate into data/slates/<draftGroupId>.json +
+data/slates/index.json, and keeps data/slate.json as the default (main) slate.
 """
-import argparse, csv, io, json, math, re, sys, unicodedata, urllib.request
-from datetime import datetime, timezone
+import argparse, csv, io, json, math, re, sys, time, unicodedata, urllib.request
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/128 Safari/537.36"}
 SEASON = 2026
 # Projection-source weights (renormalized per player over the sources that have him)
-SOURCE_WEIGHTS = {"sleeper": 0.28, "espn": 0.2, "fantasypros": 0.27, "cbs": 0.15, "dkavg": 0.10}
+SOURCE_WEIGHTS = {"sleeper": 0.2, "espn": 0.15, "fantasypros": 0.17, "cbs": 0.1, "numberfire": 0.12, "dff": 0.1,
+                  "props": 0.1, "dkavg": 0.06}
+SOURCES = [k for k in SOURCE_WEIGHTS if k != "dkavg"]
 
-def get(url, headers=None, as_json=True):
+def get(url, headers=None, as_json=True, tries=3):
     req = urllib.request.Request(url, headers={**UA, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        data = r.read().decode("utf-8-sig")
+    for attempt in range(tries):  # retry transient network errors / 5xx, never 4xx
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                data = r.read().decode("utf-8-sig")
+            break
+        except Exception as e:
+            if attempt == tries - 1 or 400 <= getattr(e, "code", 0) < 500: raise
+            time.sleep(2 * (attempt + 1))
     return json.loads(data) if as_json else data
 
 def norm(name):
     n = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode().lower()
-    n = re.sub(r"[.'`,]", "", n)
+    n = re.sub(r"[.'`,]", "", n).replace("-", " ")
     n = re.sub(r"\b(jr|sr|ii|iii|iv|v)\b", "", n)
     return re.sub(r"\s+", " ", n).strip()
 
-TEAM_FIX = {"WSH": "WAS", "JAC": "JAX", "LA": "LAR"}
+TEAM_FIX = {"WSH": "WAS", "JAC": "JAX", "LA": "LAR", "LVR": "LV", "GBP": "GB", "KCC": "KC", "NOS": "NO", "NEP": "NE",
+            "SFO": "SF", "TBB": "TB", "ARZ": "ARI", "BLT": "BAL", "CLV": "CLE", "HST": "HOU"}
 def tm(t): return TEAM_FIX.get(t, t)
 
 def phi(x): return 0.5 * (1 + math.erf(x / math.sqrt(2)))
@@ -59,8 +71,38 @@ def classic_groups():
     out.sort(key=lambda g: (g["start"], g["name"] != "Main", -g["games"]))
     return out
 
-def dk_players(dg):
-    txt = get(f"https://www.draftkings.com/lineup/getavailableplayerscsv?contestTypeId=21&draftGroupId={dg}", as_json=False)
+def showdown_groups():
+    """Single-game Showdown Captain Mode draft groups (GameTypeId 96) starting within 6 days."""
+    lobby = get("https://www.draftkings.com/lobby/getcontests?sport=NFL")
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    out = []
+    for g in lobby["DraftGroups"]:
+        if g.get("GameTypeId") != 96 or g.get("GameCount") != 1:
+            continue
+        start = datetime.fromisoformat(g["StartDateEst"].split(".")[0])
+        if (start - now).days > 6:
+            continue
+        name = (g.get("ContestStartTimeSuffix") or "").strip().strip("()").strip() or "Showdown"
+        out.append(dict(id=g["DraftGroupId"], name=name, start=g["StartDateEst"][:16], games=1,
+                        featured=g.get("DraftGroupTag") == "Featured", type="showdown", contestTypeId=g.get("ContestTypeId") or 96))
+    out.sort(key=lambda g: g["start"])
+    return out
+
+def dk_showdown_players(dg, ctype=96):
+    """Showdown CSV lists every player twice (CPT at 1.5x salary, FLEX): merge into one record with cptId/cptSalary."""
+    rows = dk_players(dg, ctype)
+    flex = {(r["name"], r["team"], r["pos"]): r for r in rows if r["slot"] == "FLEX"}
+    out = []
+    for r in rows:
+        if r["slot"] != "CPT": continue
+        f = flex.get((r["name"], r["team"], r["pos"]))
+        if not f: continue
+        out.append(dict(f, cptId=r["id"], cptSalary=r["salary"]))
+    for p in out: p.pop("slot", None)
+    return out
+
+def dk_players(dg, ctype=21):
+    txt = get(f"https://www.draftkings.com/lineup/getavailableplayerscsv?contestTypeId={ctype}&draftGroupId={dg}", as_json=False)
     rows = list(csv.DictReader(io.StringIO(txt)))
     out = []
     for r in rows:
@@ -72,11 +114,17 @@ def dk_players(dg):
         out.append(dict(id=int(r["ID"]), name=r["Name"].strip(), pos=r["Position"], team=team, opp=opp,
                         home=team == home, salary=int(r["Salary"]), game=f"{away}@{home}", kickoff=f"{date} {time}",
                         dkavg=float(r["AvgPointsPerGame"] or 0), status=(r["Status"] or "").strip()))
+        if ctype != 21: out[-1]["slot"] = r["Roster Position"]
     return out
 
 # ---------- Sleeper (Rotowire) ----------
 def dk_from_stats(s, pos):
     g = lambda k: float(s.get(k) or 0)
+    if pos == "K":  # DK kicker: FG 0-39 3, 40-49 4, 50+ 5, XP 1
+        if "kpts" in s: return g("kpts")
+        short = g("fgm_0_19") + g("fgm_20_29") + g("fgm_30_39")
+        if not short and not g("fgm_40_49") and not g("fgm_50p"): short = g("fgm")
+        return 3 * short + 4 * g("fgm_40_49") + 5 * g("fgm_50p") + g("xpm")
     if pos == "DEF":
         pa = g("pts_allow")
         bands = [(0, 0.5, 10), (0.5, 6.5, 7), (6.5, 13.5, 4), (13.5, 20.5, 1), (20.5, 27.5, 0), (27.5, 34.5, -1), (34.5, 99, -4)]
@@ -97,7 +145,7 @@ def dk_from_stats(s, pos):
 def sleeper_proj(week):
     """Returns {(name|DST, team, game_date): pts} and {(team, game_date): week}."""
     url = (f"https://api.sleeper.app/projections/nfl/{SEASON}/{week}?season_type=regular"
-           "&position%5B%5D=QB&position%5B%5D=RB&position%5B%5D=WR&position%5B%5D=TE&position%5B%5D=DEF")
+           "&position%5B%5D=QB&position%5B%5D=RB&position%5B%5D=WR&position%5B%5D=TE&position%5B%5D=DEF&position%5B%5D=K")
     out, team_week = {}, {}
     for r in get(url):
         p = r.get("player") or {}
@@ -116,10 +164,11 @@ def sleeper_proj(week):
 ESPN_TEAMS = {1:"ATL",2:"BUF",3:"CHI",4:"CIN",5:"CLE",6:"DAL",7:"DEN",8:"DET",9:"GB",10:"TEN",11:"IND",12:"KC",13:"LV",14:"LAR",
               15:"MIA",16:"MIN",17:"NE",18:"NO",19:"NYG",20:"NYJ",21:"PHI",22:"ARI",23:"PIT",24:"LAC",25:"SF",26:"SEA",27:"TB",
               28:"WAS",29:"CAR",30:"JAX",33:"BAL",34:"HOU"}
+ESPN_IDS = {}  # ESPN athlete id -> (name key, team, position id); filled by espn_proj, used by props_proj
 def espn_proj(week):
-    flt = {"players": {"filterSlotIds": {"value": [0, 2, 4, 6, 16]},
+    flt = {"players": {"filterSlotIds": {"value": [0, 2, 4, 6, 16, 17]},
                        "filterStatsForTopScoringPeriodIds": {"value": 2, "additionalValue": [f"00{SEASON}", f"10{SEASON}", f"11{SEASON}{week}"]},
-                       "limit": 1000, "sortPercOwned": {"sortPriority": 1, "sortAsc": False}}}
+                       "limit": 1500, "sortPercOwned": {"sortPriority": 1, "sortAsc": False}}}
     url = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/{SEASON}/segments/0/leaguedefaults/3?scoringPeriodId={week}&view=kona_player_info"
     d = get(url, {"X-Fantasy-Filter": json.dumps(flt)})
     out = {}
@@ -127,6 +176,7 @@ def espn_proj(week):
         p = e["player"]
         team = ESPN_TEAMS.get(p.get("proTeamId"))
         if not team: continue
+        ESPN_IDS[p["id"]] = ("DST" if p.get("defaultPositionId") == 16 else norm(p["fullName"]), team, p.get("defaultPositionId"))
         proj = next((s.get("appliedTotal") for s in p.get("stats", [])
                      if s.get("scoringPeriodId") == week and s.get("statSourceId") == 1 and s.get("statSplitTypeId") == 1), None)
         if proj is None: continue
@@ -177,35 +227,22 @@ def _num(v):
     except Exception: return 0.0
 
 def fantasypros_proj(week):
-    """FantasyPros expert-consensus stat projections -> DK points. {(name|DST, team, week): pts}"""
+    """FantasyPros expert consensus. The stat-projection tables now show only the top 10 rows without a login, so use the
+    weekly ECR rankings pages, which embed every ranked player with ECR-implied points (r2p_pts, PPR) -> DK.
+    {(name|DST, team, week): pts}"""
     out = {}
-    cols = {  # (group, label) -> sleeper-style stat key
-        "qb": {("PASSING","YDS"):"pass_yd", ("PASSING","TDS"):"pass_td", ("PASSING","INTS"):"pass_int",
-               ("RUSHING","YDS"):"rush_yd", ("RUSHING","TDS"):"rush_td", ("MISC","FL"):"fum_lost"},
-        "rb": {("RUSHING","YDS"):"rush_yd", ("RUSHING","TDS"):"rush_td", ("RECEIVING","REC"):"rec",
-               ("RECEIVING","YDS"):"rec_yd", ("RECEIVING","TDS"):"rec_td", ("MISC","FL"):"fum_lost"},
-        "wr": {("RECEIVING","REC"):"rec", ("RECEIVING","YDS"):"rec_yd", ("RECEIVING","TDS"):"rec_td",
-               ("RUSHING","YDS"):"rush_yd", ("RUSHING","TDS"):"rush_td", ("MISC","FL"):"fum_lost"},
-        "te": {("RECEIVING","REC"):"rec", ("RECEIVING","YDS"):"rec_yd", ("RECEIVING","TDS"):"rec_td", ("MISC","FL"):"fum_lost"},
-    }
-    for pos, cmap in cols.items():
-        t = _read_tables(f"https://www.fantasypros.com/nfl/projections/{pos}.php?week={week}&scoring=PPR")[0]
-        for _, row in t.iterrows():
-            raw = str(row[t.columns[0]]).strip()
-            m = re.match(r"(.+?)\s+([A-Z]{2,3})$", raw)
-            if not m: continue
-            stats = {}
-            for c in t.columns:
-                k = cmap.get((c[0], c[1])) if isinstance(c, tuple) else None
-                if k: stats[k] = _num(row[c])
-            out[(norm(m.group(1)), tm(m.group(2)), week)] = round(dk_from_stats(stats, pos.upper()), 2)
-    t = _read_tables(f"https://www.fantasypros.com/nfl/projections/dst.php?week={week}&scoring=PPR")[0]
-    for _, row in t.iterrows():
-        team = team_from_name(str(row["Player"]))
-        if not team: continue
-        stats = {"sack": _num(row["SACK"]), "int": _num(row["INT"]), "fum_rec": _num(row["FR"]), "def_td": _num(row["TD"]),
-                 "safe": _num(row["SAFETY"]), "pts_allow": _num(row["PA"])}
-        out[("DST", team, week)] = round(dk_from_stats(stats, "DEF"), 2)
+    for pg in ("qb", "ppr-rb", "ppr-wr", "ppr-te", "dst", "k"):
+        html = get(f"https://www.fantasypros.com/nfl/rankings/{pg}.php?week={week}", as_json=False)
+        m = re.search(r"var ecrData = (\{.*?\});\s*\n", html, re.S)
+        if not m: continue
+        d = json.loads(m.group(1))
+        if str(d.get("week")) != str(week): continue
+        for r in d.get("players", []):
+            pos, team = r.get("player_position_id"), tm(r.get("player_team_id") or "")
+            if r.get("r2p_pts") in (None, "") or not team: continue
+            pts = float(r["r2p_pts"])
+            who = "DST" if pos == "DST" else norm(r["player_name"])
+            out[(who, team, week)] = round(pts if pos in ("DST", "K") else pts * 1.04, 2)  # PPR -> add expected DK bonuses
     return out
 
 def cbs_proj(week):
@@ -214,14 +251,16 @@ def cbs_proj(week):
     keymap = {"QB": [("yds  Passing", "pass_yd"), ("td  Touchdow", "pass_td"), ("int  Interce", "pass_int"),
                      ("yds  Rushing", "rush_yd"), ("td  Rushing", "rush_td"), ("fl  Fumbles", "fum_lost")],
               "RB": [("yds  Rushing", "rush_yd"), ("td  Rushing", "rush_td"), ("rec  Recepti", "rec"),
-                     ("yds  Receivi", "rec_yd"), ("td  Receivi", "rec_td"), ("fl  Fumbles", "fum_lost")]}
+                     ("yds  Receivi", "rec_yd"), ("td  Receivi", "rec_td"), ("fl  Fumbles", "fum_lost")],
+              "K": [("1-19  ", "fgm_0_19"), ("20-29  ", "fgm_20_29"), ("30-39  ", "fgm_30_39"), ("40-49  ", "fgm_40_49"),
+                    ("50+  ", "fgm_50p"), ("xpm  ", "xpm")]}
     keymap["WR"] = keymap["TE"] = keymap["RB"]
-    for pos in ("QB", "RB", "WR", "TE"):
+    for pos in ("QB", "RB", "WR", "TE", "K"):
         t = _read_tables(f"https://www.cbssports.com/fantasy/football/stats/{pos}/{SEASON}/{week}/projections/ppr/")[0]
         labels = {c: c[1] for c in t.columns}
         for _, row in t.iterrows():
             raw = re.sub(r"\s+", " ", str(row[t.columns[0]])).strip()
-            m = re.match(r".*?\b(QB|RB|WR|TE) ([A-Z]{2,3}) (.+?) (QB|RB|WR|TE) ([A-Z]{2,3})$", raw)
+            m = re.match(r".*?\b(QB|RB|FB|WR|TE|K) ([A-Z]{2,3}) (.+?) (QB|RB|FB|WR|TE|K) ([A-Z]{2,3})$", raw)
             if not m: continue
             stats = {}
             for c, lab in labels.items():
@@ -229,6 +268,105 @@ def cbs_proj(week):
                     if lab.startswith(prefix) and key not in stats:
                         stats[key] = _num(row[c])
             out[(norm(m.group(3)), tm(m.group(5)), week)] = round(dk_from_stats(stats, pos), 2)
+    t = _read_tables(f"https://www.cbssports.com/fantasy/football/stats/DST/{SEASON}/{week}/projections/ppr/")[0]
+    col = lambda pre: next((c for c in t.columns if c[1].startswith(pre)), None)
+    dmap = {"int": "int  ", "safe": "sfty  ", "sack": "sck  ", "fum_rec": "frec  ", "def_td": "dtd  ", "pts_allow": "pts  "}
+    for _, row in t.iterrows():
+        team = team_from_name(str(row[t.columns[0]]))
+        if not team: continue
+        stats = {k: _num(row[col(pre)]) for k, pre in dmap.items() if col(pre) is not None}
+        out[("DST", team, week)] = round(dk_from_stats(stats, "DEF"), 2)
+    return out
+
+def numberfire_proj():
+    """numberFire / FanDuel Research weekly stat projections (current week only) -> DK points.
+    Keyed by opponent instead of week: {(name, team, opp): pts}"""
+    q = ("query($input: ProjectionsInput!) { getProjections(input: $input) { ... on NflSkill { player { name position } "
+         "team { abbreviation } gameInfo { homeTeam { abbreviation } awayTeam { abbreviation } } passingYards passingTouchdowns "
+         "interceptionsThrown rushingYards rushingTouchdowns receptions receivingYards receivingTouchdowns fumLost } } }")
+    body = json.dumps({"query": q, "variables": {"input": {"type": "PPR", "position": "NFL_SKILL", "sport": "NFL"}}}).encode()
+    req = urllib.request.Request("https://fdresearch-api.fanduel.com/graphql", data=body,
+                                 headers={**UA, "content-type": "application/json", "origin": "https://www.fanduel.com"})
+    for attempt in range(4):  # the endpoint intermittently answers 502
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                rows = json.loads(r.read())["data"]["getProjections"]
+            break
+        except Exception:
+            if attempt == 3: raise
+            time.sleep(3 * (attempt + 1))
+    out = {}
+    for r in rows:
+        gi = r.get("gameInfo") or {}
+        team = tm((r.get("team") or {}).get("abbreviation") or "")
+        h, a = (tm(((gi.get(k) or {}).get("abbreviation") or "")) for k in ("homeTeam", "awayTeam"))
+        if not team or not h or not a: continue
+        g = lambda k: float(r.get(k) or 0)
+        stats = {"pass_yd": g("passingYards"), "pass_td": g("passingTouchdowns"), "pass_int": g("interceptionsThrown"),
+                 "rush_yd": g("rushingYards"), "rush_td": g("rushingTouchdowns"), "rec": g("receptions"),
+                 "rec_yd": g("receivingYards"), "rec_td": g("receivingTouchdowns"), "fum_lost": g("fumLost")}
+        out[(norm(r["player"]["name"]), team, a if team == h else h)] = round(dk_from_stats(stats, "X"), 2)
+    return out
+
+def dff_proj():
+    """DailyFantasyFuel DraftKings projections for every upcoming classic + showdown slate. {(name|DST, team, week): pts}"""
+    base = "https://www.dailyfantasyfuel.com"
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    out = {}
+    dates = [d["start_date"] for d in get(f"{base}/data/slates/recent/NFL/draftkings?date={today}&url=")["dates"] if d["start_date"] >= today]
+    for dt in dates:
+        for sl in get(f"{base}/data/slates/recent/NFL/draftkings?date={dt}&url=").get("slates", []):
+            path = "showdown-single-game-projections" if str(sl.get("showdown_flag")) == "1" else "projections"
+            html = get(f"{base}/nfl/{path}/draftkings/{dt}?slate={sl['url']}", as_json=False)
+            for tr in re.findall(r'<tr class="[^"]*projections-listing[^>]*>', html):
+                r = dict(re.findall(r'data-([a-z_0-9]+)=\s*"([^"]*)"', tr))
+                pts = _num(r.get("ppg_proj"))
+                if pts <= 0 or not r.get("week"): continue
+                who = "DST" if r.get("pos") == "DST" else norm(r.get("name", ""))
+                out.setdefault((who, tm(r.get("team", "")), int(r["week"])), pts)
+    return out
+
+PROP_KEYS = {"Total Passing Yards": "pass_yd", "Total Passing Touchdowns": "pass_td", "Total Passing Interceptions": "pass_int",
+             "Total Rushing Yards": "rush_yd", "Total Receiving Yards": "rec_yd", "Total Receptions": "rec",
+             "Total Kicking Points": "kpts"}
+def props_proj(dates):
+    """DraftKings Sportsbook player props (via ESPN's public odds API) -> implied DK points.
+    O/U lines are medians: counts get a Poisson mean shift, yardage a small right-skew bump; TDs come from the TD lines
+    (passing) or league yards-per-TD rates (rushing/receiving). {(name|DST, team, week): pts}"""
+    out = {}
+    for dt in dates:
+        for ev in get(f"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates={dt}").get("events", []):
+            if ev.get("status", {}).get("type", {}).get("state") != "pre": continue
+            eid, wk = ev["id"], (ev.get("week") or {}).get("number")
+            items, page = [], 1
+            while True:
+                try:
+                    d = get(f"https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/{eid}/competitions/{eid}"
+                            f"/odds/100/propBets?lang=en&region=us&limit=1000&page={page}")
+                except Exception:
+                    break  # no props posted for this game yet
+                items += d.get("items", [])
+                if page >= d.get("pageCount", 1): break
+                page += 1
+            lines = {}
+            for it in items:
+                k = PROP_KEYS.get(it.get("type", {}).get("name", "").replace(" (incl. overtime)", ""))
+                v = ((it.get("current") or {}).get("target") or {}).get("value")
+                m = re.search(r"athletes/(\d+)", (it.get("athlete") or {}).get("$ref", ""))
+                if k and v is not None and m: lines.setdefault(int(m.group(1)), {}).setdefault(k, float(v))
+            for aid, L in lines.items():
+                if aid not in ESPN_IDS: continue
+                who, team, pos = ESPN_IDS[aid]
+                if "kpts" in L: out[(who, team, wk)] = round(L["kpts"], 2); continue
+                if not any(k in L for k in ("pass_yd", "rush_yd", "rec_yd")): continue
+                st = {"pass_yd": L.get("pass_yd", 0), "rush_yd": 1.04 * L.get("rush_yd", 0), "rec_yd": 1.04 * L.get("rec_yd", 0)}
+                st["pass_td"] = L["pass_td"] + 0.17 if "pass_td" in L else st["pass_yd"] / 160
+                st["pass_int"] = L["pass_int"] + 0.19 if "pass_int" in L else st["pass_yd"] / 400
+                st["rec"] = L["rec"] + 0.2 if "rec" in L else st["rec_yd"] / (8 if pos == 2 else 12)
+                st["rush_td"] = st["rush_yd"] / (100 if pos == 1 else 115)
+                st["rec_td"] = st["rec_yd"] / 150
+                st["fum_lost"] = 0.05
+                out[(who, team, wk)] = round(dk_from_stats(st, "X"), 2)
     return out
 
 def tuned_weights():
@@ -255,9 +393,9 @@ def archive(slate, picks_path, week):
     except Exception:
         pass
     d = ROOT / f"data/history/w{week}"; d.mkdir(parents=True, exist_ok=True)
-    keep = ("id", "name", "team", "pos", "salary", "proj", "ceil", "src", "status", "game")
-    slim = dict({k: slate[k] for k in ("draftGroupId", "slateName", "start", "week", "updated")},
-                players=[{k: p.get(k) for k in keep} for p in slate["players"] if p["proj"] > 0 or p["salary"] >= 4000])
+    keep = ("id", "name", "team", "pos", "salary", "proj", "ceil", "src", "status", "game", "cptId", "cptSalary")
+    slim = dict({k: slate[k] for k in ("draftGroupId", "slateName", "start", "week", "updated")}, type=slate.get("type", "classic"),
+                players=[{k: p[k] for k in keep if k in p} for p in slate["players"] if p["proj"] > 0 or p["salary"] >= 4000])
     (d / f"slate-{slate['draftGroupId']}.json").write_text(json.dumps(slim, separators=(",", ":")))
     if picks_path.exists():
         (d / "picks.json").write_text(picks_path.read_text())
@@ -269,60 +407,95 @@ def current_week():
     except Exception:
         return None
 
-def build_slate(group, sl, team_week, es, adj, week, fp=None, cb=None):
-    fp, cb = fp or {}, cb or {}
+def _alt(n): return f"{n[0]} {n.split()[-1]}" if n and n != "DST" and " " in n else n
+
+class Source(dict):
+    """Projection dict keyed (name|DST, team, week|opp) with a first-initial + last-name fallback (Josh/Joshua Palmer)."""
+    def __init__(self, d=None):
+        super().__init__(d or {})
+        self.alt = {}
+        for k, v in self.items():
+            ak = (_alt(k[0]),) + k[1:]
+            self.alt[ak] = None if ak in self.alt else v  # ambiguous -> no fallback
+    def look(self, who, team, key):
+        v = self.get((who, team, key))
+        return v if v is not None else self.alt.get((_alt(who), team, key))
+
+def project(p, wk, srcs, W, adj):
+    """Blend every reachable source for one DK player, then apply DK status + overrides.json. Shared by Classic and Showdown."""
+    gdate = datetime.strptime(p["kickoff"].split()[0], "%m/%d/%Y").strftime("%Y-%m-%d")
+    who = "DST" if p["pos"] == "DST" else norm(p["name"])
+    sl = srcs.get("sleeper") or Source()
+    val = {}
+    s = sl.look(who, p["team"], gdate)
+    val["sleeper"] = s if s is not None else sl.look(who, p["team"], f"W{wk}")
+    for k in SOURCES:
+        if k == "sleeper": continue
+        val[k] = (srcs.get(k) or Source()).look(who, p["team"], p["opp"] if k == "numberfire" else wk)
+    if val["espn"] is not None and p["pos"] not in ("DST", "K"):
+        val["espn"] = val["espn"] * 1.04  # ESPN PPR -> add expected DK yardage bonuses (scaled)
+    # weighted blend of every projection source we could reach (weights renormalize if a source is missing)
+    wsum = sum(W[k] for k in SOURCES if val[k] is not None)
+    tot = sum(val[k] * W[k] for k in SOURCES if val[k] is not None)
+    if p["dkavg"] > 0 and wsum: tot += p["dkavg"] * W["dkavg"]; wsum += W["dkavg"]
+    proj = tot / wsum if wsum else 0.0
+    p["src"] = {k: (round(v, 2) if v is not None else None) for k, v in val.items()}
+    p["src"]["dkavg"] = p["dkavg"]
+    mult, note = 1.0, ""
+    if p["status"] in ("O", "IR", "D", "OUT", "PUP", "SUS", "NFI"):
+        mult, note = 0.0, f"DK status {p['status']}"
+    o = adj.get(norm(p["name"]))
+    if o and (not o.get("team") or o["team"] == p["team"]):
+        if o.get("proj") is not None and p["status"] not in ("O", "IR"):
+            proj = float(o["proj"])  # researched projection override
+        mult = mult * o.get("mult", 1.0) if p["status"] not in ("O", "IR") else 0.0
+        note = o.get("note", note)
+    p["proj"] = round(proj * mult, 2)
+    p["note"] = note
+    vol = {"QB": 0.45, "RB": 0.6, "WR": 0.75, "TE": 0.75, "DST": 0.8, "K": 0.6}[p["pos"]]
+    p["ceil"] = round(p["proj"] * (1 + vol) * (o.get("ceil_mult", 1.0) if o else 1.0), 2)  # boom/sleeper ceiling bump
+    return {k for k, v in val.items() if v is not None}
+
+SOURCE_NAMES = ["DraftKings salary CSV", "Sleeper/Rotowire projections", "ESPN Fantasy projections",
+                "FantasyPros expert consensus", "CBS Sports projections", "numberFire/FanDuel Research projections",
+                "DailyFantasyFuel projections", "DraftKings Sportsbook player props (via ESPN)", "ESPN/Vegas lines",
+                "Claude's multi-site injury, news & DFS research (overrides.json, picks.json)"]
+
+def build_slate(group, srcs, team_week, adj, week):
     W = tuned_weights()
-    dg = group["id"]
-    players = dk_players(dg)
+    dg, sd = group["id"], group.get("type") == "showdown"
+    players = dk_showdown_players(dg, group.get("contestTypeId", 96)) if sd else dk_players(dg)
     dates = sorted({datetime.strptime(p["kickoff"].split()[0], "%m/%d/%Y").strftime("%Y%m%d") for p in players})
     games = vegas(dates)
-    matched = {"sleeper": 0, "espn": 0, "fantasypros": 0, "cbs": 0}
+    matched = {k: 0 for k in SOURCES}
+    wks = []
     for p in players:
         gdate = datetime.strptime(p["kickoff"].split()[0], "%m/%d/%Y").strftime("%Y-%m-%d")
-        who = "DST" if p["pos"] == "DST" else norm(p["name"])
-        wk = team_week.get((p["team"], gdate), week)
-        s = sl.get((who, p["team"], gdate))
-        if s is None: s = sl.get((who, p["team"], f"W{wk}"))
-        e = es.get((who, p["team"], wk))
-        if s is not None: matched["sleeper"] += 1
-        if e is not None:
-            matched["espn"] += 1
-            if p["pos"] != "DST":  # ESPN PPR -> add expected DK yardage bonuses (scaled)
-                e = e * 1.04
-        f = fp.get((who, p["team"], wk)); c = cb.get((who, p["team"], wk))
-        if f is not None: matched["fantasypros"] += 1
-        if c is not None: matched["cbs"] += 1
-        # weighted blend of every projection source we could reach (weights renormalize if a source is missing)
-        srcs, wts = [], []
-        if s is not None: srcs.append(s); wts.append(W["sleeper"])
-        if e is not None: srcs.append(e); wts.append(W["espn"])
-        if f is not None: srcs.append(f); wts.append(W["fantasypros"])
-        if c is not None: srcs.append(c); wts.append(W["cbs"])
-        if p["dkavg"] > 0 and srcs: srcs.append(p["dkavg"]); wts.append(W["dkavg"])
-        proj = sum(x * w for x, w in zip(srcs, wts)) / sum(wts) if wts else 0.0
-        p["src"] = {"sleeper": s, "espn": round(e, 2) if e is not None else None, "fantasypros": f, "cbs": c, "dkavg": p["dkavg"]}
-        mult, note = 1.0, ""
-        if p["status"] in ("O", "IR", "D", "OUT", "PUP", "SUS", "NFI"):
-            mult, note = 0.0, f"DK status {p['status']}"
-        o = adj.get(norm(p["name"]))
-        if o and (not o.get("team") or o["team"] == p["team"]):
-            if o.get("proj") is not None and p["status"] not in ("O", "IR"):
-                proj = float(o["proj"])  # researched projection override
-            mult = mult * o.get("mult", 1.0) if p["status"] not in ("O", "IR") else 0.0
-            note = o.get("note", note)
-        p["proj"] = round(proj * mult, 2)
-        p["note"] = note
-        vol = {"QB": 0.45, "RB": 0.6, "WR": 0.75, "TE": 0.75, "DST": 0.8}[p["pos"]]
-        p["ceil"] = round(p["proj"] * (1 + vol) * (o.get("ceil_mult", 1.0) if o else 1.0), 2)  # boom/sleeper ceiling bump
+        wk = team_week.get((p["team"], gdate), week); wks.append(wk)
+        for k in project(p, wk, srcs, W, adj): matched[k] += 1
         g = games.get(p["game"])
         p["implied"] = g["implied"].get(p["team"]) if g else None
-    return dict(updated=datetime.now(timezone.utc).isoformat(timespec="minutes"), week=week, season=SEASON,
-                draftGroupId=dg, slateName=group["name"], start=group["start"],
+    return dict(updated=datetime.now(timezone.utc).isoformat(timespec="minutes"), week=min(wks or [week]), season=SEASON,
+                type="showdown" if sd else "classic", draftGroupId=dg, slateName=group["name"], start=group["start"],
                 games=[games[k] for k in sorted({p["game"] for p in players}) if k in games],
-                players=sorted(players, key=lambda p: -p["proj"]), matched=matched,
-                sources=["DraftKings salary CSV", "Sleeper/Rotowire projections", "ESPN Fantasy projections",
-                         "FantasyPros expert consensus", "CBS Sports projections",
-                         "ESPN/Vegas lines", "Claude's multi-site injury, news & DFS research (overrides.json, picks.json)"])
+                players=sorted(players, key=lambda p: -p["proj"]), matched=matched, sources=SOURCE_NAMES)
+
+def fetch_sources(week, dates):
+    """Every projection source, each isolated so one failure never breaks the build."""
+    raw = {k: {} for k in SOURCES}
+    team_week = {}
+    for w in (week, week + 1):
+        for k, fn in (("fantasypros", fantasypros_proj), ("cbs", cbs_proj), ("espn", espn_proj)):
+            try: raw[k].update(fn(w))
+            except Exception as e: print(k, "failed", w, e, file=sys.stderr)
+        try:
+            s1, t1 = sleeper_proj(w); raw["sleeper"].update(s1); team_week.update(t1)
+        except Exception as e: print("sleeper failed", w, e, file=sys.stderr)
+    for k, fn in (("numberfire", numberfire_proj), ("dff", dff_proj), ("props", lambda: props_proj(dates))):
+        try: raw[k].update(fn())
+        except Exception as e: print(k, "failed", e, file=sys.stderr)
+    for k, v in raw.items(): print(f"source {k}: {len(v)} projections", file=sys.stderr)
+    return {k: Source(v) for k, v in raw.items()}, team_week
 
 def main():
     ap = argparse.ArgumentParser()
@@ -331,39 +504,39 @@ def main():
     a = ap.parse_args()
     week = a.week or current_week()
     if not week: sys.exit("could not detect NFL week; pass --week")
-    groups = classic_groups()
+    groups = [dict(g, type="classic") for g in classic_groups()]
+    try: groups += showdown_groups()
+    except Exception as e: print("showdown lobby failed", e, file=sys.stderr)
     if a.draft_group: groups = [g for g in groups if g["id"] in a.draft_group]
-    if not groups: sys.exit("no upcoming DraftKings Classic slates found")
-    sl, team_week, es, fp, cb = {}, {}, {}, {}, {}
-    for w in (week, week + 1):
-        try: fp.update(fantasypros_proj(w))
-        except Exception as e: print("fantasypros failed", w, e, file=sys.stderr)
-        try: cb.update(cbs_proj(w))
-        except Exception as e: print("cbs failed", w, e, file=sys.stderr)
-        try:
-            s1, t1 = sleeper_proj(w); sl.update(s1); team_week.update(t1)
-        except Exception as e: print("sleeper failed", w, e, file=sys.stderr)
-        try: es.update(espn_proj(w))
-        except Exception as e: print("espn failed", w, e, file=sys.stderr)
+    if not groups: sys.exit("no upcoming DraftKings slates found")
+    dates = sorted({(datetime.fromisoformat(g["start"]) + timedelta(days=d)).strftime("%Y%m%d") for g in groups for d in range(5)})
+    srcs, team_week = fetch_sources(week, dates)
     ov = json.loads((ROOT / "data/overrides.json").read_text())
     adj = {norm(k): v for k, v in {**ov.get("players", {}), **ov.get("boosts", {})}.items()}
     outdir = ROOT / "data/slates"; outdir.mkdir(parents=True, exist_ok=True)
     index = []
+    try: old_index = json.loads((outdir / "index.json").read_text())["slates"]
+    except Exception: old_index = []
+    main_id = next((x["id"] for x in groups if x["type"] == "classic" and x["name"] == "Main"), None)
     for g in groups:
         try:
-            slate = build_slate(g, sl, team_week, es, adj, week, fp, cb)
+            slate = build_slate(g, srcs, team_week, adj, week)
         except Exception as e:
-            print("slate failed", g, e, file=sys.stderr); continue
+            print("slate failed", g, e, file=sys.stderr)
+            prev = next((i for i in old_index if i["id"] == g["id"]), None)
+            if prev and (outdir / f"{g['id']}.json").exists(): index.append(prev)  # keep the last good build
+            continue
         if not slate["players"]:
             print(f"{g['name']} ({g['id']}): no players yet, skipped", file=sys.stderr); continue
         (outdir / f"{g['id']}.json").write_text(json.dumps(slate, separators=(",", ":")))
-        index.append(dict(g, players=len(slate["players"]), matched=slate["matched"]))
-        archive(slate, ROOT / "data/picks.json", week)
-        print(f"{g['name']} ({g['id']}): {len(slate['players'])} players, matched {slate['matched']}", file=sys.stderr)
-        if g["id"] == next((x["id"] for x in groups if x["name"] == "Main"), None):
+        index.append(dict({k: v for k, v in g.items() if k != "contestTypeId"}, players=len(slate["players"]), matched=slate["matched"]))
+        archive(slate, ROOT / "data/picks.json", slate["week"])  # snapshot under the slate's own NFL week for grading
+        print(f"{g['type']} {g['name']} ({g['id']}): {len(slate['players'])} players, matched {slate['matched']}", file=sys.stderr)
+        if g["id"] == main_id:
             (ROOT / "data/slate.json").write_text(json.dumps(slate, separators=(",", ":")))
-    # default = first upcoming Main slate, else first slate
-    default = next((i["id"] for i in index if i["name"] == "Main"), index[0]["id"] if index else None)
+    # default = first upcoming Main Classic slate, else first Classic slate, else first slate
+    classic = [i for i in index if i.get("type", "classic") == "classic"]
+    default = next((i["id"] for i in classic if i["name"] == "Main"), (classic or index)[0]["id"] if index else None)
     keep = {f"{i['id']}.json" for i in index}
     for f in outdir.glob("*.json"):
         if f.name != "index.json" and f.name not in keep: f.unlink()

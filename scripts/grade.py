@@ -21,6 +21,8 @@ HIST = ROOT / "data/history"
 
 def dk_actual(s, pos):
     g = lambda k: float(s.get(k) or 0)
+    if pos == "K":
+        return round(3 * (g("fgm_0_19") + g("fgm_20_29") + g("fgm_30_39")) + 4 * g("fgm_40_49") + 5 * g("fgm_50p") + g("xpm"), 2)
     if pos == "DEF":
         pa = g("pts_allow")
         pa_pts = 10 if pa == 0 else 7 if pa <= 6 else 4 if pa <= 13 else 1 if pa <= 20 else 0 if pa <= 27 else -1 if pa <= 34 else -4
@@ -35,7 +37,7 @@ def dk_actual(s, pos):
 
 def actuals(week):
     url = (f"https://api.sleeper.app/stats/nfl/{SEASON}/{week}?season_type=regular"
-           "&position%5B%5D=QB&position%5B%5D=RB&position%5B%5D=WR&position%5B%5D=TE&position%5B%5D=DEF")
+           "&position%5B%5D=QB&position%5B%5D=RB&position%5B%5D=WR&position%5B%5D=TE&position%5B%5D=DEF&position%5B%5D=K")
     out = {}
     for r in get(url):
         p = r.get("player") or {}
@@ -61,6 +63,26 @@ def best_lineup(players, key):
     return [P[i] for i in range(len(P)) if r.x[i] > 0.5]
 
 
+def best_showdown(players, key):
+    """Exact max of `key` under DK Showdown rules: 1 CPT (1.5x pts, cptSalary) + 5 FLEX, both teams, $50K."""
+    import numpy as np
+    from scipy.optimize import milp, LinearConstraint, Bounds
+    P = [p for p in players if p.get(key) is not None and p.get("cptSalary")]
+    n = len(P)
+    if n < 6: return None
+    v = np.array([float(p[key]) for p in P])
+    eye = np.eye(n)
+    A = [np.r_[[p["cptSalary"] for p in P], [p["salary"] for p in P]], np.r_[np.ones(n), np.zeros(n)], np.r_[np.zeros(n), np.ones(n)]]
+    lo, hi = [0, 1, 5], [50000, 1, 5]
+    for t in {p["team"] for p in P}:
+        m = np.array([1.0 if p["team"] == t else 0.0 for p in P]); A.append(np.r_[m, m]); lo.append(1); hi.append(5)
+    A = np.vstack(A + [np.hstack([eye, eye])]); lo += [0] * n; hi += [1] * n
+    r = milp(-np.r_[1.5 * v, v], constraints=LinearConstraint(A, lo, hi), integrality=np.ones(2 * n), bounds=Bounds(0, 1))
+    if not r.success: return None
+    cpt = [dict(P[i], cpt=True) for i in range(n) if r.x[i] > 0.5]
+    return cpt + [P[i] for i in range(n) if r.x[n + i] > 0.5]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int)
@@ -78,6 +100,8 @@ def main():
     results = {"week": week, "graded": datetime.now(timezone.utc).isoformat(timespec="minutes"), "slates": []}
     seen_players = set()
     for f in sorted(wdir.glob("slate-*.json")):
+        if any((HIST / f"w{w}" / f.name).exists() for w in (week + 1, week + 2)):
+            continue  # older builds filed next week's slates under the current week; the real snapshot lives in that week
         sl = json.loads(f.read_text())
         P = sl["players"]
         for p in P:
@@ -106,13 +130,18 @@ def main():
                 if m: out.append({"name": m["name"], "salary": m["salary"], "proj": m["proj"], "actual": m["actual"],
                                   "value_x": round((m["actual"] or 0) / (m["salary"] / 1000), 2)})
             return out
-        mx = best_lineup([p for p in P if p.get("proj", 0) > 0], "proj")
-        opt = best_lineup(played, "actual")
+        sd = sl.get("type") == "showdown"
+        best = best_showdown if sd else best_lineup
+        mult = lambda p: 1.5 if p.get("cpt") else 1.0
+        sal = lambda p: p["cptSalary"] if p.get("cpt") else p["salary"]
+        tag = lambda p: ("CPT " if p.get("cpt") else "") + p["name"]
+        mx = best([p for p in P if p.get("proj", 0) > 0], "proj")
+        opt = best(played, "actual")
         results["slates"].append({
-            "id": sl["draftGroupId"], "name": sl.get("slateName"),
-            "maxProjLineup": {"proj": round(sum(p["proj"] for p in mx), 1), "actual": round(sum(p["actual"] or 0 for p in mx), 1),
-                              "players": [p["name"] for p in mx]} if mx else None,
-            "optimalLineup": {"actual": round(sum(p["actual"] for p in opt), 1), "players": [f"{p['name']} ${p['salary']}" for p in opt]} if opt else None,
+            "id": sl["draftGroupId"], "name": sl.get("slateName"), "type": sl.get("type", "classic"),
+            "maxProjLineup": {"proj": round(sum(p["proj"] * mult(p) for p in mx), 1), "actual": round(sum((p["actual"] or 0) * mult(p) for p in mx), 1),
+                              "players": [tag(p) for p in mx]} if mx else None,
+            "optimalLineup": {"actual": round(sum(p["actual"] * mult(p) for p in opt), 1), "players": [f"{tag(p)} ${sal(p)}" for p in opt]} if opt else None,
             "mustPlays": grade_list(name_pk.get("mustPlays")), "core": grade_list(name_pk.get("core")),
             "sleepers": grade_list(name_pk.get("sleepers")), "fades": grade_list(name_pk.get("fades")),
             "boomPlayers": [{"name": p["name"], "pos": p["pos"], "team": p["team"], "salary": p["salary"], "proj": p["proj"],
