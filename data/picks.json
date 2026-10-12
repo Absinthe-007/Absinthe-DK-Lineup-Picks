@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T18:39:04Z",
+  "updated": "2026-10-12T22:58:00Z",
   "week": 5,
   "sources": [
     "NBC Sports/Rotoworld",
@@ -238,7 +238,7 @@
           "name": "Keon Coleman",
           "team": "BUF",
           "pos": "WR",
-          "why": "$4,600. Full practice; W4 team-high 46 snaps, 78% routes, 23% tgt share, 26.6 DK; 24% tgts/route with Moore off the field. Palmer OUT, Moore ~50/50 (Rotoworld 'unlikely'); +250 TD."
+          "why": "$4,600. Full practice; W4 team-high 46 snaps, 78% routes, 23% tgt share, 26.6 DK; 24% tgts/route with Moore off the field. Palmer OUT, Moore INACTIVE (official); +250 TD."
         }
       ],
       "core": [
@@ -353,7 +353,7 @@
           "name": "Greg Dortch",
           "team": "BUF",
           "pos": "WR",
-          "why": "$3,000. ONLY if Moore is inactive (FantasyLife/RotoGrinders punt).",
+          "why": "$3,000. Moore INACTIVE (Palmer OUT) - steps into WR3 snaps; cheap BUF stack piece in a 54.5 total.",
           "boom": "medium"
         }
       ],
@@ -382,13 +382,9 @@
         {
           "name": "Blake Corum",
           "why": "15% snaps W4, +317 TD"
-        },
-        {
-          "name": "DJ Moore",
-          "why": "Q shoulder, DNP-DNP-limited, no props posted; left early in 2 of 4 games"
         }
       ],
-      "notes": "Deep-research refresh (Mon afternoon, 50+ sources). MNF BUF@LAR 54.5, LAR -3.5 (opened -3/53.5; 88% of money on LAR). TNF SEA@DEN moved to SEA -3 / 40.5 (opened -1.5 / 43); Thursday Denver forecast ~50F, breezy, 40% showers (NWS) - slight under lean. DJ Moore is a true GTD: check Bills inactives ~6:45 ET - if OUT, Coleman/Kincaid/Dortch bump; if active, Coleman dips slightly. Charbonnet (PUP) not expected to play TNF; DEN CBs Surtain/Moss and S Hufanga banged up (helps JSN). Projections are estimates."
+      "notes": "Deep-research refresh (Mon afternoon, 50+ sources). MNF BUF@LAR 54.5, LAR -3.5 (opened -3/53.5; 88% of money on LAR). TNF SEA@DEN moved to SEA -3 / 40.5 (opened -1.5 / 43); Thursday Denver forecast ~50F, breezy, 40% showers (NWS) - slight under lean. DJ Moore is a true GTD: check Bills inactives ~6:45 ET - if OUT, Coleman/Kincaid/Dortch bump; if active, Coleman dips slightly. Charbonnet (PUP) not expected to play TNF; DEN CBs Surtain/Moss and S Hufanga banged up (helps JSN). Projections are estimates. Final inactives (Mon 10/12 6:58pm ET): DJ Moore INACTIVE (shoulder); Palmer, Ed Oliver OUT; Parkinson active (cleared). Boosted Coleman (1.1), Dortch (proj 5), Knox, Kincaid, Shakir; Skyler Bell (debut) active. No must-play changes."
     },
     "154941": {
       "mustPlays": [],
@@ -431,7 +427,7 @@
           "name": "Keon Coleman",
           "team": "BUF",
           "pos": "WR",
-          "why": "FLEX $5,600 / CPT $8,400 leverage if Moore OUT. 23% tgt share, 26.6 DK W4."
+          "why": "FLEX $5,600 / CPT $8,400 leverage - Moore INACTIVE + Palmer OUT: de facto WR1. 23% tgt share, 26.6 DK W4."
         },
         {
           "name": "Harrison Mevis",
@@ -479,7 +475,14 @@
           "name": "Greg Dortch",
           "team": "BUF",
           "pos": "WR",
-          "why": "FLEX $800. Only if Moore is inactive - salary saver that frees Allen CPT + Puka + Kyren.",
+          "why": "FLEX $800. Moore INACTIVE - WR3 snaps; salary saver that frees Allen CPT + Puka + Kyren.",
+          "boom": "high"
+        },
+        {
+          "name": "Skyler Bell",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "FLEX $200. Rookie debut, active with Moore + Palmer out; min-salary punt to fit stars.",
           "boom": "medium"
         }
       ],
@@ -502,15 +505,11 @@
           "why": "DST vs BUF offense 2nd in EPA/play"
         },
         {
-          "name": "DJ Moore",
-          "why": "Q shoulder, ~50/50, early-exit risk; no props"
-        },
-        {
           "name": "Khalil Shakir",
           "why": "$7,000 vs tough slot CB Josh Wallace; ~10.7 DK implied"
         }
       ],
-      "notes": "Showdown: 1 CPT (1.5x pts, 1.5x salary) + 5 FLEX, $50K. Consensus script Rams 27-30, Bills 23-24, pass-leaning shootout (LAR 6th in PROE). Must plays CPT Allen + Puka + Kyren = $38,900, leaving $11,100 for 3 FLEX (e.g. Coleman 5,600 + Higbee 4,400 + Dortch 800 = $49,700). If Moore is ruled OUT (~6:45 ET), Coleman CPT and Dortch become strong leverage. Projections are estimates."
+      "notes": "Showdown: 1 CPT (1.5x pts, 1.5x salary) + 5 FLEX, $50K. Consensus script Rams 27-30, Bills 23-24, pass-leaning shootout (LAR 6th in PROE). Must plays CPT Allen + Puka + Kyren = $38,900, leaving $11,100 for 3 FLEX (e.g. Coleman 5,600 + Higbee 4,400 + Dortch 800 = $49,700). If Moore is ruled OUT (~6:45 ET), Coleman CPT and Dortch become strong leverage. Projections are estimates. Final inactives (Mon 10/12 6:58pm ET): DJ Moore INACTIVE (shoulder); Palmer, Ed Oliver OUT; Parkinson active (cleared). Boosted Coleman (1.1), Dortch (proj 5), Knox, Kincaid, Shakir; Skyler Bell (debut) active. No must-play changes."
     }
   }
 }

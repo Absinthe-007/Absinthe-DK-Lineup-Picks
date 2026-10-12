@@ -1,15 +1,11 @@
 {
   "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; 'ceil_mult' raises a sleeper ceiling; optional 'team' restricts the match.",
-  "updated": "2026-10-12T18:38:20Z",
+  "updated": "2026-10-12T22:58:00Z",
   "week": 5,
   "players": {
     "Joshua Palmer": {
       "mult": 0,
       "note": "OUT (shoulder) - Bills final report"
-    },
-    "DJ Moore": {
-      "mult": 0.45,
-      "note": "Q shoulder/AC: DNP-DNP-limited (non-contact). ~50/50: Rotoworld 'unlikely', RotoGrinders 'likely out' vs RotoBaller/SI 'expected to play'; no props posted; left early in 2 of 4 games. Check 6:45 ET inactives"
     },
     "Zach Charbonnet": {
       "mult": 0,
@@ -79,6 +75,10 @@
     "Sam Darnold": {
       "mult": 0.93,
       "note": "7 TD/6 INT in 3 games since return, 5 sacks W5; ~224.5 pass-yd threshold -> ~13.8 DK; TNF total down to 40.5 (DK)"
+    },
+    "DJ Moore": {
+      "mult": 0,
+      "note": "Inactive - CBS Sports/Rotowire official inactives 10/12 (shoulder)"
     }
   },
   "boosts": {
@@ -104,14 +104,14 @@
       "note": "283.5 pass yds, 2.5 TD (o +130) -> ~20.4 DK, ~40% 300-yd bonus; 51+ att in 2 straight; BUF 27th EPA/dropback, 10 pass TD allowed"
     },
     "Keon Coleman": {
-      "mult": 1.03,
-      "ceil_mult": 1.25,
-      "note": "Full practice (ankle); W4 team-high 46 snaps, 78% routes, 23% tgt share, 26.6 DK; 24% TPRR with Moore off field; +250 TD. ~1.1 if Moore OUT, 0.95 if active"
+      "mult": 1.1,
+      "ceil_mult": 1.3,
+      "note": "Moore + Palmer OUT: de facto WR1; W4 team-high 46 snaps, 78% routes, 23% tgt share, 24% TPRR with Moore off field, 26.6 DK; +250 TD"
     },
     "Khalil Shakir": {
-      "mult": 1.0,
+      "mult": 1.05,
       "ceil_mult": 1.1,
-      "note": "44.5 yds/4.5 rec, +245 TD -> ~10.7 DK; 7-82 W4; tough slot matchup (Josh Wallace, RotoBaller)"
+      "note": "44.5 yds/4.5 rec, +245 TD -> ~10.7 DK; 7-82 W4; tough slot matchup (Josh Wallace, RotoBaller); Moore inactive -> more volume"
     },
     "Tyler Higbee": {
       "proj": 7.5,
@@ -120,9 +120,9 @@
       "note": "73% routes, 17 tgts last 2 games; +300 TD; Parkinson returns, ESPN 3.5 outlier/CBS 9.6 ignores Parkinson (TheRams.com/SBD)"
     },
     "Dalton Kincaid": {
-      "mult": 1.0,
+      "mult": 1.05,
       "ceil_mult": 1.2,
-      "note": "55.5 yds prop, +203 TD -> ~12.0 DK, but 35 of 59 snaps (Knox 36), 1-7 W4, tgts 14->5 W1-2 vs W3-4"
+      "note": "55.5 yds prop, +203 TD -> ~12.0 DK, but 35 of 59 snaps (Knox 36), 1-7 W4, tgts 14->5 W1-2 vs W3-4; Moore/Palmer OUT -> more 12 personnel/targets"
     },
     "Ty Johnson": {
       "proj": 5.5,
@@ -174,14 +174,15 @@
       "note": "SEA D #2 EPA/play; DEN 24th EPA, 1/12 on 3rd down W5; DEN implied ~18.75"
     },
     "Greg Dortch": {
+      "proj": 5.0,
       "mult": 1.0,
       "ceil_mult": 1.3,
-      "note": "Punt WR only if Moore OUT (FantasyLife/RotoGrinders)"
+      "note": "Moore inactive (Palmer OUT): WR3 snaps; FantasyLife/RotoGrinders punt if Moore OUT"
     },
     "Dawson Knox": {
-      "mult": 1.0,
-      "ceil_mult": 1.2,
-      "note": "Out-snapped Kincaid 36-35 W4; more 12 personnel with WRs thin"
+      "mult": 1.1,
+      "ceil_mult": 1.25,
+      "note": "Out-snapped Kincaid 36-35 W4; Moore + Palmer OUT -> heavier 12 personnel"
     },
     "Harrison Mevis": {
       "mult": 1.03,
@@ -211,6 +212,12 @@
       "mult": 1.0,
       "ceil_mult": 1.25,
       "note": "90% snaps, 5 tgts W5; Football Nation contrarian TD pick"
+    },
+    "Skyler Bell": {
+      "proj": 3.5,
+      "mult": 1.0,
+      "ceil_mult": 1.3,
+      "note": "Rookie 4th-rd WR active for NFL debut (Brady) with Moore + Palmer OUT; rotational WR4/5"
     }
   }
 }
