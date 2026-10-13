@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T22:58:00Z",
+  "updated": "2026-10-13T04:29:53Z",
   "week": 5,
   "sources": [
     "NBC Sports/Rotoworld",
@@ -389,10 +389,74 @@
     "154941": {
       "mustPlays": [],
       "core": [],
-      "sleepers": [],
+      "sleepers": [
+        {
+          "name": "Germie Bernard",
+          "team": "PIT",
+          "pos": "WR",
+          "why": "$4,000: Pittman on IR and Roman Wilson out a few weeks (finger) leave him the WR2 role; 6 catches, 80 yds in W5 (RotoBaller).",
+          "boom": "high"
+        },
+        {
+          "name": "Keon Coleman",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "$4,900: DJ Moore's shoulder keeps recurring (inactive MNF) and Palmer is out; 6-116-1 in W4 as de facto WR1; BUF implied 29.2 at LV (52.5 total).",
+          "boom": "high"
+        },
+        {
+          "name": "Tyler Higbee",
+          "team": "LAR",
+          "pos": "TE",
+          "why": "$3,400: 73% routes, 17 targets last 2 games; LAR 32.5 implied is the slate high vs ARI.",
+          "boom": "medium"
+        },
+        {
+          "name": "Kendre Miller",
+          "team": "NO",
+          "pos": "RB",
+          "why": "$4,600: Etienne on IR until W9; led NO with 10 carries and a TD in W5; NO@NYG 45.5 near pick'em.",
+          "boom": "medium"
+        },
+        {
+          "name": "Kendrick Bourne",
+          "team": "ARI",
+          "pos": "WR",
+          "why": "$4,000: 8 targets/70 yds with Marvin Harrison Jr. inactive; ARI 12.5-pt dogs should be throwing late.",
+          "boom": "medium"
+        },
+        {
+          "name": "Michael Mayer",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$3,200 TE in a 52.5 total; LV 6-pt home dogs vs BUF = pass volume.",
+          "boom": "medium"
+        },
+        {
+          "name": "Kalif Raymond",
+          "team": "CHI",
+          "pos": "WR",
+          "why": "$3,900 piece of the 49.5-total CHI@ATL game (CHI implied 26.2); Caleb Williams expected back.",
+          "boom": "medium"
+        },
+        {
+          "name": "Hunter Henry",
+          "team": "NE",
+          "pos": "TE",
+          "why": "$4,000: 8-106-1 over the last 2 weeks; NE implied 25.2 vs NYJ.",
+          "boom": "medium"
+        },
+        {
+          "name": "Ravens",
+          "team": "BAL",
+          "pos": "DST",
+          "why": "$3,200 vs Deshaun Watson and a CLE backfield missing Judkins (walking boot) and Sanders (hip); CLE implied 18.",
+          "boom": "medium"
+        }
+      ],
       "stacks": [],
       "fades": [],
-      "notes": "Week 6 Main (Sun 10/18): preliminary - full research and picks come in the Sunday 10 AM CT run. Week 5 picks removed so they don't apply here."
+      "notes": "Week 6 Main (Sun 10/18). Sleepers added Tue 10/13 from early-week news (RotoBaller W6 waiver/injury roundup, Vegas totals); must plays, core, stacks and fades come in the Sunday 10 AM CT run after final injury reports."
     },
     "154488": {
       "mustPlays": [

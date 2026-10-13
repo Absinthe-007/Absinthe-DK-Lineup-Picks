@@ -1,24 +1,24 @@
 {
- "updated": "2026-10-12T22:58+00:00",
- "week": 5,
+ "updated": "2026-10-13T04:31+00:00",
+ "week": 6,
  "default": 154941,
  "slates": [
   {
-   "id": 154520,
-   "name": "Mon-Thu",
-   "start": "2026-10-12T20:15",
-   "games": 2,
+   "id": 154940,
+   "name": "Thu-Mon",
+   "start": "2026-10-15T20:15",
+   "games": 14,
    "featured": false,
    "type": "classic",
-   "players": 101,
+   "players": 727,
    "matched": {
-    "sleeper": 100,
-    "espn": 69,
-    "fantasypros": 45,
-    "cbs": 51,
-    "numberfire": 35,
-    "dff": 28,
-    "props": 35
+    "sleeper": 713,
+    "espn": 499,
+    "fantasypros": 232,
+    "cbs": 379,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 37
    }
   },
   {
@@ -32,29 +32,29 @@
    "matched": {
     "sleeper": 502,
     "espn": 354,
-    "fantasypros": 164,
-    "cbs": 268,
+    "fantasypros": 167,
+    "cbs": 269,
     "numberfire": 0,
     "dff": 0,
     "props": 0
    }
   },
   {
-   "id": 154488,
-   "name": "BUF @ LAR",
-   "start": "2026-10-12T20:15",
+   "id": 154947,
+   "name": "SEA @ DEN",
+   "start": "2026-10-15T20:15",
    "games": 1,
    "featured": true,
    "type": "showdown",
-   "players": 49,
+   "players": 56,
    "matched": {
-    "sleeper": 49,
-    "espn": 37,
-    "fantasypros": 32,
-    "cbs": 27,
-    "numberfire": 35,
-    "dff": 30,
-    "props": 21
+    "sleeper": 55,
+    "espn": 36,
+    "fantasypros": 15,
+    "cbs": 28,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 16
    }
   }
  ]
