@@ -101,7 +101,6 @@ body.maxmode #optStack, body.maxmode #optStackRB, body.maxmode #optBB, body.maxm
 body.maxmode #optMust, body.maxmode #optRand, body.maxmode #optExp, body.maxmode #optMinSal, body.maxmode #optUnique, body.maxmode #optCeil{opacity:.4}
 .star.sleeper{color:var(--DST)}
 .chip.boom{background:color-mix(in srgb,var(--DST) 25%,var(--chip));font-size:11px;padding:1px 8px;margin-left:6px}
-body.maxmode #optSleep{opacity:.4}
 body:not(.showdown) .sd-only,body.showdown .classic-only{display:none!important}
 .pos.CPT{background:#d4a017;color:#1a1300}.pos.K{background:#596579}
 .ic.cp{font-size:11px;font-weight:800}.ic.cp.on{background:#d4a017;color:#1a1300;border-color:#d4a017}

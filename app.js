@@ -300,7 +300,7 @@
     for (let i = 0; i < runs.length && remaining > 0; i++) {
       const n = Math.floor(remaining / runs.length) + (i < remaining % runs.length ? 1 : 0); if (!n) continue;
       const pool = players.map(p => { const a = adjusted(p, runs[i].st); return Object.assign({}, p, { proj: a.adj, ceil: a.ceil }); });
-      const sleepMin = base.max ? 0 : +$("#optSleep").value;
+      const sleepMin = +$("#optSleep").value; // max points also keeps Claude's sleepers in (set the slider to 0 for pure max)
       const sleepSet = new Set(sleeperIds.filter(id => !S.excluded.includes(id)));
       const opts = Object.assign({}, base, sdLocks([]), {
         n, excluded: new Set(S.excluded), exposure: base.max ? {} : S.exposure, teamMins: base.max ? {} : runs[i].st.teamMins || {},

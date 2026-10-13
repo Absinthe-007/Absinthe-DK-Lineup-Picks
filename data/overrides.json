@@ -1,6 +1,6 @@
 {
   "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; 'ceil_mult' raises a sleeper ceiling; optional 'team' restricts the match.",
-  "updated": "2026-10-12T22:58:00Z",
+  "updated": "2026-10-13T04:29:53Z",
   "week": 5,
   "players": {
     "Joshua Palmer": {
@@ -77,8 +77,9 @@
       "note": "7 TD/6 INT in 3 games since return, 5 sacks W5; ~224.5 pass-yd threshold -> ~13.8 DK; TNF total down to 40.5 (DK)"
     },
     "DJ Moore": {
-      "mult": 0,
-      "note": "Inactive - CBS Sports/Rotowire official inactives 10/12 (shoulder)"
+      "mult": 0.5,
+      "note": "Inactive for W5 MNF (recurring shoulder sprain); W6 vs LV status TBD - treat as GTD until practice reports",
+      "team": "BUF"
     }
   },
   "boosts": {
@@ -218,6 +219,48 @@
       "mult": 1.0,
       "ceil_mult": 1.3,
       "note": "Rookie 4th-rd WR active for NFL debut (Brady) with Moore + Palmer OUT; rotational WR4/5"
+    },
+    "Germie Bernard": {
+      "mult": 1.12,
+      "note": "Pittman IR + Roman Wilson out (finger, few weeks): WR2 role; 6-80 in W5 (RotoBaller)",
+      "ceil_mult": 1.25,
+      "team": "PIT"
+    },
+    "Kendre Miller": {
+      "mult": 1.08,
+      "note": "Etienne IR to W9; led NO with 10 carries + TD in W5 (RotoBaller)",
+      "ceil_mult": 1.2,
+      "team": "NO"
+    },
+    "Kalif Raymond": {
+      "mult": 1.0,
+      "note": "$3,900 piece of CHI (26.2 implied) in 49.5 total",
+      "ceil_mult": 1.2,
+      "team": "CHI"
+    },
+    "Michael Mayer": {
+      "mult": 1.03,
+      "note": "$3,200 TE in 52.5 total; LV 6-pt dogs = pass volume",
+      "ceil_mult": 1.2,
+      "team": "LV"
+    },
+    "Kendrick Bourne": {
+      "mult": 1.03,
+      "note": "8 tgts/70 yds W5 with Harrison Jr. inactive; ARI 12.5-pt dogs = pass volume",
+      "ceil_mult": 1.2,
+      "team": "ARI"
+    },
+    "Ravens": {
+      "mult": 1.05,
+      "note": "vs Watson; CLE backfield thin (Judkins boot, Sanders hip); CLE implied 18",
+      "ceil_mult": 1.15,
+      "team": "BAL"
+    },
+    "Hunter Henry": {
+      "mult": 1.03,
+      "note": "8-106-1 over last 2 weeks; NE implied 25.2",
+      "ceil_mult": 1.15,
+      "team": "NE"
     }
   }
 }
