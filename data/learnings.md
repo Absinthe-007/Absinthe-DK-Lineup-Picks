@@ -17,6 +17,9 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - Concurrent research runs overwrite each other (last commit wins). Before uploading, re-read data/picks.json and data/overrides.json from main and merge, never blind-replace; keep per-slate entries under "slates".
 - overrides.json applies to every slate (matched by name), so prior-week injury/boost notes leak into the next week's slates. Each run: drop finished-week entries and rewrite notes that cite last week's opponent; give later-week slates a stub picks entry instead of letting a stale "default" apply.
 - Anytime-TD prices are a fast tiebreaker for must plays: shortest-priced RB/QB in the highest total are the floor anchors.
+- Highest total is necessary but not sufficient (W5): optimal lineups mixed the top-total core with cheap QB+pass-catcher stacks from 43-48 total games and a $2,400-2,800 DST. Always surface at least one such mid-total stack and two cheap DSTs as sleepers.
+- Don't fade a bell-cow RB only because props trim him a point or two (W5 Cook 26.8, Corum 16.2); fades need a role/usage reason (snap share falling, committee, injury).
+- Source accuracy (W5): Sleeper MAE 4.9 < blend 5.1 < ESPN 5.3 < CBS 5.5 < FantasyPros 6.8. When broad sources split, lean Sleeper + props; distrust a lone FantasyPros outlier.
 
 ## Week 5 (2026) — pre-game notes
 - Core: Lions–Cardinals 54.5 total. Must plays Gibbs, Brissett, St. Brown, McBride.
@@ -37,3 +40,10 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - sleepers: Broncos 12.0 (3.75x), AJ Barner 5.0 (1.56x), Evan Engram 9.5 (3.39x), Courtland Sutton 9.8 (2.13x), George Holani 6.1 (1.36x), Rashid Shaheed 4.3 (1.07x)
 - Boom players: Isaiah Likely $4300 32.4 pts (proj 12.59), 49ers $2400 18.0 pts (proj 5.21), Drake Maye $6300 42.46 pts (proj 19.05), Packers $2700 18.0 pts (proj 4.69), DeMario Douglas $3500 22.5 pts (proj 7.02), Jameis Winston $4800 29.74 pts (proj 13.51), Jaylen Warren $6700 39.8 pts (proj 20.41), Jets $2700 16.0 pts (proj 7.55), Jayden Daniels $6000 35.26 pts (proj 19.16), Kyle Williams $3100 18.1 pts (proj 4.04)
 - Source MAE so far: numberfire 1.455, dff 2.36, props 3.052, sleeper 4.907, blend 5.121, espn 5.287, cbs 5.485, dkavg 5.959, fantasypros 6.828
+
+### Why (Week 5, written Thu 10/15)
+- Boom players had three shapes: (1) cheap QB-led stacks in MID-total games, not the slate's top total: NE (Maye $6300 42.5 + Douglas $3500 22.5 + K. Williams $3100 18.1), NYG (Winston $4800 29.7 + Likely $4300 32.4 + Nabers $6300 32.1), PIT (Warren $6700 39.8 + Freiermuth $3900 21.5), GB (Love 28.3 + Watson 35.3). (2) Cheap DSTs at $2,400-2,700 (49ers 18, Packers 18, Jets 16) - three of the top-8 value plays. (3) Backup QB / injury-opening pass catchers (Winston starting, Likely and Douglas filling vacated targets).
+- Our top-total core (DET-ARI 54.5: Gibbs 40.7, Brissett 26.3, McBride 21.6) did hit, but every optimal lineup also needed 2+ players from the NE/NYG/PIT/GB mid-tier games we barely touched. Max-points lineup scored 173.6 on Main vs 284.8 optimal; Sun-Mon 181.8 vs 284.9.
+- Must plays: Allen 34.5, Puka 40.7, Kyren 19.6 good; Coleman 7.7 (WR1-by-injury on an elite offense still only got volume, no TD). Fades: Waddle 4.8, Harvey 0.7, Nix 8.9 all correct; Cook (26.8) and Corum (16.2) fades were wrong - props trimmed RBs whose TD equity was underpriced.
+- Sleepers: Broncos DST 12 (3.75x), Engram 9.5, Ty Johnson 11.2, Sutton 9.8 paid; Parkinson 1.3, Kincaid 3.7, Dortch 0, Bell 0 failed (backup TEs/WR4s in crowded rooms are not "injury openings").
+- Weight differently: (a) name 1-2 mid-total (43-48) QB stacks per slate as sleepers, especially a QB <= $6,300 with a TE/WR3 under $4,000; (b) always list 2 cheap DSTs ($2,400-2,800) facing turnover-prone/backup QBs; (c) don't fade a workhorse RB on a modest props trim alone (Cook); (d) among the broad sources Sleeper (MAE 4.9) beat ESPN 5.3/CBS 5.5/FantasyPros 6.8 - when they disagree, lean toward Sleeper/props.
