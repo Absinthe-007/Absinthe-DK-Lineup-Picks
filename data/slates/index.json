@@ -1,44 +1,8 @@
 {
- "updated": "2026-10-18T17:18+00:00",
+ "updated": "2026-10-18T22:59+00:00",
  "week": 6,
- "default": 154944,
+ "default": 154946,
  "slates": [
-  {
-   "id": 154944,
-   "name": "Afternoon Only",
-   "start": "2026-10-18T16:05",
-   "games": 3,
-   "featured": true,
-   "type": "classic",
-   "players": 158,
-   "matched": {
-    "sleeper": 154,
-    "espn": 110,
-    "fantasypros": 96,
-    "cbs": 77,
-    "numberfire": 112,
-    "dff": 83,
-    "props": 46
-   }
-  },
-  {
-   "id": 154945,
-   "name": "Afternoon Turbo",
-   "start": "2026-10-18T16:25",
-   "games": 2,
-   "featured": false,
-   "type": "classic",
-   "players": 107,
-   "matched": {
-    "sleeper": 104,
-    "espn": 72,
-    "fantasypros": 62,
-    "cbs": 53,
-    "numberfire": 75,
-    "dff": 57,
-    "props": 32
-   }
-  },
   {
    "id": 154946,
    "name": "Primetime",
@@ -53,62 +17,8 @@
     "fantasypros": 65,
     "cbs": 54,
     "numberfire": 73,
-    "dff": 50,
-    "props": 28
-   }
-  },
-  {
-   "id": 154956,
-   "name": "ARI @ LAR",
-   "start": "2026-10-18T16:05",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 53,
-   "matched": {
-    "sleeper": 52,
-    "espn": 40,
-    "fantasypros": 36,
-    "cbs": 26,
-    "numberfire": 37,
-    "dff": 27,
-    "props": 16
-   }
-  },
-  {
-   "id": 154957,
-   "name": "BUF @ LV",
-   "start": "2026-10-18T16:25",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 54,
-   "matched": {
-    "sleeper": 54,
-    "espn": 39,
-    "fantasypros": 35,
-    "cbs": 28,
-    "numberfire": 37,
-    "dff": 31,
-    "props": 18
-   }
-  },
-  {
-   "id": 154958,
-   "name": "LAC @ KC",
-   "start": "2026-10-18T16:25",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 58,
-   "matched": {
-    "sleeper": 55,
-    "espn": 37,
-    "fantasypros": 31,
-    "cbs": 29,
-    "numberfire": 38,
-    "dff": 30,
-    "props": 18
+    "dff": 53,
+    "props": 29
    }
   },
   {
@@ -125,8 +35,8 @@
     "fantasypros": 33,
     "cbs": 28,
     "numberfire": 35,
-    "dff": 27,
-    "props": 19
+    "dff": 30,
+    "props": 20
    }
   },
   {
