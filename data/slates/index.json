@@ -1,62 +1,8 @@
 {
- "updated": "2026-10-18T15:58+00:00",
+ "updated": "2026-10-18T17:18+00:00",
  "week": 6,
- "default": 154941,
+ "default": 154944,
  "slates": [
-  {
-   "id": 154941,
-   "name": "Main",
-   "start": "2026-10-18T13:00",
-   "games": 10,
-   "featured": true,
-   "type": "classic",
-   "players": 526,
-   "matched": {
-    "sleeper": 507,
-    "espn": 359,
-    "fantasypros": 311,
-    "cbs": 259,
-    "numberfire": 371,
-    "dff": 270,
-    "props": 152
-   }
-  },
-  {
-   "id": 154943,
-   "name": "Sun-Mon",
-   "start": "2026-10-18T13:00",
-   "games": 12,
-   "featured": false,
-   "type": "classic",
-   "players": 634,
-   "matched": {
-    "sleeper": 613,
-    "espn": 434,
-    "fantasypros": 376,
-    "cbs": 313,
-    "numberfire": 444,
-    "dff": 320,
-    "props": 180
-   }
-  },
-  {
-   "id": 154942,
-   "name": "Early Only",
-   "start": "2026-10-18T13:00",
-   "games": 7,
-   "featured": false,
-   "type": "classic",
-   "players": 366,
-   "matched": {
-    "sleeper": 351,
-    "espn": 249,
-    "fantasypros": 217,
-    "cbs": 182,
-    "numberfire": 259,
-    "dff": 186,
-    "props": 106
-   }
-  },
   {
    "id": 154944,
    "name": "Afternoon Only",
@@ -66,12 +12,12 @@
    "type": "classic",
    "players": 158,
    "matched": {
-    "sleeper": 155,
+    "sleeper": 154,
     "espn": 110,
-    "fantasypros": 94,
+    "fantasypros": 96,
     "cbs": 77,
     "numberfire": 112,
-    "dff": 84,
+    "dff": 83,
     "props": 46
    }
   },
@@ -84,12 +30,12 @@
    "type": "classic",
    "players": 107,
    "matched": {
-    "sleeper": 105,
+    "sleeper": 104,
     "espn": 72,
-    "fantasypros": 61,
+    "fantasypros": 62,
     "cbs": 53,
     "numberfire": 75,
-    "dff": 58,
+    "dff": 57,
     "props": 32
    }
   },
@@ -112,132 +58,6 @@
    }
   },
   {
-   "id": 154949,
-   "name": "CHI @ ATL",
-   "start": "2026-10-18T13:00",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 52,
-   "matched": {
-    "sleeper": 52,
-    "espn": 32,
-    "fantasypros": 30,
-    "cbs": 26,
-    "numberfire": 33,
-    "dff": 27,
-    "props": 17
-   }
-  },
-  {
-   "id": 154950,
-   "name": "NYJ @ NE",
-   "start": "2026-10-18T13:00",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 55,
-   "matched": {
-    "sleeper": 52,
-    "espn": 39,
-    "fantasypros": 34,
-    "cbs": 29,
-    "numberfire": 41,
-    "dff": 31,
-    "props": 18
-   }
-  },
-  {
-   "id": 154951,
-   "name": "CAR @ PHI",
-   "start": "2026-10-18T13:00",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 55,
-   "matched": {
-    "sleeper": 52,
-    "espn": 44,
-    "fantasypros": 34,
-    "cbs": 29,
-    "numberfire": 43,
-    "dff": 29,
-    "props": 16
-   }
-  },
-  {
-   "id": 154952,
-   "name": "PIT @ TB",
-   "start": "2026-10-18T13:00",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 52,
-   "matched": {
-    "sleeper": 50,
-    "espn": 37,
-    "fantasypros": 32,
-    "cbs": 28,
-    "numberfire": 35,
-    "dff": 30,
-    "props": 16
-   }
-  },
-  {
-   "id": 154953,
-   "name": "NO @ NYG",
-   "start": "2026-10-18T13:00",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 61,
-   "matched": {
-    "sleeper": 56,
-    "espn": 38,
-    "fantasypros": 35,
-    "cbs": 29,
-    "numberfire": 34,
-    "dff": 29,
-    "props": 19
-   }
-  },
-  {
-   "id": 154954,
-   "name": "BAL @ CLE",
-   "start": "2026-10-18T13:00",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 55,
-   "matched": {
-    "sleeper": 53,
-    "espn": 38,
-    "fantasypros": 32,
-    "cbs": 28,
-    "numberfire": 38,
-    "dff": 28,
-    "props": 16
-   }
-  },
-  {
-   "id": 154955,
-   "name": "TEN @ IND",
-   "start": "2026-10-18T13:00",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 52,
-   "matched": {
-    "sleeper": 51,
-    "espn": 35,
-    "fantasypros": 34,
-    "cbs": 27,
-    "numberfire": 35,
-    "dff": 26,
-    "props": 18
-   }
-  },
-  {
    "id": 154956,
    "name": "ARI @ LAR",
    "start": "2026-10-18T16:05",
@@ -248,7 +68,7 @@
    "matched": {
     "sleeper": 52,
     "espn": 40,
-    "fantasypros": 35,
+    "fantasypros": 36,
     "cbs": 26,
     "numberfire": 37,
     "dff": 27,
@@ -266,7 +86,7 @@
    "matched": {
     "sleeper": 54,
     "espn": 39,
-    "fantasypros": 34,
+    "fantasypros": 35,
     "cbs": 28,
     "numberfire": 37,
     "dff": 31,
@@ -282,12 +102,12 @@
    "type": "showdown",
    "players": 58,
    "matched": {
-    "sleeper": 56,
+    "sleeper": 55,
     "espn": 37,
     "fantasypros": 31,
     "cbs": 29,
     "numberfire": 38,
-    "dff": 31,
+    "dff": 30,
     "props": 18
    }
   },
