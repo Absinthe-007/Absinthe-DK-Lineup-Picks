@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T15:31:44Z",
+  "updated": "2026-10-18T16:00:00Z",
   "week": 6,
   "sources": [
     "49erswebzone, SF Standard, ArizonaSports, AZCardinals.com (Urban), GoPHNX",
@@ -55,7 +55,13 @@
     "api.weather.gov hourly forecasts + gridpoint gusts (Foxborough, Philadelphia, Tampa, Cleveland, MetLife, Arrowhead, Lambeau, Levi's)",
     "lineups.com, CBS Prisco (score picks, snippets)",
     "nfl.com/injuries (2026 reg6) and NFL.com Sunday injuries-to-monitor",
-    "patriots.com, newyorkjets.com, chargers.com, raiders.com, therams.com, buccaneers.com, philadelphiaeagles.com, neworleanssaints.com, giants.com, packers.com, dallascowboys.com, commanders.com, 49ers.com (official injury reports/trackers/depth charts)"
+    "patriots.com, newyorkjets.com, chargers.com, raiders.com, therams.com, buccaneers.com, philadelphiaeagles.com, neworleanssaints.com, giants.com, packers.com, dallascowboys.com, commanders.com, 49ers.com (official injury reports/trackers/depth charts)",
+    "CBS Sports live Week 6 inactives tracker (10/18)",
+    "Yahoo Sports / team-site inactives posts (TEN-IND, NO-NYG, PIT-TB)",
+    "ESPN core injuries API inactives (10/18 11:3x ET)",
+    "Sleeper players API injury_status (10/18)",
+    "SI Buccaneers OnSI (Tucker inactive)",
+    "NBC Sports/Rotoworld player news (Kamara, Spears active)"
   ],
   "default": {
     "mustPlays": [
@@ -435,6 +441,20 @@
           "pos": "DST",
           "why": "$2,200. NE -5 TO margin, Maye 7 INT; Jets 8 sacks W5; NE LT Campbell playing hurt (ESPN, Rotowire)",
           "boom": "medium"
+        },
+        {
+          "name": "Mo Alie-Cox",
+          "team": "IND",
+          "pos": "TE",
+          "why": "$2,500. Late swap: Tyler Warren INACTIVE -> TE1 snaps in IND's 43.5-total dome game as 6.5-pt fav; min-price TE punt (proj ~4.6)",
+          "boom": "low"
+        },
+        {
+          "name": "Josh Downs",
+          "team": "IND",
+          "pos": "WR",
+          "why": "Late swap: Warren INACTIVE -> slot/middle targets consolidate; props ~11 before bump",
+          "boom": "medium"
         }
       ],
       "stacks": [
@@ -463,7 +483,7 @@
         },
         {
           "name": "Pat Freiermuth",
-          "why": "Added Q (calf) Saturday; props ~8.4 vs 10.6 blend; wind"
+          "why": "Active (calf) but props ~8.4 vs 10.6 blend; wind"
         },
         {
           "name": "Davante Adams",
@@ -478,7 +498,7 @@
           "why": "A.J. Brown back takes the X; Chism's 76% snaps were injury-driven"
         }
       ],
-      "notes": "Sun 10/18 game-day run (12 per-game research agents, 250+ source visits). Key news: Lamar OUT (Huntley), Hurts OUT (McKee) + Barkley OUT, Mayfield OUT (Jalon Daniels), Love (ARI) OUT, Monangai OUT, Breece Hall OUT, Rice OUT, Sean Tucker not expected to play; A.J. Brown + Omar Cooper activated from IR; DeVonta Smith, McConkey, Q. Johnston, Nailor, Concepcion, Ty Johnson cleared; Caleb Williams starts; Najee expected to start over Skattebo; Judkins INACTIVE (McLaughlin lead back); GTDs Tyler Warren (groin, ~50/50), DJ Moore (lean out, 2:55pm), Freiermuth (optimistic). PIT@TB wind NE 15 mph, gusts ~24 - mild passing/kicking downgrade; all other outdoor games calm. Re-check Warren (1pm inactives) and DJ Moore (2:55pm); Downs/K. Allen/Treadwell and Coleman are the swaps."
+      "notes": "Sun 10/18 game-day run (12 per-game research agents, 250+ source visits). Key news: Lamar OUT (Huntley), Hurts OUT (McKee) + Barkley OUT, Mayfield OUT (Jalon Daniels), Love (ARI) OUT, Monangai OUT, Breece Hall OUT, Rice OUT, Sean Tucker not expected to play; A.J. Brown + Omar Cooper activated from IR; DeVonta Smith, McConkey, Q. Johnston, Nailor, Concepcion, Ty Johnson cleared; Caleb Williams starts; Najee expected to start over Skattebo; Judkins INACTIVE (McLaughlin lead back); GTDs Tyler Warren (groin, ~50/50), DJ Moore (lean out, 2:55pm), Freiermuth (optimistic). PIT@TB wind NE 15 mph, gusts ~24 - mild passing/kicking downgrade; all other outdoor games calm. Re-check Warren (1pm inactives) and DJ Moore (2:55pm); Downs/K. Allen/Treadwell and Coleman are the swaps. Final inactives (11:55am ET): Tyler Warren INACTIVE -> Josh Downs/K. Allen/Treadwell up, Mo Alie-Cox TE1 punt; Nick Singleton + Granson inactive (Spears RB2); Sean Tucker inactive. ACTIVE: Caleb Williams, A.J. Brown, Henderson, Olave, Kamara, Freiermuth, Dowdle, Sadiq, Trevor Etienne (debut)."
     },
     "154943": {
       "mustPlays": [
@@ -657,6 +677,20 @@
           "pos": "DST",
           "why": "$2,200. NE -5 TO margin, Maye 7 INT; Jets 8 sacks W5; NE LT Campbell playing hurt (ESPN, Rotowire)",
           "boom": "medium"
+        },
+        {
+          "name": "Mo Alie-Cox",
+          "team": "IND",
+          "pos": "TE",
+          "why": "$2,500. Late swap: Tyler Warren INACTIVE -> TE1 snaps in IND's 43.5-total dome game as 6.5-pt fav; min-price TE punt (proj ~4.6)",
+          "boom": "low"
+        },
+        {
+          "name": "Josh Downs",
+          "team": "IND",
+          "pos": "WR",
+          "why": "Late swap: Warren INACTIVE -> slot/middle targets consolidate; props ~11 before bump",
+          "boom": "medium"
         }
       ],
       "stacks": [
@@ -686,7 +720,7 @@
         },
         {
           "name": "Pat Freiermuth",
-          "why": "Added Q (calf) Saturday; props ~8.4 vs 10.6 blend; wind"
+          "why": "Active (calf) but props ~8.4 vs 10.6 blend; wind"
         },
         {
           "name": "Davante Adams",
@@ -709,7 +743,7 @@
           "why": "Blend inflated by one 123-yd game; props/est ~12"
         }
       ],
-      "notes": "Sun 10/18 game-day run (12 per-game research agents, 250+ source visits). Key news: Lamar OUT (Huntley), Hurts OUT (McKee) + Barkley OUT, Mayfield OUT (Jalon Daniels), Love (ARI) OUT, Monangai OUT, Breece Hall OUT, Rice OUT, Sean Tucker not expected to play; A.J. Brown + Omar Cooper activated from IR; DeVonta Smith, McConkey, Q. Johnston, Nailor, Concepcion, Ty Johnson cleared; Caleb Williams starts; Najee expected to start over Skattebo; Judkins INACTIVE (McLaughlin lead back); GTDs Tyler Warren (groin, ~50/50), DJ Moore (lean out, 2:55pm), Freiermuth (optimistic). PIT@TB wind NE 15 mph, gusts ~24 - mild passing/kicking downgrade; all other outdoor games calm. Re-check Warren (1pm inactives) and DJ Moore (2:55pm); Downs/K. Allen/Treadwell and Coleman are the swaps. MNF: Evans DNP all week (0.78), Bosa OUT, Croskey-Merritt OUT (Rachaad White lead), Diggs GTD."
+      "notes": "Sun 10/18 game-day run (12 per-game research agents, 250+ source visits). Key news: Lamar OUT (Huntley), Hurts OUT (McKee) + Barkley OUT, Mayfield OUT (Jalon Daniels), Love (ARI) OUT, Monangai OUT, Breece Hall OUT, Rice OUT, Sean Tucker not expected to play; A.J. Brown + Omar Cooper activated from IR; DeVonta Smith, McConkey, Q. Johnston, Nailor, Concepcion, Ty Johnson cleared; Caleb Williams starts; Najee expected to start over Skattebo; Judkins INACTIVE (McLaughlin lead back); GTDs Tyler Warren (groin, ~50/50), DJ Moore (lean out, 2:55pm), Freiermuth (optimistic). PIT@TB wind NE 15 mph, gusts ~24 - mild passing/kicking downgrade; all other outdoor games calm. Re-check Warren (1pm inactives) and DJ Moore (2:55pm); Downs/K. Allen/Treadwell and Coleman are the swaps. MNF: Evans DNP all week (0.78), Bosa OUT, Croskey-Merritt OUT (Rachaad White lead), Diggs GTD. Final inactives (11:55am ET): Tyler Warren INACTIVE -> Josh Downs/K. Allen/Treadwell up, Mo Alie-Cox TE1 punt; Nick Singleton + Granson inactive (Spears RB2); Sean Tucker inactive. ACTIVE: Caleb Williams, A.J. Brown, Henderson, Olave, Kamara, Freiermuth, Dowdle, Sadiq, Trevor Etienne (debut)."
     },
     "154942": {
       "mustPlays": [
@@ -873,6 +907,20 @@
           "pos": "DST",
           "why": "$2,800. Shough playing with two broken bones in L hand (Schefter), INT -132, sacked 13x; NO LT Banks IR; Carter expected to play",
           "boom": "medium"
+        },
+        {
+          "name": "Mo Alie-Cox",
+          "team": "IND",
+          "pos": "TE",
+          "why": "$2,500. Late swap: Tyler Warren INACTIVE -> TE1 snaps in IND's 43.5-total dome game as 6.5-pt fav; min-price TE punt (proj ~4.6)",
+          "boom": "low"
+        },
+        {
+          "name": "Josh Downs",
+          "team": "IND",
+          "pos": "WR",
+          "why": "Late swap: Warren INACTIVE -> slot/middle targets consolidate; props ~11 before bump",
+          "boom": "medium"
         }
       ],
       "stacks": [
@@ -900,14 +948,14 @@
         },
         {
           "name": "Pat Freiermuth",
-          "why": "Added Q (calf) Saturday; props ~8.4 vs 10.6 blend; wind"
+          "why": "Active (calf) but props ~8.4 vs 10.6 blend; wind"
         },
         {
           "name": "Davante Adams",
           "why": "Props ~13.4 vs 15.9 blend; Puka (24 tgts) squeezes volume"
         }
       ],
-      "notes": "Early-only (7 games, 1:00pm ET). Highest total CHI@ATL 51.5, then NO@NYG 46.5. Judkins INACTIVE -> McLaughlin. Tyler Warren GTD (groin) - if out, bump Downs/K. Allen/Treadwell."
+      "notes": "Early-only (7 games, 1:00pm ET). Highest total CHI@ATL 51.5, then NO@NYG 46.5. Judkins INACTIVE -> McLaughlin. Final inactives (11:55am ET): Tyler Warren INACTIVE -> Josh Downs/K. Allen/Treadwell up, Mo Alie-Cox TE1 punt; Nick Singleton + Granson inactive (Spears RB2); Sean Tucker inactive. ACTIVE: Caleb Williams, A.J. Brown, Henderson, Olave, Kamara, Freiermuth, Dowdle, Sadiq, Trevor Etienne (debut)."
     },
     "154944": {
       "mustPlays": [
@@ -1385,7 +1433,7 @@
           "why": "Depleted front + CBs"
         }
       ],
-      "notes": "Close dome game (CHI -1.5, 51.5). Bijan or London CPT with CHI bring-backs; Caleb CPT contrarian. Kickers ~7.5-8 DK."
+      "notes": "Close dome game (CHI -1.5, 51.5). Bijan or London CPT with CHI bring-backs; Caleb CPT contrarian. Kickers ~7.5-8 DK. Final inactives (11:55am ET): Caleb Williams ACTIVE/starting; Monangai OUT."
     },
     "154950": {
       "mustPlays": [
@@ -1451,7 +1499,7 @@
           "why": "RB3 with Henderson active"
         }
       ],
-      "notes": "NE -7.5, 43.5, calm. Maye + NE pass catcher main build; Wilson volume for NYJ."
+      "notes": "NE -7.5, 43.5, calm. Maye + NE pass catcher main build; Wilson volume for NYJ. Final inactives (11:55am ET): A.J. Brown + Henderson ACTIVE, Sadiq + Omar Cooper ACTIVE; Breece Hall + Adonai Mitchell INACTIVE."
     },
     "154951": {
       "mustPlays": [
@@ -1517,7 +1565,7 @@
           "why": "Depleted D"
         }
       ],
-      "notes": "CAR -3, 39.5. CAR-controlled low total; PHI short passing via Smith/Goedert."
+      "notes": "CAR -3, 39.5. CAR-controlled low total; PHI short passing via Smith/Goedert. Final inactives (11:55am ET): Trevor Etienne ACTIVE (debut off IR, CPT fade - change-of-pace); Barkley/Hurts OUT, Dillon OUT."
     },
     "154952": {
       "mustPlays": [
@@ -1554,14 +1602,14 @@
           "name": "Darnell Washington",
           "team": "PIT",
           "pos": "TE",
-          "why": "$3,400. More snaps if Freiermuth limited",
+          "why": "$3,400. Blocking TE with 38-51 snaps; Freiermuth active but on a late calf tag",
           "boom": "medium"
         },
         {
           "name": "Rico Dowdle",
           "team": "PIT",
           "pos": "RB",
-          "why": "$7,000. Expected to play, 7.5 carries",
+          "why": "$7,000. ACTIVE (toe), 7.5 carries",
           "boom": "medium"
         }
       ],
@@ -1569,14 +1617,14 @@
       "fades": [
         {
           "name": "Pat Freiermuth",
-          "why": "Late calf Q"
+          "why": "Active (calf cleared) but late Q, props ~8.4; wind"
         },
         {
           "name": "DK Metcalf",
           "why": "4-5 tgts, wind"
         }
       ],
-      "notes": "PIT -1.5, 38.5, NE wind 15 gusts ~24. Run-heavy, FG-friendly; kickers viable."
+      "notes": "PIT -1.5, 38.5, NE wind 15 gusts ~24. Run-heavy, FG-friendly; kickers viable. Final inactives (11:55am ET): Sean Tucker INACTIVE (Josh Williams backup), Mayfield OUT; Freiermuth + Dowdle ACTIVE."
     },
     "154953": {
       "mustPlays": [
@@ -1642,7 +1690,7 @@
           "why": "TD-or-bust"
         }
       ],
-      "notes": "NO -1.5, 46.5, calm. Pass-heavy both sides; Winston-Nabers-Likely with Olave bring-back."
+      "notes": "NO -1.5, 46.5, calm. Pass-heavy both sides; Winston-Nabers-Likely with Olave bring-back. Final inactives (11:55am ET): Kamara + Olave ACTIVE; Theo Johnson OUT."
     },
     "154954": {
       "mustPlays": [
@@ -1701,7 +1749,7 @@
           "why": "Concepcion back"
         }
       ],
-      "notes": "BAL -3, 39.5. Henry + Ravens DST + K Loop correlation."
+      "notes": "BAL -3, 39.5. Henry + Ravens DST + K Loop correlation. Final inactives (11:55am ET): Judkins INACTIVE; Lamar OUT (Huntley); Ja'Kobi Lane not on BAL inactives."
     },
     "154956": {
       "mustPlays": [
@@ -2032,7 +2080,7 @@
           "name": "Josh Downs",
           "team": "IND",
           "pos": "WR",
-          "why": "48.5 yds/4.5 rec, +213 TD -> ~11; up if Warren sits"
+          "why": "Warren INACTIVE -> targets consolidate; 48.5 yds/4.5 rec, +213 TD -> ~12"
         },
         {
           "name": "Carnell Tate",
@@ -2054,7 +2102,7 @@
           "name": "Keenan Allen",
           "team": "IND",
           "pos": "WR",
-          "why": "9 tgts each of last 2",
+          "why": "9 tgts each of last 2; Warren INACTIVE adds volume",
           "boom": "medium"
         },
         {
@@ -2062,6 +2110,20 @@
           "team": "TEN",
           "pos": "DST",
           "why": "Jones 1.7% TD rate",
+          "boom": "medium"
+        },
+        {
+          "name": "Mo Alie-Cox",
+          "team": "IND",
+          "pos": "TE",
+          "why": "$1,200. Warren INACTIVE -> TE1 snaps; red-zone TD-or-bust punt",
+          "boom": "medium"
+        },
+        {
+          "name": "Tyjae Spears",
+          "team": "TEN",
+          "pos": "RB",
+          "why": "Active; Singleton inactive -> clear RB2, trailing-script passing-down work",
           "boom": "medium"
         }
       ],
@@ -2074,13 +2136,9 @@
         {
           "name": "Colts",
           "why": "Low pressure/takeaways"
-        },
-        {
-          "name": "Tyler Warren",
-          "why": "GTD groin - only if confirmed active"
         }
       ],
-      "notes": "IND -6.5, 43.5 dome, TEN slowest pace. Taylor-heavy; K Shrader strong FLEX (5/5 FG W5)."
+      "notes": "IND -6.5, 43.5 dome, TEN slowest pace. Taylor-heavy; K Shrader strong FLEX (5/5 FG W5). Final inactives (11:55am ET): Tyler Warren (groin), Nick Singleton, Kylen Granson, Dulin, Riley Leonard INACTIVE. Spears active."
     },
     "154981": {
       "mustPlays": [],
