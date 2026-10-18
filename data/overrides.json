@@ -1,11 +1,11 @@
 {
   "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; 'ceil_mult' raises a sleeper ceiling; optional 'team' restricts the match.",
-  "updated": "2026-10-18T15:31:44Z",
+  "updated": "2026-10-18T16:00:00Z",
   "week": 6,
   "players": {
     "Caleb Williams": {
       "mult": 0.98,
-      "note": "Hamstring Q but starting (Schefter 10/17, Rapoport Sun AM, ESPN inactives 10/18); props 233.5 yds/1.5 TD/19.5 rush -> ~18",
+      "note": "ACTIVE, starting (hamstring) - CBS 11:36am ET/ESPN inactives 10/18; props 233.5 yds/1.5 TD/19.5 rush -> ~18",
       "team": "CHI"
     },
     "Kyle Monangai": {
@@ -113,8 +113,8 @@
       "proj": 6.0
     },
     "Kenyon Sadiq": {
-      "mult": 0.9,
-      "note": "Concussion Q but FULL Fri; Rapoport 'in line to play' (ESPN 10/18)",
+      "mult": 1.0,
+      "note": "ACTIVE (concussion cleared, full Fri) - ESPN 11:35am ET 10/18",
       "team": "NYJ"
     },
     "Mason Taylor": {
@@ -145,14 +145,14 @@
     },
     "A.J. Brown": {
       "mult": 1.0,
-      "note": "Activated from IR Sat 10/17 (Q ankle); Rapoport/Garafolo: expected to play 'a good amount'; Rotoworld WR2; snap-count risk",
+      "note": "ACTIVE (off IR, ankle) - not on NE inactives (CBS 11:33am ET); Rapoport 'a good amount' of snaps; snap-count risk",
       "team": "NE",
       "proj": 11.5,
       "ceil_mult": 1.2
     },
     "TreVeyon Henderson": {
       "mult": 1.0,
-      "note": "Q ankle, Rapoport likely plays on pitch count; NE elevated no RB (ESPN 10/18)",
+      "note": "ACTIVE (ankle) - CBS 11:33am ET; Rapoport pitch count; NE elevated no RB",
       "team": "NE",
       "proj": 4.0,
       "ceil_mult": 1.3
@@ -334,7 +334,7 @@
     },
     "Sean Tucker": {
       "mult": 0,
-      "note": "Rapoport: not expected to play (quad) - NFL.com/ESPN 10/18",
+      "note": "Inactive (quad) - Bucs inactives/SI 10/18; Josh Williams backup",
       "team": "TB"
     },
     "Bucky Irving": {
@@ -375,7 +375,7 @@
     },
     "Rico Dowdle": {
       "mult": 1.0,
-      "note": "Q toe, Fowler: expected to play; 7.5 carries prop -> ~5.5",
+      "note": "ACTIVE (toe) - not on PIT inactives (SI/Yahoo 10/18); 7.5 carries prop -> ~5.5",
       "team": "PIT"
     },
     "DK Metcalf": {
@@ -384,13 +384,13 @@
       "team": "PIT"
     },
     "Pat Freiermuth": {
-      "mult": 0.85,
-      "note": "Added Q (calf) Sat; Rapoport 'optimistic'; props 36.5 yds/3.5 rec -> ~8.4 (Rotowire 10/18)",
+      "mult": 1.0,
+      "note": "ACTIVE (calf Q cleared) - CBS/ESPN inactives 10/18; props 36.5 yds/3.5 rec -> ~8.4",
       "team": "PIT"
     },
     "Darnell Washington": {
       "mult": 1.0,
-      "note": "More TE snaps if Freiermuth limited; 38-51 snaps W3-5",
+      "note": "Freiermuth ACTIVE -> normal TE2 role; 38-51 snaps W3-5",
       "team": "PIT",
       "ceil_mult": 1.15
     },
@@ -422,13 +422,13 @@
       "ceil_mult": 1.15
     },
     "Chris Olave": {
-      "mult": 0.97,
-      "note": "Illness Q; Rapoport expected to play (10/18); 78.5 yds/6.5 rec, +145 TD -> ~17",
+      "mult": 1.0,
+      "note": "ACTIVE (illness) - Saints inactives/CBS 11:42am ET; 78.5 yds/6.5 rec, +145 TD -> ~17",
       "team": "NO"
     },
     "Alvin Kamara": {
       "mult": 0.9,
-      "note": "Back Q, Rapoport expected to play; 27% snaps W5; props ~7.9",
+      "note": "ACTIVE (back) - Saints inactives/NBC 10/18; timeshare w/ Miller+Donaldson, 27% snaps W5; props ~7.9",
       "team": "NO"
     },
     "Tyler Shough": {
@@ -1134,8 +1134,8 @@
       "team": "WAS"
     },
     "Tyler Warren": {
-      "mult": 0.6,
-      "note": "Groin Q, added late Fri; Fowler: GTD, see how he feels Sun AM (ESPN/Rotoworld 10/18); ~50/50; props 49.5 yds/5.5 rec -> ~12.4 if active",
+      "mult": 0,
+      "note": "Inactive (groin) - CBS inactives tracker 11:34am ET, Yahoo/Colts inactives 10/18",
       "team": "IND"
     },
     "Jonathan Taylor": {
@@ -1144,10 +1144,10 @@
       "team": "IND"
     },
     "Josh Downs": {
-      "mult": 1.0,
-      "note": "48.5 yds/4.5 rec, +213 TD -> ~11; more work if Warren sits (Rotoworld)",
+      "mult": 1.1,
+      "note": "Warren INACTIVE (11:34am ET) -> slot/middle targets consolidate; 48.5 yds/4.5 rec, +213 TD -> ~12",
       "team": "IND",
-      "ceil_mult": 1.1
+      "ceil_mult": 1.15
     },
     "Daniel Jones": {
       "mult": 0.95,
@@ -1155,14 +1155,14 @@
       "team": "IND"
     },
     "Keenan Allen": {
-      "mult": 1.03,
-      "note": "9 tgts each of last 2; Pierce IR, Slayton released; 41.5 yds/4.5 rec -> ~9.8",
+      "mult": 1.07,
+      "note": "Warren INACTIVE -> more targets; 9 tgts each of last 2; 41.5 yds/4.5 rec -> ~10.3",
       "team": "IND",
       "ceil_mult": 1.15
     },
     "Laquon Treadwell": {
-      "mult": 1.0,
-      "note": "Full-time WR3 (Slayton released, Pierce IR, Dulin OUT); 8 tgts W5",
+      "mult": 1.05,
+      "note": "Warren INACTIVE; full-time WR3 (Pierce IR, Dulin/Slayton gone); 8 tgts W5",
       "team": "IND",
       "ceil_mult": 1.15
     },
@@ -1197,8 +1197,8 @@
       "team": "TEN"
     },
     "Tyjae Spears": {
-      "mult": 0.95,
-      "note": "Full Fri, expected to play; props ~6",
+      "mult": 1.0,
+      "note": "ACTIVE (knee), Singleton inactive -> clear RB2 behind Pollard; props ~6 (NBC/Yahoo 10/18)",
       "team": "TEN"
     },
     "Cam Ward": {
@@ -1232,6 +1232,40 @@
       "note": "$2,300 punt: Jones 1.7% TD rate; IND OL concerns stale (Travis/Goncalves off report)",
       "team": "TEN",
       "ceil_mult": 1.15
+    },
+    "Nick Singleton": {
+      "mult": 0,
+      "note": "Inactive (coach's decision) - Yahoo/Titans inactives, ESPN 10/18",
+      "team": "TEN"
+    },
+    "Kylen Granson": {
+      "mult": 0,
+      "note": "Inactive - Yahoo/Titans inactives 10/18",
+      "team": "TEN"
+    },
+    "Riley Leonard": {
+      "mult": 0,
+      "note": "Inactive (3rd QB) - ESPN/Yahoo inactives 10/18",
+      "team": "IND"
+    },
+    "Mo Alie-Cox": {
+      "proj": 4.6,
+      "mult": 1.0,
+      "ceil_mult": 1.3,
+      "note": "Warren INACTIVE -> TE1 snaps (~70%), Ogletree TE2; min-price TE punt (Yahoo inactives 10/18)",
+      "team": "IND"
+    },
+    "Drew Ogletree": {
+      "proj": 2.4,
+      "mult": 1.0,
+      "ceil_mult": 1.2,
+      "note": "Warren INACTIVE -> TE2/12-personnel snaps",
+      "team": "IND"
+    },
+    "Trevor Etienne": {
+      "mult": 0.9,
+      "note": "ACTIVE, 2026 debut off IR (ankle) - CBS 11:40am ET; change-of-pace behind Hubbard (Dillon OUT)",
+      "team": "CAR"
     }
   },
   "boosts": {}
