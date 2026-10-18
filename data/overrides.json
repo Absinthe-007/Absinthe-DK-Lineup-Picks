@@ -1,6 +1,6 @@
 {
   "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; 'ceil_mult' raises a sleeper ceiling; optional 'team' restricts the match.",
-  "updated": "2026-10-18T16:00:00Z",
+  "updated": "2026-10-18T22:57:30Z",
   "week": 6,
   "players": {
     "Caleb Williams": {
@@ -922,8 +922,8 @@
       "team": "LAC"
     },
     "CeeDee Lamb": {
-      "mult": 0.95,
-      "note": "Full all week (thigh bruise); 80.5 yds/6.5 rec, +130 TD -> ~18; GB 4th pass DVOA, Nixon plays",
+      "mult": 1.0,
+      "note": "ACTIVE, no limitations (thigh) - off injury report, PrizePicks/NBC 10/18; 80.5 yds/6.5 rec, +130 TD -> ~18",
       "team": "DAL",
       "ceil_mult": 1.1
     },
@@ -977,7 +977,7 @@
     },
     "MarShawn Lloyd": {
       "mult": 0.95,
-      "note": "ATD -115/-150 but 2.8 YPC; ~10.5",
+      "note": "ATD -115/-150 but 2.8 YPC; ~10.5; LG Aaron Banks INACTIVE (packers.com 10/18)",
       "team": "GB"
     },
     "Tucker Kraft": {
@@ -998,8 +998,8 @@
       "ceil_mult": 1.2
     },
     "Bo Melton": {
-      "mult": 1.15,
-      "note": "Slot with Skyy Moore IR; Savion Williams activation risk",
+      "mult": 1.05,
+      "note": "Slot with Skyy Moore IR; Savion Williams ACTIVE (packers.com 10/18) may cut into snaps",
       "team": "GB",
       "ceil_mult": 1.2
     },
@@ -1266,6 +1266,16 @@
       "mult": 0.9,
       "note": "ACTIVE, 2026 debut off IR (ankle) - CBS 11:40am ET; change-of-pace behind Hubbard (Dillon OUT)",
       "team": "CAR"
+    },
+    "Emari Demercado": {
+      "mult": 0,
+      "note": "Inactive - dallascowboys.com 10/18",
+      "team": "DAL"
+    },
+    "Savion Williams": {
+      "mult": 0.9,
+      "note": "ACTIVE (ankle Q) off IR - packers.com/dallascowboys.com inactives 10/18 5:50pm CT; KR + WR4 snaps behind Watson/Golden",
+      "team": "GB"
     }
   },
   "boosts": {}

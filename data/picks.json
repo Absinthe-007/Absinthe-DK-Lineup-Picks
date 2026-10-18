@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T16:00:00Z",
+  "updated": "2026-10-18T22:57:30Z",
   "week": 6,
   "sources": [
     "49erswebzone, SF Standard, ArizonaSports, AZCardinals.com (Urban), GoPHNX",
@@ -61,7 +61,10 @@
     "ESPN core injuries API inactives (10/18 11:3x ET)",
     "Sleeper players API injury_status (10/18)",
     "SI Buccaneers OnSI (Tucker inactive)",
-    "NBC Sports/Rotoworld player news (Kamara, Spears active)"
+    "NBC Sports/Rotoworld player news (Kamara, Spears active)",
+    "packers.com + dallascowboys.com SNF inactives (10/18 5:50pm CT)",
+    "Yahoo Sports SNF who's in/out tracker",
+    "ESPN game summary API (DAL@GB injuries, DK odds, weather)"
   ],
   "default": {
     "mustPlays": [
@@ -1367,7 +1370,7 @@
           "why": "Omenihu + Jean-Baptiste OUT"
         }
       ],
-      "notes": "Primetime: SNF DAL@GB 53.5 (wind 12, gusts ~21) + MNF WAS@SF 52.5. MNF statuses (Evans, Diggs, McNichols/Kirk activations) decided Monday."
+      "notes": "Primetime: SNF DAL@GB 53.5 (wind 12, gusts ~21) + MNF WAS@SF 52.5. MNF statuses (Evans, Diggs, McNichols/Kirk activations) decided Monday. Final inactives (primetime) 2026-10-18T22:57Z: SNF DAL@GB no fantasy starters out. GB inactive: St-Juste, Burton, Banks (LG), Jennings; DAL inactive: Overshown, Durant, Clark, Demercado, Houston, Shelton, C. Brown. Savion Williams ACTIVE (Melton trimmed), Lamb/Porter active. ML ~pick'em (DAL -1.5), 53.5, gusts ~22."
     },
     "154949": {
       "mustPlays": [
@@ -1984,7 +1987,7 @@
           "name": "Bo Melton",
           "team": "GB",
           "pos": "WR",
-          "why": "$2,800. Slot with Skyy Moore IR",
+          "why": "$2,800. Slot with Skyy Moore IR; Savion Williams active (KR/WR4) may trim snaps",
           "boom": "medium"
         }
       ],
@@ -1999,7 +2002,7 @@
           "why": "No role"
         }
       ],
-      "notes": "GB -1.5, 53.5, wind 12 gusts ~21. Shootout lean; Aubrey K FLEX."
+      "notes": "GB -1.5, 53.5, wind 12 gusts ~21. Shootout lean; Aubrey K FLEX. Final inactives (primetime) 2026-10-18T22:57Z: SNF DAL@GB no fantasy starters out. GB inactive: St-Juste, Burton, Banks (LG), Jennings; DAL inactive: Overshown, Durant, Clark, Demercado, Houston, Shelton, C. Brown. Savion Williams ACTIVE (Melton trimmed), Lamb/Porter active. ML ~pick'em (DAL -1.5), 53.5, gusts ~22."
     },
     "154960": {
       "mustPlays": [
