@@ -1,1076 +1,2094 @@
 {
- "updated": "2026-10-15T15:21:51Z",
- "week": 6,
- "sources": [
-  "4for4",
-  "AP",
-  "AccuWeather",
-  "Athlon Sports",
-  "AtlantaFalcons.com",
-  "BaltimoreRavens.com",
-  "Behind the Steel Curtain",
-  "BetMGM",
-  "BettingPros",
-  "Big Blue View",
-  "Bleeding Green Nation",
-  "Buccaneers.com",
-  "Buffalo Bills official",
-  "CBS Sports",
-  "CBS Sports/SportsLine",
-  "Canal Street Chronicles",
-  "Chargers.com",
-  "Chicago Sun-Times",
-  "ChicagoBears.com",
-  "ClevelandBrowns.com",
-  "Colts.com",
-  "Commanders.com",
-  "Covers",
-  "Dawg Pound Daily",
-  "Denver Gazette",
-  "DenverBroncos.com",
-  "Dimers",
-  "DraftKings Network",
-  "DraftSharks",
-  "ESPN",
-  "FOX Sports",
-  "FTN",
-  "FanDuel Research",
-  "Fanatics Sportsbook",
-  "Fantasy Life",
-  "FantasyLabs",
-  "FantasyLife",
-  "FantasyPros",
-  "FantraxHQ",
-  "Field Gulls",
-  "Football Nation",
-  "FootballDB/StatChasers",
-  "Footballguys",
-  "Giants.com",
-  "Heavy",
-  "HoustonTexans.com",
-  "Jaguars.com",
-  "Kalshi/DeFi Rate",
-  "Mile High Sports",
-  "NBC Sports/Rotoworld",
-  "NFL.com injuries",
-  "National Weather Service",
-  "NewOrleansSaints.com",
-  "NewYorkJets.com",
-  "Oddsshopper",
-  "Packers.com",
-  "Panthers.com",
-  "Patriots.com",
-  "Pewter Report",
-  "PhiladelphiaEagles.com",
-  "PhillyVoice",
-  "Raiders.com",
-  "Rams Wire",
-  "RotoBaller",
-  "RotoGrinders",
-  "RotoWire",
-  "Rotoballer",
-  "Rotowire",
-  "SI.com",
-  "SI/OnSI",
-  "Seahawks.com",
-  "Seattle Sports/MyNorthwest",
-  "Sharp Football Analysis",
-  "SportsBettingDime",
-  "Squawka",
-  "Statchasers",
-  "Steelers.com",
-  "Stokastic",
-  "Tampa Bay Times",
-  "The Big Lead",
-  "TheRams.com",
-  "Titans.com",
-  "Turf Show Times",
-  "VSiN",
-  "VegasInsider",
-  "WagerTalk",
-  "Yahoo Sports",
-  "azcardinals.com"
- ],
- "default": {
-  "mustPlays": [
-   {
-    "name": "Puka Nacua",
-    "team": "LAR",
-    "pos": "WR",
-    "why": "$8,100. 24 targets (17-138-1) W5 at 85% routes; props 97.5 yds/7.5 rec, -160 TD -> ~22.8 DK; LAR 32.0 implied (slate high) vs ARI allowing league-high 32.4 ppg (SBD/BetMGM/ESPN/Rotowire)"
-   },
-   {
-    "name": "Kyren Williams",
-    "team": "LAR",
-    "pos": "RB",
-    "why": "$6,800. Anytime TD -250 (71%) - shortest RB price on the slate; 70.5 rush yds -> ~18.5-19 DK; LAR -12.5 script (BettingPros/BetMGM/Dimers)"
-   },
-   {
-    "name": "Isaiah Likely",
-    "team": "NYG",
-    "pos": "TE",
-    "why": "$4,800. Double-digit targets 3 of 4 games, 32.4 DK W5; Winston 54-60 dropbacks; FantasyLabs top TE plus/minus; NO 30th pts/drive (giants.com/FantasyLabs/Sharp)"
-   }
+  "updated": "2026-10-18T15:31:44Z",
+  "week": 6,
+  "sources": [
+    "49erswebzone, SF Standard, ArizonaSports, AZCardinals.com (Urban), GoPHNX",
+    "ABC7/Cimini, NY Post/Costello, The Athletic (Duggan), Raanan, Fowler X, Schefter X (insider reports via ESPN/search)",
+    "AP / USA Today / La Nacion (McVay quotes)",
+    "Athlon Sports final injury reports",
+    "AtoZ Sports, ClutchPoints, Heavy, Newsweek, The Big Lead, Bolavip, Hottakes, Complex (news)",
+    "BetMGM props",
+    "Boston Globe snap counts",
+    "CBS Sports (betting previews, injury news)",
+    "Covers (predictions, props, betting splits)",
+    "DK Network (chalk plays, value picks, Millionaire picks, props, buzz)",
+    "DK salary CSVs and DK lobby (getcontests)",
+    "Dimers projections/predictions",
+    "DraftSharks news (Judkins inactive, Lamb)",
+    "ESPN Fantasy Playbook / DFS values",
+    "ESPN box scores / team schedule APIs (W3-W5 usage)",
+    "ESPN content API (Week 6 Sunday inactives article, Schefter Shough story)",
+    "ESPN core injuries API (Rotowire blurbs citing Rapoport/Schefter/Fowler/Garafolo/beat writers)",
+    "ESPN core propBets/odds API (DK props)",
+    "ESPN game summary API (injuries, DK odds open/current, predictor, weather)",
+    "ESPN scoreboard API (site.api.espn.com)",
+    "Establish The Run (Silva matchups preview)",
+    "FTN (tournament picks/ownership, snippet)",
+    "FanDuel Research props",
+    "Fantasy Life (DK main-slate picks, showdown, matchup breakdowns)",
+    "FantasyData box score",
+    "FantasyLabs (leverage picks, model picks, stacks, ownership notes)",
+    "Fantrax HQ SNF preview",
+    "Football Nation USA (props, game guides, line movement)",
+    "Kalshi prediction markets (via Oddsshopper/SBD/Covers)",
+    "Legion Report, Footballguys, LeagueLogs snap data (via search)",
+    "NBC Sports / Rotoworld / ProFootballTalk player news",
+    "Oddsshopper (Kalshi prices, MNF picks)",
+    "Philadelphia Inquirer (line movement)",
+    "RotoBaller (snap/route notes, outlooks)",
+    "Rotowire (team news, DK Week 6 top picks, props, weather)",
+    "SI.com (team sites final injury reports + SI Betting props/injury-impact)",
+    "Sharp Football Analysis (Hribar worksheets)",
+    "Sleeper players API (injury/practice status, depth charts)",
+    "Sleeper trending adds API",
+    "Sleeper weekly stats API (snaps, targets, carries W3-5)",
+    "SportsBettingDime props + Kalshi TD prices",
+    "SportsBookReview props",
+    "SportsLine MNF DFS lineups",
+    "Sportsgambler / Squawka / Sports Interaction props (snippets)",
+    "Steelers Depot, Bleeding Green Nation, ArrowheadAddict, Windy City Gridiron, PatsPulpit (team blogs)",
+    "Stokastic anytime-TD cheat sheet",
+    "The Fantasy Footballers news",
+    "WGR 550 (Capaccio) via SI, Buffalo News (Buscaglia) via Yahoo",
+    "Yahoo Sports (is X playing today, start/sit, Rapoport Sunday report)",
+    "YouWager props",
+    "api.weather.gov hourly forecasts + gridpoint gusts (Foxborough, Philadelphia, Tampa, Cleveland, MetLife, Arrowhead, Lambeau, Levi's)",
+    "lineups.com, CBS Prisco (score picks, snippets)",
+    "nfl.com/injuries (2026 reg6) and NFL.com Sunday injuries-to-monitor",
+    "patriots.com, newyorkjets.com, chargers.com, raiders.com, therams.com, buccaneers.com, philadelphiaeagles.com, neworleanssaints.com, giants.com, packers.com, dallascowboys.com, commanders.com, 49ers.com (official injury reports/trackers/depth charts)"
   ],
-  "core": [
-   {
-    "name": "Matthew Stafford",
-    "team": "LAR",
-    "pos": "QB",
-    "why": "$6,400. 285.5 pass yds, 2.5 TD (o +115), ~40% 300-yd bonus -> ~21.9 DK; 51+ att 3 straight; ARI highest pass-TD rate allowed (SBD/Yahoo)"
-   },
-   {
-    "name": "Bijan Robinson",
-    "team": "ATL",
-    "pos": "RB",
-    "why": "$8,700. 91.5 rush, -250 TD -> ~21 DK; 75% RB opps W5; CHI 27th EPA/run, LBs Edwards/Elliott DNP, Sweat suspended (BetMGM/Covers/ESPN)"
-   },
-   {
-    "name": "Drake London",
-    "team": "ATL",
-    "pos": "WR",
-    "why": "$7,000. 86.5 rec yds (o -135), +110 TD -> ~19 DK; 32% tgts W5, 418 yds in Penix's 3 starts; CHI 30th yds/play (BetMGM/Rotowire)"
-   },
-   {
-    "name": "Rhamondre Stevenson",
-    "team": "NE",
-    "pos": "RB",
-    "why": "$6,000. Rush prop moved 37.5 -> 70.5, -175 TD -> ~16.2 DK; Henderson OUT (high ankle); NE -7.5, NYJ allowed 6 RB TD (SBD/DK Network)"
-   },
-   {
-    "name": "Josh Allen",
-    "team": "BUF",
-    "pos": "QB",
-    "why": "53.5 total"
-   },
-   {
-    "name": "Brock Bowers",
-    "team": "LV",
-    "pos": "TE",
-    "why": "TD every game"
-   },
-   {
-    "name": "Kenneth Walker III",
-    "team": "KC",
-    "pos": "RB",
-    "why": "-190 TD"
-   }
-  ],
-  "sleepers": [
-   {
-    "name": "D'Andre Swift",
-    "team": "CHI",
-    "pos": "RB",
-    "why": "$6,700. Full practice; Monangai (thumb/toe) 'would have been ruled out'; -185 TD, first-TD favorite; CHI 73 plays/g in 50.5 total (Sun-Times/BetMGM)",
-    "boom": "high"
-   },
-   {
-    "name": "Chiefs",
-    "team": "KC",
-    "pos": "DST",
-    "why": "$3,600. LAC allows NFL-worst 6.0 sacks+TO per game, Herbert INT in every game (7), Alt/Slater/Biadasz out; LAC implied 17 (ESPN/Sharp/Covers)",
-    "boom": "high"
-   },
-   {
-    "name": "Jameis Winston",
-    "team": "NYG",
-    "pos": "QB",
-    "why": "$5,100 mid-total (45.5) stack per W5 lesson: 576 yds/6 TD last 2, league-high 60 dropbacks; NO 30th pts/drive. Pair Nabers/Likely (giants.com/Sharp)",
-    "boom": "medium"
-   },
-   {
-    "name": "Darius Cooper",
-    "team": "PHI",
-    "pos": "WR",
-    "why": "$4,300. Led PHI WRs 85% snaps W5; DeVonta Smith DNP (likely out); CAR CBs Horn + Jackson on IR (PhillyVoice/Panthers.com)",
-    "boom": "medium"
-   },
-   {
-    "name": "Efton Chism III",
-    "team": "NE",
-    "pos": "WR",
-    "why": "$3,500. 76% snaps, 5-57 W5 replacing Hollins (IR); stale CBS/numberFire drag proj (SI snap counts)",
-    "boom": "medium"
-   },
-   {
-    "name": "Jalen Royals",
-    "team": "KC",
-    "pos": "WR",
-    "why": "$3,300. Forced WR2 with Rice (DNP, 'unlikely') + Thornton IR; 63% snaps W4 (AP/ESPN box)",
-    "boom": "medium"
-   },
-   {
-    "name": "Steelers",
-    "team": "PIT",
-    "pos": "DST",
-    "why": "$3,300. vs undrafted rookie Jalon Daniels (Mayfield thumb), TB 2nd-most sacks allowed, 15-21 mph wind (NWS/Tampa Bay Times)",
-    "boom": "medium"
-   },
-   {
-    "name": "Germie Bernard",
-    "team": "PIT",
-    "pos": "WR",
-    "why": "$4,000. 92% snaps, 6-80 W5; WR2 with R. Wilson + Skowronek OUT",
-    "boom": "medium"
-   },
-   {
-    "name": "Kyle Pitts Sr.",
-    "team": "ATL",
-    "pos": "TE",
-    "why": "$3,700. 6 tgts W5; CHI 32nd vs 2-TE sets",
-    "boom": "medium"
-   }
-  ],
-  "stacks": [
-   "LAR: Stafford + Puka + Kyren, bring back McBride",
-   "NYG: Winston + Nabers + Likely (mid-total)",
-   "BUF-LV: Allen + Shakir + Bowers",
-   "CHI-ATL: Penix + London, bring back Swift"
-  ],
-  "fades": [
-   {
-    "name": "DeVonta Smith",
-    "why": "DNP Wed (hamstring + toe), missed 2 straight - likely OUT"
-   },
-   {
-    "name": "Bucky Irving",
-    "why": "~12.5 DK implied vs 15.4 blend; 54% snaps, Gainwell more routes; rookie QB + wind"
-   },
-   {
-    "name": "Lamar Jackson",
-    "why": "No practice since 10/4 ankle; ~50/50 - only if he practices Fri"
-   },
-   {
-    "name": "Daniel Jones",
-    "why": "Never better than QB23, DK avg 10.9; blend inflated by CBS 20.3"
-   },
-   {
-    "name": "Aaron Rodgers",
-    "why": "9 TD on 4.5 expected; TB no QB above QB12; 15-21 mph wind"
-   },
-   {
-    "name": "Alvin Kamara",
-    "why": "27% snaps, 3 carries W5; back injury"
-   }
-  ],
-  "notes": "Thursday preliminary refresh (Wed practice reports). Sunday-morning run replaces this after Friday designations and weather."
- },
- "slates": {
-  "154940": {
-   "mustPlays": [
-    {
-     "name": "Puka Nacua",
-     "team": "LAR",
-     "pos": "WR",
-     "why": "$8,100. 24 targets (17-138-1) W5 at 85% routes; props 97.5 yds/7.5 rec, -160 TD -> ~22.8 DK; LAR 32.0 implied (slate high) vs ARI allowing league-high 32.4 ppg (SBD/BetMGM/ESPN/Rotowire)"
-    },
-    {
-     "name": "Jordan Love",
-     "team": "GB",
-     "pos": "QB",
-     "why": "$5,500 in a 52.5-53.5 total: 269.5 pass yds -> ~20 DK; 367 yds W5; DAL 32nd EPA/play, 5 sacks all year, 6 TD passes in last 2 vs DAL (SBD/Covers/NFL.com)"
-    },
-    {
-     "name": "Kyren Williams",
-     "team": "LAR",
-     "pos": "RB",
-     "why": "$6,800. Anytime TD -250 (71%) - shortest RB price on the slate; 70.5 rush yds -> ~18.5-19 DK; LAR -12.5 script (BettingPros/BetMGM/Dimers)"
-    },
-    {
-     "name": "George Kittle",
-     "team": "SF",
-     "pos": "TE",
-     "why": "$5,200. Deebo OUT (W9); WAS 29th Y/tgt to TE with league-high 17.1% TE TD rate; +125 TD (44%); SF 29.0 implied (BetMGM/Sharp/CBS)"
-    }
-   ],
-   "core": [
-    {
-     "name": "Josh Allen",
-     "team": "BUF",
-     "pos": "QB",
-     "why": "53.5 total, ~22.7 DK props + 8 rush TD"
-    },
-    {
-     "name": "Brock Bowers",
-     "team": "LV",
-     "pos": "TE",
-     "why": "TD every game, 77.5-81.5 yds, +100 TD"
-    },
-    {
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "pos": "RB",
-     "why": "$8,700. 91.5 rush, -250 TD -> ~21 DK; 75% RB opps W5; CHI 27th EPA/run, LBs Edwards/Elliott DNP, Sweat suspended (BetMGM/Covers/ESPN)"
-    },
-    {
-     "name": "Drake London",
-     "team": "ATL",
-     "pos": "WR",
-     "why": "$7,000. 86.5 rec yds (o -135), +110 TD -> ~19 DK; 32% tgts W5, 418 yds in Penix's 3 starts; CHI 30th yds/play (BetMGM/Rotowire)"
-    },
-    {
-     "name": "Jaxon Smith-Njigba",
-     "team": "SEA",
-     "pos": "WR",
-     "why": "No game status (full Wed); ~20 DK props, Surtain/Hufanga OUT - only TNF piece worth it"
-    },
-    {
-     "name": "Kenneth Walker III",
-     "team": "KC",
-     "pos": "RB",
-     "why": "86.5 rush, -190 TD; 74% rush share; KC -8.5"
-    },
-    {
-     "name": "Mike Evans",
-     "team": "SF",
-     "pos": "WR",
-     "why": "37% tgt share, Deebo OUT, -120 TD"
-    },
-    {
-     "name": "CeeDee Lamb",
-     "team": "DAL",
-     "pos": "WR",
-     "why": "Full practice Wed; GB CBs hurt; 80.5 yds, +120 TD"
-    },
-    {
-     "name": "Rhamondre Stevenson",
-     "team": "NE",
-     "pos": "RB",
-     "why": "$6,000. Rush prop moved 37.5 -> 70.5, -175 TD -> ~16.2 DK; Henderson OUT (high ankle); NE -7.5, NYJ allowed 6 RB TD (SBD/DK Network)"
-    },
-    {
-     "name": "Isaiah Likely",
-     "team": "NYG",
-     "pos": "TE",
-     "why": "$4,800. Double-digit targets 3 of 4 games, 32.4 DK W5; Winston 54-60 dropbacks; FantasyLabs top TE plus/minus; NO 30th pts/drive (giants.com/FantasyLabs/Sharp)"
-    }
-   ],
-   "sleepers": [
-    {
-     "name": "George Pickens",
-     "team": "DAL",
-     "pos": "WR",
-     "why": "$6,800. 13 tgts (31%), 9-130-1 W5; GB CBs Nixon + St-Juste DNP, Parsons out; ownership flows to Lamb/Watson (Packers.com/SBD)",
-     "boom": "high"
-    },
-    {
-     "name": "D'Andre Swift",
-     "team": "CHI",
-     "pos": "RB",
-     "why": "$6,700. Full practice; Monangai (thumb/toe) 'would have been ruled out'; -185 TD, first-TD favorite; CHI 73 plays/g in 50.5 total (Sun-Times/BetMGM)",
-     "boom": "high"
-    },
-    {
-     "name": "Brandin Cooks",
-     "team": "SF",
-     "pos": "WR",
-     "why": "$4,000. Deebo OUT to W9, Pearsall/Kirk/Robinson out; Shanahan signals bigger role; +260 TD (27.8%) vs WAS 30.8 ppg allowed (Yardbarker/BetMGM)",
-     "boom": "high"
-    },
-    {
-     "name": "Chiefs",
-     "team": "KC",
-     "pos": "DST",
-     "why": "$3,600. LAC allows NFL-worst 6.0 sacks+TO per game, Herbert INT in every game (7), Alt/Slater/Biadasz out; LAC implied 17 (ESPN/Sharp/Covers)",
-     "boom": "high"
-    },
-    {
-     "name": "Jameis Winston",
-     "team": "NYG",
-     "pos": "QB",
-     "why": "$5,100 mid-total (45.5) stack per W5 lesson: 576 yds/6 TD last 2, league-high 60 dropbacks; NO 30th pts/drive. Pair Nabers/Likely (giants.com/Sharp)",
-     "boom": "medium"
-    },
-    {
-     "name": "Darius Cooper",
-     "team": "PHI",
-     "pos": "WR",
-     "why": "$4,300. Led PHI WRs 85% snaps W5; DeVonta Smith DNP (likely out); CAR CBs Horn + Jackson on IR (PhillyVoice/Panthers.com)",
-     "boom": "medium"
-    },
-    {
-     "name": "Efton Chism III",
-     "team": "NE",
-     "pos": "WR",
-     "why": "$3,500. 76% snaps, 5-57 W5 replacing Hollins (IR); stale CBS/numberFire drag proj (SI snap counts)",
-     "boom": "medium"
-    },
-    {
-     "name": "Marvin Harrison Jr.",
-     "team": "HOU",
-     "pos": "WR",
-     "why": "$4,700. Traded to HOU, debut; Stroud reunion, outside role; JAX 30th pass yds allowed, CB Brown DNP; Kalshi 25+ yds 44% (PFR/Fantasy Life)",
-     "boom": "medium"
-    },
-    {
-     "name": "Bo Melton",
-     "team": "GB",
-     "pos": "WR",
-     "why": "$3,000. Took slot (28-30 snaps) with Skyy Moore in boot; min price in 52.5 total (Yahoo)",
-     "boom": "medium"
-    },
-    {
-     "name": "Jalen Royals",
-     "team": "KC",
-     "pos": "WR",
-     "why": "$3,300. Forced WR2 with Rice (DNP, 'unlikely') + Thornton IR; 63% snaps W4 (AP/ESPN box)",
-     "boom": "medium"
-    }
-   ],
-   "stacks": [
-    "GB-DAL (52.5): Love + Golden/Kraft, bring back Pickens or Lamb",
-    "LAR (32 implied): Stafford + Puka + Kyren, bring back McBride (TD 5 straight)",
-    "BUF-LV (53.5): Allen + Shakir, bring back Bowers/Tre Tucker",
-    "Mid-total stack (W5 lesson): Winston + Nabers + Likely vs NO (45.5)",
-    "CHI-ATL dome: Penix + London + Pitts, bring back Swift/Odunze"
-   ],
-   "fades": [
-    {
-     "name": "Christian Watson",
-     "why": "Props 72.5 yds/4.5 rec -> ~15.6 vs blend 19.0 chasing 6-143-2; Lambeau gusts ~25 mph"
-    },
-    {
-     "name": "DeVonta Smith",
-     "why": "DNP Wed (hamstring + toe), missed 2 straight - likely OUT"
-    },
-    {
-     "name": "Bucky Irving",
-     "why": "~12.5 DK implied vs 15.4 blend; 54% snaps, Gainwell more routes; rookie QB + wind"
-    },
-    {
-     "name": "Lamar Jackson",
-     "why": "No practice since 10/4 ankle; ~50/50 - only if he practices Fri"
-    },
-    {
-     "name": "Daniel Jones",
-     "why": "Never better than QB23, DK avg 10.9; blend inflated by CBS 20.3"
-    },
-    {
-     "name": "Aaron Rodgers",
-     "why": "9 TD on 4.5 expected; TB no QB above QB12; 15-21 mph wind"
-    },
-    {
-     "name": "Alvin Kamara",
-     "why": "27% snaps, 3 carries W5; back injury"
-    },
-    {
-     "name": "Jaylen Waddle",
-     "why": "Props ~11 DK, SEA 3rd-fewest WR pts, 71% of targets <10 yds"
-    }
-   ],
-   "notes": "Thu-Mon covers all 14 W6 games (TNF SEA@DEN 40.5 locks 8:15pm ET). Most Sunday/Monday statuses are from Wed 10/14 practice; Thursday/Friday reports still to come - Lamar, Barkley, DJ Moore, Diggs, Monangai, Rice, McConkey, Judkins, Olave are the swing names. Key news: Mayfield DNP (Jalon Daniels starts), Dart IR (Winston starts), MHJ traded to HOU, Murray on MIN (Brissett starts), Deebo OUT, Montgomery/Breece Hall/Henderson/T. Harris/Thornton out, Sweat suspended."
+  "default": {
+    "mustPlays": [
+      {
+        "name": "Bijan Robinson",
+        "team": "ATL",
+        "pos": "RB",
+        "why": "$8,700. DK props 96.5 rush (up from 91.5), 18.5 carries, 3.5 rec, -250 TD -> ~21.5 DK before 100-yd bonus; 24 touches/g, 100+ total yds in 4 of 5; CHI missing LBs Edwards/Elliott, Sweat (susp), Odeyingbo (IR); dome, total up 47.5->51.5 (ESPN props API, DK Network, nfl.com)"
+      },
+      {
+        "name": "Puka Nacua",
+        "team": "LAR",
+        "pos": "WR",
+        "why": "$8,100. 94.5 rec yds (up), ~7.5 rec, -155 TD -> ~22 DK; 24 tgts W5, 91% snaps; LAR 32 implied vs ARI allowing 32.4 ppg / 9.1 Y/A; FTN ~36% owned - the chalk that is chalk for a reason (ESPN odds, Dimers, Rotowire)"
+      },
+      {
+        "name": "Josh Allen",
+        "team": "BUF",
+        "pos": "QB",
+        "why": "$7,500. Rush TD in every game (8 in 5), ATD -145/-170 (~58%) -> ~24.5-26 DK; BUF 29.5 implied in the slate-high 53.5 total (dome); LV pass D 25th EPA (Covers, SBR, SI, DK Network)"
+      }
+    ],
+    "core": [
+      {
+        "name": "Kyren Williams",
+        "team": "LAR",
+        "pos": "RB",
+        "why": "$6,800. ATD -200/-210 (61-67%), 68.5 rush + ~26 rec yds -> ~17-20 DK; 21.8/36.7/19.6 DK last 3; LAR -12.5 script (ESPN odds, Dimers)"
+      },
+      {
+        "name": "Kenneth Walker III",
+        "team": "KC",
+        "pos": "RB",
+        "why": "$8,500. 90.5-93.5 rush, -155/-190 TD -> ~19-21 DK; 87%+ of KC RB carries, 34 DK in W4; KC -7.5 (moved from -2.5) vs 0-5 LAC, Rice OUT (ESPN, Football Nation, SI)"
+      },
+      {
+        "name": "Drake London",
+        "team": "ATL",
+        "pos": "WR",
+        "why": "$7,000. 89.5 rec yds, 5.5 rec, +110 TD -> ~18.5 DK; 31% tgt share/52% air yds with Penix; 90+ yds 3 straight; CHI last in yds/target with banged-up CBs (ESPN props, Rotowire)"
+      },
+      {
+        "name": "Brock Bowers",
+        "team": "LV",
+        "pos": "TE",
+        "why": "$7,500. 6.5 rec, 79.5-81.5 yds, ~50% TD -> ~18.5 DK; 14/11/10 tgts + a TD each of last 3; BUF allows 77% completions; 53.5 total (raiders.com, Covers, ESPN box scores)"
+      },
+      {
+        "name": "Malik Nabers",
+        "team": "NYG",
+        "pos": "WR",
+        "why": "$6,500. 20 tgts W5, 36% share/95% routes (FantasyLabs); 71.5 yds, +170 TD -> ~16"
+      },
+      {
+        "name": "Isaiah Likely",
+        "team": "NYG",
+        "pos": "TE",
+        "why": "$4,800. 12-13 tgts W4-5, Theo Johnson OUT; props ~12.3-13.2 (trimmed 0.93) - heavily owned punt"
+      },
+      {
+        "name": "Xavier Worthy",
+        "team": "KC",
+        "pos": "WR",
+        "why": "$4,600. De facto WR1 with Rice OUT; +140 TD, 7 tgts 2 of 3"
+      },
+      {
+        "name": "Tetairoa McMillan",
+        "team": "CAR",
+        "pos": "WR",
+        "why": "$7,300. 66.5 yds, +185 TD -> ~15; 16 tgts W4"
+      },
+      {
+        "name": "Matthew Stafford",
+        "team": "LAR",
+        "pos": "QB",
+        "why": "$6,400. 278.5 pass yds, 300+ in 4 straight, 51-55 att; ARI 9.1 Y/A allowed"
+      },
+      {
+        "name": "Tyler Huntley",
+        "team": "BAL",
+        "pos": "QB",
+        "why": "$4,700. Confirmed starter (Lamar OUT); ~24 DK W5; 6 sources avg ~15.2 at min-QB price"
+      },
+      {
+        "name": "Panthers",
+        "team": "CAR",
+        "pos": "DST",
+        "why": "$2,500. Best cheap DST: McKee start, PHI OL missing 2 starters"
+      }
+    ],
+    "sleepers": [
+      {
+        "name": "A.J. Brown",
+        "team": "NE",
+        "pos": "WR",
+        "why": "$6,100. Activated from IR Sat; Rapoport/Garafolo: 'good amount' of snaps; true X for Maye (8 TD since W4); field fades him on snap-count fear - proj 11.5, ceiling ~25 (NBC/Rotoworld, patriots.com)",
+        "boom": "high"
+      },
+      {
+        "name": "Jalen Coker",
+        "team": "CAR",
+        "pos": "WR",
+        "why": "$5,900. ~8% owned (FantasyLabs); 26% tgt/route, 2.6 YPRR, 46% slot vs PHI (2nd-most slot catches allowed) missing CBs Carter II + Bennett; 55.5 yds, +220 TD; 36.8 DK W1",
+        "boom": "high"
+      },
+      {
+        "name": "Bucky Irving",
+        "team": "TB",
+        "pos": "RB",
+        "why": "$6,200. ~6% owned (FantasyLabs); 21-165-2 W5, 75% of carries, Tucker not expected to play (Rapoport); goal-line role in a run-first wind game",
+        "boom": "high"
+      },
+      {
+        "name": "Najee Harris",
+        "team": "NYG",
+        "pos": "RB",
+        "why": "$4,500. Fowler (ESPN 10/18): expected to START over Skattebo (4 fumbles, 3.6 YPC); NO allows the most rush TDs; Dimers 40 rush yds, 26% TD - projections still have him ~5",
+        "boom": "medium"
+      },
+      {
+        "name": "Jaleel McLaughlin",
+        "team": "CLE",
+        "pos": "RB",
+        "why": "$4,900. Judkins INACTIVE (DraftSharks 11:29am ET) -> lead back with Sanders IR + Sampson OUT; proj set 10.0, ~13-15 touches; ESPN 'preferred play' if Judkins sits; split with Estime unclear",
+        "boom": "high"
+      },
+      {
+        "name": "Jameis Winston",
+        "team": "NYG",
+        "pos": "QB",
+        "why": "$5,100. Mid-total (46.5) QB stack per W5 lesson: 3 TD in each of last 2, 54 att W5; NO 27th EPA; pair with Nabers (20 tgts W5) + Mooney ($3,700, +608 TD) / Likely",
+        "boom": "medium"
+      },
+      {
+        "name": "Carnell Tate",
+        "team": "TEN",
+        "pos": "WR",
+        "why": "$5,000. 1-6 W5 -> low owned, but 12 tgts/145 yds W4; 53.5 yds, +290 TD; IND allows 8.0 Y/A (29th), bottom-3 pressure (SBD, Sharp, ETR)",
+        "boom": "high"
+      },
+      {
+        "name": "KC Concepcion Jr.",
+        "team": "CLE",
+        "pos": "WR",
+        "why": "$4,200. Cleared concussion protocol, no designation; 5/6/9/8 tgts W1-4; props ~10.6 vs blend 6.6; Rotowire Watson bargain stack",
+        "boom": "medium"
+      },
+      {
+        "name": "Trey McBride",
+        "team": "ARI",
+        "pos": "TE",
+        "why": "$7,200. <10% owned (FantasyLabs) vs Puka ~36%; 10-12 tgts last 3; ARI chasing as 12.5-pt dog, 47-52 Brissett attempts; 64.5 yds/7.5 rec",
+        "boom": "medium"
+      },
+      {
+        "name": "Panthers",
+        "team": "CAR",
+        "pos": "DST",
+        "why": "$2,500. Tanner McKee first 2026 start, PHI OL without Lane Johnson + Dickerson (both OUT), C Kendall Q; PHI scored 7/20/17 W3-5",
+        "boom": "high"
+      },
+      {
+        "name": "Jets",
+        "team": "NYJ",
+        "pos": "DST",
+        "why": "$2,200. NE -5 TO margin, Maye 7 INT; Jets 8 sacks W5; NE LT Campbell playing hurt (ESPN, Rotowire)",
+        "boom": "medium"
+      }
+    ],
+    "stacks": [
+      "Allen + Bowers (bring-back) + Tucker/Nailor in BUF@LV 53.5 (slate-high, dome)",
+      "Penix + London with Burden/Odunze bring-back in CHI@ATL 51.5 (dome, money on over)",
+      "Stafford + Puka + Kyren with McBride bring-back (ARI@LAR 51.5, ARI 32.4 ppg allowed)",
+      "Mid-total sleeper stack (W5 lesson): Winston + Nabers + Mooney/Likely with Olave bring-back (NO@NYG 46.5)",
+      "Cheap leverage: Bryce Young + Coker/McMillan (CAR -3 vs depleted PHI secondary); Panthers DST is the other side of PHI"
+    ],
+    "fades": [
+      {
+        "name": "D'Andre Swift",
+        "why": "Market cut him: rush 74.5->62.5, carries 17.5->15.5; 9 carries on 40/69 snaps W5 with Monangai out; ATL faces fewest runs (ESPN props, PFF)"
+      },
+      {
+        "name": "Cam Skattebo",
+        "why": "$5,800 for a back losing work: Fowler says Najee starts, near-even split (Duggan), 4 fumbles"
+      },
+      {
+        "name": "Dameon Pierce",
+        "why": "Popular (DKN) but 11-14 W5, no rush props, ~18-pt implied PHI with McKee"
+      },
+      {
+        "name": "Tony Pollard",
+        "why": "Props ~9.9; Spears takes trailing-script work as 6.5-pt dog (ETR)"
+      },
+      {
+        "name": "Pat Freiermuth",
+        "why": "Added Q (calf) Saturday; props ~8.4 vs 10.6 blend; wind"
+      },
+      {
+        "name": "Davante Adams",
+        "why": "Props ~13.4 vs 15.9 blend; Puka (24 tgts) squeezes volume"
+      },
+      {
+        "name": "Mike Washington Jr.",
+        "why": "1 carry W5, 15.5 rush prop at $5,000"
+      },
+      {
+        "name": "Efton Chism III",
+        "why": "A.J. Brown back takes the X; Chism's 76% snaps were injury-driven"
+      }
+    ],
+    "notes": "Sun 10/18 game-day run (12 per-game research agents, 250+ source visits). Key news: Lamar OUT (Huntley), Hurts OUT (McKee) + Barkley OUT, Mayfield OUT (Jalon Daniels), Love (ARI) OUT, Monangai OUT, Breece Hall OUT, Rice OUT, Sean Tucker not expected to play; A.J. Brown + Omar Cooper activated from IR; DeVonta Smith, McConkey, Q. Johnston, Nailor, Concepcion, Ty Johnson cleared; Caleb Williams starts; Najee expected to start over Skattebo; Judkins INACTIVE (McLaughlin lead back); GTDs Tyler Warren (groin, ~50/50), DJ Moore (lean out, 2:55pm), Freiermuth (optimistic). PIT@TB wind NE 15 mph, gusts ~24 - mild passing/kicking downgrade; all other outdoor games calm. Re-check Warren (1pm inactives) and DJ Moore (2:55pm); Downs/K. Allen/Treadwell and Coleman are the swaps."
   },
-  "154947": {
-   "mustPlays": [
-    {
-     "name": "Jaxon Smith-Njigba",
-     "team": "SEA",
-     "pos": "WR",
-     "why": "CPT $17,400. FULL Wed, no game status; 35% tgt share/52% air yds; 90.5 yds/6.5 rec, +110 TD -> ~20 DK; Surtain + Hufanga OUT; FantasyLabs top optimal CPT (Seahawks.com/SBD/FantasyLabs)",
-     "slot": "CPT"
+  "slates": {
+    "154941": {
+      "mustPlays": [
+        {
+          "name": "Bijan Robinson",
+          "team": "ATL",
+          "pos": "RB",
+          "why": "$8,700. DK props 96.5 rush (up from 91.5), 18.5 carries, 3.5 rec, -250 TD -> ~21.5 DK before 100-yd bonus; 24 touches/g, 100+ total yds in 4 of 5; CHI missing LBs Edwards/Elliott, Sweat (susp), Odeyingbo (IR); dome, total up 47.5->51.5 (ESPN props API, DK Network, nfl.com)"
+        },
+        {
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "$8,100. 94.5 rec yds (up), ~7.5 rec, -155 TD -> ~22 DK; 24 tgts W5, 91% snaps; LAR 32 implied vs ARI allowing 32.4 ppg / 9.1 Y/A; FTN ~36% owned - the chalk that is chalk for a reason (ESPN odds, Dimers, Rotowire)"
+        },
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "$7,500. Rush TD in every game (8 in 5), ATD -145/-170 (~58%) -> ~24.5-26 DK; BUF 29.5 implied in the slate-high 53.5 total (dome); LV pass D 25th EPA (Covers, SBR, SI, DK Network)"
+        }
+      ],
+      "core": [
+        {
+          "name": "Kyren Williams",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "$6,800. ATD -200/-210 (61-67%), 68.5 rush + ~26 rec yds -> ~17-20 DK; 21.8/36.7/19.6 DK last 3; LAR -12.5 script (ESPN odds, Dimers)"
+        },
+        {
+          "name": "Kenneth Walker III",
+          "team": "KC",
+          "pos": "RB",
+          "why": "$8,500. 90.5-93.5 rush, -155/-190 TD -> ~19-21 DK; 87%+ of KC RB carries, 34 DK in W4; KC -7.5 (moved from -2.5) vs 0-5 LAC, Rice OUT (ESPN, Football Nation, SI)"
+        },
+        {
+          "name": "Drake London",
+          "team": "ATL",
+          "pos": "WR",
+          "why": "$7,000. 89.5 rec yds, 5.5 rec, +110 TD -> ~18.5 DK; 31% tgt share/52% air yds with Penix; 90+ yds 3 straight; CHI last in yds/target with banged-up CBs (ESPN props, Rotowire)"
+        },
+        {
+          "name": "Brock Bowers",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$7,500. 6.5 rec, 79.5-81.5 yds, ~50% TD -> ~18.5 DK; 14/11/10 tgts + a TD each of last 3; BUF allows 77% completions; 53.5 total (raiders.com, Covers, ESPN box scores)"
+        },
+        {
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "pos": "WR",
+          "why": "$6,500. 20 tgts W5, 36% share/95% routes (FantasyLabs); 71.5 yds, +170 TD -> ~16"
+        },
+        {
+          "name": "Isaiah Likely",
+          "team": "NYG",
+          "pos": "TE",
+          "why": "$4,800. 12-13 tgts W4-5, Theo Johnson OUT; props ~12.3-13.2 (trimmed 0.93) - heavily owned punt"
+        },
+        {
+          "name": "Xavier Worthy",
+          "team": "KC",
+          "pos": "WR",
+          "why": "$4,600. De facto WR1 with Rice OUT; +140 TD, 7 tgts 2 of 3"
+        },
+        {
+          "name": "Tetairoa McMillan",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$7,300. 66.5 yds, +185 TD -> ~15; 16 tgts W4"
+        },
+        {
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "pos": "QB",
+          "why": "$6,400. 278.5 pass yds, 300+ in 4 straight, 51-55 att; ARI 9.1 Y/A allowed"
+        },
+        {
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "pos": "QB",
+          "why": "$4,700. Confirmed starter (Lamar OUT); ~24 DK W5; 6 sources avg ~15.2 at min-QB price"
+        },
+        {
+          "name": "Panthers",
+          "team": "CAR",
+          "pos": "DST",
+          "why": "$2,500. Best cheap DST: McKee start, PHI OL missing 2 starters"
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "A.J. Brown",
+          "team": "NE",
+          "pos": "WR",
+          "why": "$6,100. Activated from IR Sat; Rapoport/Garafolo: 'good amount' of snaps; true X for Maye (8 TD since W4); field fades him on snap-count fear - proj 11.5, ceiling ~25 (NBC/Rotoworld, patriots.com)",
+          "boom": "high"
+        },
+        {
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$5,900. ~8% owned (FantasyLabs); 26% tgt/route, 2.6 YPRR, 46% slot vs PHI (2nd-most slot catches allowed) missing CBs Carter II + Bennett; 55.5 yds, +220 TD; 36.8 DK W1",
+          "boom": "high"
+        },
+        {
+          "name": "Bucky Irving",
+          "team": "TB",
+          "pos": "RB",
+          "why": "$6,200. ~6% owned (FantasyLabs); 21-165-2 W5, 75% of carries, Tucker not expected to play (Rapoport); goal-line role in a run-first wind game",
+          "boom": "high"
+        },
+        {
+          "name": "Najee Harris",
+          "team": "NYG",
+          "pos": "RB",
+          "why": "$4,500. Fowler (ESPN 10/18): expected to START over Skattebo (4 fumbles, 3.6 YPC); NO allows the most rush TDs; Dimers 40 rush yds, 26% TD - projections still have him ~5",
+          "boom": "medium"
+        },
+        {
+          "name": "Jaleel McLaughlin",
+          "team": "CLE",
+          "pos": "RB",
+          "why": "$4,900. Judkins INACTIVE (DraftSharks 11:29am ET) -> lead back with Sanders IR + Sampson OUT; proj set 10.0, ~13-15 touches; ESPN 'preferred play' if Judkins sits; split with Estime unclear",
+          "boom": "high"
+        },
+        {
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "pos": "QB",
+          "why": "$5,100. Mid-total (46.5) QB stack per W5 lesson: 3 TD in each of last 2, 54 att W5; NO 27th EPA; pair with Nabers (20 tgts W5) + Mooney ($3,700, +608 TD) / Likely",
+          "boom": "medium"
+        },
+        {
+          "name": "Carnell Tate",
+          "team": "TEN",
+          "pos": "WR",
+          "why": "$5,000. 1-6 W5 -> low owned, but 12 tgts/145 yds W4; 53.5 yds, +290 TD; IND allows 8.0 Y/A (29th), bottom-3 pressure (SBD, Sharp, ETR)",
+          "boom": "high"
+        },
+        {
+          "name": "KC Concepcion Jr.",
+          "team": "CLE",
+          "pos": "WR",
+          "why": "$4,200. Cleared concussion protocol, no designation; 5/6/9/8 tgts W1-4; props ~10.6 vs blend 6.6; Rotowire Watson bargain stack",
+          "boom": "medium"
+        },
+        {
+          "name": "Trey McBride",
+          "team": "ARI",
+          "pos": "TE",
+          "why": "$7,200. <10% owned (FantasyLabs) vs Puka ~36%; 10-12 tgts last 3; ARI chasing as 12.5-pt dog, 47-52 Brissett attempts; 64.5 yds/7.5 rec",
+          "boom": "medium"
+        },
+        {
+          "name": "Panthers",
+          "team": "CAR",
+          "pos": "DST",
+          "why": "$2,500. Tanner McKee first 2026 start, PHI OL without Lane Johnson + Dickerson (both OUT), C Kendall Q; PHI scored 7/20/17 W3-5",
+          "boom": "high"
+        },
+        {
+          "name": "Jets",
+          "team": "NYJ",
+          "pos": "DST",
+          "why": "$2,200. NE -5 TO margin, Maye 7 INT; Jets 8 sacks W5; NE LT Campbell playing hurt (ESPN, Rotowire)",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Allen + Bowers (bring-back) + Tucker/Nailor in BUF@LV 53.5 (slate-high, dome)",
+        "Penix + London with Burden/Odunze bring-back in CHI@ATL 51.5 (dome, money on over)",
+        "Stafford + Puka + Kyren with McBride bring-back (ARI@LAR 51.5, ARI 32.4 ppg allowed)",
+        "Mid-total sleeper stack (W5 lesson): Winston + Nabers + Mooney/Likely with Olave bring-back (NO@NYG 46.5)",
+        "Cheap leverage: Bryce Young + Coker/McMillan (CAR -3 vs depleted PHI secondary); Panthers DST is the other side of PHI"
+      ],
+      "fades": [
+        {
+          "name": "D'Andre Swift",
+          "why": "Market cut him: rush 74.5->62.5, carries 17.5->15.5; 9 carries on 40/69 snaps W5 with Monangai out; ATL faces fewest runs (ESPN props, PFF)"
+        },
+        {
+          "name": "Cam Skattebo",
+          "why": "$5,800 for a back losing work: Fowler says Najee starts, near-even split (Duggan), 4 fumbles"
+        },
+        {
+          "name": "Dameon Pierce",
+          "why": "Popular (DKN) but 11-14 W5, no rush props, ~18-pt implied PHI with McKee"
+        },
+        {
+          "name": "Tony Pollard",
+          "why": "Props ~9.9; Spears takes trailing-script work as 6.5-pt dog (ETR)"
+        },
+        {
+          "name": "Pat Freiermuth",
+          "why": "Added Q (calf) Saturday; props ~8.4 vs 10.6 blend; wind"
+        },
+        {
+          "name": "Davante Adams",
+          "why": "Props ~13.4 vs 15.9 blend; Puka (24 tgts) squeezes volume"
+        },
+        {
+          "name": "Mike Washington Jr.",
+          "why": "1 carry W5, 15.5 rush prop at $5,000"
+        },
+        {
+          "name": "Efton Chism III",
+          "why": "A.J. Brown back takes the X; Chism's 76% snaps were injury-driven"
+        }
+      ],
+      "notes": "Sun 10/18 game-day run (12 per-game research agents, 250+ source visits). Key news: Lamar OUT (Huntley), Hurts OUT (McKee) + Barkley OUT, Mayfield OUT (Jalon Daniels), Love (ARI) OUT, Monangai OUT, Breece Hall OUT, Rice OUT, Sean Tucker not expected to play; A.J. Brown + Omar Cooper activated from IR; DeVonta Smith, McConkey, Q. Johnston, Nailor, Concepcion, Ty Johnson cleared; Caleb Williams starts; Najee expected to start over Skattebo; Judkins INACTIVE (McLaughlin lead back); GTDs Tyler Warren (groin, ~50/50), DJ Moore (lean out, 2:55pm), Freiermuth (optimistic). PIT@TB wind NE 15 mph, gusts ~24 - mild passing/kicking downgrade; all other outdoor games calm. Re-check Warren (1pm inactives) and DJ Moore (2:55pm); Downs/K. Allen/Treadwell and Coleman are the swaps."
     },
-    {
-     "name": "Emanuel Wilson",
-     "team": "SEA",
-     "pos": "RB",
-     "why": "$9,400. Sole lead back (Charbonnet OUT, Price IR): 18.5 carries, 66.5 yds, +115 TD; every SEA RB red-zone opp last 2 games; DEN 4.7 YPC allowed (BetMGM/SBD)"
+    "154943": {
+      "mustPlays": [
+        {
+          "name": "Bijan Robinson",
+          "team": "ATL",
+          "pos": "RB",
+          "why": "$8,700. DK props 96.5 rush (up from 91.5), 18.5 carries, 3.5 rec, -250 TD -> ~21.5 DK before 100-yd bonus; 24 touches/g, 100+ total yds in 4 of 5; CHI missing LBs Edwards/Elliott, Sweat (susp), Odeyingbo (IR); dome, total up 47.5->51.5 (ESPN props API, DK Network, nfl.com)"
+        },
+        {
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "$8,100. 94.5 rec yds (up), ~7.5 rec, -155 TD -> ~22 DK; 24 tgts W5, 91% snaps; LAR 32 implied vs ARI allowing 32.4 ppg / 9.1 Y/A; FTN ~36% owned - the chalk that is chalk for a reason (ESPN odds, Dimers, Rotowire)"
+        },
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "$7,500. Rush TD in every game (8 in 5), ATD -145/-170 (~58%) -> ~24.5-26 DK; BUF 29.5 implied in the slate-high 53.5 total (dome); LV pass D 25th EPA (Covers, SBR, SI, DK Network)"
+        }
+      ],
+      "core": [
+        {
+          "name": "Kyren Williams",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "$6,800. ATD -200/-210 (61-67%), 68.5 rush + ~26 rec yds -> ~17-20 DK; 21.8/36.7/19.6 DK last 3; LAR -12.5 script (ESPN odds, Dimers)"
+        },
+        {
+          "name": "Kenneth Walker III",
+          "team": "KC",
+          "pos": "RB",
+          "why": "$8,500. 90.5-93.5 rush, -155/-190 TD -> ~19-21 DK; 87%+ of KC RB carries, 34 DK in W4; KC -7.5 (moved from -2.5) vs 0-5 LAC, Rice OUT (ESPN, Football Nation, SI)"
+        },
+        {
+          "name": "Drake London",
+          "team": "ATL",
+          "pos": "WR",
+          "why": "$7,000. 89.5 rec yds, 5.5 rec, +110 TD -> ~18.5 DK; 31% tgt share/52% air yds with Penix; 90+ yds 3 straight; CHI last in yds/target with banged-up CBs (ESPN props, Rotowire)"
+        },
+        {
+          "name": "Brock Bowers",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$7,500. 6.5 rec, 79.5-81.5 yds, ~50% TD -> ~18.5 DK; 14/11/10 tgts + a TD each of last 3; BUF allows 77% completions; 53.5 total (raiders.com, Covers, ESPN box scores)"
+        },
+        {
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "pos": "WR",
+          "why": "$6,500. 20 tgts W5, 36% share/95% routes (FantasyLabs); 71.5 yds, +170 TD -> ~16"
+        },
+        {
+          "name": "Isaiah Likely",
+          "team": "NYG",
+          "pos": "TE",
+          "why": "$4,800. 12-13 tgts W4-5, Theo Johnson OUT; props ~12.3-13.2 (trimmed 0.93) - heavily owned punt"
+        },
+        {
+          "name": "Xavier Worthy",
+          "team": "KC",
+          "pos": "WR",
+          "why": "$4,600. De facto WR1 with Rice OUT; +140 TD, 7 tgts 2 of 3"
+        },
+        {
+          "name": "Tetairoa McMillan",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$7,300. 66.5 yds, +185 TD -> ~15; 16 tgts W4"
+        },
+        {
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "pos": "QB",
+          "why": "$6,400. 278.5 pass yds, 300+ in 4 straight, 51-55 att; ARI 9.1 Y/A allowed"
+        },
+        {
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "pos": "QB",
+          "why": "$4,700. Confirmed starter (Lamar OUT); ~24 DK W5; 6 sources avg ~15.2 at min-QB price"
+        },
+        {
+          "name": "Panthers",
+          "team": "CAR",
+          "pos": "DST",
+          "why": "$2,500. Best cheap DST: McKee start, PHI OL missing 2 starters"
+        },
+        {
+          "name": "Jordan Love",
+          "team": "GB",
+          "pos": "QB",
+          "why": "$5,500. 271.5-274.5 pass yds, 2+ TD -200 -> ~20 DK; DAL last in dropback EPA, 8.1 YPA allowed, 5 sacks all year; total up 51.5->53.5 (FanDuel, SI, Fantrax)"
+        },
+        {
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "pos": "RB",
+          "why": "$7,900. 59.5 rush + 40.5 rec, -252 TD (Kalshi ~72%) -> ~19-20 DK; rush TD 4 straight; SF -7.5, 30 implied (Football Nation, Oddsshopper)"
+        },
+        {
+          "name": "George Kittle",
+          "team": "SF",
+          "pos": "TE",
+          "why": "$5,200. 62.5 rec yds, +125 TD -> ~14-15 DK; WAS 31st DVOA vs TE; Deebo OUT and Evans DNP all week (Yahoo, Fantasy Life)"
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "A.J. Brown",
+          "team": "NE",
+          "pos": "WR",
+          "why": "$6,100. Activated from IR Sat; Rapoport/Garafolo: 'good amount' of snaps; true X for Maye (8 TD since W4); field fades him on snap-count fear - proj 11.5, ceiling ~25 (NBC/Rotoworld, patriots.com)",
+          "boom": "high"
+        },
+        {
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$5,900. ~8% owned (FantasyLabs); 26% tgt/route, 2.6 YPRR, 46% slot vs PHI (2nd-most slot catches allowed) missing CBs Carter II + Bennett; 55.5 yds, +220 TD; 36.8 DK W1",
+          "boom": "high"
+        },
+        {
+          "name": "Bucky Irving",
+          "team": "TB",
+          "pos": "RB",
+          "why": "$6,200. ~6% owned (FantasyLabs); 21-165-2 W5, 75% of carries, Tucker not expected to play (Rapoport); goal-line role in a run-first wind game",
+          "boom": "high"
+        },
+        {
+          "name": "Najee Harris",
+          "team": "NYG",
+          "pos": "RB",
+          "why": "$4,500. Fowler (ESPN 10/18): expected to START over Skattebo (4 fumbles, 3.6 YPC); NO allows the most rush TDs; Dimers 40 rush yds, 26% TD - projections still have him ~5",
+          "boom": "medium"
+        },
+        {
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "pos": "QB",
+          "why": "$5,100. Mid-total (46.5) QB stack per W5 lesson: 3 TD in each of last 2, 54 att W5; NO 27th EPA; pair with Nabers (20 tgts W5) + Mooney ($3,700, +608 TD) / Likely",
+          "boom": "medium"
+        },
+        {
+          "name": "George Pickens",
+          "team": "DAL",
+          "pos": "WR",
+          "why": "$6,800. 13 tgts 9-130-1 W5, +150/+160 TD; lower owned than Lamb/Watson in a 53.5 total",
+          "boom": "high"
+        },
+        {
+          "name": "Rachaad White",
+          "team": "WAS",
+          "pos": "RB",
+          "why": "$4,600. Lead back with Croskey-Merritt OUT; 60% snaps W5; SF allowed league-high 37 RB catches; trailing script (Commanders.com, Fantasy Life)",
+          "boom": "high"
+        },
+        {
+          "name": "Jaleel McLaughlin",
+          "team": "CLE",
+          "pos": "RB",
+          "why": "$4,900. Judkins INACTIVE (DraftSharks 11:29am ET) -> lead back with Sanders IR + Sampson OUT; proj set 10.0, ~13-15 touches; ESPN 'preferred play' if Judkins sits; split with Estime unclear",
+          "boom": "high"
+        },
+        {
+          "name": "Panthers",
+          "team": "CAR",
+          "pos": "DST",
+          "why": "$2,500. Tanner McKee first 2026 start, PHI OL without Lane Johnson + Dickerson (both OUT), C Kendall Q; PHI scored 7/20/17 W3-5",
+          "boom": "high"
+        },
+        {
+          "name": "Jets",
+          "team": "NYJ",
+          "pos": "DST",
+          "why": "$2,200. NE -5 TO margin, Maye 7 INT; Jets 8 sacks W5; NE LT Campbell playing hurt (ESPN, Rotowire)",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Allen + Bowers (bring-back) + Tucker/Nailor in BUF@LV 53.5 (slate-high, dome)",
+        "Penix + London with Burden/Odunze bring-back in CHI@ATL 51.5 (dome, money on over)",
+        "Stafford + Puka + Kyren with McBride bring-back (ARI@LAR 51.5, ARI 32.4 ppg allowed)",
+        "Mid-total sleeper stack (W5 lesson): Winston + Nabers + Mooney/Likely with Olave bring-back (NO@NYG 46.5)",
+        "Cheap leverage: Bryce Young + Coker/McMillan (CAR -3 vs depleted PHI secondary); Panthers DST is the other side of PHI",
+        "Love + Watson/Golden with Pickens bring-back (DAL@GB 53.5)"
+      ],
+      "fades": [
+        {
+          "name": "D'Andre Swift",
+          "why": "Market cut him: rush 74.5->62.5, carries 17.5->15.5; 9 carries on 40/69 snaps W5 with Monangai out; ATL faces fewest runs (ESPN props, PFF)"
+        },
+        {
+          "name": "Cam Skattebo",
+          "why": "$5,800 for a back losing work: Fowler says Najee starts, near-even split (Duggan), 4 fumbles"
+        },
+        {
+          "name": "Dameon Pierce",
+          "why": "Popular (DKN) but 11-14 W5, no rush props, ~18-pt implied PHI with McKee"
+        },
+        {
+          "name": "Tony Pollard",
+          "why": "Props ~9.9; Spears takes trailing-script work as 6.5-pt dog (ETR)"
+        },
+        {
+          "name": "Pat Freiermuth",
+          "why": "Added Q (calf) Saturday; props ~8.4 vs 10.6 blend; wind"
+        },
+        {
+          "name": "Davante Adams",
+          "why": "Props ~13.4 vs 15.9 blend; Puka (24 tgts) squeezes volume"
+        },
+        {
+          "name": "Mike Washington Jr.",
+          "why": "1 carry W5, 15.5 rush prop at $5,000"
+        },
+        {
+          "name": "Efton Chism III",
+          "why": "A.J. Brown back takes the X; Chism's 76% snaps were injury-driven"
+        },
+        {
+          "name": "Mike Evans",
+          "why": "DNP Thu-Fri-Sat (ribs + Achilles), decision Monday - late-swap only"
+        },
+        {
+          "name": "Matthew Golden",
+          "why": "Blend inflated by one 123-yd game; props/est ~12"
+        }
+      ],
+      "notes": "Sun 10/18 game-day run (12 per-game research agents, 250+ source visits). Key news: Lamar OUT (Huntley), Hurts OUT (McKee) + Barkley OUT, Mayfield OUT (Jalon Daniels), Love (ARI) OUT, Monangai OUT, Breece Hall OUT, Rice OUT, Sean Tucker not expected to play; A.J. Brown + Omar Cooper activated from IR; DeVonta Smith, McConkey, Q. Johnston, Nailor, Concepcion, Ty Johnson cleared; Caleb Williams starts; Najee expected to start over Skattebo; Judkins INACTIVE (McLaughlin lead back); GTDs Tyler Warren (groin, ~50/50), DJ Moore (lean out, 2:55pm), Freiermuth (optimistic). PIT@TB wind NE 15 mph, gusts ~24 - mild passing/kicking downgrade; all other outdoor games calm. Re-check Warren (1pm inactives) and DJ Moore (2:55pm); Downs/K. Allen/Treadwell and Coleman are the swaps. MNF: Evans DNP all week (0.78), Bosa OUT, Croskey-Merritt OUT (Rachaad White lead), Diggs GTD."
     },
-    {
-     "name": "Seahawks",
-     "team": "SEA",
-     "pos": "DST",
-     "why": "$5,200. NFL-high 11 takeaways/7 INT; Nix INT prop -139, 11 turnover-worthy plays (PFF); DEN implied ~19 (Rotoballer)"
+    "154942": {
+      "mustPlays": [
+        {
+          "name": "Bijan Robinson",
+          "team": "ATL",
+          "pos": "RB",
+          "why": "$8,700. DK props 96.5 rush (up from 91.5), 18.5 carries, 3.5 rec, -250 TD -> ~21.5 DK before 100-yd bonus; 24 touches/g, 100+ total yds in 4 of 5; CHI missing LBs Edwards/Elliott, Sweat (susp), Odeyingbo (IR); dome, total up 47.5->51.5 (ESPN props API, DK Network, nfl.com)"
+        },
+        {
+          "name": "Drake London",
+          "team": "ATL",
+          "pos": "WR",
+          "why": "$7,000. 89.5 rec yds, 5.5 rec, +110 TD -> ~18.5 DK; 31% tgt share/52% air yds with Penix; 90+ yds 3 straight; CHI last in yds/target with banged-up CBs (ESPN props, Rotowire)"
+        },
+        {
+          "name": "Drake Maye",
+          "team": "NE",
+          "pos": "QB",
+          "why": "$6,600. 237.5 pass yds, 1.5 TD (-155), ~25 rush -> ~19.5-20 DK; A.J. Brown activated from IR; calm 53F; 42.5 DK W5 (ESPN, Covers, weather.gov)"
+        }
+      ],
+      "core": [
+        {
+          "name": "Rhamondre Stevenson",
+          "team": "NE",
+          "pos": "RB",
+          "why": "$6,000. ~14 DK implied (66.5 rush); NE -7.5; FantasyLabs top plus/minus"
+        },
+        {
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "pos": "WR",
+          "why": "$6,500. 20 tgts W5, ~16 implied"
+        },
+        {
+          "name": "Isaiah Likely",
+          "team": "NYG",
+          "pos": "TE",
+          "why": "$4,800. 12-13 tgts, Theo Johnson OUT"
+        },
+        {
+          "name": "Tetairoa McMillan",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$7,300. ~15 implied, 16 tgts W4"
+        },
+        {
+          "name": "Chris Olave",
+          "team": "NO",
+          "pos": "WR",
+          "why": "$7,600. Expected to play (Rapoport); 78.5 yds/6.5 rec -> ~17"
+        },
+        {
+          "name": "Derrick Henry",
+          "team": "BAL",
+          "pos": "RB",
+          "why": "$8,200. 23-26 carries 4 straight, -161 TD vs CLE 29th rush EPA"
+        },
+        {
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "pos": "QB",
+          "why": "$4,700. Confirmed starter, ~15 proj at near-min QB price"
+        },
+        {
+          "name": "Panthers",
+          "team": "CAR",
+          "pos": "DST",
+          "why": "$2,500. McKee + depleted PHI OL"
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "A.J. Brown",
+          "team": "NE",
+          "pos": "WR",
+          "why": "$6,100. Activated from IR Sat; Rapoport/Garafolo: 'good amount' of snaps; true X for Maye (8 TD since W4); field fades him on snap-count fear - proj 11.5, ceiling ~25 (NBC/Rotoworld, patriots.com)",
+          "boom": "high"
+        },
+        {
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$5,900. ~8% owned (FantasyLabs); 26% tgt/route, 2.6 YPRR, 46% slot vs PHI (2nd-most slot catches allowed) missing CBs Carter II + Bennett; 55.5 yds, +220 TD; 36.8 DK W1",
+          "boom": "high"
+        },
+        {
+          "name": "Bucky Irving",
+          "team": "TB",
+          "pos": "RB",
+          "why": "$6,200. ~6% owned (FantasyLabs); 21-165-2 W5, 75% of carries, Tucker not expected to play (Rapoport); goal-line role in a run-first wind game",
+          "boom": "high"
+        },
+        {
+          "name": "Najee Harris",
+          "team": "NYG",
+          "pos": "RB",
+          "why": "$4,500. Fowler (ESPN 10/18): expected to START over Skattebo (4 fumbles, 3.6 YPC); NO allows the most rush TDs; Dimers 40 rush yds, 26% TD - projections still have him ~5",
+          "boom": "medium"
+        },
+        {
+          "name": "Jaleel McLaughlin",
+          "team": "CLE",
+          "pos": "RB",
+          "why": "$4,900. Judkins INACTIVE (DraftSharks 11:29am ET) -> lead back with Sanders IR + Sampson OUT; proj set 10.0, ~13-15 touches; ESPN 'preferred play' if Judkins sits; split with Estime unclear",
+          "boom": "high"
+        },
+        {
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "pos": "QB",
+          "why": "$5,100. Mid-total (46.5) QB stack per W5 lesson: 3 TD in each of last 2, 54 att W5; NO 27th EPA; pair with Nabers (20 tgts W5) + Mooney ($3,700, +608 TD) / Likely",
+          "boom": "medium"
+        },
+        {
+          "name": "Carnell Tate",
+          "team": "TEN",
+          "pos": "WR",
+          "why": "$5,000. 1-6 W5 -> low owned, but 12 tgts/145 yds W4; 53.5 yds, +290 TD; IND allows 8.0 Y/A (29th), bottom-3 pressure (SBD, Sharp, ETR)",
+          "boom": "high"
+        },
+        {
+          "name": "Laquon Treadwell",
+          "team": "IND",
+          "pos": "WR",
+          "why": "$3,300. Full-time WR3 (Slayton released, Pierce IR, Dulin OUT); 8 tgts W5, team-high 36 routes W4; more if Warren (GTD) sits",
+          "boom": "medium"
+        },
+        {
+          "name": "KC Concepcion Jr.",
+          "team": "CLE",
+          "pos": "WR",
+          "why": "$4,200. Cleared concussion protocol, no designation; 5/6/9/8 tgts W1-4; props ~10.6 vs blend 6.6; Rotowire Watson bargain stack",
+          "boom": "medium"
+        },
+        {
+          "name": "Germie Bernard",
+          "team": "PIT",
+          "pos": "WR",
+          "why": "$4,000. 92% snaps, 9 tgts 6-80 W5; WR2 with R. Wilson/Skowronek OUT; Fantasy Life under-owned GPP",
+          "boom": "medium"
+        },
+        {
+          "name": "Panthers",
+          "team": "CAR",
+          "pos": "DST",
+          "why": "$2,500. Tanner McKee first 2026 start, PHI OL without Lane Johnson + Dickerson (both OUT), C Kendall Q; PHI scored 7/20/17 W3-5",
+          "boom": "high"
+        },
+        {
+          "name": "Jets",
+          "team": "NYJ",
+          "pos": "DST",
+          "why": "$2,200. NE -5 TO margin, Maye 7 INT; Jets 8 sacks W5; NE LT Campbell playing hurt (ESPN, Rotowire)",
+          "boom": "medium"
+        },
+        {
+          "name": "Giants",
+          "team": "NYG",
+          "pos": "DST",
+          "why": "$2,800. Shough playing with two broken bones in L hand (Schefter), INT -132, sacked 13x; NO LT Banks IR; Carter expected to play",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Penix + London + Pitts, Burden/Odunze bring-back (CHI@ATL 51.5)",
+        "Maye + A.J. Brown/Henry (NE 25.5 implied)",
+        "Winston + Nabers + Mooney, Olave bring-back (46.5)",
+        "Young + Coker + Panthers DST angle"
+      ],
+      "fades": [
+        {
+          "name": "D'Andre Swift",
+          "why": "Market cut him: rush 74.5->62.5, carries 17.5->15.5; 9 carries on 40/69 snaps W5 with Monangai out; ATL faces fewest runs (ESPN props, PFF)"
+        },
+        {
+          "name": "Cam Skattebo",
+          "why": "$5,800 for a back losing work: Fowler says Najee starts, near-even split (Duggan), 4 fumbles"
+        },
+        {
+          "name": "Dameon Pierce",
+          "why": "Popular (DKN) but 11-14 W5, no rush props, ~18-pt implied PHI with McKee"
+        },
+        {
+          "name": "Tony Pollard",
+          "why": "Props ~9.9; Spears takes trailing-script work as 6.5-pt dog (ETR)"
+        },
+        {
+          "name": "Pat Freiermuth",
+          "why": "Added Q (calf) Saturday; props ~8.4 vs 10.6 blend; wind"
+        },
+        {
+          "name": "Davante Adams",
+          "why": "Props ~13.4 vs 15.9 blend; Puka (24 tgts) squeezes volume"
+        }
+      ],
+      "notes": "Early-only (7 games, 1:00pm ET). Highest total CHI@ATL 51.5, then NO@NYG 46.5. Judkins INACTIVE -> McLaughlin. Tyler Warren GTD (groin) - if out, bump Downs/K. Allen/Treadwell."
+    },
+    "154944": {
+      "mustPlays": [
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "$7,500. Rush TD in every game (8 in 5), ATD -145/-170 (~58%) -> ~24.5-26 DK; BUF 29.5 implied in the slate-high 53.5 total (dome); LV pass D 25th EPA (Covers, SBR, SI, DK Network)"
+        },
+        {
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "$8,100. 94.5 rec yds (up), ~7.5 rec, -155 TD -> ~22 DK; 24 tgts W5, 91% snaps; LAR 32 implied vs ARI allowing 32.4 ppg / 9.1 Y/A; FTN ~36% owned - the chalk that is chalk for a reason (ESPN odds, Dimers, Rotowire)"
+        },
+        {
+          "name": "Kenneth Walker III",
+          "team": "KC",
+          "pos": "RB",
+          "why": "$8,500. 90.5-93.5 rush, -155/-190 TD -> ~19-21 DK; 87%+ of KC RB carries, 34 DK in W4; KC -7.5 (moved from -2.5) vs 0-5 LAC, Rice OUT (ESPN, Football Nation, SI)"
+        },
+        {
+          "name": "Kyren Williams",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "$6,800. ATD -200/-210 (61-67%), 68.5 rush + ~26 rec yds -> ~17-20 DK; 21.8/36.7/19.6 DK last 3; LAR -12.5 script (ESPN odds, Dimers)"
+        }
+      ],
+      "core": [
+        {
+          "name": "Brock Bowers",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$7,500. 6.5 rec, 79.5-81.5 yds, ~50% TD -> ~18.5 DK; 14/11/10 tgts + a TD each of last 3; BUF allows 77% completions; 53.5 total (raiders.com, Covers, ESPN box scores)"
+        },
+        {
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "pos": "QB",
+          "why": "$6,400. 300+ yds 4 straight"
+        },
+        {
+          "name": "James Cook III",
+          "team": "BUF",
+          "pos": "RB",
+          "why": "$7,400. 91.5 rush, -170 TD -> ~18; chalk"
+        },
+        {
+          "name": "Xavier Worthy",
+          "team": "KC",
+          "pos": "WR",
+          "why": "$4,600. WR1 with Rice OUT"
+        },
+        {
+          "name": "Michael Wilson",
+          "team": "ARI",
+          "pos": "WR",
+          "why": "$6,700. 61.5 yds, 17/13/7 tgts; main ARI WR"
+        },
+        {
+          "name": "Chiefs",
+          "team": "KC",
+          "pos": "DST",
+          "why": "$3,600. Herbert 7 INT / 22 sacks"
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Trey McBride",
+          "team": "ARI",
+          "pos": "TE",
+          "why": "$7,200. <10% owned (FantasyLabs) vs Puka ~36%; 10-12 tgts last 3; ARI chasing as 12.5-pt dog, 47-52 Brissett attempts; 64.5 yds/7.5 rec",
+          "boom": "medium"
+        },
+        {
+          "name": "Blake Corum",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "$4,800. +130 TD, Dimers 49 rush yds; 53 rec yds W5; 12.5-pt fav closing script",
+          "boom": "medium"
+        },
+        {
+          "name": "Tyler Higbee",
+          "team": "LAR",
+          "pos": "TE",
+          "why": "$3,400. 6-11 tgts, 28.8% TD (Dimers); ARI safeties Wingard + W. Williams OUT, Baker Q",
+          "boom": "medium"
+        },
+        {
+          "name": "Michael Mayer",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$3,200. TE2 with Runyon OUT in the 53.5 total; 8-82 on 10 tgts W4; BUF 77% comp allowed",
+          "boom": "medium"
+        },
+        {
+          "name": "Jalen Nailor",
+          "team": "LV",
+          "pos": "WR",
+          "why": "$3,700. Cleared concussion (full Fri, no designation); outside WR2 in slate-high total; props ~6 vs stale low proj",
+          "boom": "medium"
+        },
+        {
+          "name": "Keaton Mitchell",
+          "team": "LAC",
+          "pos": "RB",
+          "why": "$4,300. 13 tgts last 3; checkdowns for sack-prone Herbert as 7.5-pt dog",
+          "boom": "medium"
+        },
+        {
+          "name": "Raiders",
+          "team": "LV",
+          "pos": "DST",
+          "why": "$2,400. T-1st 10 takeaways; Allen INT in 3 straight, Cook fumbles",
+          "boom": "medium"
+        },
+        {
+          "name": "Chiefs",
+          "team": "KC",
+          "pos": "DST",
+          "why": "$3,600. Herbert 7 INT / 22 sacks in 5 games, LT Joe Alt + G Awosika OUT; ESPN DST3",
+          "boom": "medium"
+        },
+        {
+          "name": "Keon Coleman",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "$4,900. X role if DJ Moore (Q, lean out) sits: 46 snaps, 6-116-1 W4",
+          "boom": "high"
+        },
+        {
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "pos": "WR",
+          "why": "$5,300. Off report after full Fri; clear WR1 with Harris OUT; likely low-owned",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Allen + Bowers/Tucker (53.5)",
+        "Stafford + Puka + McBride bring-back (51.5)",
+        "Walker + Chiefs DST (KC -7.5, LAC 17 implied)"
+      ],
+      "fades": [
+        {
+          "name": "Davante Adams",
+          "why": "Props ~13.4"
+        },
+        {
+          "name": "Mike Washington Jr.",
+          "why": "1 carry W5"
+        },
+        {
+          "name": "Dalton Kincaid",
+          "why": "7 tgts last 3 combined"
+        },
+        {
+          "name": "Rams",
+          "why": "Garrett IR, total up 5 pts"
+        },
+        {
+          "name": "Omarion Hampton",
+          "why": "2.4 YPC, 3-way split, 31.5 rush prop"
+        }
+      ],
+      "notes": "Afternoon (ARI@LAR 4:05, BUF@LV + LAC@KC 4:25). DJ Moore / Palmer decided at 2:55pm inactives; McDuffie (LAR CB) Q."
+    },
+    "154945": {
+      "mustPlays": [
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "$7,500. Rush TD in every game (8 in 5), ATD -145/-170 (~58%) -> ~24.5-26 DK; BUF 29.5 implied in the slate-high 53.5 total (dome); LV pass D 25th EPA (Covers, SBR, SI, DK Network)"
+        },
+        {
+          "name": "Kenneth Walker III",
+          "team": "KC",
+          "pos": "RB",
+          "why": "$8,500. 90.5-93.5 rush, -155/-190 TD -> ~19-21 DK; 87%+ of KC RB carries, 34 DK in W4; KC -7.5 (moved from -2.5) vs 0-5 LAC, Rice OUT (ESPN, Football Nation, SI)"
+        },
+        {
+          "name": "Brock Bowers",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$7,500. 6.5 rec, 79.5-81.5 yds, ~50% TD -> ~18.5 DK; 14/11/10 tgts + a TD each of last 3; BUF allows 77% completions; 53.5 total (raiders.com, Covers, ESPN box scores)"
+        }
+      ],
+      "core": [
+        {
+          "name": "James Cook III",
+          "team": "BUF",
+          "pos": "RB",
+          "why": "$7,400. ~18 implied"
+        },
+        {
+          "name": "Xavier Worthy",
+          "team": "KC",
+          "pos": "WR",
+          "why": "$4,600. WR1 with Rice OUT"
+        },
+        {
+          "name": "Travis Kelce",
+          "team": "KC",
+          "pos": "TE",
+          "why": "$5,500. 52.5 yds; Rice/Thornton out"
+        },
+        {
+          "name": "Ashton Jeanty",
+          "team": "LV",
+          "pos": "RB",
+          "why": "$6,500. Full health, ~15.5-16 implied"
+        },
+        {
+          "name": "Chiefs",
+          "team": "KC",
+          "pos": "DST",
+          "why": "$3,600"
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "Michael Mayer",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$3,200. TE2 with Runyon OUT in the 53.5 total; 8-82 on 10 tgts W4; BUF 77% comp allowed",
+          "boom": "medium"
+        },
+        {
+          "name": "Jalen Nailor",
+          "team": "LV",
+          "pos": "WR",
+          "why": "$3,700. Cleared concussion (full Fri, no designation); outside WR2 in slate-high total; props ~6 vs stale low proj",
+          "boom": "medium"
+        },
+        {
+          "name": "Keaton Mitchell",
+          "team": "LAC",
+          "pos": "RB",
+          "why": "$4,300. 13 tgts last 3; checkdowns for sack-prone Herbert as 7.5-pt dog",
+          "boom": "medium"
+        },
+        {
+          "name": "Raiders",
+          "team": "LV",
+          "pos": "DST",
+          "why": "$2,400. T-1st 10 takeaways; Allen INT in 3 straight, Cook fumbles",
+          "boom": "medium"
+        },
+        {
+          "name": "Keon Coleman",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "$4,900. Moore role if inactive",
+          "boom": "high"
+        },
+        {
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "pos": "WR",
+          "why": "$5,300. Clear LAC WR1, off report",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Allen + Bowers + Cook",
+        "Walker + Chiefs DST",
+        "Cousins + Bowers + Tucker cheap mirror"
+      ],
+      "fades": [
+        {
+          "name": "Mike Washington Jr.",
+          "why": "1 carry W5"
+        },
+        {
+          "name": "Dalton Kincaid",
+          "why": "Knox split"
+        },
+        {
+          "name": "Omarion Hampton",
+          "why": "2.4 YPC committee"
+        }
+      ],
+      "notes": "Turbo: BUF@LV 53.5 + LAC@KC 41.5 (total fell from 46)."
+    },
+    "154946": {
+      "mustPlays": [
+        {
+          "name": "Jordan Love",
+          "team": "GB",
+          "pos": "QB",
+          "why": "$5,500. 271.5-274.5 pass yds, 2+ TD -200 -> ~20 DK; DAL last in dropback EPA, 8.1 YPA allowed, 5 sacks all year; total up 51.5->53.5 (FanDuel, SI, Fantrax)"
+        },
+        {
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "pos": "RB",
+          "why": "$7,900. 59.5 rush + 40.5 rec, -252 TD (Kalshi ~72%) -> ~19-20 DK; rush TD 4 straight; SF -7.5, 30 implied (Football Nation, Oddsshopper)"
+        },
+        {
+          "name": "George Kittle",
+          "team": "SF",
+          "pos": "TE",
+          "why": "$5,200. 62.5 rec yds, +125 TD -> ~14-15 DK; WAS 31st DVOA vs TE; Deebo OUT and Evans DNP all week (Yahoo, Fantasy Life)"
+        }
+      ],
+      "core": [
+        {
+          "name": "Javonte Williams",
+          "team": "DAL",
+          "pos": "RB",
+          "why": "$7,500. -182/-220 TD, 77% snaps vs GB 28th run DVOA"
+        },
+        {
+          "name": "CeeDee Lamb",
+          "team": "DAL",
+          "pos": "WR",
+          "why": "$8,300. ~18 implied, full practice"
+        },
+        {
+          "name": "Christian Watson",
+          "team": "GB",
+          "pos": "WR",
+          "why": "$6,900. ~15.3 implied"
+        },
+        {
+          "name": "Dak Prescott",
+          "team": "DAL",
+          "pos": "QB",
+          "why": "$7,000. 276.5 yds, 40+ att 3 straight"
+        },
+        {
+          "name": "Brock Purdy",
+          "team": "SF",
+          "pos": "QB",
+          "why": "$6,800. ~20 implied"
+        }
+      ],
+      "sleepers": [
+        {
+          "name": "George Pickens",
+          "team": "DAL",
+          "pos": "WR",
+          "why": "$6,800. 13 tgts 9-130-1 W5, +150/+160 TD; lower owned than Lamb/Watson in a 53.5 total",
+          "boom": "high"
+        },
+        {
+          "name": "Ryan Flournoy",
+          "team": "DAL",
+          "pos": "WR",
+          "why": "$4,300. 8/5/4 tgts, 3-90 W5; Dak 40+ att 3 straight",
+          "boom": "medium"
+        },
+        {
+          "name": "Pierre Strong Jr.",
+          "team": "GB",
+          "pos": "RB",
+          "why": "$4,000. Most routes of GB RBs (PFF via Fantrax), Jacobs still OUT, +266 TD; DAL 3rd-most RB rush yds allowed",
+          "boom": "medium"
+        },
+        {
+          "name": "Kaleb Johnson",
+          "team": "GB",
+          "pos": "RB",
+          "why": "$4,300. 15 carries last 2, out-carried Lloyd in close W4 game, Brooks IR; proj ~4 - one TD = 10+",
+          "boom": "medium"
+        },
+        {
+          "name": "Rachaad White",
+          "team": "WAS",
+          "pos": "RB",
+          "why": "$4,600. Lead back with Croskey-Merritt OUT; 60% snaps W5; SF allowed league-high 37 RB catches; trailing script (Commanders.com, Fantasy Life)",
+          "boom": "high"
+        },
+        {
+          "name": "Brandin Cooks",
+          "team": "SF",
+          "pos": "WR",
+          "why": "$4,000. Starter with Deebo OUT, +258 TD; WR1 if Evans (DNP all week) sits Monday",
+          "boom": "medium"
+        },
+        {
+          "name": "Chig Okonkwo",
+          "team": "WAS",
+          "pos": "TE",
+          "why": "$3,300. 6 tgts 4-60 W5; Diggs GTD; SportsLine DFS pro building around him",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [
+        "Love + Watson + Pickens bring-back (53.5)",
+        "McCaffrey + Kittle + 49ers DST"
+      ],
+      "fades": [
+        {
+          "name": "Mike Evans",
+          "why": "DNP all week, decision Monday"
+        },
+        {
+          "name": "Matthew Golden",
+          "why": "~12 implied vs 15 blend"
+        },
+        {
+          "name": "Tyler Goodson",
+          "why": "0 carries W5"
+        },
+        {
+          "name": "Commanders",
+          "why": "Omenihu + Jean-Baptiste OUT"
+        }
+      ],
+      "notes": "Primetime: SNF DAL@GB 53.5 (wind 12, gusts ~21) + MNF WAS@SF 52.5. MNF statuses (Evans, Diggs, McNichols/Kirk activations) decided Monday."
+    },
+    "154949": {
+      "mustPlays": [
+        {
+          "name": "Bijan Robinson",
+          "team": "ATL",
+          "pos": "RB",
+          "why": "CPT $17,700. ~21.5 implied + bonuses, 30+ DK in 3 of 5",
+          "slot": "CPT"
+        },
+        {
+          "name": "Drake London",
+          "team": "ATL",
+          "pos": "WR",
+          "why": "$10,000. 31% tgt share, ~18.5"
+        },
+        {
+          "name": "Caleb Williams",
+          "team": "CHI",
+          "pos": "QB",
+          "why": "$10,600. Starting; ~18 implied with rushing"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Roschon Johnson",
+          "team": "CHI",
+          "pos": "RB",
+          "why": "$3,400. 7 tgts W5, Monangai OUT",
+          "boom": "medium"
+        },
+        {
+          "name": "Jahan Dotson",
+          "team": "ATL",
+          "pos": "WR",
+          "why": "$3,000. 54 yds 2 straight, deep role",
+          "boom": "medium"
+        },
+        {
+          "name": "Colston Loveland",
+          "team": "CHI",
+          "pos": "TE",
+          "why": "18 tgts last 3, QB upgrade",
+          "boom": "medium"
+        },
+        {
+          "name": "Rome Odunze",
+          "team": "CHI",
+          "pos": "WR",
+          "why": "68/69 snaps, 9 tgts W5",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "D'Andre Swift",
+          "why": "Volume props cut ~12 yds"
+        },
+        {
+          "name": "Bears",
+          "why": "Depleted front + CBs"
+        }
+      ],
+      "notes": "Close dome game (CHI -1.5, 51.5). Bijan or London CPT with CHI bring-backs; Caleb CPT contrarian. Kickers ~7.5-8 DK."
+    },
+    "154950": {
+      "mustPlays": [
+        {
+          "name": "Drake Maye",
+          "team": "NE",
+          "pos": "QB",
+          "why": "CPT $16,800. ~19.5-20 implied, Brown back",
+          "slot": "CPT"
+        },
+        {
+          "name": "Rhamondre Stevenson",
+          "team": "NE",
+          "pos": "RB",
+          "why": "$10,000. ~14 implied, 71% snaps"
+        },
+        {
+          "name": "Garrett Wilson",
+          "team": "NYJ",
+          "pos": "WR",
+          "why": "$10,800. 72.5 yds, 11 tgts W5"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "A.J. Brown",
+          "team": "NE",
+          "pos": "WR",
+          "why": "$9,600. Off IR, expected 'good amount' of snaps",
+          "boom": "high"
+        },
+        {
+          "name": "Jets",
+          "team": "NYJ",
+          "pos": "DST",
+          "why": "$3,200. Maye 7 INT, NE -5 TO",
+          "boom": "medium"
+        },
+        {
+          "name": "Kyle Williams",
+          "team": "NE",
+          "pos": "WR",
+          "why": "$3,400. Deep dart, 18 DK W5",
+          "boom": "medium"
+        },
+        {
+          "name": "Omar Cooper Jr.",
+          "team": "NYJ",
+          "pos": "WR",
+          "why": "$3,800. Off IR, expected to play",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Efton Chism III",
+          "why": "Brown takes snaps"
+        },
+        {
+          "name": "Corey Kiner",
+          "why": "RB3 with Henderson active"
+        }
+      ],
+      "notes": "NE -7.5, 43.5, calm. Maye + NE pass catcher main build; Wilson volume for NYJ."
+    },
+    "154951": {
+      "mustPlays": [
+        {
+          "name": "Chuba Hubbard",
+          "team": "CAR",
+          "pos": "RB",
+          "why": "CPT $14,100. Most likely TD in game (-115), 19-20 carries",
+          "slot": "CPT"
+        },
+        {
+          "name": "Tetairoa McMillan",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$10,400. 66.5 yds, 16-tgt ceiling"
+        },
+        {
+          "name": "Panthers",
+          "team": "CAR",
+          "pos": "DST",
+          "why": "$3,600. McKee + PHI OL missing 2 starters"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "DeVonta Smith",
+          "team": "PHI",
+          "pos": "WR",
+          "why": "$10,000. Playing (Full Fri); stale projections undercount him (~12.3)",
+          "boom": "medium"
+        },
+        {
+          "name": "Jalen Coker",
+          "team": "CAR",
+          "pos": "WR",
+          "why": "$8,400. Slot edge, 26% tgt/route",
+          "boom": "high"
+        },
+        {
+          "name": "Darren Waller",
+          "team": "CAR",
+          "pos": "TE",
+          "why": "$4,600. Toe cleared, ~7.4",
+          "boom": "medium"
+        },
+        {
+          "name": "Tanner McKee",
+          "team": "PHI",
+          "pos": "QB",
+          "why": "$6,000. ~12 implied",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Dameon Pierce",
+          "why": "11-14 W5"
+        },
+        {
+          "name": "Eagles",
+          "why": "Depleted D"
+        }
+      ],
+      "notes": "CAR -3, 39.5. CAR-controlled low total; PHI short passing via Smith/Goedert."
+    },
+    "154952": {
+      "mustPlays": [
+        {
+          "name": "Jaylen Warren",
+          "team": "PIT",
+          "pos": "RB",
+          "why": "CPT $15,000. 87-97% snaps, ~15.3 implied on the favored side",
+          "slot": "CPT"
+        },
+        {
+          "name": "Steelers",
+          "team": "PIT",
+          "pos": "DST",
+          "why": "$5,200. vs undrafted rookie Daniels in wind"
+        },
+        {
+          "name": "Germie Bernard",
+          "team": "PIT",
+          "pos": "WR",
+          "why": "$5,400. 9 tgts W5, WR2 by attrition"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Bucky Irving",
+          "team": "TB",
+          "pos": "RB",
+          "why": "$9,600. 21-165-2 W5, Tucker out",
+          "boom": "high"
+        },
+        {
+          "name": "Darnell Washington",
+          "team": "PIT",
+          "pos": "TE",
+          "why": "$3,400. More snaps if Freiermuth limited",
+          "boom": "medium"
+        },
+        {
+          "name": "Rico Dowdle",
+          "team": "PIT",
+          "pos": "RB",
+          "why": "$7,000. Expected to play, 7.5 carries",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Pat Freiermuth",
+          "why": "Late calf Q"
+        },
+        {
+          "name": "DK Metcalf",
+          "why": "4-5 tgts, wind"
+        }
+      ],
+      "notes": "PIT -1.5, 38.5, NE wind 15 gusts ~24. Run-heavy, FG-friendly; kickers viable."
+    },
+    "154953": {
+      "mustPlays": [
+        {
+          "name": "Malik Nabers",
+          "team": "NYG",
+          "pos": "WR",
+          "why": "CPT $15,000. 20-tgt role, best ceiling",
+          "slot": "CPT"
+        },
+        {
+          "name": "Jameis Winston",
+          "team": "NYG",
+          "pos": "QB",
+          "why": "$9,000. 3 TD each of last 2"
+        },
+        {
+          "name": "Chris Olave",
+          "team": "NO",
+          "pos": "WR",
+          "why": "$11,200. Expected to play, ~17 implied"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Najee Harris",
+          "team": "NYG",
+          "pos": "RB",
+          "why": "$3,400. Expected starter (Fowler)",
+          "boom": "high"
+        },
+        {
+          "name": "Giants",
+          "team": "NYG",
+          "pos": "DST",
+          "why": "$3,800. Shough broken hand",
+          "boom": "medium"
+        },
+        {
+          "name": "Darnell Mooney",
+          "team": "NYG",
+          "pos": "WR",
+          "why": "$4,400. Healthy, 7 tgts W5",
+          "boom": "medium"
+        },
+        {
+          "name": "Tyrone Tracy Jr.",
+          "team": "NYG",
+          "pos": "RB",
+          "why": "$2,800. 3rd-down back",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Cam Skattebo",
+          "why": "Losing work to Najee"
+        },
+        {
+          "name": "Kendre Miller",
+          "why": "TD-or-bust"
+        }
+      ],
+      "notes": "NO -1.5, 46.5, calm. Pass-heavy both sides; Winston-Nabers-Likely with Olave bring-back."
+    },
+    "154954": {
+      "mustPlays": [
+        {
+          "name": "Derrick Henry",
+          "team": "BAL",
+          "pos": "RB",
+          "why": "CPT $18,300. 22+ carries, -161 TD vs CLE 29th rush EPA",
+          "slot": "CPT"
+        },
+        {
+          "name": "Tyler Huntley",
+          "team": "BAL",
+          "pos": "QB",
+          "why": "$8,800. Starter, ~24 DK W5"
+        },
+        {
+          "name": "Ravens",
+          "team": "BAL",
+          "pos": "DST",
+          "why": "$5,200. Watson sacked 8x W5"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "KC Concepcion Jr.",
+          "team": "CLE",
+          "pos": "WR",
+          "why": "Cleared, 7-9 tgt role",
+          "boom": "medium"
+        },
+        {
+          "name": "Rashod Bateman",
+          "team": "BAL",
+          "pos": "WR",
+          "why": "$5,800. 6 tgts with Huntley W5",
+          "boom": "medium"
+        },
+        {
+          "name": "Jaleel McLaughlin",
+          "team": "CLE",
+          "pos": "RB",
+          "why": "$7,000. Judkins INACTIVE - lead back",
+          "boom": "high"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Jerry Jeudy",
+          "why": "Squeezed by Concepcion"
+        },
+        {
+          "name": "Isaiah Bond",
+          "why": "Concepcion back"
+        }
+      ],
+      "notes": "BAL -3, 39.5. Henry + Ravens DST + K Loop correlation."
+    },
+    "154956": {
+      "mustPlays": [
+        {
+          "name": "Puka Nacua",
+          "team": "LAR",
+          "pos": "WR",
+          "why": "CPT $18,000. ~22 implied, 24 tgts W5",
+          "slot": "CPT"
+        },
+        {
+          "name": "Kyren Williams",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "$8,400. -200 TD + receiving"
+        },
+        {
+          "name": "Matthew Stafford",
+          "team": "LAR",
+          "pos": "QB",
+          "why": "$10,400. 300+ yds 4 straight"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Blake Corum",
+          "team": "LAR",
+          "pos": "RB",
+          "why": "$4,400. +130 TD",
+          "boom": "medium"
+        },
+        {
+          "name": "Tyler Higbee",
+          "team": "LAR",
+          "pos": "TE",
+          "why": "$4,000. 28.8% TD",
+          "boom": "medium"
+        },
+        {
+          "name": "Trey McBride",
+          "team": "ARI",
+          "pos": "TE",
+          "why": "$10,600. Contrarian CPT, 10-12 tgts",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Davante Adams",
+          "why": "~13.4 implied"
+        },
+        {
+          "name": "Rams",
+          "why": "Garrett IR, total up"
+        }
+      ],
+      "notes": "LAR -12.5, 51.5 dome. Rams lead, Stafford keeps throwing; ARI late volume to McBride/Wilson."
+    },
+    "154957": {
+      "mustPlays": [
+        {
+          "name": "Josh Allen",
+          "team": "BUF",
+          "pos": "QB",
+          "why": "CPT $17,400. Rush TD every game, ~58% ATD",
+          "slot": "CPT"
+        },
+        {
+          "name": "Brock Bowers",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$10,600. 10+ tgts + TD each of last 3"
+        },
+        {
+          "name": "James Cook III",
+          "team": "BUF",
+          "pos": "RB",
+          "why": "$10,400. 20+ carries vs LV 2.39 yds before contact allowed"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Jalen Nailor",
+          "team": "LV",
+          "pos": "WR",
+          "why": "$3,000. Cleared concussion",
+          "boom": "medium"
+        },
+        {
+          "name": "Michael Mayer",
+          "team": "LV",
+          "pos": "TE",
+          "why": "$3,600. TE2, Runyon OUT",
+          "boom": "medium"
+        },
+        {
+          "name": "Raiders",
+          "team": "LV",
+          "pos": "DST",
+          "why": "$3,400. 10 takeaways",
+          "boom": "medium"
+        },
+        {
+          "name": "Keon Coleman",
+          "team": "BUF",
+          "pos": "WR",
+          "why": "$6,800. If DJ Moore inactive",
+          "boom": "high"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Mike Washington Jr.",
+          "why": "1 carry W5"
+        },
+        {
+          "name": "Dalton Kincaid",
+          "why": "Knox split"
+        }
+      ],
+      "notes": "BUF -5.5, 53.5 dome. BUF runs, LV throws to Bowers/Tucker; DJ Moore 2:55pm."
+    },
+    "154958": {
+      "mustPlays": [
+        {
+          "name": "Kenneth Walker III",
+          "team": "KC",
+          "pos": "RB",
+          "why": "CPT $18,600. 87% carries, -155/-190 TD as 7.5-pt home fav",
+          "slot": "CPT"
+        },
+        {
+          "name": "Chiefs",
+          "team": "KC",
+          "pos": "DST",
+          "why": "$5,600. Herbert 7 INT/22 sacks, Alt OUT"
+        },
+        {
+          "name": "Xavier Worthy",
+          "team": "KC",
+          "pos": "WR",
+          "why": "$6,600. WR1, +140 TD"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Keaton Mitchell",
+          "team": "LAC",
+          "pos": "RB",
+          "why": "$4,000. Checkdown back",
+          "boom": "medium"
+        },
+        {
+          "name": "Noah Gray",
+          "team": "KC",
+          "pos": "TE",
+          "why": "$2,600. More 12 personnel",
+          "boom": "medium"
+        },
+        {
+          "name": "Ladd McConkey",
+          "team": "LAC",
+          "pos": "WR",
+          "why": "$7,600. Off report",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Emmett Johnson",
+          "why": "No role behind Walker"
+        },
+        {
+          "name": "Omarion Hampton",
+          "why": "2.4 YPC"
+        }
+      ],
+      "notes": "KC -7.5, 41.5 (from 46). KC leads, leans on Walker; Butker solid FLEX."
+    },
+    "154959": {
+      "mustPlays": [
+        {
+          "name": "Jordan Love",
+          "team": "GB",
+          "pos": "QB",
+          "why": "CPT $14,100. ~20 implied vs DAL last dropback EPA",
+          "slot": "CPT"
+        },
+        {
+          "name": "Christian Watson",
+          "team": "GB",
+          "pos": "WR",
+          "why": "$9,000. Clear WR1, +110/+130 TD"
+        },
+        {
+          "name": "Javonte Williams",
+          "team": "DAL",
+          "pos": "RB",
+          "why": "$9,600. -182/-220 TD, goal-line"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Pierre Strong Jr.",
+          "team": "GB",
+          "pos": "RB",
+          "why": "$3,000. Leads GB RBs in routes",
+          "boom": "medium"
+        },
+        {
+          "name": "Kaleb Johnson",
+          "team": "GB",
+          "pos": "RB",
+          "why": "$3,400. 15 carries last 2",
+          "boom": "medium"
+        },
+        {
+          "name": "George Pickens",
+          "team": "DAL",
+          "pos": "WR",
+          "why": "$8,800. 13 tgts W5",
+          "boom": "high"
+        },
+        {
+          "name": "Bo Melton",
+          "team": "GB",
+          "pos": "WR",
+          "why": "$2,800. Slot with Skyy Moore IR",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Matthew Golden",
+          "why": "~12 implied"
+        },
+        {
+          "name": "Tyler Goodson",
+          "why": "No role"
+        }
+      ],
+      "notes": "GB -1.5, 53.5, wind 12 gusts ~21. Shootout lean; Aubrey K FLEX."
+    },
+    "154960": {
+      "mustPlays": [
+        {
+          "name": "Christian McCaffrey",
+          "team": "SF",
+          "pos": "RB",
+          "why": "CPT $17,700. ~72% TD (Kalshi), rush + rec volume",
+          "slot": "CPT"
+        },
+        {
+          "name": "George Kittle",
+          "team": "SF",
+          "pos": "TE",
+          "why": "$8,200. WAS 31st vs TE"
+        },
+        {
+          "name": "Rachaad White",
+          "team": "WAS",
+          "pos": "RB",
+          "why": "$6,600. Lead back, JCM OUT"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Brandin Cooks",
+          "team": "SF",
+          "pos": "WR",
+          "why": "$4,000. Starter, WR1 if Evans out",
+          "boom": "medium"
+        },
+        {
+          "name": "Chig Okonkwo",
+          "team": "WAS",
+          "pos": "TE",
+          "why": "$4,600. 6 tgts W5",
+          "boom": "medium"
+        },
+        {
+          "name": "Jacob Cowing",
+          "team": "SF",
+          "pos": "WR",
+          "why": "$2,200. WR3, full Fri",
+          "boom": "medium"
+        },
+        {
+          "name": "Austin Ekeler",
+          "team": "WAS",
+          "pos": "RB",
+          "why": "$3,600. Pass-game role",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Mike Evans",
+          "why": "DNP all week - only if confirmed active"
+        },
+        {
+          "name": "Commanders",
+          "why": "Two pass rushers OUT"
+        }
+      ],
+      "notes": "SF -7.5, 52.5. Statuses decided Monday; re-run Monday."
+    },
+    "154955": {
+      "mustPlays": [
+        {
+          "name": "Jonathan Taylor",
+          "team": "IND",
+          "pos": "RB",
+          "why": "CPT. 87.5 rush, -233 TD (70%) -> ~19.5-20 as 6.5-pt home fav; dome",
+          "slot": "CPT"
+        },
+        {
+          "name": "Josh Downs",
+          "team": "IND",
+          "pos": "WR",
+          "why": "48.5 yds/4.5 rec, +213 TD -> ~11; up if Warren sits"
+        },
+        {
+          "name": "Carnell Tate",
+          "team": "TEN",
+          "pos": "WR",
+          "why": "53.5 yds, +290 TD -> ~11.3; IND 8.0 Y/A allowed"
+        }
+      ],
+      "core": [],
+      "sleepers": [
+        {
+          "name": "Laquon Treadwell",
+          "team": "IND",
+          "pos": "WR",
+          "why": "Full-time WR3, 8 tgts W5",
+          "boom": "medium"
+        },
+        {
+          "name": "Keenan Allen",
+          "team": "IND",
+          "pos": "WR",
+          "why": "9 tgts each of last 2",
+          "boom": "medium"
+        },
+        {
+          "name": "Titans",
+          "team": "TEN",
+          "pos": "DST",
+          "why": "Jones 1.7% TD rate",
+          "boom": "medium"
+        }
+      ],
+      "stacks": [],
+      "fades": [
+        {
+          "name": "Tony Pollard",
+          "why": "Script favors Spears"
+        },
+        {
+          "name": "Colts",
+          "why": "Low pressure/takeaways"
+        },
+        {
+          "name": "Tyler Warren",
+          "why": "GTD groin - only if confirmed active"
+        }
+      ],
+      "notes": "IND -6.5, 43.5 dome, TEN slowest pace. Taylor-heavy; K Shrader strong FLEX (5/5 FG W5)."
+    },
+    "154981": {
+      "mustPlays": [],
+      "core": [],
+      "sleepers": [],
+      "stacks": [],
+      "fades": [],
+      "notes": "Mon-Thu slate (MNF WAS@SF + TNF Week 7): stub - Monday game-day run will fill it. MNF lean: McCaffrey, Kittle, Rachaad White; Evans DNP all week."
     }
-   ],
-   "core": [
-    {
-     "name": "Sam Darnold",
-     "team": "SEA",
-     "pos": "QB",
-     "why": "218.5 yds -> ~14 DK; pairs with JSN CPT"
-    },
-    {
-     "name": "Bo Nix",
-     "team": "DEN",
-     "pos": "QB",
-     "why": "202.5 yds, 1.5 TD (o +180) -> ~14.5; 3rd-best CPT optimal rate (FantasyLabs)"
-    },
-    {
-     "name": "Jason Myers",
-     "team": "SEA",
-     "pos": "K",
-     "why": "Low total, two top defenses, altitude for long FGs"
-    },
-    {
-     "name": "Wil Lutz",
-     "team": "DEN",
-     "pos": "K",
-     "why": "Same logic; DEN drives stall vs #1 yds/play D"
-    },
-    {
-     "name": "Cooper Kupp",
-     "team": "SEA",
-     "pos": "WR",
-     "why": "$3,200, ~5.5 DK props; DEN 21st vs slot"
-    }
-   ],
-   "sleepers": [
-    {
-     "name": "Evan Engram",
-     "team": "DEN",
-     "pos": "TE",
-     "why": "$4,000. 22% tgts/route, 4-55 W5; DK Network UTIL pick",
-     "boom": "medium"
-    },
-    {
-     "name": "Troy Franklin",
-     "team": "DEN",
-     "pos": "WR",
-     "why": "$3,000. Routes 49%->63% post-Bryant IR; +750 TD",
-     "boom": "medium"
-    },
-    {
-     "name": "RJ Harvey",
-     "team": "DEN",
-     "pos": "RB",
-     "why": "$6,400. Props ~8 (3.5 rec) vs proj 6.2; 16 catches W3-4; SEA allows 4th-most RB rec share",
-     "boom": "medium"
-    },
-    {
-     "name": "AJ Barner",
-     "team": "SEA",
-     "pos": "TE",
-     "why": "$4,200. 77.8% of dropbacks, 13.6% RZ tgt share; DEN 7th-most TE rec yds",
-     "boom": "medium"
-    },
-    {
-     "name": "Broncos",
-     "team": "DEN",
-     "pos": "DST",
-     "why": "$4,800. Darnold 5-6 INT in 3 games, 8 sacks last 2; low-owned",
-     "boom": "medium"
-    }
-   ],
-   "stacks": [
-    "CPT JSN + Darnold + Wilson + SEA DST (SEA 21.5 implied, script SEA 20-16)",
-    "Contrarian: CPT Emanuel Wilson (best optimal vs ownership in FantasyLabs sims)",
-    "Contrarian: CPT Nix + Engram/Franklin, bring back JSN"
-   ],
-   "fades": [
-    {
-     "name": "Jaylen Waddle",
-     "why": "$9,000 FLEX for ~11 DK implied; SEA 3rd-fewest WR pts; DK Network fade"
-    },
-    {
-     "name": "J.K. Dobbins",
-     "why": "$8,400 for ~8.5 implied; SEA 3.6 YPC allowed"
-    },
-    {
-     "name": "Courtland Sutton",
-     "why": "~7.8 implied; <=3 catches every game"
-    },
-    {
-     "name": "Rashid Shaheed",
-     "why": "No TD as a Seahawk, 21 yds/g"
-    },
-    {
-     "name": "George Holani",
-     "why": "~4.6 implied"
-    }
-   ],
-   "notes": "TNF 8:15pm ET, 40.5 total (down from 42.5), SEA -2.5. Weather 49-52F, wind ~10 mph, gusts 22 - no downgrade. Final report: Charbonnet/Drake Thomas/Surratt OUT (SEA), Surtain/Hufanga OUT, Riley Moss Q (DEN). JSN and Drew Lock had no game status (the 'Q' tags in our data are stale). Inactives at 6:45pm ET."
-  },
-  "154941": {
-   "mustPlays": [
-    {
-     "name": "Puka Nacua",
-     "team": "LAR",
-     "pos": "WR",
-     "why": "$8,100. 24 targets (17-138-1) W5 at 85% routes; props 97.5 yds/7.5 rec, -160 TD -> ~22.8 DK; LAR 32.0 implied (slate high) vs ARI allowing league-high 32.4 ppg (SBD/BetMGM/ESPN/Rotowire)"
-    },
-    {
-     "name": "Kyren Williams",
-     "team": "LAR",
-     "pos": "RB",
-     "why": "$6,800. Anytime TD -250 (71%) - shortest RB price on the slate; 70.5 rush yds -> ~18.5-19 DK; LAR -12.5 script (BettingPros/BetMGM/Dimers)"
-    },
-    {
-     "name": "Isaiah Likely",
-     "team": "NYG",
-     "pos": "TE",
-     "why": "$4,800. Double-digit targets 3 of 4 games, 32.4 DK W5; Winston 54-60 dropbacks; FantasyLabs top TE plus/minus; NO 30th pts/drive (giants.com/FantasyLabs/Sharp)"
-    }
-   ],
-   "core": [
-    {
-     "name": "Matthew Stafford",
-     "team": "LAR",
-     "pos": "QB",
-     "why": "$6,400. 285.5 pass yds, 2.5 TD (o +115), ~40% 300-yd bonus -> ~21.9 DK; 51+ att 3 straight; ARI highest pass-TD rate allowed (SBD/Yahoo)"
-    },
-    {
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "pos": "RB",
-     "why": "$8,700. 91.5 rush, -250 TD -> ~21 DK; 75% RB opps W5; CHI 27th EPA/run, LBs Edwards/Elliott DNP, Sweat suspended (BetMGM/Covers/ESPN)"
-    },
-    {
-     "name": "Drake London",
-     "team": "ATL",
-     "pos": "WR",
-     "why": "$7,000. 86.5 rec yds (o -135), +110 TD -> ~19 DK; 32% tgts W5, 418 yds in Penix's 3 starts; CHI 30th yds/play (BetMGM/Rotowire)"
-    },
-    {
-     "name": "Rhamondre Stevenson",
-     "team": "NE",
-     "pos": "RB",
-     "why": "$6,000. Rush prop moved 37.5 -> 70.5, -175 TD -> ~16.2 DK; Henderson OUT (high ankle); NE -7.5, NYJ allowed 6 RB TD (SBD/DK Network)"
-    },
-    {
-     "name": "Josh Allen",
-     "team": "BUF",
-     "pos": "QB",
-     "why": "53.5 total"
-    },
-    {
-     "name": "Brock Bowers",
-     "team": "LV",
-     "pos": "TE",
-     "why": "TD every game"
-    },
-    {
-     "name": "Kenneth Walker III",
-     "team": "KC",
-     "pos": "RB",
-     "why": "-190 TD"
-    }
-   ],
-   "sleepers": [
-    {
-     "name": "D'Andre Swift",
-     "team": "CHI",
-     "pos": "RB",
-     "why": "$6,700. Full practice; Monangai (thumb/toe) 'would have been ruled out'; -185 TD, first-TD favorite; CHI 73 plays/g in 50.5 total (Sun-Times/BetMGM)",
-     "boom": "high"
-    },
-    {
-     "name": "Chiefs",
-     "team": "KC",
-     "pos": "DST",
-     "why": "$3,600. LAC allows NFL-worst 6.0 sacks+TO per game, Herbert INT in every game (7), Alt/Slater/Biadasz out; LAC implied 17 (ESPN/Sharp/Covers)",
-     "boom": "high"
-    },
-    {
-     "name": "Jameis Winston",
-     "team": "NYG",
-     "pos": "QB",
-     "why": "$5,100 mid-total (45.5) stack per W5 lesson: 576 yds/6 TD last 2, league-high 60 dropbacks; NO 30th pts/drive. Pair Nabers/Likely (giants.com/Sharp)",
-     "boom": "medium"
-    },
-    {
-     "name": "Darius Cooper",
-     "team": "PHI",
-     "pos": "WR",
-     "why": "$4,300. Led PHI WRs 85% snaps W5; DeVonta Smith DNP (likely out); CAR CBs Horn + Jackson on IR (PhillyVoice/Panthers.com)",
-     "boom": "medium"
-    },
-    {
-     "name": "Efton Chism III",
-     "team": "NE",
-     "pos": "WR",
-     "why": "$3,500. 76% snaps, 5-57 W5 replacing Hollins (IR); stale CBS/numberFire drag proj (SI snap counts)",
-     "boom": "medium"
-    },
-    {
-     "name": "Jalen Royals",
-     "team": "KC",
-     "pos": "WR",
-     "why": "$3,300. Forced WR2 with Rice (DNP, 'unlikely') + Thornton IR; 63% snaps W4 (AP/ESPN box)",
-     "boom": "medium"
-    },
-    {
-     "name": "Steelers",
-     "team": "PIT",
-     "pos": "DST",
-     "why": "$3,300. vs undrafted rookie Jalon Daniels (Mayfield thumb), TB 2nd-most sacks allowed, 15-21 mph wind (NWS/Tampa Bay Times)",
-     "boom": "medium"
-    },
-    {
-     "name": "Germie Bernard",
-     "team": "PIT",
-     "pos": "WR",
-     "why": "$4,000. 92% snaps, 6-80 W5; WR2 with R. Wilson + Skowronek OUT",
-     "boom": "medium"
-    },
-    {
-     "name": "Kyle Pitts Sr.",
-     "team": "ATL",
-     "pos": "TE",
-     "why": "$3,700. 6 tgts W5; CHI 32nd vs 2-TE sets",
-     "boom": "medium"
-    }
-   ],
-   "stacks": [
-    "LAR: Stafford + Puka + Kyren, bring back McBride",
-    "NYG: Winston + Nabers + Likely (mid-total)",
-    "BUF-LV: Allen + Shakir + Bowers",
-    "CHI-ATL: Penix + London, bring back Swift"
-   ],
-   "fades": [
-    {
-     "name": "DeVonta Smith",
-     "why": "DNP Wed (hamstring + toe), missed 2 straight - likely OUT"
-    },
-    {
-     "name": "Bucky Irving",
-     "why": "~12.5 DK implied vs 15.4 blend; 54% snaps, Gainwell more routes; rookie QB + wind"
-    },
-    {
-     "name": "Lamar Jackson",
-     "why": "No practice since 10/4 ankle; ~50/50 - only if he practices Fri"
-    },
-    {
-     "name": "Daniel Jones",
-     "why": "Never better than QB23, DK avg 10.9; blend inflated by CBS 20.3"
-    },
-    {
-     "name": "Aaron Rodgers",
-     "why": "9 TD on 4.5 expected; TB no QB above QB12; 15-21 mph wind"
-    },
-    {
-     "name": "Alvin Kamara",
-     "why": "27% snaps, 3 carries W5; back injury"
-    }
-   ],
-   "notes": "Thursday preliminary refresh (Wed practice reports). Sunday-morning run replaces this after Friday designations and weather."
-  },
-  "154943": {
-   "mustPlays": [
-    {
-     "name": "Puka Nacua",
-     "team": "LAR",
-     "pos": "WR",
-     "why": "$8,100. 24 targets (17-138-1) W5 at 85% routes; props 97.5 yds/7.5 rec, -160 TD -> ~22.8 DK; LAR 32.0 implied (slate high) vs ARI allowing league-high 32.4 ppg (SBD/BetMGM/ESPN/Rotowire)"
-    },
-    {
-     "name": "Jordan Love",
-     "team": "GB",
-     "pos": "QB",
-     "why": "$5,500 in a 52.5-53.5 total: 269.5 pass yds -> ~20 DK; 367 yds W5; DAL 32nd EPA/play, 5 sacks all year, 6 TD passes in last 2 vs DAL (SBD/Covers/NFL.com)"
-    },
-    {
-     "name": "Kyren Williams",
-     "team": "LAR",
-     "pos": "RB",
-     "why": "$6,800. Anytime TD -250 (71%) - shortest RB price on the slate; 70.5 rush yds -> ~18.5-19 DK; LAR -12.5 script (BettingPros/BetMGM/Dimers)"
-    },
-    {
-     "name": "George Kittle",
-     "team": "SF",
-     "pos": "TE",
-     "why": "$5,200. Deebo OUT (W9); WAS 29th Y/tgt to TE with league-high 17.1% TE TD rate; +125 TD (44%); SF 29.0 implied (BetMGM/Sharp/CBS)"
-    }
-   ],
-   "core": [
-    {
-     "name": "Josh Allen",
-     "team": "BUF",
-     "pos": "QB",
-     "why": "53.5 total, ~22.7 DK props + 8 rush TD"
-    },
-    {
-     "name": "Brock Bowers",
-     "team": "LV",
-     "pos": "TE",
-     "why": "TD every game, 77.5-81.5 yds, +100 TD"
-    },
-    {
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "pos": "RB",
-     "why": "$8,700. 91.5 rush, -250 TD -> ~21 DK; 75% RB opps W5; CHI 27th EPA/run, LBs Edwards/Elliott DNP, Sweat suspended (BetMGM/Covers/ESPN)"
-    },
-    {
-     "name": "Drake London",
-     "team": "ATL",
-     "pos": "WR",
-     "why": "$7,000. 86.5 rec yds (o -135), +110 TD -> ~19 DK; 32% tgts W5, 418 yds in Penix's 3 starts; CHI 30th yds/play (BetMGM/Rotowire)"
-    },
-    {
-     "name": "Kenneth Walker III",
-     "team": "KC",
-     "pos": "RB",
-     "why": "86.5 rush, -190 TD; 74% rush share; KC -8.5"
-    },
-    {
-     "name": "Mike Evans",
-     "team": "SF",
-     "pos": "WR",
-     "why": "37% tgt share, Deebo OUT, -120 TD"
-    },
-    {
-     "name": "CeeDee Lamb",
-     "team": "DAL",
-     "pos": "WR",
-     "why": "Full practice Wed; GB CBs hurt; 80.5 yds, +120 TD"
-    },
-    {
-     "name": "Rhamondre Stevenson",
-     "team": "NE",
-     "pos": "RB",
-     "why": "$6,000. Rush prop moved 37.5 -> 70.5, -175 TD -> ~16.2 DK; Henderson OUT (high ankle); NE -7.5, NYJ allowed 6 RB TD (SBD/DK Network)"
-    },
-    {
-     "name": "Isaiah Likely",
-     "team": "NYG",
-     "pos": "TE",
-     "why": "$4,800. Double-digit targets 3 of 4 games, 32.4 DK W5; Winston 54-60 dropbacks; FantasyLabs top TE plus/minus; NO 30th pts/drive (giants.com/FantasyLabs/Sharp)"
-    }
-   ],
-   "sleepers": [
-    {
-     "name": "George Pickens",
-     "team": "DAL",
-     "pos": "WR",
-     "why": "$6,800. 13 tgts (31%), 9-130-1 W5; GB CBs Nixon + St-Juste DNP, Parsons out; ownership flows to Lamb/Watson (Packers.com/SBD)",
-     "boom": "high"
-    },
-    {
-     "name": "D'Andre Swift",
-     "team": "CHI",
-     "pos": "RB",
-     "why": "$6,700. Full practice; Monangai (thumb/toe) 'would have been ruled out'; -185 TD, first-TD favorite; CHI 73 plays/g in 50.5 total (Sun-Times/BetMGM)",
-     "boom": "high"
-    },
-    {
-     "name": "Brandin Cooks",
-     "team": "SF",
-     "pos": "WR",
-     "why": "$4,000. Deebo OUT to W9, Pearsall/Kirk/Robinson out; Shanahan signals bigger role; +260 TD (27.8%) vs WAS 30.8 ppg allowed (Yardbarker/BetMGM)",
-     "boom": "high"
-    },
-    {
-     "name": "Chiefs",
-     "team": "KC",
-     "pos": "DST",
-     "why": "$3,600. LAC allows NFL-worst 6.0 sacks+TO per game, Herbert INT in every game (7), Alt/Slater/Biadasz out; LAC implied 17 (ESPN/Sharp/Covers)",
-     "boom": "high"
-    },
-    {
-     "name": "Jameis Winston",
-     "team": "NYG",
-     "pos": "QB",
-     "why": "$5,100 mid-total (45.5) stack per W5 lesson: 576 yds/6 TD last 2, league-high 60 dropbacks; NO 30th pts/drive. Pair Nabers/Likely (giants.com/Sharp)",
-     "boom": "medium"
-    },
-    {
-     "name": "Darius Cooper",
-     "team": "PHI",
-     "pos": "WR",
-     "why": "$4,300. Led PHI WRs 85% snaps W5; DeVonta Smith DNP (likely out); CAR CBs Horn + Jackson on IR (PhillyVoice/Panthers.com)",
-     "boom": "medium"
-    },
-    {
-     "name": "Efton Chism III",
-     "team": "NE",
-     "pos": "WR",
-     "why": "$3,500. 76% snaps, 5-57 W5 replacing Hollins (IR); stale CBS/numberFire drag proj (SI snap counts)",
-     "boom": "medium"
-    },
-    {
-     "name": "Bo Melton",
-     "team": "GB",
-     "pos": "WR",
-     "why": "$3,000. Took slot (28-30 snaps) with Skyy Moore in boot; min price in 52.5 total (Yahoo)",
-     "boom": "medium"
-    },
-    {
-     "name": "Jalen Royals",
-     "team": "KC",
-     "pos": "WR",
-     "why": "$3,300. Forced WR2 with Rice (DNP, 'unlikely') + Thornton IR; 63% snaps W4 (AP/ESPN box)",
-     "boom": "medium"
-    }
-   ],
-   "stacks": [
-    "GB-DAL (52.5): Love + Golden/Kraft, bring back Pickens or Lamb",
-    "LAR (32 implied): Stafford + Puka + Kyren, bring back McBride (TD 5 straight)",
-    "BUF-LV (53.5): Allen + Shakir, bring back Bowers/Tre Tucker",
-    "Mid-total stack (W5 lesson): Winston + Nabers + Likely vs NO (45.5)",
-    "CHI-ATL dome: Penix + London + Pitts, bring back Swift/Odunze"
-   ],
-   "fades": [
-    {
-     "name": "Christian Watson",
-     "why": "Props 72.5 yds/4.5 rec -> ~15.6 vs blend 19.0 chasing 6-143-2; Lambeau gusts ~25 mph"
-    },
-    {
-     "name": "DeVonta Smith",
-     "why": "DNP Wed (hamstring + toe), missed 2 straight - likely OUT"
-    },
-    {
-     "name": "Bucky Irving",
-     "why": "~12.5 DK implied vs 15.4 blend; 54% snaps, Gainwell more routes; rookie QB + wind"
-    },
-    {
-     "name": "Lamar Jackson",
-     "why": "No practice since 10/4 ankle; ~50/50 - only if he practices Fri"
-    },
-    {
-     "name": "Daniel Jones",
-     "why": "Never better than QB23, DK avg 10.9; blend inflated by CBS 20.3"
-    },
-    {
-     "name": "Aaron Rodgers",
-     "why": "9 TD on 4.5 expected; TB no QB above QB12; 15-21 mph wind"
-    },
-    {
-     "name": "Alvin Kamara",
-     "why": "27% snaps, 3 carries W5; back injury"
-    },
-    {
-     "name": "Jaylen Waddle",
-     "why": "Props ~11 DK, SEA 3rd-fewest WR pts, 71% of targets <10 yds"
-    }
-   ],
-   "notes": "Thursday preliminary (same research as Thu-Mon minus TNF/London). Sunday run will refresh."
-  },
-  "154942": {
-   "mustPlays": [
-    {
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "pos": "RB",
-     "why": "$8,700. 91.5 rush, -250 TD -> ~21 DK; 75% RB opps W5; CHI 27th EPA/run, LBs Edwards/Elliott DNP, Sweat suspended (BetMGM/Covers/ESPN)"
-    },
-    {
-     "name": "Drake London",
-     "team": "ATL",
-     "pos": "WR",
-     "why": "$7,000. 86.5 rec yds (o -135), +110 TD -> ~19 DK; 32% tgts W5, 418 yds in Penix's 3 starts; CHI 30th yds/play (BetMGM/Rotowire)"
-    },
-    {
-     "name": "Rhamondre Stevenson",
-     "team": "NE",
-     "pos": "RB",
-     "why": "$6,000. Rush prop moved 37.5 -> 70.5, -175 TD -> ~16.2 DK; Henderson OUT (high ankle); NE -7.5, NYJ allowed 6 RB TD (SBD/DK Network)"
-    },
-    {
-     "name": "Isaiah Likely",
-     "team": "NYG",
-     "pos": "TE",
-     "why": "$4,800. Double-digit targets 3 of 4 games, 32.4 DK W5; Winston 54-60 dropbacks; FantasyLabs top TE plus/minus; NO 30th pts/drive (giants.com/FantasyLabs/Sharp)"
-    }
-   ],
-   "core": [
-    {
-     "name": "Drake Maye",
-     "team": "NE",
-     "pos": "QB",
-     "why": "236.5 yds -> ~19.7; 42.5 DK W5"
-    },
-    {
-     "name": "Malik Nabers",
-     "team": "NYG",
-     "pos": "WR",
-     "why": "20 tgts W5"
-    },
-    {
-     "name": "Jameis Winston",
-     "team": "NYG",
-     "pos": "QB",
-     "why": "60 dropbacks W5"
-    },
-    {
-     "name": "Chuba Hubbard",
-     "team": "CAR",
-     "pos": "RB",
-     "why": "67.5 rush, -125 TD"
-    }
-   ],
-   "sleepers": [
-    {
-     "name": "D'Andre Swift",
-     "team": "CHI",
-     "pos": "RB",
-     "why": "$6,700. Full practice; Monangai (thumb/toe) 'would have been ruled out'; -185 TD, first-TD favorite; CHI 73 plays/g in 50.5 total (Sun-Times/BetMGM)",
-     "boom": "high"
-    },
-    {
-     "name": "Jameis Winston",
-     "team": "NYG",
-     "pos": "QB",
-     "why": "$5,100 mid-total (45.5) stack per W5 lesson: 576 yds/6 TD last 2, league-high 60 dropbacks; NO 30th pts/drive. Pair Nabers/Likely (giants.com/Sharp)",
-     "boom": "medium"
-    },
-    {
-     "name": "Darius Cooper",
-     "team": "PHI",
-     "pos": "WR",
-     "why": "$4,300. Led PHI WRs 85% snaps W5; DeVonta Smith DNP (likely out); CAR CBs Horn + Jackson on IR (PhillyVoice/Panthers.com)",
-     "boom": "medium"
-    },
-    {
-     "name": "Efton Chism III",
-     "team": "NE",
-     "pos": "WR",
-     "why": "$3,500. 76% snaps, 5-57 W5 replacing Hollins (IR); stale CBS/numberFire drag proj (SI snap counts)",
-     "boom": "medium"
-    },
-    {
-     "name": "Steelers",
-     "team": "PIT",
-     "pos": "DST",
-     "why": "$3,300. vs undrafted rookie Jalon Daniels (Mayfield thumb), TB 2nd-most sacks allowed, 15-21 mph wind (NWS/Tampa Bay Times)",
-     "boom": "medium"
-    },
-    {
-     "name": "Panthers",
-     "team": "CAR",
-     "pos": "DST",
-     "why": "$2,500. Hurts most-pressured QB (NGS), PHI 26th scoring",
-     "boom": "medium"
-    },
-    {
-     "name": "Kyle Pitts Sr.",
-     "team": "ATL",
-     "pos": "TE",
-     "why": "$3,700. CHI 32nd vs 2-TE sets",
-     "boom": "medium"
-    }
-   ],
-   "stacks": [
-    "CHI-ATL: Penix + London + Pitts, bring back Swift",
-    "NYG: Winston + Nabers + Likely",
-    "NE: Maye + Chism/Henry, Stevenson"
-   ],
-   "fades": [
-    {
-     "name": "DeVonta Smith",
-     "why": "DNP Wed (hamstring + toe), missed 2 straight - likely OUT"
-    },
-    {
-     "name": "Bucky Irving",
-     "why": "~12.5 DK implied vs 15.4 blend; 54% snaps, Gainwell more routes; rookie QB + wind"
-    },
-    {
-     "name": "Lamar Jackson",
-     "why": "No practice since 10/4 ankle; ~50/50 - only if he practices Fri"
-    },
-    {
-     "name": "Daniel Jones",
-     "why": "Never better than QB23, DK avg 10.9; blend inflated by CBS 20.3"
-    },
-    {
-     "name": "Aaron Rodgers",
-     "why": "9 TD on 4.5 expected; TB no QB above QB12; 15-21 mph wind"
-    },
-    {
-     "name": "Alvin Kamara",
-     "why": "27% snaps, 3 carries W5; back injury"
-    }
-   ],
-   "notes": "Thursday preliminary; Sunday run will refresh."
   }
- }
 }
