@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T15:12:56Z",
+ "updated": "2026-10-19T22:57:00Z",
  "week": 6,
  "sources": [
   "49erswebzone (Kirk trending)",
@@ -344,7 +344,7 @@
      "name": "Terry McLaurin",
      "team": "WAS",
      "pos": "WR",
-     "why": "$8,000. ~11.8; CPT leverage if Diggs OUT"
+     "why": "$8,000. ~11.8; 49.5 yds props, Diggs active so share is split"
     }
    ],
    "sleepers": [
@@ -356,17 +356,17 @@
      "boom": "high"
     },
     {
+     "name": "Mike Evans",
+     "team": "SF",
+     "pos": "WR",
+     "why": "$9,600. ACTIVE after DNP week; 62.5 yds/4.5 rec props intact - low-owned CPT/FLEX leverage vs Kittle/Cooks chalk",
+     "boom": "high"
+    },
+    {
      "name": "Jacob Cowing",
      "team": "SF",
      "pos": "WR",
      "why": "$2,200. WR3, ATD 18.5%, best $/pt on slate (~2.5x)",
-     "boom": "medium"
-    },
-    {
-     "name": "Antonio Williams",
-     "team": "WAS",
-     "pos": "WR",
-     "why": "$4,200. 68% snaps W5 without Diggs; boost if Diggs inactive",
      "boom": "medium"
     },
     {
@@ -392,7 +392,7 @@
    "fades": [
     {
      "name": "Stefon Diggs",
-     "why": "Q hamstring, no Kalshi market, 40.5-yd prop -> ~9 pts at $8,400"
+     "why": "ACTIVE but ~8.5 pts at $8,400 (39.5 yds prop) after limited week"
     },
     {
      "name": "Commanders",
@@ -403,7 +403,7 @@
      "why": "24.5 rush yds prop, little receiving"
     }
    ],
-   "notes": "SF -7.5, total 51.5 (from 52.5). NW wind 13 mph at kickoff easing to 7, no rain. Late swap: if Evans OUT -> Kittle CPT, Cooks/Cowing up; if Diggs OUT -> A. Williams/Burks up, McLaurin CPT leverage. Kirk (IR) and McNichols (IR) activations possible Mon PM. No published ownership; est chalk Purdy CPT, Kittle, CMC, Cooks."
+   "notes": "SF -7.5, total 51.5 (from 52.5). NW wind 13 mph at kickoff easing to 7, no rain. Late swap: if Evans OUT -> Kittle CPT, Cooks/Cowing up; if Diggs OUT -> A. Williams/Burks up, McLaurin CPT leverage. Kirk (IR) and McNichols (IR) activations possible Mon PM. No published ownership; est chalk Purdy CPT, Kittle, CMC, Cooks. | Final inactives (primetime) 10/19 ~6:58pm ET: Evans + Diggs ACTIVE (no reported snap limits); Kirk OUT (IR), Deebo, Bosa, Sigle, Wallow, Omenihu, Mariota inactive; McNichols activated (RB3), Juszczyk active. Total back to 52.5 (SF -7.5), 64F, gusts ~16 mph, dry. Evans proj up to ~13, Diggs ~8.5; A. Williams/Burks down."
   },
   "154981": {
    "mustPlays": [
@@ -520,8 +520,8 @@
      "name": "Antonio Williams",
      "team": "WAS",
      "pos": "WR",
-     "why": "$4,100. 68% snaps W5 without Diggs; Diggs (hamstring) ~55% and capped - main beneficiary (CBS/Rotowire).",
-     "boom": "medium"
+     "why": "$4,100. Diggs ACTIVE - role back to rotational WR3; lower priority, punt only",
+     "boom": "low"
     },
     {
      "name": "Jacob Cowing",
@@ -574,11 +574,11 @@
    "fades": [
     {
      "name": "Stefon Diggs",
-     "why": "Q hamstring, pregame-workout decision, WAS bye next; ~9 pts even if active at $5,300"
+     "why": "ACTIVE (no limit reported) but ~8.5 pts at $5,300; WAS bye next"
     },
     {
      "name": "Mike Evans",
-     "why": "DNP all week (ribs + Achilles), props cut 15 yds/1 rec = snap cap; only a leverage play if active"
+     "why": "ACTIVE - 62.5 yd prop; ~13 pts at $6,500, playable leverage but Cooks/Kittle still better $/pt"
     },
     {
      "name": "Rhamondre Stevenson",
@@ -597,7 +597,7 @@
      "why": "vs SF TT 29.5 with two pass rushers OUT"
     }
    ],
-   "notes": "Mon 10/19 ~11:30am CT. MNF WAS@SF: SF -7.5, total 52.5->51.5 (DK/ESPN), SF TT 29.5. TNF NE@CHI: CHI -3 (opened -1.5), 49.5 (opened 47.5), clear/calm. Evans + Diggs decisions at ~6:45pm ET inactives - Evans projected at ~75% x 14.5, Diggs ~57% x 9.3. NE/CHI practice reports Tue/Wed: late-swap Doubs/Monangai/OL news. Projections are estimates."
+   "notes": "Mon 10/19 ~11:30am CT. MNF WAS@SF: SF -7.5, total 52.5->51.5 (DK/ESPN), SF TT 29.5. TNF NE@CHI: CHI -3 (opened -1.5), 49.5 (opened 47.5), clear/calm. Evans + Diggs decisions at ~6:45pm ET inactives - Evans projected at ~75% x 14.5, Diggs ~57% x 9.3. NE/CHI practice reports Tue/Wed: late-swap Doubs/Monangai/OL news. Projections are estimates. | Final inactives (primetime) 10/19 ~6:58pm ET: Evans + Diggs ACTIVE (no reported snap limits); Kirk OUT (IR), Deebo, Bosa, Sigle, Wallow, Omenihu, Mariota inactive; McNichols activated (RB3), Juszczyk active. Total back to 52.5 (SF -7.5), 64F, gusts ~16 mph, dry. Evans proj up to ~13, Diggs ~8.5; A. Williams/Burks down."
   },
   "155198": {
    "mustPlays": [],
