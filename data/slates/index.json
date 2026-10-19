@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T15:14+00:00",
+ "updated": "2026-10-19T19:50+00:00",
  "week": 6,
  "default": 155198,
  "slates": [
@@ -14,10 +14,10 @@
    "matched": {
     "sleeper": 108,
     "espn": 72,
-    "fantasypros": 49,
+    "fantasypros": 51,
     "cbs": 54,
     "numberfire": 38,
-    "dff": 25,
+    "dff": 27,
     "props": 25
    }
   },
@@ -30,12 +30,12 @@
    "type": "classic",
    "players": 513,
    "matched": {
-    "sleeper": 505,
+    "sleeper": 504,
     "espn": 366,
-    "fantasypros": 122,
+    "fantasypros": 134,
     "cbs": 275,
     "numberfire": 0,
-    "dff": 221,
+    "dff": 229,
     "props": 0
    }
   },
@@ -53,7 +53,7 @@
     "fantasypros": 36,
     "cbs": 30,
     "numberfire": 38,
-    "dff": 27,
+    "dff": 29,
     "props": 14
    }
   }
