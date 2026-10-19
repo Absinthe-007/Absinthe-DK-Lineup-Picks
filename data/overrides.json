@@ -1,6 +1,6 @@
 {
  "_note": "Claude's research layer. 'mult' multiplies the blended projection (0 = out); optional 'proj' replaces it; 'ceil_mult' raises a sleeper ceiling; optional 'team' restricts the match.",
- "updated": "2026-10-19T15:11:14Z",
+ "updated": "2026-10-19T22:57:00Z",
  "week": 6,
  "players": {
   "Christian McCaffrey": {
@@ -19,9 +19,9 @@
   },
   "Mike Evans": {
    "mult": 1.0,
-   "note": "Q ribs+Achilles, DNP all week; Maiocco 'I think Evans will play', props posted but cut 78.5->63.5 yds/5.5->4.5 rec (snap cap) -> ~14.5 if active x ~75% = 11; decision near kickoff (NBC Bay Area, Yahoo, ESPN props 10/19)",
+   "note": "ACTIVE (Q ribs/Achilles, no listed limit) - 49ers.com inactives 10/19; DK props 62.5 yds/4.5 rec (ESPN core propBets) -> ~14.5, small snap haircut after DNP week",
    "team": "SF",
-   "proj": 11.0,
+   "proj": 13.0,
    "ceil_mult": 1.2
   },
   "George Kittle": {
@@ -59,7 +59,7 @@
   },
   "Kyle Juszczyk": {
    "mult": 1.0,
-   "note": "Back from knee bone bruise, no designation; ATD 14.5%",
+   "note": "Active, back from knee (49ers.com 10/19); ATD 14.5%",
    "team": "SF",
    "proj": 2.5
   },
@@ -71,12 +71,12 @@
   },
   "49ers": {
    "mult": 0.95,
-   "note": "WAS TT 21.5; Bosa, Sigle, Wallow OUT + Greenlaw suspended vs scrambling Daniels; Kalshi DST TD 12.5%",
+   "note": "WAS TT 21.5; Bosa, Sigle, Wallow OUT + Greenlaw suspended vs scrambling Daniels; Kalshi DST TD 12.5%; Bosa/Sigle/Wallow confirmed inactive 10/19",
    "team": "SF"
   },
   "Deebo Samuel": {
    "mult": 0,
-   "note": "OUT (hamstring), ESPN est return 11/8",
+   "note": "Inactive (hamstring) - 49ers.com 10/19",
    "team": "SF"
   },
   "Demarcus Robinson": {
@@ -86,7 +86,7 @@
   },
   "Christian Kirk": {
    "mult": 0,
-   "note": "IR (calf), window open - may be activated Monday PM (Rotowire 10/17); re-check transactions",
+   "note": "Inactive - ruled out Mon, stays on IR (49ers.com 10/19)",
    "team": "SF"
   },
   "Jayden Daniels": {
@@ -104,9 +104,9 @@
   },
   "Stefon Diggs": {
    "mult": 1.0,
-   "note": "Q hamstring: DNP Thu, LP Fri/Sat, pregame workout decides (Riggo's Rag 10/19); no Kalshi markets; DK props 40.5 yds/3.5 rec -> ~9.3 if active x ~57%; WAS bye W7",
+   "note": "ACTIVE (Q hamstring) - not on Commanders.com inactives 10/19 (Yahoo live); DK props 39.5 yds/4.5 rec -> ~9.3, slight haircut",
    "team": "WAS",
-   "proj": 5.3
+   "proj": 8.5
   },
   "Rachaad White": {
    "mult": 1.0,
@@ -131,16 +131,16 @@
   },
   "Antonio Williams": {
    "mult": 1.0,
-   "note": "22.5 yds/2.5 rec, ATD 15.5% -> ~6.3; 68% snaps W5 without Diggs; main beneficiary if Diggs sits (CBS/Rotowire)",
+   "note": "Diggs ACTIVE (10/19 inactives) - back to WR3/4 rotation; 21.5 yds/2.5 rec props",
    "team": "WAS",
-   "proj": 7.0,
+   "proj": 5.8,
    "ceil_mult": 1.15
   },
   "Treylon Burks": {
    "mult": 1.0,
-   "note": "73% snaps W5 with Diggs out; ATD 12.5%; +2 if Diggs OUT",
+   "note": "Diggs ACTIVE - rotational; ATD 12.5%",
    "team": "WAS",
-   "proj": 5.0
+   "proj": 4.0
   },
   "Dyami Brown": {
    "mult": 0.9,
@@ -155,22 +155,22 @@
   },
   "Commanders": {
    "mult": 0.85,
-   "note": "vs SF TT 29.5; Omenihu + Jean-Baptiste OUT, secondary Q (Cross, Amos)",
+   "note": "vs SF TT 29.5; Omenihu + Jean-Baptiste OUT, secondary Q (Cross, Amos); Omenihu + CBs Moreau/Yiadom inactive 10/19",
    "team": "WAS"
   },
   "Jacory Croskey-Merritt": {
    "mult": 0,
-   "note": "OUT (groin) - Commanders.com 10/17",
+   "note": "OUT (groin), placed on IR 10/19 - Commanders.com",
    "team": "WAS"
   },
   "Marcus Mariota": {
    "mult": 0,
-   "note": "OUT",
+   "note": "Inactive - Commanders.com 10/19",
    "team": "WAS"
   },
   "Jeremy McNichols": {
    "mult": 1.0,
-   "note": "IR/Q (quad), full practice all week, ~65% to be activated Mon (PFT/CBS); RB3",
+   "note": "Activated from IR 10/19 (Commanders.com), RB3 behind White/Ekeler",
    "team": "WAS",
    "proj": 2.5
   },
@@ -517,6 +517,11 @@
    "mult": 0,
    "note": "IR (hip)",
    "team": "CLE"
+  },
+  "Kurtis Rourke": {
+   "mult": 0,
+   "note": "Inactive - 49ers.com 10/19",
+   "team": "SF"
   }
  },
  "boosts": {}
