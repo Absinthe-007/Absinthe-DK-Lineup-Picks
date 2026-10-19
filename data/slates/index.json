@@ -1,42 +1,42 @@
 {
- "updated": "2026-10-18T22:59+00:00",
+ "updated": "2026-10-19T15:14+00:00",
  "week": 6,
- "default": 154946,
+ "default": 155198,
  "slates": [
   {
-   "id": 154946,
-   "name": "Primetime",
-   "start": "2026-10-18T20:20",
+   "id": 154981,
+   "name": "Mon-Thu",
+   "start": "2026-10-19T20:15",
    "games": 2,
    "featured": false,
    "type": "classic",
    "players": 110,
    "matched": {
-    "sleeper": 107,
-    "espn": 75,
-    "fantasypros": 65,
+    "sleeper": 108,
+    "espn": 72,
+    "fantasypros": 49,
     "cbs": 54,
-    "numberfire": 73,
-    "dff": 53,
-    "props": 29
+    "numberfire": 38,
+    "dff": 25,
+    "props": 25
    }
   },
   {
-   "id": 154959,
-   "name": "DAL @ GB",
-   "start": "2026-10-18T20:20",
-   "games": 1,
+   "id": 155198,
+   "name": "Main",
+   "start": "2026-10-25T13:00",
+   "games": 10,
    "featured": true,
-   "type": "showdown",
-   "players": 55,
+   "type": "classic",
+   "players": 513,
    "matched": {
-    "sleeper": 54,
-    "espn": 38,
-    "fantasypros": 33,
-    "cbs": 28,
-    "numberfire": 35,
-    "dff": 30,
-    "props": 20
+    "sleeper": 505,
+    "espn": 366,
+    "fantasypros": 122,
+    "cbs": 275,
+    "numberfire": 0,
+    "dff": 221,
+    "props": 0
    }
   },
   {
@@ -54,7 +54,7 @@
     "cbs": 30,
     "numberfire": 38,
     "dff": 27,
-    "props": 13
+    "props": 14
    }
   }
  ]

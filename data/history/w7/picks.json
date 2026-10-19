@@ -1,0 +1,611 @@
+{
+ "updated": "2026-10-19T15:12:56Z",
+ "week": 6,
+ "sources": [
+  "49erswebzone (Kirk trending)",
+  "49erswebzone, SF Standard, ArizonaSports, AZCardinals.com (Urban), GoPHNX",
+  "4for4 W6 injury report",
+  "ABC7/Cimini, NY Post/Costello, The Athletic (Duggan), Raanan, Fowler X, Schefter X (insider reports via ESPN/search)",
+  "AP / USA Today / La Nacion (McVay quotes)",
+  "Athlon Sports final injury reports",
+  "AtoZ Sports, ClutchPoints, Heavy, Newsweek, The Big Lead, Bolavip, Hottakes, Complex (news)",
+  "BetMGM props",
+  "Boston Globe snap counts",
+  "Boston.com Vrabel radio 10/19",
+  "CBS Sports (Diggs, McNichols; W6 inactives tracker)",
+  "CBS Sports (betting previews, injury news)",
+  "CBS Sports live Week 6 inactives tracker (10/18)",
+  "CBS/SportsLine MNF DFS 10/19",
+  "Covers (predictions, props, betting splits)",
+  "Covers WAS-SF props/ATD/prediction (10/19 7:19-7:26am ET); Covers NE-CHI early lean",
+  "DK Network (chalk plays, value picks, Millionaire picks, props, buzz)",
+  "DK salary CSVs and DK lobby (getcontests)",
+  "Digital Sports Desk",
+  "Dimers projections/predictions",
+  "DraftKings Network MNF Showdown (Stan Son 10/18)",
+  "DraftSharks news (Judkins inactive, Lamb)",
+  "ESPN Fantasy Playbook / DFS values",
+  "ESPN Reiss (Doubs, A.J. Brown), Cronin (Caleb, Sweat), ESPN Fantasy 'Who got the ball' 10/19",
+  "ESPN box scores / team schedule APIs (W3-W5 usage)",
+  "ESPN content API (Week 6 Sunday inactives article, Schefter Shough story)",
+  "ESPN core API odds + DK propBets (provider 100) - 10/19 14:43-17:14Z",
+  "ESPN core injuries API (Rotowire blurbs citing Rapoport/Schefter/Fowler/Garafolo/beat writers)",
+  "ESPN core injuries API inactives (10/18 11:3x ET)",
+  "ESPN core propBets/odds API (DK props)",
+  "ESPN core team injuries (SF 25, WAS 28); ESPN league injuries API",
+  "ESPN game summary API (DAL@GB injuries, DK odds, weather)",
+  "ESPN game summary API (injuries, DK odds open/current, predictor, weather)",
+  "ESPN scoreboard API (site.api.espn.com)",
+  "ESPN site API scoreboard/summary (event 401873008, 401872999, 401873001) - 10/19 15:00Z",
+  "ESPN/Bleacher Report (Giants QB)",
+  "Establish The Run (Silva matchups preview)",
+  "FOX6 Milwaukee + Acme Packing (Jacobs)",
+  "FTN (tournament picks/ownership, snippet)",
+  "FTN + Lineups.com Showdown (snippets)",
+  "FanDuel Research props",
+  "Fantasy Life (DK main-slate picks, showdown, matchup breakdowns)",
+  "FantasyData box score",
+  "FantasyLabs (leverage picks, model picks, stacks, ownership notes)",
+  "Fantrax HQ SNF preview",
+  "FantraxHQ MNF plays + preview",
+  "Football Nation USA (NE-CHI guide, W6 injury fallout)",
+  "Football Nation USA (props, game guides, line movement)",
+  "Footballguys W6 injury updates",
+  "Heavy (Evans, Vrabel availability, Penix)",
+  "Inquirer/CP24-AP (Hurts)",
+  "Jingletree Bears injuries",
+  "Kalshi API (KXNFLGAME/TD/SPREAD/RECYDS/RSHYDS WAS-SF) - 10/19",
+  "Kalshi prediction markets (via Oddsshopper/SBD/Covers)",
+  "Legion Report, Footballguys, LeagueLogs snap data (via search)",
+  "Musketfire NE injuries",
+  "NBC Sports / Rotoworld / ProFootballTalk player news",
+  "NBC Sports Bay Area (Maiocco); NBC Sports/Rotoworld player news; PFT (McNichols, Minter)",
+  "NBC Sports Philadelphia (Steele)",
+  "NBC Sports/Rotoworld player news (Kamara, Spears active)",
+  "Oddsshopper (Kalshi prices, MNF picks)",
+  "Ourlads depth charts SF/WAS",
+  "Philadelphia Inquirer (line movement)",
+  "Polymarket gamma API nfl-was-sf-2026-10-20",
+  "Riggo's Rag Diggs 10/19 7:30am ET",
+  "RotoBaller (snap/route notes, outlooks)",
+  "Rotoballer MNF Showdown 10/19",
+  "Rotowire (team news, DK Week 6 top picks, props, weather)",
+  "Rotowire headlines (Kirk, Diggs, Doubs, Kamara)",
+  "SI Bears On SI (Monangai)",
+  "SI Buccaneers OnSI (Tucker inactive)",
+  "SI betting (WAS-SF props, Diggs, Evans; NE-CHI preview); Fantasy Life odds 10/19",
+  "SI.com (team sites final injury reports + SI Betting props/injury-impact)",
+  "Sharp Football Analysis (Hribar worksheets)",
+  "Sleeper API players, stats W1-6, trending adds, W7 projections - 10/19",
+  "Sleeper players API (injury/practice status, depth charts)",
+  "Sleeper players API injury_status (10/18)",
+  "Sleeper trending adds API",
+  "Sleeper weekly stats API (snaps, targets, carries W3-5)",
+  "SportsBettingDime props + Kalshi TD prices",
+  "SportsBookReview props",
+  "SportsLine MNF DFS lineups",
+  "Sportsgambler / Squawka / Sports Interaction props (snippets)",
+  "Steelers Depot, Bleeding Green Nation, ArrowheadAddict, Windy City Gridiron, PatsPulpit (team blogs)",
+  "Stokastic anytime-TD cheat sheet",
+  "The Fantasy Footballers news",
+  "WGR 550 (Capaccio) via SI, Buffalo News (Buscaglia) via Yahoo",
+  "Yahoo (Commanders Wire, Sporting News, Evans/Diggs/Doubs/Bears takeaways)",
+  "Yahoo Sports (is X playing today, start/sit, Rapoport Sunday report)",
+  "Yahoo Sports / team-site inactives posts (TEN-IND, NO-NYG, PIT-TB)",
+  "Yahoo Sports SNF who's in/out tracker",
+  "YouWager props",
+  "api.weather.gov MTR/97,86 (Santa Clara) and LOT/76,72 (Soldier Field)",
+  "api.weather.gov hourly forecasts + gridpoint gusts (Foxborough, Philadelphia, Tampa, Cleveland, MetLife, Arrowhead, Lambeau, Levi's)",
+  "commanders.com game status; patriots.com game observations; chicagobears.com recap",
+  "lineups.com, CBS Prisco (score picks, snippets)",
+  "nfl.com/injuries (2026 reg6) and NFL.com Sunday injuries-to-monitor",
+  "nfl.com/injuries/league/2026/reg6; nfl.com Sunday notable injuries + Monday roundup 10/19",
+  "nflverse injuries_2026.csv",
+  "packers.com + dallascowboys.com SNF inactives (10/18 5:50pm CT)",
+  "patriots.com, newyorkjets.com, chargers.com, raiders.com, therams.com, buccaneers.com, philadelphiaeagles.com, neworleanssaints.com, giants.com, packers.com, dallascowboys.com, commanders.com, 49ers.com (official injury reports/trackers/depth charts)"
+ ],
+ "default": {
+  "mustPlays": [
+   {
+    "name": "Christian McCaffrey",
+    "team": "SF",
+    "pos": "RB",
+    "why": "$7,900. Props 61.5 rush/38.5 rec yds/4.5 rec, ATD 69.5% (Kalshi), 2+ TD 30.5% -> ~22 DK; SF TT 29.5 (DK via ESPN API) as 7.5-pt home fav; 74-83% snaps W3-5 (Sleeper)."
+   },
+   {
+    "name": "Brock Purdy",
+    "team": "SF",
+    "pos": "QB",
+    "why": "$6,800. 252.5 pass yds (up 5), 2.5 TD o+146 -> ~22 props-implied; WAS allows most pass TD (14) and 23.8 DK/g to QBs; FTN/DKN/Rotoballer #1 Showdown CPT."
+   },
+   {
+    "name": "George Kittle",
+    "team": "SF",
+    "pos": "TE",
+    "why": "$5,200. 68.5 rec yds (up from 63.5)/5.5 rec, ATD 45.5% -> ~16.5; 85-92% snaps; WAS allows 22.2 DK/g to TE; Deebo OUT, Evans limited."
+   },
+   {
+    "name": "A.J. Brown",
+    "team": "NE",
+    "pos": "WR",
+    "why": "$6,000. 76% snaps + 10 tgts in IR return W6; Doubs (shoulder) likely OUT for TNF -> WR1 volume; CHI -3/49.5, calm 60F (ESPN, Reiss 10/19, NWS). Late swap possible Thu."
+   }
+  ],
+  "core": [
+   {
+    "name": "D'Andre Swift",
+    "team": "CHI",
+    "pos": "RB",
+    "why": "$6,900. 58% snaps, 16 car + 5 tgts, 5 RZ carries, 2 TD W6; Monangai OUT again (week-to-week)."
+   },
+   {
+    "name": "Rachaad White",
+    "team": "WAS",
+    "pos": "RB",
+    "why": "$4,600. JCM OUT: rush prop 20.5->46.5, ATD 40.5% -> ~12; SF allows 24.6 DK/g to RBs."
+   },
+   {
+    "name": "DeMario Douglas",
+    "team": "NE",
+    "pos": "WR",
+    "why": "$4,600. 7-86-1 on 8 tgts W6, 19+ DK two straight; slot volume up without Doubs."
+   },
+   {
+    "name": "Rome Odunze",
+    "team": "CHI",
+    "pos": "WR",
+    "why": "$4,700. 96% snaps W6 but 4 tgts after 7-9 W4-5 - regression spot."
+   },
+   {
+    "name": "Jayden Daniels",
+    "team": "WAS",
+    "pos": "QB",
+    "why": "$6,000. 38.5 rush prop (up 6), ATD 26.5% -> ~19.5; 103 rush yds/2 TD W5."
+   },
+   {
+    "name": "Drake Maye",
+    "team": "NE",
+    "pos": "QB",
+    "why": "$6,500. 3+ pass TD three straight; NE TT ~23.25."
+   },
+   {
+    "name": "Caleb Williams",
+    "team": "CHI",
+    "pos": "QB",
+    "why": "$6,300. 30/36, 305 in hamstring return; CHI TT ~26.25 at home."
+   },
+   {
+    "name": "Colston Loveland",
+    "team": "CHI",
+    "pos": "TE",
+    "why": "$4,400. 68/77 snaps, 7 tgts, 3 RZ tgts, TD W6."
+   },
+   {
+    "name": "Terry McLaurin",
+    "team": "WAS",
+    "pos": "WR",
+    "why": "$5,100. 46.5 yds, ATD 30.5% -> ~11.8; no designation."
+   },
+   {
+    "name": "Bears",
+    "team": "CHI",
+    "pos": "DST",
+    "why": "$3,000. NE OL banged up (Moses, Vera-Tucker, B. Brown), Vrabel: turnovers 'historic' - 5 sacks/3 takeaways W6."
+   }
+  ],
+  "sleepers": [
+   {
+    "name": "Brandin Cooks",
+    "team": "SF",
+    "pos": "WR",
+    "why": "$4,000. Starter with Deebo OUT; Kalshi ATD 24.5% (best under $6K); TD on 40% snaps W5; WR1-ish if Evans sits/limited.",
+    "boom": "high"
+   },
+   {
+    "name": "Corey Kiner",
+    "team": "NE",
+    "pos": "RB",
+    "why": "$4,300. Hot hand: 11-57 on 12 snaps, 5 RZ carries, closed W6 with 8 straight carries; Vrabel 'ride the hot hand'.",
+    "boom": "high"
+   },
+   {
+    "name": "Efton Chism III",
+    "team": "NE",
+    "pos": "WR",
+    "why": "$3,300. 42/68 snaps W6 after Doubs left; 57 snaps/6 tgts W5 - full-time role if Doubs OUT.",
+    "boom": "medium"
+   },
+   {
+    "name": "Antonio Williams",
+    "team": "WAS",
+    "pos": "WR",
+    "why": "$4,100. 68% snaps W5 without Diggs; Diggs (hamstring) ~55% and capped - main beneficiary (CBS/Rotowire).",
+    "boom": "medium"
+   },
+   {
+    "name": "Jacob Cowing",
+    "team": "SF",
+    "pos": "WR",
+    "why": "$3,000. WR3 on 92% of 3-WR snaps, ATD 18.5% - near-min piece of the 51.5-total game.",
+    "boom": "medium"
+   },
+   {
+    "name": "Austin Ekeler",
+    "team": "WAS",
+    "pos": "RB",
+    "why": "$4,200. Passing-down back in a 7.5-pt dog script; SF allows 2nd-most RB targets.",
+    "boom": "medium"
+   },
+   {
+    "name": "Kyle Williams",
+    "team": "NE",
+    "pos": "WR",
+    "why": "$3,200. Deep role, 18.1 DK in W5; more snaps with Doubs out.",
+    "boom": "medium"
+   },
+   {
+    "name": "Eli Raridon",
+    "team": "NE",
+    "pos": "TE",
+    "why": "$2,600. 39/68 snaps, 3 tgts + RZ look W6 - salary-saver TE.",
+    "boom": "medium"
+   },
+   {
+    "name": "Bears",
+    "team": "CHI",
+    "pos": "DST",
+    "why": "$3,000. Cheap DST vs turnover-prone NE with backup OL.",
+    "boom": "high"
+   },
+   {
+    "name": "Patriots",
+    "team": "NE",
+    "pos": "DST",
+    "why": "$2,700. Second cheap DST; CHI 12 penalties/4 sacks allowed W6.",
+    "boom": "medium"
+   }
+  ],
+  "stacks": [
+   "Purdy + Kittle + CMC (SF TT 29.5) with a WAS bring-back (Daniels/White/McLaurin)",
+   "Mid-total TNF stack (rule from W5): Maye + Douglas + A.J. Brown/Henry, bring back Odunze or Loveland",
+   "Caleb + Odunze + Loveland (CHI TT ~26.25) with Bears DST fade of NE skill players"
+  ],
+  "fades": [
+   {
+    "name": "Stefon Diggs",
+    "why": "Q hamstring, pregame-workout decision, WAS bye next; ~9 pts even if active at $5,300"
+   },
+   {
+    "name": "Mike Evans",
+    "why": "DNP all week (ribs + Achilles), props cut 15 yds/1 rec = snap cap; only a leverage play if active"
+   },
+   {
+    "name": "Rhamondre Stevenson",
+    "why": "0 targets W6, lost RZ work to Kiner, 3-way committee"
+   },
+   {
+    "name": "TreVeyon Henderson",
+    "why": "High-ankle, fumble, snaps 28/12/16"
+   },
+   {
+    "name": "Romeo Doubs",
+    "why": "Shoulder - Sleeper Out, Vrabel doubtful on short week"
+   },
+   {
+    "name": "Commanders",
+    "why": "vs SF TT 29.5 with two pass rushers OUT"
+   }
+  ],
+  "notes": "Mon 10/19 ~11:30am CT. MNF WAS@SF: SF -7.5, total 52.5->51.5 (DK/ESPN), SF TT 29.5. TNF NE@CHI: CHI -3 (opened -1.5), 49.5 (opened 47.5), clear/calm. Evans + Diggs decisions at ~6:45pm ET inactives - Evans projected at ~75% x 14.5, Diggs ~57% x 9.3. NE/CHI practice reports Tue/Wed: late-swap Doubs/Monangai/OL news. Projections are estimates."
+ },
+ "slates": {
+  "154960": {
+   "mustPlays": [
+    {
+     "name": "Brock Purdy",
+     "team": "SF",
+     "pos": "QB",
+     "why": "CPT $16,200. Props ~22 DK (252.5 yds, 2.5 TD o+146); WAS allows most pass TD; consensus #1 CPT (FTN, DKN, Rotoballer, Lineups).",
+     "slot": "CPT"
+    },
+    {
+     "name": "Christian McCaffrey",
+     "team": "SF",
+     "pos": "RB",
+     "why": "$11,800. ATD 69.5%, 2+ TD 30.5% (Kalshi) -> ~22; highest TD equity in a SF -7.5 script."
+    },
+    {
+     "name": "George Kittle",
+     "team": "SF",
+     "pos": "TE",
+     "why": "$8,200. 68.5 yds/5.5 rec, ATD 45.5% -> ~16.5; WAS allows 22.2 DK/g to TE. Purdy CPT + CMC + Kittle = $36,200, leaves $13,800 for 3 FLEX (e.g. Daniels + Ekeler + Cowing)."
+    }
+   ],
+   "core": [
+    {
+     "name": "Jayden Daniels",
+     "team": "WAS",
+     "pos": "QB",
+     "why": "$10,000. Rush prop up to 38.5, ~19.5 DK; best WAS CPT pivot"
+    },
+    {
+     "name": "Rachaad White",
+     "team": "WAS",
+     "pos": "RB",
+     "why": "$6,600. JCM OUT, 46.5 rush prop"
+    },
+    {
+     "name": "Eddy Pineiro",
+     "team": "SF",
+     "pos": "K",
+     "why": "$5,200. 8.5 kick pts, SF TT 29.5"
+    },
+    {
+     "name": "Terry McLaurin",
+     "team": "WAS",
+     "pos": "WR",
+     "why": "$8,000. ~11.8; CPT leverage if Diggs OUT"
+    }
+   ],
+   "sleepers": [
+    {
+     "name": "Brandin Cooks",
+     "team": "SF",
+     "pos": "WR",
+     "why": "$4,000. Starter (Deebo OUT), Kalshi ATD 24.5%; gains if Evans sits",
+     "boom": "high"
+    },
+    {
+     "name": "Jacob Cowing",
+     "team": "SF",
+     "pos": "WR",
+     "why": "$2,200. WR3, ATD 18.5%, best $/pt on slate (~2.5x)",
+     "boom": "medium"
+    },
+    {
+     "name": "Antonio Williams",
+     "team": "WAS",
+     "pos": "WR",
+     "why": "$4,200. 68% snaps W5 without Diggs; boost if Diggs inactive",
+     "boom": "medium"
+    },
+    {
+     "name": "Austin Ekeler",
+     "team": "WAS",
+     "pos": "RB",
+     "why": "$3,600. Pass-down back as 7.5-pt dog; SF allows 2nd-most RB tgts",
+     "boom": "medium"
+    },
+    {
+     "name": "Kyle Juszczyk",
+     "team": "SF",
+     "pos": "RB",
+     "why": "$1,400. Back from knee, ATD 14.5% - punt to fit Purdy+CMC+Kittle",
+     "boom": "medium"
+    }
+   ],
+   "stacks": [
+    "CPT Purdy + Kittle + Cooks/Evans, bring back Daniels or McLaurin",
+    "CPT CMC + SF DST + Pineiro (blowout script)",
+    "Contrarian: CPT Daniels + McLaurin + White (WAS keeps it close; Kalshi WAS 21.5% ML)"
+   ],
+   "fades": [
+    {
+     "name": "Stefon Diggs",
+     "why": "Q hamstring, no Kalshi market, 40.5-yd prop -> ~9 pts at $8,400"
+    },
+    {
+     "name": "Commanders",
+     "why": "vs SF TT 29.5"
+    },
+    {
+     "name": "Kaelon Black",
+     "why": "24.5 rush yds prop, little receiving"
+    }
+   ],
+   "notes": "SF -7.5, total 51.5 (from 52.5). NW wind 13 mph at kickoff easing to 7, no rain. Late swap: if Evans OUT -> Kittle CPT, Cooks/Cowing up; if Diggs OUT -> A. Williams/Burks up, McLaurin CPT leverage. Kirk (IR) and McNichols (IR) activations possible Mon PM. No published ownership; est chalk Purdy CPT, Kittle, CMC, Cooks."
+  },
+  "154981": {
+   "mustPlays": [
+    {
+     "name": "Christian McCaffrey",
+     "team": "SF",
+     "pos": "RB",
+     "why": "$7,900. Props 61.5 rush/38.5 rec yds/4.5 rec, ATD 69.5% (Kalshi), 2+ TD 30.5% -> ~22 DK; SF TT 29.5 (DK via ESPN API) as 7.5-pt home fav; 74-83% snaps W3-5 (Sleeper)."
+    },
+    {
+     "name": "Brock Purdy",
+     "team": "SF",
+     "pos": "QB",
+     "why": "$6,800. 252.5 pass yds (up 5), 2.5 TD o+146 -> ~22 props-implied; WAS allows most pass TD (14) and 23.8 DK/g to QBs; FTN/DKN/Rotoballer #1 Showdown CPT."
+    },
+    {
+     "name": "George Kittle",
+     "team": "SF",
+     "pos": "TE",
+     "why": "$5,200. 68.5 rec yds (up from 63.5)/5.5 rec, ATD 45.5% -> ~16.5; 85-92% snaps; WAS allows 22.2 DK/g to TE; Deebo OUT, Evans limited."
+    },
+    {
+     "name": "A.J. Brown",
+     "team": "NE",
+     "pos": "WR",
+     "why": "$6,000. 76% snaps + 10 tgts in IR return W6; Doubs (shoulder) likely OUT for TNF -> WR1 volume; CHI -3/49.5, calm 60F (ESPN, Reiss 10/19, NWS). Late swap possible Thu."
+    }
+   ],
+   "core": [
+    {
+     "name": "D'Andre Swift",
+     "team": "CHI",
+     "pos": "RB",
+     "why": "$6,900. 58% snaps, 16 car + 5 tgts, 5 RZ carries, 2 TD W6; Monangai OUT again (week-to-week)."
+    },
+    {
+     "name": "Rachaad White",
+     "team": "WAS",
+     "pos": "RB",
+     "why": "$4,600. JCM OUT: rush prop 20.5->46.5, ATD 40.5% -> ~12; SF allows 24.6 DK/g to RBs."
+    },
+    {
+     "name": "DeMario Douglas",
+     "team": "NE",
+     "pos": "WR",
+     "why": "$4,600. 7-86-1 on 8 tgts W6, 19+ DK two straight; slot volume up without Doubs."
+    },
+    {
+     "name": "Rome Odunze",
+     "team": "CHI",
+     "pos": "WR",
+     "why": "$4,700. 96% snaps W6 but 4 tgts after 7-9 W4-5 - regression spot."
+    },
+    {
+     "name": "Jayden Daniels",
+     "team": "WAS",
+     "pos": "QB",
+     "why": "$6,000. 38.5 rush prop (up 6), ATD 26.5% -> ~19.5; 103 rush yds/2 TD W5."
+    },
+    {
+     "name": "Drake Maye",
+     "team": "NE",
+     "pos": "QB",
+     "why": "$6,500. 3+ pass TD three straight; NE TT ~23.25."
+    },
+    {
+     "name": "Caleb Williams",
+     "team": "CHI",
+     "pos": "QB",
+     "why": "$6,300. 30/36, 305 in hamstring return; CHI TT ~26.25 at home."
+    },
+    {
+     "name": "Colston Loveland",
+     "team": "CHI",
+     "pos": "TE",
+     "why": "$4,400. 68/77 snaps, 7 tgts, 3 RZ tgts, TD W6."
+    },
+    {
+     "name": "Terry McLaurin",
+     "team": "WAS",
+     "pos": "WR",
+     "why": "$5,100. 46.5 yds, ATD 30.5% -> ~11.8; no designation."
+    },
+    {
+     "name": "Bears",
+     "team": "CHI",
+     "pos": "DST",
+     "why": "$3,000. NE OL banged up (Moses, Vera-Tucker, B. Brown), Vrabel: turnovers 'historic' - 5 sacks/3 takeaways W6."
+    }
+   ],
+   "sleepers": [
+    {
+     "name": "Brandin Cooks",
+     "team": "SF",
+     "pos": "WR",
+     "why": "$4,000. Starter with Deebo OUT; Kalshi ATD 24.5% (best under $6K); TD on 40% snaps W5; WR1-ish if Evans sits/limited.",
+     "boom": "high"
+    },
+    {
+     "name": "Corey Kiner",
+     "team": "NE",
+     "pos": "RB",
+     "why": "$4,300. Hot hand: 11-57 on 12 snaps, 5 RZ carries, closed W6 with 8 straight carries; Vrabel 'ride the hot hand'.",
+     "boom": "high"
+    },
+    {
+     "name": "Efton Chism III",
+     "team": "NE",
+     "pos": "WR",
+     "why": "$3,300. 42/68 snaps W6 after Doubs left; 57 snaps/6 tgts W5 - full-time role if Doubs OUT.",
+     "boom": "medium"
+    },
+    {
+     "name": "Antonio Williams",
+     "team": "WAS",
+     "pos": "WR",
+     "why": "$4,100. 68% snaps W5 without Diggs; Diggs (hamstring) ~55% and capped - main beneficiary (CBS/Rotowire).",
+     "boom": "medium"
+    },
+    {
+     "name": "Jacob Cowing",
+     "team": "SF",
+     "pos": "WR",
+     "why": "$3,000. WR3 on 92% of 3-WR snaps, ATD 18.5% - near-min piece of the 51.5-total game.",
+     "boom": "medium"
+    },
+    {
+     "name": "Austin Ekeler",
+     "team": "WAS",
+     "pos": "RB",
+     "why": "$4,200. Passing-down back in a 7.5-pt dog script; SF allows 2nd-most RB targets.",
+     "boom": "medium"
+    },
+    {
+     "name": "Kyle Williams",
+     "team": "NE",
+     "pos": "WR",
+     "why": "$3,200. Deep role, 18.1 DK in W5; more snaps with Doubs out.",
+     "boom": "medium"
+    },
+    {
+     "name": "Eli Raridon",
+     "team": "NE",
+     "pos": "TE",
+     "why": "$2,600. 39/68 snaps, 3 tgts + RZ look W6 - salary-saver TE.",
+     "boom": "medium"
+    },
+    {
+     "name": "Bears",
+     "team": "CHI",
+     "pos": "DST",
+     "why": "$3,000. Cheap DST vs turnover-prone NE with backup OL.",
+     "boom": "high"
+    },
+    {
+     "name": "Patriots",
+     "team": "NE",
+     "pos": "DST",
+     "why": "$2,700. Second cheap DST; CHI 12 penalties/4 sacks allowed W6.",
+     "boom": "medium"
+    }
+   ],
+   "stacks": [
+    "Purdy + Kittle + CMC (SF TT 29.5) with a WAS bring-back (Daniels/White/McLaurin)",
+    "Mid-total TNF stack (rule from W5): Maye + Douglas + A.J. Brown/Henry, bring back Odunze or Loveland",
+    "Caleb + Odunze + Loveland (CHI TT ~26.25) with Bears DST fade of NE skill players"
+   ],
+   "fades": [
+    {
+     "name": "Stefon Diggs",
+     "why": "Q hamstring, pregame-workout decision, WAS bye next; ~9 pts even if active at $5,300"
+    },
+    {
+     "name": "Mike Evans",
+     "why": "DNP all week (ribs + Achilles), props cut 15 yds/1 rec = snap cap; only a leverage play if active"
+    },
+    {
+     "name": "Rhamondre Stevenson",
+     "why": "0 targets W6, lost RZ work to Kiner, 3-way committee"
+    },
+    {
+     "name": "TreVeyon Henderson",
+     "why": "High-ankle, fumble, snaps 28/12/16"
+    },
+    {
+     "name": "Romeo Doubs",
+     "why": "Shoulder - Sleeper Out, Vrabel doubtful on short week"
+    },
+    {
+     "name": "Commanders",
+     "why": "vs SF TT 29.5 with two pass rushers OUT"
+    }
+   ],
+   "notes": "Mon 10/19 ~11:30am CT. MNF WAS@SF: SF -7.5, total 52.5->51.5 (DK/ESPN), SF TT 29.5. TNF NE@CHI: CHI -3 (opened -1.5), 49.5 (opened 47.5), clear/calm. Evans + Diggs decisions at ~6:45pm ET inactives - Evans projected at ~75% x 14.5, Diggs ~57% x 9.3. NE/CHI practice reports Tue/Wed: late-swap Doubs/Monangai/OL news. Projections are estimates."
+  },
+  "155198": {
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "stacks": [],
+   "fades": [],
+   "notes": "Week 7 Sunday slate: stub - Sunday game-day run fills it. Early news: Hurts IR (clots), Lamar/Mayfield/Barkley/Love lean out or GTD, Jacobs back from exempt list, Doubs + Bateman shoulder, NYG QB (Winston vs McCarthy) TBD."
+  }
+ }
+}
