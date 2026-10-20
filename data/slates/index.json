@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T17:20+00:00",
+ "updated": "2026-10-20T18:27+00:00",
  "week": 7,
  "default": 155198,
  "slates": [
@@ -14,7 +14,7 @@
    "matched": {
     "sleeper": 708,
     "espn": 506,
-    "fantasypros": 346,
+    "fantasypros": 347,
     "cbs": 383,
     "numberfire": 512,
     "dff": 0,
@@ -32,7 +32,7 @@
    "matched": {
     "sleeper": 502,
     "espn": 365,
-    "fantasypros": 244,
+    "fantasypros": 245,
     "cbs": 276,
     "numberfire": 363,
     "dff": 0,
@@ -55,6 +55,150 @@
     "numberfire": 36,
     "dff": 0,
     "props": 18
+   }
+  },
+  {
+   "id": 155205,
+   "name": "PIT vs NO",
+   "start": "2026-10-25T09:30",
+   "games": 1,
+   "featured": true,
+   "type": "showdown",
+   "players": 56,
+   "matched": {
+    "sleeper": 54,
+    "espn": 38,
+    "fantasypros": 26,
+    "cbs": 28,
+    "numberfire": 38,
+    "dff": 0,
+    "props": 12
+   }
+  },
+  {
+   "id": 155206,
+   "name": "NYG @ HOU",
+   "start": "2026-10-25T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 55,
+   "matched": {
+    "sleeper": 54,
+    "espn": 41,
+    "fantasypros": 27,
+    "cbs": 32,
+    "numberfire": 33,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 155207,
+   "name": "TB @ CAR",
+   "start": "2026-10-25T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 51,
+   "matched": {
+    "sleeper": 50,
+    "espn": 38,
+    "fantasypros": 24,
+    "cbs": 29,
+    "numberfire": 39,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 155208,
+   "name": "IND @ MIN",
+   "start": "2026-10-25T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 51,
+   "matched": {
+    "sleeper": 50,
+    "espn": 40,
+    "fantasypros": 26,
+    "cbs": 28,
+    "numberfire": 35,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 155209,
+   "name": "CLE @ TEN",
+   "start": "2026-10-25T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 52,
+   "matched": {
+    "sleeper": 52,
+    "espn": 35,
+    "fantasypros": 29,
+    "cbs": 30,
+    "numberfire": 35,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 155210,
+   "name": "CIN @ BAL",
+   "start": "2026-10-25T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 52,
+   "matched": {
+    "sleeper": 51,
+    "espn": 37,
+    "fantasypros": 26,
+    "cbs": 31,
+    "numberfire": 38,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 155211,
+   "name": "SF @ ATL",
+   "start": "2026-10-25T13:00",
+   "games": 1,
+   "featured": true,
+   "type": "showdown",
+   "players": 56,
+   "matched": {
+    "sleeper": 56,
+    "espn": 37,
+    "fantasypros": 26,
+    "cbs": 27,
+    "numberfire": 35,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 155212,
+   "name": "MIA @ NYJ",
+   "start": "2026-10-25T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 52,
+   "matched": {
+    "sleeper": 50,
+    "espn": 40,
+    "fantasypros": 24,
+    "cbs": 33,
+    "numberfire": 36,
+    "dff": 0,
+    "props": 0
    }
   }
  ]
