@@ -1,24 +1,24 @@
 {
- "updated": "2026-10-19T22:58+00:00",
+ "updated": "2026-10-20T00:37+00:00",
  "week": 6,
  "default": 155198,
  "slates": [
   {
-   "id": 154981,
-   "name": "Mon-Thu",
-   "start": "2026-10-19T20:15",
-   "games": 2,
+   "id": 155197,
+   "name": "Thu-Mon",
+   "start": "2026-10-22T20:15",
+   "games": 14,
    "featured": false,
    "type": "classic",
-   "players": 110,
+   "players": 726,
    "matched": {
-    "sleeper": 108,
-    "espn": 72,
-    "fantasypros": 53,
-    "cbs": 52,
-    "numberfire": 38,
-    "dff": 27,
-    "props": 25
+    "sleeper": 712,
+    "espn": 507,
+    "fantasypros": 215,
+    "cbs": 383,
+    "numberfire": 0,
+    "dff": 229,
+    "props": 13
    }
   },
   {
@@ -32,7 +32,7 @@
    "matched": {
     "sleeper": 504,
     "espn": 366,
-    "fantasypros": 155,
+    "fantasypros": 149,
     "cbs": 276,
     "numberfire": 0,
     "dff": 229,
@@ -40,21 +40,21 @@
    }
   },
   {
-   "id": 154960,
-   "name": "WAS @ SF",
-   "start": "2026-10-19T20:15",
+   "id": 155204,
+   "name": "NE @ CHI",
+   "start": "2026-10-22T20:15",
    "games": 1,
    "featured": true,
    "type": "showdown",
-   "players": 60,
+   "players": 54,
    "matched": {
-    "sleeper": 58,
-    "espn": 41,
-    "fantasypros": 36,
-    "cbs": 29,
-    "numberfire": 38,
-    "dff": 29,
-    "props": 14
+    "sleeper": 54,
+    "espn": 35,
+    "fantasypros": 18,
+    "cbs": 27,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 15
    }
   }
  ]
