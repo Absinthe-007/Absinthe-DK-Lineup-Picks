@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T17:38+00:00",
+ "updated": "2026-10-25T18:33+00:00",
  "week": 7,
  "default": 155201,
  "slates": [
@@ -18,7 +18,7 @@
     "cbs": 78,
     "numberfire": 110,
     "dff": 80,
-    "props": 48
+    "props": 46
    }
   },
   {
@@ -36,7 +36,7 @@
     "cbs": 53,
     "numberfire": 73,
     "dff": 54,
-    "props": 30
+    "props": 29
    }
   },
   {
@@ -72,7 +72,7 @@
     "cbs": 27,
     "numberfire": 37,
     "dff": 28,
-    "props": 20
+    "props": 19
    }
   },
   {
@@ -90,7 +90,7 @@
     "cbs": 26,
     "numberfire": 37,
     "dff": 29,
-    "props": 17
+    "props": 16
    }
   },
   {
