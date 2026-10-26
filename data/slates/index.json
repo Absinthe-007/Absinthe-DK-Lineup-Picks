@@ -1,132 +1,42 @@
 {
- "updated": "2026-10-25T18:33+00:00",
+ "updated": "2026-10-26T19:53+00:00",
  "week": 7,
- "default": 155201,
+ "default": 153728,
  "slates": [
   {
-   "id": 155201,
-   "name": "Afternoon Only",
-   "start": "2026-10-25T16:05",
-   "games": 3,
-   "featured": true,
-   "type": "classic",
-   "players": 156,
-   "matched": {
-    "sleeper": 153,
-    "espn": 113,
-    "fantasypros": 97,
-    "cbs": 78,
-    "numberfire": 110,
-    "dff": 80,
-    "props": 46
-   }
-  },
-  {
-   "id": 155202,
-   "name": "Afternoon Turbo",
-   "start": "2026-10-25T16:25",
+   "id": 155252,
+   "name": "Mon-Thu",
+   "start": "2026-10-26T20:15",
    "games": 2,
    "featured": false,
    "type": "classic",
-   "players": 101,
+   "players": 103,
    "matched": {
-    "sleeper": 101,
+    "sleeper": 100,
     "espn": 76,
-    "fantasypros": 63,
-    "cbs": 53,
-    "numberfire": 73,
-    "dff": 54,
-    "props": 29
+    "fantasypros": 48,
+    "cbs": 54,
+    "numberfire": 35,
+    "dff": 25,
+    "props": 27
    }
   },
   {
-   "id": 155203,
-   "name": "Primetime",
-   "start": "2026-10-25T20:20",
-   "games": 2,
+   "id": 153728,
+   "name": "Main",
+   "start": "2026-11-01T13:00",
+   "games": 11,
    "featured": false,
    "type": "classic",
-   "players": 106,
+   "players": 554,
    "matched": {
-    "sleeper": 101,
-    "espn": 70,
-    "fantasypros": 65,
-    "cbs": 50,
-    "numberfire": 74,
-    "dff": 52,
-    "props": 29
-   }
-  },
-  {
-   "id": 155213,
-   "name": "DEN @ ARI",
-   "start": "2026-10-25T16:05",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 57,
-   "matched": {
-    "sleeper": 54,
-    "espn": 39,
-    "fantasypros": 36,
-    "cbs": 27,
-    "numberfire": 37,
-    "dff": 28,
-    "props": 19
-   }
-  },
-  {
-   "id": 155214,
-   "name": "GB @ DET",
-   "start": "2026-10-25T16:25",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 54,
-   "matched": {
-    "sleeper": 54,
-    "espn": 40,
-    "fantasypros": 33,
-    "cbs": 26,
-    "numberfire": 37,
-    "dff": 29,
-    "props": 16
-   }
-  },
-  {
-   "id": 155215,
-   "name": "LAR @ LV",
-   "start": "2026-10-25T16:25",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 54,
-   "matched": {
-    "sleeper": 54,
-    "espn": 41,
-    "fantasypros": 34,
-    "cbs": 31,
-    "numberfire": 36,
-    "dff": 29,
-    "props": 16
-   }
-  },
-  {
-   "id": 155216,
-   "name": "KC @ SEA",
-   "start": "2026-10-25T20:20",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 56,
-   "matched": {
-    "sleeper": 54,
-    "espn": 36,
-    "fantasypros": 35,
-    "cbs": 24,
-    "numberfire": 39,
-    "dff": 29,
-    "props": 20
+    "sleeper": 545,
+    "espn": 392,
+    "fantasypros": 161,
+    "cbs": 298,
+    "numberfire": 0,
+    "dff": 241,
+    "props": 0
    }
   },
   {
@@ -136,15 +46,15 @@
    "games": 1,
    "featured": true,
    "type": "showdown",
-   "players": 54,
+   "players": 55,
    "matched": {
-    "sleeper": 51,
+    "sleeper": 52,
     "espn": 38,
-    "fantasypros": 34,
-    "cbs": 30,
+    "fantasypros": 35,
+    "cbs": 31,
     "numberfire": 35,
     "dff": 27,
-    "props": 13
+    "props": 17
    }
   }
  ]
