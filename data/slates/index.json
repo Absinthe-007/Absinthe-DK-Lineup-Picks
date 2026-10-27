@@ -1,26 +1,8 @@
 {
- "updated": "2026-10-26T19:53+00:00",
+ "updated": "2026-10-27T00:47+00:00",
  "week": 7,
  "default": 153728,
  "slates": [
-  {
-   "id": 155252,
-   "name": "Mon-Thu",
-   "start": "2026-10-26T20:15",
-   "games": 2,
-   "featured": false,
-   "type": "classic",
-   "players": 103,
-   "matched": {
-    "sleeper": 100,
-    "espn": 76,
-    "fantasypros": 48,
-    "cbs": 54,
-    "numberfire": 35,
-    "dff": 25,
-    "props": 27
-   }
-  },
   {
    "id": 153728,
    "name": "Main",
@@ -30,31 +12,13 @@
    "type": "classic",
    "players": 554,
    "matched": {
-    "sleeper": 545,
+    "sleeper": 544,
     "espn": 392,
     "fantasypros": 161,
-    "cbs": 298,
+    "cbs": 297,
     "numberfire": 0,
     "dff": 241,
     "props": 0
-   }
-  },
-  {
-   "id": 155217,
-   "name": "DAL @ PHI",
-   "start": "2026-10-26T20:15",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 55,
-   "matched": {
-    "sleeper": 52,
-    "espn": 38,
-    "fantasypros": 35,
-    "cbs": 31,
-    "numberfire": 35,
-    "dff": 27,
-    "props": 17
    }
   }
  ]
