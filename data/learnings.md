@@ -79,3 +79,8 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - sleepers: Corey Kiner 5.7 (1.27x), Efton Chism III 0.0 (0.0x), Kyle Williams 2.2 (0.65x), Eli Raridon 2.1 (0.75x), Bears 7.0 (2.59x), Patriots 6.0 (1.71x)
 - Boom players: Titans $2300 21.0 pts (proj 4.72), Tommy Tremble $2700 20.6 pts (proj 4.03), Omar Cooper Jr. $3800 25.3 pts (proj 6.0), Germie Bernard $4000 25.7 pts (proj 9.94), Kyle Pitts Sr. $3700 23.0 pts (proj 8.03), Josh Cuevas $2500 14.4 pts (proj 2.5), Tre Tucker $4700 26.7 pts (proj 10.02), Michael Mayer $3200 16.5 pts (proj 7.42), Jahan Dotson $3500 17.7 pts (proj 5.71), Isaiah Likely $4800 23.9 pts (proj 13.42)
 - Source MAE so far: dff 4.71, sleeper 4.877, blend 4.893, espn 5.033, numberfire 5.103, fantasypros 5.182, cbs 5.261, props 5.321, dkavg 5.506
+
+## Week 7 results (auto-graded 2026-10-27T18:06+00:00)
+- Max-points lineup: projected 141.8, scored 110.2 (hindsight optimal 260.7)
+- Boom players: Buccaneers $2200 23.0 pts (proj 5.68), Mason Taylor $2800 25.2 pts (proj 5.11), Tony Pollard $5300 39.5 pts (proj 11.88), Davis Allen $2500 18.0 pts (proj 3.03), Omar Cooper Jr. $4100 25.5 pts (proj 9.02), KC Concepcion Jr. $4400 26.2 pts (proj 9.44), Malik Willis $4700 26.02 pts (proj 14.87), Bo Nix $5000 26.28 pts (proj 17.02), Caleb Douglas $4000 21.0 pts (proj 7.31), Falcons $2200 11.0 pts (proj 4.76)
+- Source MAE so far: dff 4.709, sleeper 4.852, blend 4.866, espn 4.995, fantasypros 5.061, props 5.243, cbs 5.253, numberfire 5.271, dkavg 5.351
