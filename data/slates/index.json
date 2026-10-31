@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T19:16+00:00",
+ "updated": "2026-10-31T18:30+00:00",
  "week": 8,
  "default": 153728,
  "slates": [
@@ -14,10 +14,10 @@
    "matched": {
     "sleeper": 543,
     "espn": 391,
-    "fantasypros": 354,
-    "cbs": 294,
+    "fantasypros": 347,
+    "cbs": 291,
     "numberfire": 391,
-    "dff": 311,
+    "dff": 308,
     "props": 160
    }
   },
@@ -32,11 +32,11 @@
    "matched": {
     "sleeper": 649,
     "espn": 464,
-    "fantasypros": 424,
-    "cbs": 348,
+    "fantasypros": 414,
+    "cbs": 345,
     "numberfire": 465,
-    "dff": 366,
-    "props": 177
+    "dff": 360,
+    "props": 187
    }
   },
   {
@@ -50,11 +50,11 @@
    "matched": {
     "sleeper": 389,
     "espn": 285,
-    "fantasypros": 262,
-    "cbs": 213,
+    "fantasypros": 258,
+    "cbs": 211,
     "numberfire": 282,
-    "dff": 225,
-    "props": 120
+    "dff": 224,
+    "props": 118
    }
   },
   {
@@ -68,11 +68,11 @@
    "matched": {
     "sleeper": 154,
     "espn": 106,
-    "fantasypros": 92,
-    "cbs": 81,
+    "fantasypros": 89,
+    "cbs": 80,
     "numberfire": 109,
-    "dff": 86,
-    "props": 40
+    "dff": 84,
+    "props": 42
    }
   },
   {
@@ -86,11 +86,11 @@
    "matched": {
     "sleeper": 105,
     "espn": 69,
-    "fantasypros": 61,
+    "fantasypros": 58,
     "cbs": 54,
     "numberfire": 73,
-    "dff": 56,
-    "props": 27
+    "dff": 55,
+    "props": 29
    }
   },
   {
@@ -104,11 +104,11 @@
    "matched": {
     "sleeper": 106,
     "espn": 73,
-    "fantasypros": 70,
+    "fantasypros": 67,
     "cbs": 54,
     "numberfire": 73,
-    "dff": 55,
-    "props": 17
+    "dff": 52,
+    "props": 27
    }
   },
   {
@@ -126,7 +126,7 @@
     "cbs": 28,
     "numberfire": 34,
     "dff": 32,
-    "props": 19
+    "props": 17
    }
   },
   {
@@ -143,7 +143,7 @@
     "fantasypros": 37,
     "cbs": 30,
     "numberfire": 38,
-    "dff": 32,
+    "dff": 33,
     "props": 16
    }
   },
@@ -159,7 +159,7 @@
     "sleeper": 50,
     "espn": 36,
     "fantasypros": 35,
-    "cbs": 29,
+    "cbs": 30,
     "numberfire": 35,
     "dff": 30,
     "props": 21
@@ -179,7 +179,7 @@
     "fantasypros": 32,
     "cbs": 29,
     "numberfire": 31,
-    "dff": 30,
+    "dff": 29,
     "props": 15
    }
   },
@@ -194,8 +194,8 @@
    "matched": {
     "sleeper": 51,
     "espn": 37,
-    "fantasypros": 35,
-    "cbs": 26,
+    "fantasypros": 34,
+    "cbs": 25,
     "numberfire": 33,
     "dff": 27,
     "props": 16
@@ -212,10 +212,10 @@
    "matched": {
     "sleeper": 50,
     "espn": 37,
-    "fantasypros": 33,
+    "fantasypros": 32,
     "cbs": 25,
     "numberfire": 36,
-    "dff": 29,
+    "dff": 30,
     "props": 16
    }
   },
@@ -230,10 +230,10 @@
    "matched": {
     "sleeper": 53,
     "espn": 35,
-    "fantasypros": 34,
-    "cbs": 28,
+    "fantasypros": 32,
+    "cbs": 26,
     "numberfire": 37,
-    "dff": 29,
+    "dff": 28,
     "props": 18
    }
   },
@@ -267,9 +267,9 @@
     "sleeper": 53,
     "espn": 40,
     "fantasypros": 33,
-    "cbs": 29,
+    "cbs": 28,
     "numberfire": 36,
-    "dff": 32,
+    "dff": 31,
     "props": 15
    }
   },
@@ -284,11 +284,11 @@
    "matched": {
     "sleeper": 53,
     "espn": 37,
-    "fantasypros": 31,
-    "cbs": 29,
+    "fantasypros": 29,
+    "cbs": 30,
     "numberfire": 35,
-    "dff": 29,
-    "props": 17
+    "dff": 28,
+    "props": 18
    }
   },
   {
@@ -302,11 +302,11 @@
    "matched": {
     "sleeper": 57,
     "espn": 36,
-    "fantasypros": 35,
-    "cbs": 29,
+    "fantasypros": 34,
+    "cbs": 28,
     "numberfire": 38,
     "dff": 31,
-    "props": 14
+    "props": 15
    }
   },
   {
@@ -320,11 +320,11 @@
    "matched": {
     "sleeper": 55,
     "espn": 42,
-    "fantasypros": 38,
+    "fantasypros": 36,
     "cbs": 30,
     "numberfire": 35,
-    "dff": 32,
-    "props": 11
+    "dff": 29,
+    "props": 16
    }
   },
   {
@@ -338,11 +338,11 @@
    "matched": {
     "sleeper": 55,
     "espn": 35,
-    "fantasypros": 36,
+    "fantasypros": 35,
     "cbs": 28,
     "numberfire": 38,
-    "dff": 25,
-    "props": 10
+    "dff": 27,
+    "props": 15
    }
   }
  ]
