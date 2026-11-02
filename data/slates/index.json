@@ -1,132 +1,42 @@
 {
- "updated": "2026-11-01T19:53+00:00",
+ "updated": "2026-11-02T22:44+00:00",
  "week": 8,
- "default": 155593,
+ "default": 155994,
  "slates": [
   {
-   "id": 155593,
-   "name": "Afternoon Only",
-   "start": "2026-11-01T16:05",
-   "games": 3,
-   "featured": true,
-   "type": "classic",
-   "players": 157,
-   "matched": {
-    "sleeper": 154,
-    "espn": 108,
-    "fantasypros": 91,
-    "cbs": 80,
-    "numberfire": 109,
-    "dff": 85,
-    "props": 47
-   }
-  },
-  {
-   "id": 155594,
-   "name": "Afternoon Turbo",
-   "start": "2026-11-01T16:25",
+   "id": 155649,
+   "name": "Mon-Thu",
+   "start": "2026-11-02T20:15",
    "games": 2,
    "featured": false,
    "type": "classic",
-   "players": 107,
+   "players": 102,
    "matched": {
-    "sleeper": 105,
-    "espn": 71,
-    "fantasypros": 61,
-    "cbs": 53,
-    "numberfire": 73,
-    "dff": 56,
-    "props": 32
+    "sleeper": 102,
+    "espn": 68,
+    "fantasypros": 47,
+    "cbs": 48,
+    "numberfire": 40,
+    "dff": 27,
+    "props": 33
    }
   },
   {
-   "id": 155595,
-   "name": "Primetime",
-   "start": "2026-11-01T20:20",
-   "games": 2,
-   "featured": false,
+   "id": 155994,
+   "name": "Main",
+   "start": "2026-11-08T13:00",
+   "games": 11,
+   "featured": true,
    "type": "classic",
-   "players": 109,
+   "players": 570,
    "matched": {
-    "sleeper": 106,
-    "espn": 74,
-    "fantasypros": 66,
-    "cbs": 51,
-    "numberfire": 73,
-    "dff": 52,
-    "props": 31
-   }
-  },
-  {
-   "id": 155605,
-   "name": "LAC @ LAR",
-   "start": "2026-11-01T16:05",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 54,
-   "matched": {
-    "sleeper": 53,
-    "espn": 41,
-    "fantasypros": 33,
-    "cbs": 30,
-    "numberfire": 36,
-    "dff": 31,
-    "props": 17
-   }
-  },
-  {
-   "id": 155606,
-   "name": "NE @ MIA",
-   "start": "2026-11-01T16:25",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 53,
-   "matched": {
-    "sleeper": 53,
-    "espn": 38,
-    "fantasypros": 32,
-    "cbs": 29,
-    "numberfire": 35,
-    "dff": 29,
-    "props": 18
-   }
-  },
-  {
-   "id": 155607,
-   "name": "KC @ DEN",
-   "start": "2026-11-01T16:25",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 59,
-   "matched": {
-    "sleeper": 57,
-    "espn": 37,
-    "fantasypros": 34,
-    "cbs": 28,
-    "numberfire": 38,
-    "dff": 31,
-    "props": 18
-   }
-  },
-  {
-   "id": 155951,
-   "name": "PHI @ WAS",
-   "start": "2026-11-01T20:20",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 58,
-   "matched": {
-    "sleeper": 55,
-    "espn": 42,
-    "fantasypros": 36,
-    "cbs": 30,
-    "numberfire": 35,
-    "dff": 29,
-    "props": 17
+    "sleeper": 558,
+    "espn": 415,
+    "fantasypros": 155,
+    "cbs": 289,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 7
    }
   },
   {
@@ -142,8 +52,8 @@
     "espn": 36,
     "fantasypros": 34,
     "cbs": 25,
-    "numberfire": 38,
-    "dff": 27,
+    "numberfire": 40,
+    "dff": 29,
     "props": 18
    }
   }
