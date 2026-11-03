@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T19:38+00:00",
+ "updated": "2026-11-03T20:29+00:00",
  "week": 9,
  "default": 155994,
  "slates": [
@@ -18,7 +18,7 @@
     "cbs": 386,
     "numberfire": 502,
     "dff": 0,
-    "props": 49
+    "props": 56
    }
   },
   {
@@ -37,6 +37,42 @@
     "numberfire": 401,
     "dff": 0,
     "props": 23
+   }
+  },
+  {
+   "id": 155996,
+   "name": "Sun-Mon",
+   "start": "2026-11-08T13:00",
+   "games": 13,
+   "featured": false,
+   "type": "classic",
+   "players": 670,
+   "matched": {
+    "sleeper": 655,
+    "espn": 484,
+    "fantasypros": 275,
+    "cbs": 337,
+    "numberfire": 466,
+    "dff": 0,
+    "props": 30
+   }
+  },
+  {
+   "id": 155995,
+   "name": "Early Only",
+   "start": "2026-11-08T13:00",
+   "games": 7,
+   "featured": false,
+   "type": "classic",
+   "players": 358,
+   "matched": {
+    "sleeper": 349,
+    "espn": 257,
+    "fantasypros": 146,
+    "cbs": 180,
+    "numberfire": 254,
+    "dff": 0,
+    "props": 12
    }
   },
   {
