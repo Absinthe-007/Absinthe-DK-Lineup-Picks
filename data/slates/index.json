@@ -1,24 +1,24 @@
 {
- "updated": "2026-11-02T22:44+00:00",
+ "updated": "2026-11-03T03:03+00:00",
  "week": 8,
  "default": 155994,
  "slates": [
   {
-   "id": 155649,
-   "name": "Mon-Thu",
-   "start": "2026-11-02T20:15",
-   "games": 2,
+   "id": 155993,
+   "name": "Thu-Mon",
+   "start": "2026-11-05T20:15",
+   "games": 15,
    "featured": false,
    "type": "classic",
-   "players": 102,
+   "players": 768,
    "matched": {
-    "sleeper": 102,
-    "espn": 68,
-    "fantasypros": 47,
-    "cbs": 48,
-    "numberfire": 40,
-    "dff": 27,
-    "props": 33
+    "sleeper": 753,
+    "espn": 553,
+    "fantasypros": 212,
+    "cbs": 385,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 31
    }
   },
   {
@@ -40,21 +40,21 @@
    }
   },
   {
-   "id": 155609,
-   "name": "CHI @ SEA",
-   "start": "2026-11-02T20:15",
+   "id": 156000,
+   "name": "JAX @ BAL",
+   "start": "2026-11-05T20:15",
    "games": 1,
    "featured": true,
    "type": "showdown",
-   "players": 55,
+   "players": 52,
    "matched": {
-    "sleeper": 55,
+    "sleeper": 52,
     "espn": 36,
-    "fantasypros": 34,
-    "cbs": 25,
-    "numberfire": 40,
-    "dff": 29,
-    "props": 18
+    "fantasypros": 15,
+    "cbs": 27,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 14
    }
   }
  ]
