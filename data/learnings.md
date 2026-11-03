@@ -84,3 +84,10 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - Max-points lineup: projected 141.8, scored 110.2 (hindsight optimal 260.7)
 - Boom players: Buccaneers $2200 23.0 pts (proj 5.68), Mason Taylor $2800 25.2 pts (proj 5.11), Tony Pollard $5300 39.5 pts (proj 11.88), Davis Allen $2500 18.0 pts (proj 3.03), Omar Cooper Jr. $4100 25.5 pts (proj 9.02), KC Concepcion Jr. $4400 26.2 pts (proj 9.44), Malik Willis $4700 26.02 pts (proj 14.87), Bo Nix $5000 26.28 pts (proj 17.02), Caleb Douglas $4000 21.0 pts (proj 7.31), Falcons $2200 11.0 pts (proj 4.76)
 - Source MAE so far: dff 4.709, sleeper 4.852, blend 4.866, espn 4.995, fantasypros 5.061, props 5.243, cbs 5.253, numberfire 5.271, dkavg 5.351
+
+## Week 8 results (auto-graded 2026-11-03T19:37+00:00)
+- Max-points lineup: projected 142.3, scored 124.5 (hindsight optimal 301.4)
+- mustPlays: A.J. Brown None (0.0x)
+- sleepers: Corey Kiner 3.8 (0.95x), Efton Chism III 7.7 (2.26x), Kyle Williams 11.3 (3.42x), Eli Raridon 1.5 (0.45x), Patriots 8.0 (2.22x)
+- Boom players: Tyler Allgeier $4900 39.1 pts (proj 7.19), Adonai Mitchell $4000 30.2 pts (proj 0.0), Cam Ward $4600 30.26 pts (proj 12.72), Harold Fannin Jr. $4200 27.4 pts (proj 9.59), Joe Burrow $7000 45.48 pts (proj 23.59), Buccaneers $2900 18.0 pts (proj 6.31), Tee Higgins $6700 40.5 pts (proj 17.21), Chimere Dike $3000 18.1 pts (proj 3.08), Emmett Johnson $4800 28.3 pts (proj 4.47), Gunnar Helm $2500 14.6 pts (proj 5.44)
+- Source MAE so far: dff 4.843, blend 4.883, sleeper 4.898, espn 5.042, fantasypros 5.084, cbs 5.249, props 5.34, numberfire 5.344, dkavg 5.356

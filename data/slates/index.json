@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-03T03:03+00:00",
- "week": 8,
+ "updated": "2026-11-03T19:38+00:00",
+ "week": 9,
  "default": 155994,
  "slates": [
   {
@@ -10,15 +10,15 @@
    "games": 15,
    "featured": false,
    "type": "classic",
-   "players": 768,
+   "players": 769,
    "matched": {
-    "sleeper": 753,
-    "espn": 553,
-    "fantasypros": 212,
-    "cbs": 385,
-    "numberfire": 0,
+    "sleeper": 751,
+    "espn": 554,
+    "fantasypros": 319,
+    "cbs": 386,
+    "numberfire": 502,
     "dff": 0,
-    "props": 31
+    "props": 49
    }
   },
   {
@@ -30,13 +30,13 @@
    "type": "classic",
    "players": 570,
    "matched": {
-    "sleeper": 558,
+    "sleeper": 555,
     "espn": 415,
-    "fantasypros": 155,
-    "cbs": 289,
-    "numberfire": 0,
+    "fantasypros": 235,
+    "cbs": 290,
+    "numberfire": 401,
     "dff": 0,
-    "props": 7
+    "props": 23
    }
   },
   {
@@ -46,15 +46,159 @@
    "games": 1,
    "featured": true,
    "type": "showdown",
-   "players": 52,
+   "players": 54,
    "matched": {
-    "sleeper": 52,
-    "espn": 36,
-    "fantasypros": 15,
+    "sleeper": 53,
+    "espn": 37,
+    "fantasypros": 26,
     "cbs": 27,
     "numberfire": 0,
     "dff": 0,
-    "props": 14
+    "props": 15
+   }
+  },
+  {
+   "id": 156001,
+   "name": "CIN vs ATL",
+   "start": "2026-11-08T09:30",
+   "games": 1,
+   "featured": true,
+   "type": "showdown",
+   "players": 53,
+   "matched": {
+    "sleeper": 52,
+    "espn": 36,
+    "fantasypros": 23,
+    "cbs": 25,
+    "numberfire": 35,
+    "dff": 0,
+    "props": 11
+   }
+  },
+  {
+   "id": 156002,
+   "name": "NYG @ PHI",
+   "start": "2026-11-08T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 58,
+   "matched": {
+    "sleeper": 55,
+    "espn": 43,
+    "fantasypros": 23,
+    "cbs": 29,
+    "numberfire": 31,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156003,
+   "name": "NYJ @ KC",
+   "start": "2026-11-08T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 55,
+   "matched": {
+    "sleeper": 53,
+    "espn": 39,
+    "fantasypros": 22,
+    "cbs": 26,
+    "numberfire": 39,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156004,
+   "name": "CLE @ NO",
+   "start": "2026-11-08T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 52,
+   "matched": {
+    "sleeper": 50,
+    "espn": 37,
+    "fantasypros": 23,
+    "cbs": 29,
+    "numberfire": 38,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156005,
+   "name": "DAL @ IND",
+   "start": "2026-11-08T13:00",
+   "games": 1,
+   "featured": true,
+   "type": "showdown",
+   "players": 50,
+   "matched": {
+    "sleeper": 50,
+    "espn": 37,
+    "fantasypros": 23,
+    "cbs": 28,
+    "numberfire": 32,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156006,
+   "name": "LAR @ WAS",
+   "start": "2026-11-08T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 56,
+   "matched": {
+    "sleeper": 55,
+    "espn": 41,
+    "fantasypros": 25,
+    "cbs": 28,
+    "numberfire": 38,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156007,
+   "name": "DEN @ CAR",
+   "start": "2026-11-08T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 54,
+   "matched": {
+    "sleeper": 53,
+    "espn": 39,
+    "fantasypros": 23,
+    "cbs": 28,
+    "numberfire": 43,
+    "dff": 0,
+    "props": 12
+   }
+  },
+  {
+   "id": 156008,
+   "name": "DET @ MIA",
+   "start": "2026-11-08T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 51,
+   "matched": {
+    "sleeper": 51,
+    "espn": 37,
+    "fantasypros": 21,
+    "cbs": 27,
+    "numberfire": 33,
+    "dff": 0,
+    "props": 0
    }
   }
  ]
