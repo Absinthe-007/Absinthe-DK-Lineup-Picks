@@ -1,150 +1,42 @@
 {
- "updated": "2026-11-08T19:56+00:00",
+ "updated": "2026-11-09T23:24+00:00",
  "week": 9,
- "default": 155997,
+ "default": 156416,
  "slates": [
   {
-   "id": 155997,
-   "name": "Afternoon Only",
-   "start": "2026-11-08T16:05",
-   "games": 4,
-   "featured": true,
-   "type": "classic",
-   "players": 216,
-   "matched": {
-    "sleeper": 209,
-    "espn": 161,
-    "fantasypros": 131,
-    "cbs": 105,
-    "numberfire": 149,
-    "dff": 108,
-    "props": 60
-   }
-  },
-  {
-   "id": 156363,
-   "name": "Afternoon Turbo",
-   "start": "2026-11-08T16:25",
-   "games": 3,
-   "featured": false,
-   "type": "classic",
-   "players": 163,
-   "matched": {
-    "sleeper": 158,
-    "espn": 122,
-    "fantasypros": 100,
-    "cbs": 76,
-    "numberfire": 113,
-    "dff": 80,
-    "props": 42
-   }
-  },
-  {
-   "id": 155999,
-   "name": "Primetime",
-   "start": "2026-11-08T20:20",
+   "id": 156037,
+   "name": "Mon-Thu",
+   "start": "2026-11-09T20:15",
    "games": 2,
    "featured": false,
    "type": "classic",
-   "players": 97,
+   "players": 103,
    "matched": {
-    "sleeper": 95,
-    "espn": 70,
-    "fantasypros": 61,
-    "cbs": 47,
-    "numberfire": 67,
-    "dff": 53,
-    "props": 31
-   }
-  },
-  {
-   "id": 156009,
-   "name": "HOU @ LAC",
-   "start": "2026-11-08T16:05",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 55,
-   "matched": {
-    "sleeper": 53,
-    "espn": 41,
-    "fantasypros": 33,
-    "cbs": 31,
-    "numberfire": 36,
-    "dff": 30,
-    "props": 20
-   }
-  },
-  {
-   "id": 156010,
-   "name": "LV @ SF",
-   "start": "2026-11-08T16:25",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 58,
-   "matched": {
-    "sleeper": 57,
-    "espn": 44,
-    "fantasypros": 37,
-    "cbs": 31,
-    "numberfire": 36,
-    "dff": 29,
-    "props": 16
-   }
-  },
-  {
-   "id": 156011,
-   "name": "GB @ NE",
-   "start": "2026-11-08T16:25",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 55,
-   "matched": {
-    "sleeper": 55,
-    "espn": 43,
-    "fantasypros": 35,
-    "cbs": 25,
-    "numberfire": 41,
-    "dff": 29,
-    "props": 18
-   }
-  },
-  {
-   "id": 156366,
-   "name": "ARI @ SEA",
-   "start": "2026-11-08T16:25",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 58,
-   "matched": {
-    "sleeper": 54,
-    "espn": 41,
-    "fantasypros": 34,
-    "cbs": 26,
-    "numberfire": 36,
+    "sleeper": 100,
+    "espn": 76,
+    "fantasypros": 53,
+    "cbs": 50,
+    "numberfire": 34,
     "dff": 28,
-    "props": 14
+    "props": 33
    }
   },
   {
-   "id": 156013,
-   "name": "TB @ CHI",
-   "start": "2026-11-08T20:20",
-   "games": 1,
+   "id": 156416,
+   "name": "Main",
+   "start": "2026-11-15T13:00",
+   "games": 10,
    "featured": true,
-   "type": "showdown",
-   "players": 53,
+   "type": "classic",
+   "players": 506,
    "matched": {
-    "sleeper": 52,
-    "espn": 36,
-    "fantasypros": 34,
-    "cbs": 27,
-    "numberfire": 33,
-    "dff": 29,
-    "props": 17
+    "sleeper": 500,
+    "espn": 370,
+    "fantasypros": 271,
+    "cbs": 274,
+    "numberfire": 0,
+    "dff": 220,
+    "props": 0
    }
   },
   {
@@ -161,8 +53,8 @@
     "fantasypros": 31,
     "cbs": 24,
     "numberfire": 34,
-    "dff": 28,
-    "props": 17
+    "dff": 30,
+    "props": 20
    }
   }
  ]
