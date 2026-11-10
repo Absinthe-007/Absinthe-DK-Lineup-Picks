@@ -91,3 +91,10 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - sleepers: Corey Kiner 3.8 (0.95x), Efton Chism III 7.7 (2.26x), Kyle Williams 11.3 (3.42x), Eli Raridon 1.5 (0.45x), Patriots 8.0 (2.22x)
 - Boom players: Tyler Allgeier $4900 39.1 pts (proj 7.19), Adonai Mitchell $4000 30.2 pts (proj 0.0), Cam Ward $4600 30.26 pts (proj 12.72), Harold Fannin Jr. $4200 27.4 pts (proj 9.59), Joe Burrow $7000 45.48 pts (proj 23.59), Buccaneers $2900 18.0 pts (proj 6.31), Tee Higgins $6700 40.5 pts (proj 17.21), Chimere Dike $3000 18.1 pts (proj 3.08), Emmett Johnson $4800 28.3 pts (proj 4.47), Gunnar Helm $2500 14.6 pts (proj 5.44)
 - Source MAE so far: dff 4.843, blend 4.883, sleeper 4.898, espn 5.042, fantasypros 5.084, cbs 5.249, props 5.34, numberfire 5.344, dkavg 5.356
+
+## Week 9 results (auto-graded 2026-11-10T19:51+00:00)
+- Max-points lineup: projected 141.7, scored 128.4 (hindsight optimal 266.9)
+- mustPlays: Christian McCaffrey 22.7 (2.84x), Brock Purdy 26.28 (3.86x), George Kittle 9.8 (1.63x), A.J. Brown None (0.0x)
+- sleepers: Brandin Cooks 4.5 (1.15x), Corey Kiner 11.5 (2.8x), Efton Chism III 15.9 (4.42x), Antonio Williams 5.5 (1.34x), Jacob Cowing 1.5 (0.42x), Austin Ekeler 5.4 (1.23x), Kyle Williams 0.0 (0.0x), Eli Raridon 8.2 (2.34x), Patriots -1.0 (-0.32x)
+- Boom players: Kayshon Boutte $3400 31.5 pts (proj 4.65), Darren Waller $3300 23.0 pts (proj 6.02), Tank Dell $3500 23.5 pts (proj 4.33), C.J. Stroud $5900 39.36 pts (proj 18.2), Jordan Love $6300 39.18 pts (proj 18.28), Shedeur Sanders $4000 22.68 pts (proj 14.77), Jordan Watkins $3300 18.6 pts (proj 2.8), Van Jefferson $3000 16.8 pts (proj 2.05), Matthew Golden $7000 35.4 pts (proj 16.29), Packers $2400 12.0 pts (proj 6.46)
+- Source MAE so far: dff 4.739, blend 4.808, sleeper 4.847, espn 4.968, fantasypros 4.988, cbs 5.176, dkavg 5.265, numberfire 5.302, props 5.311
