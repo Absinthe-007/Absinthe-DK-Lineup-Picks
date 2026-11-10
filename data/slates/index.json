@@ -1,24 +1,24 @@
 {
- "updated": "2026-11-09T23:24+00:00",
+ "updated": "2026-11-10T03:47+00:00",
  "week": 9,
  "default": 156416,
  "slates": [
   {
-   "id": 156037,
-   "name": "Mon-Thu",
-   "start": "2026-11-09T20:15",
-   "games": 2,
+   "id": 156415,
+   "name": "Thu-Mon",
+   "start": "2026-11-12T20:15",
+   "games": 14,
    "featured": false,
    "type": "classic",
-   "players": 103,
+   "players": 718,
    "matched": {
-    "sleeper": 100,
-    "espn": 76,
-    "fantasypros": 53,
-    "cbs": 50,
-    "numberfire": 34,
-    "dff": 28,
-    "props": 33
+    "sleeper": 705,
+    "espn": 522,
+    "fantasypros": 348,
+    "cbs": 382,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 22
    }
   },
   {
@@ -32,29 +32,29 @@
    "matched": {
     "sleeper": 500,
     "espn": 370,
-    "fantasypros": 271,
-    "cbs": 274,
+    "fantasypros": 253,
+    "cbs": 271,
     "numberfire": 0,
-    "dff": 220,
+    "dff": 0,
     "props": 0
    }
   },
   {
-   "id": 156014,
-   "name": "BUF @ MIN",
-   "start": "2026-11-09T20:15",
+   "id": 156421,
+   "name": "WAS @ NYG",
+   "start": "2026-11-12T20:15",
    "games": 1,
    "featured": true,
    "type": "showdown",
-   "players": 48,
+   "players": 59,
    "matched": {
-    "sleeper": 47,
-    "espn": 38,
-    "fantasypros": 31,
-    "cbs": 24,
-    "numberfire": 34,
-    "dff": 30,
-    "props": 20
+    "sleeper": 57,
+    "espn": 42,
+    "fantasypros": 22,
+    "cbs": 30,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 15
    }
   }
  ]
