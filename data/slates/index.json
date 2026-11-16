@@ -1,114 +1,42 @@
 {
- "updated": "2026-11-15T20:32+00:00",
+ "updated": "2026-11-16T23:21+00:00",
  "week": 10,
- "default": 156419,
+ "default": 156561,
  "slates": [
   {
-   "id": 156419,
-   "name": "Afternoon Only",
-   "start": "2026-11-15T16:05",
-   "games": 3,
-   "featured": true,
-   "type": "classic",
-   "players": 158,
-   "matched": {
-    "sleeper": 157,
-    "espn": 119,
-    "fantasypros": 97,
-    "cbs": 86,
-    "numberfire": 109,
-    "dff": 26,
-    "props": 47
-   }
-  },
-  {
-   "id": 156420,
-   "name": "Primetime",
-   "start": "2026-11-15T20:20",
+   "id": 156457,
+   "name": "Mon-Thu",
+   "start": "2026-11-16T20:15",
    "games": 2,
    "featured": false,
    "type": "classic",
-   "players": 102,
+   "players": 99,
    "matched": {
-    "sleeper": 99,
-    "espn": 73,
-    "fantasypros": 66,
-    "cbs": 54,
-    "numberfire": 76,
-    "dff": 25,
-    "props": 27
-   }
-  },
-  {
-   "id": 156430,
-   "name": "SEA @ LV",
-   "start": "2026-11-15T16:05",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 53,
-   "matched": {
-    "sleeper": 52,
-    "espn": 38,
-    "fantasypros": 33,
-    "cbs": 30,
+    "sleeper": 98,
+    "espn": 77,
+    "fantasypros": 54,
+    "cbs": 53,
     "numberfire": 36,
-    "dff": 10,
-    "props": 18
+    "dff": 12,
+    "props": 30
    }
   },
   {
-   "id": 156431,
-   "name": "LAR @ ARI",
-   "start": "2026-11-15T16:05",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 58,
-   "matched": {
-    "sleeper": 57,
-    "espn": 47,
-    "fantasypros": 35,
-    "cbs": 33,
-    "numberfire": 37,
-    "dff": 10,
-    "props": 19
-   }
-  },
-  {
-   "id": 156432,
-   "name": "SF @ DAL",
-   "start": "2026-11-15T16:25",
-   "games": 1,
+   "id": 156561,
+   "name": "Main",
+   "start": "2026-11-22T13:00",
+   "games": 10,
    "featured": true,
-   "type": "showdown",
-   "players": 57,
+   "type": "classic",
+   "players": 504,
    "matched": {
-    "sleeper": 57,
-    "espn": 42,
-    "fantasypros": 35,
-    "cbs": 30,
-    "numberfire": 36,
-    "dff": 10,
-    "props": 16
-   }
-  },
-  {
-   "id": 156433,
-   "name": "PIT @ CIN",
-   "start": "2026-11-15T20:20",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 54,
-   "matched": {
-    "sleeper": 52,
-    "espn": 38,
-    "fantasypros": 35,
-    "cbs": 28,
-    "numberfire": 40,
-    "dff": 14,
-    "props": 17
+    "sleeper": 493,
+    "espn": 367,
+    "fantasypros": 170,
+    "cbs": 289,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 0
    }
   },
   {
@@ -125,8 +53,8 @@
     "fantasypros": 35,
     "cbs": 30,
     "numberfire": 36,
-    "dff": 12,
-    "props": 14
+    "dff": 14,
+    "props": 21
    }
   }
  ]
