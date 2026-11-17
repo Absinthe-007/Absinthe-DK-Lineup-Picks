@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T21:06+00:00",
+ "updated": "2026-11-17T22:14+00:00",
  "week": 11,
  "default": 156561,
  "slates": [
@@ -18,7 +18,7 @@
     "cbs": 364,
     "numberfire": 455,
     "dff": 0,
-    "props": 53
+    "props": 70
    }
   },
   {
@@ -36,7 +36,7 @@
     "cbs": 284,
     "numberfire": 344,
     "dff": 0,
-    "props": 29
+    "props": 42
    }
   },
   {
@@ -54,7 +54,7 @@
     "cbs": 340,
     "numberfire": 422,
     "dff": 0,
-    "props": 39
+    "props": 56
    }
   },
   {
@@ -72,7 +72,7 @@
     "cbs": 195,
     "numberfire": 244,
     "dff": 0,
-    "props": 11
+    "props": 24
    }
   },
   {
@@ -144,7 +144,7 @@
     "cbs": 28,
     "numberfire": 31,
     "dff": 0,
-    "props": 0
+    "props": 6
    }
   },
   {
@@ -180,7 +180,7 @@
     "cbs": 27,
     "numberfire": 36,
     "dff": 0,
-    "props": 2
+    "props": 9
    }
   },
   {
