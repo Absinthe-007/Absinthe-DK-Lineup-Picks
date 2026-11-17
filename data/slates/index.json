@@ -1,24 +1,24 @@
 {
- "updated": "2026-11-16T23:21+00:00",
+ "updated": "2026-11-17T04:10+00:00",
  "week": 10,
  "default": 156561,
  "slates": [
   {
-   "id": 156457,
-   "name": "Mon-Thu",
-   "start": "2026-11-16T20:15",
-   "games": 2,
+   "id": 156774,
+   "name": "Thu-Mon",
+   "start": "2026-11-19T20:15",
+   "games": 13,
    "featured": false,
    "type": "classic",
-   "players": 99,
+   "players": 663,
    "matched": {
-    "sleeper": 98,
-    "espn": 77,
-    "fantasypros": 54,
-    "cbs": 53,
-    "numberfire": 36,
-    "dff": 12,
-    "props": 30
+    "sleeper": 648,
+    "espn": 488,
+    "fantasypros": 219,
+    "cbs": 368,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 28
    }
   },
   {
@@ -30,31 +30,31 @@
    "type": "classic",
    "players": 504,
    "matched": {
-    "sleeper": 493,
+    "sleeper": 492,
     "espn": 367,
-    "fantasypros": 170,
-    "cbs": 289,
+    "fantasypros": 164,
+    "cbs": 288,
     "numberfire": 0,
     "dff": 0,
     "props": 0
    }
   },
   {
-   "id": 156434,
-   "name": "LAC @ BAL",
-   "start": "2026-11-16T20:15",
+   "id": 156781,
+   "name": "IND @ HOU",
+   "start": "2026-11-19T20:15",
    "games": 1,
    "featured": true,
    "type": "showdown",
-   "players": 54,
+   "players": 51,
    "matched": {
-    "sleeper": 53,
-    "espn": 40,
-    "fantasypros": 35,
-    "cbs": 30,
-    "numberfire": 36,
-    "dff": 14,
-    "props": 21
+    "sleeper": 51,
+    "espn": 42,
+    "fantasypros": 20,
+    "cbs": 27,
+    "numberfire": 0,
+    "dff": 0,
+    "props": 11
    }
   }
  ]
