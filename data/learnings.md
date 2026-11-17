@@ -98,3 +98,10 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - sleepers: Brandin Cooks 4.5 (1.15x), Corey Kiner 11.5 (2.8x), Efton Chism III 15.9 (4.42x), Antonio Williams 5.5 (1.34x), Jacob Cowing 1.5 (0.42x), Austin Ekeler 5.4 (1.23x), Kyle Williams 0.0 (0.0x), Eli Raridon 8.2 (2.34x), Patriots -1.0 (-0.32x)
 - Boom players: Kayshon Boutte $3400 31.5 pts (proj 4.65), Darren Waller $3300 23.0 pts (proj 6.02), Tank Dell $3500 23.5 pts (proj 4.33), C.J. Stroud $5900 39.36 pts (proj 18.2), Jordan Love $6300 39.18 pts (proj 18.28), Shedeur Sanders $4000 22.68 pts (proj 14.77), Jordan Watkins $3300 18.6 pts (proj 2.8), Van Jefferson $3000 16.8 pts (proj 2.05), Matthew Golden $7000 35.4 pts (proj 16.29), Packers $2400 12.0 pts (proj 6.46)
 - Source MAE so far: dff 4.739, blend 4.808, sleeper 4.847, espn 4.968, fantasypros 4.988, cbs 5.176, dkavg 5.265, numberfire 5.302, props 5.311
+
+## Week 10 results (auto-graded 2026-11-17T21:05+00:00)
+- Max-points lineup: projected 137.0, scored 164.2 (hindsight optimal 294.2)
+- mustPlays: Christian McCaffrey 49.3 (5.8x), Brock Purdy 34.66 (4.95x), George Kittle 13.4 (2.06x)
+- sleepers: Brandin Cooks None (0.0x), Jacob Cowing 0.0 (0.0x)
+- Boom players: Emmett Johnson $4700 38.1 pts (proj 13.36), George Pickens $6300 46.5 pts (proj 13.54), Vikings $2800 18.0 pts (proj 7.32), Patrick Mahomes $6000 38.42 pts (proj 19.46), Dak Prescott $6400 38.42 pts (proj 19.71), Christian McCaffrey $8500 49.3 pts (proj 21.5), Myles Price $3000 16.1 pts (proj 3.92), Gavin Bartholomew $2500 12.6 pts (proj 4.32), Parker Washington $6200 31.2 pts (proj 15.38), Deshaun Watson $5100 25.38 pts (proj 15.42)
+- Source MAE so far: blend 4.885, sleeper 4.893, dff 4.929, espn 4.998, fantasypros 5.023, cbs 5.209, dkavg 5.32, numberfire 5.381, props 5.385

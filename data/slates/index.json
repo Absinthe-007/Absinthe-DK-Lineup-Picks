@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-17T04:10+00:00",
- "week": 10,
+ "updated": "2026-11-17T21:06+00:00",
+ "week": 11,
  "default": 156561,
  "slates": [
   {
@@ -13,12 +13,12 @@
    "players": 663,
    "matched": {
     "sleeper": 648,
-    "espn": 488,
-    "fantasypros": 219,
-    "cbs": 368,
-    "numberfire": 0,
+    "espn": 490,
+    "fantasypros": 280,
+    "cbs": 364,
+    "numberfire": 455,
     "dff": 0,
-    "props": 28
+    "props": 53
    }
   },
   {
@@ -31,12 +31,48 @@
    "players": 504,
    "matched": {
     "sleeper": 492,
-    "espn": 367,
-    "fantasypros": 164,
-    "cbs": 288,
-    "numberfire": 0,
+    "espn": 369,
+    "fantasypros": 210,
+    "cbs": 284,
+    "numberfire": 344,
     "dff": 0,
-    "props": 0
+    "props": 29
+   }
+  },
+  {
+   "id": 156776,
+   "name": "Sun-Mon",
+   "start": "2026-11-22T13:00",
+   "games": 12,
+   "featured": false,
+   "type": "classic",
+   "players": 619,
+   "matched": {
+    "sleeper": 605,
+    "espn": 449,
+    "fantasypros": 257,
+    "cbs": 340,
+    "numberfire": 422,
+    "dff": 0,
+    "props": 39
+   }
+  },
+  {
+   "id": 156775,
+   "name": "Early Only",
+   "start": "2026-11-22T13:00",
+   "games": 7,
+   "featured": false,
+   "type": "classic",
+   "players": 358,
+   "matched": {
+    "sleeper": 351,
+    "espn": 256,
+    "fantasypros": 147,
+    "cbs": 195,
+    "numberfire": 244,
+    "dff": 0,
+    "props": 11
    }
   },
   {
@@ -50,11 +86,137 @@
    "matched": {
     "sleeper": 51,
     "espn": 42,
+    "fantasypros": 25,
+    "cbs": 27,
+    "numberfire": 34,
+    "dff": 0,
+    "props": 15
+   }
+  },
+  {
+   "id": 156782,
+   "name": "ARI @ KC",
+   "start": "2026-11-22T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 62,
+   "matched": {
+    "sleeper": 60,
+    "espn": 45,
+    "fantasypros": 23,
+    "cbs": 32,
+    "numberfire": 36,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156783,
+   "name": "MIA @ BUF",
+   "start": "2026-11-22T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 49,
+   "matched": {
+    "sleeper": 49,
+    "espn": 40,
+    "fantasypros": 21,
+    "cbs": 29,
+    "numberfire": 31,
+    "dff": 0,
+    "props": 9
+   }
+  },
+  {
+   "id": 156784,
+   "name": "TEN @ DAL",
+   "start": "2026-11-22T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 51,
+   "matched": {
+    "sleeper": 51,
+    "espn": 33,
+    "fantasypros": 26,
+    "cbs": 28,
+    "numberfire": 31,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156785,
+   "name": "BAL @ CAR",
+   "start": "2026-11-22T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 54,
+   "matched": {
+    "sleeper": 54,
+    "espn": 41,
+    "fantasypros": 26,
+    "cbs": 32,
+    "numberfire": 43,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 156786,
+   "name": "NO @ CHI",
+   "start": "2026-11-22T13:00",
+   "games": 1,
+   "featured": true,
+   "type": "showdown",
+   "players": 54,
+   "matched": {
+    "sleeper": 52,
+    "espn": 35,
+    "fantasypros": 22,
+    "cbs": 27,
+    "numberfire": 36,
+    "dff": 0,
+    "props": 2
+   }
+  },
+  {
+   "id": 156787,
+   "name": "TB @ DET",
+   "start": "2026-11-22T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 51,
+   "matched": {
+    "sleeper": 50,
+    "espn": 35,
     "fantasypros": 20,
     "cbs": 27,
-    "numberfire": 0,
+    "numberfire": 34,
     "dff": 0,
-    "props": 11
+    "props": 0
+   }
+  },
+  {
+   "id": 156788,
+   "name": "PIT @ PHI",
+   "start": "2026-11-22T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 53,
+   "matched": {
+    "sleeper": 51,
+    "espn": 41,
+    "fantasypros": 22,
+    "cbs": 33,
+    "numberfire": 33,
+    "dff": 0,
+    "props": 0
    }
   }
  ]

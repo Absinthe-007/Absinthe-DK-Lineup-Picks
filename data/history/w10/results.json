@@ -1,0 +1,2654 @@
+{
+ "week": 10,
+ "graded": "2026-11-17T21:05+00:00",
+ "slates": [
+  {
+   "id": 156415,
+   "name": "Thu-Mon",
+   "type": "classic",
+   "maxProjLineup": {
+    "proj": 136.9,
+    "actual": 136.6,
+    "players": [
+     "Jahmyr Gibbs",
+     "Josh Allen",
+     "Ja'Marr Chase",
+     "Jaylen Warren",
+     "DeMario Douglas",
+     "T.J. Hockenson",
+     "Colby Parkinson",
+     "Packers",
+     "Laquon Treadwell"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 302.5,
+    "players": [
+     "Christian McCaffrey $8500",
+     "Patrick Mahomes $6000",
+     "Chuba Hubbard $7200",
+     "Parker Washington $6200",
+     "Isaiah Likely $5300",
+     "George Pickens $6300",
+     "Vikings $2800",
+     "Emmett Johnson $4700",
+     "Myles Price $3000"
+    ]
+   },
+   "mustPlays": [
+    {
+     "name": "Christian McCaffrey",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Brock Purdy",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "George Kittle",
+     "salary": 6500,
+     "proj": 16.3,
+     "actual": 13.4,
+     "value_x": 2.06
+    },
+    {
+     "name": "A.J. Brown",
+     "salary": 5800,
+     "proj": 8.48,
+     "actual": 4.7,
+     "value_x": 0.81
+    }
+   ],
+   "core": [
+    {
+     "name": "Rachaad White",
+     "salary": 5100,
+     "proj": 12.0,
+     "actual": 6.2,
+     "value_x": 1.22
+    },
+    {
+     "name": "DeMario Douglas",
+     "salary": 4800,
+     "proj": 12.25,
+     "actual": 1.4,
+     "value_x": 0.29
+    },
+    {
+     "name": "Jayden Daniels",
+     "salary": 5700,
+     "proj": 19.3,
+     "actual": 22.76,
+     "value_x": 3.99
+    },
+    {
+     "name": "Drake Maye",
+     "salary": 6800,
+     "proj": 22.82,
+     "actual": 3.02,
+     "value_x": 0.44
+    }
+   ],
+   "sleepers": [
+    {
+     "name": "Brandin Cooks",
+     "salary": 3500,
+     "proj": 7.8,
+     "actual": null,
+     "value_x": 0.0
+    },
+    {
+     "name": "Corey Kiner",
+     "salary": 4700,
+     "proj": 11.87,
+     "actual": 2.5,
+     "value_x": 0.53
+    },
+    {
+     "name": "Efton Chism III",
+     "salary": 3800,
+     "proj": 7.11,
+     "actual": 0.0,
+     "value_x": 0.0
+    },
+    {
+     "name": "Antonio Williams",
+     "salary": 4600,
+     "proj": 5.8,
+     "actual": 12.2,
+     "value_x": 2.65
+    },
+    {
+     "name": "Jacob Cowing",
+     "salary": 3400,
+     "proj": 5.5,
+     "actual": 0.0,
+     "value_x": 0.0
+    },
+    {
+     "name": "Austin Ekeler",
+     "salary": 4600,
+     "proj": 6.5,
+     "actual": 9.2,
+     "value_x": 2.0
+    },
+    {
+     "name": "Kyle Williams",
+     "salary": 3300,
+     "proj": 5.38,
+     "actual": 0.0,
+     "value_x": 0.0
+    },
+    {
+     "name": "Eli Raridon",
+     "salary": 3300,
+     "proj": 7.68,
+     "actual": 1.6,
+     "value_x": 0.48
+    },
+    {
+     "name": "Patriots",
+     "salary": 2600,
+     "proj": 4.53,
+     "actual": 2.0,
+     "value_x": 0.77
+    }
+   ],
+   "fades": [
+    {
+     "name": "Stefon Diggs",
+     "salary": 5600,
+     "proj": 8.5,
+     "actual": 20.3,
+     "value_x": 3.63
+    },
+    {
+     "name": "Mike Evans",
+     "salary": 6000,
+     "proj": 13.0,
+     "actual": null,
+     "value_x": 0.0
+    },
+    {
+     "name": "Rhamondre Stevenson",
+     "salary": 6200,
+     "proj": 2.16,
+     "actual": 1.5,
+     "value_x": 0.24
+    },
+    {
+     "name": "TreVeyon Henderson",
+     "salary": 5200,
+     "proj": 0.0,
+     "actual": 0.0,
+     "value_x": 0.0
+    },
+    {
+     "name": "Commanders",
+     "salary": 2400,
+     "proj": 5.81,
+     "actual": 5.0,
+     "value_x": 2.08
+    }
+   ],
+   "boomPlayers": [
+    {
+     "name": "Emmett Johnson",
+     "pos": "RB",
+     "team": "KC",
+     "salary": 4700,
+     "proj": 6.65,
+     "actual": 38.1,
+     "value_x": 8.11
+    },
+    {
+     "name": "George Pickens",
+     "pos": "WR",
+     "team": "DAL",
+     "salary": 6300,
+     "proj": 12.61,
+     "actual": 46.5,
+     "value_x": 7.38
+    },
+    {
+     "name": "Vikings",
+     "pos": "DST",
+     "team": "MIN",
+     "salary": 2800,
+     "proj": 7.31,
+     "actual": 18.0,
+     "value_x": 6.43
+    },
+    {
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "team": "KC",
+     "salary": 6000,
+     "proj": 19.08,
+     "actual": 38.42,
+     "value_x": 6.4
+    },
+    {
+     "name": "Dak Prescott",
+     "pos": "QB",
+     "team": "DAL",
+     "salary": 6400,
+     "proj": 19.77,
+     "actual": 38.42,
+     "value_x": 6.0
+    },
+    {
+     "name": "Christian McCaffrey",
+     "pos": "RB",
+     "team": "SF",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Isaiah Likely",
+     "pos": "TE",
+     "team": "NYG",
+     "salary": 5300,
+     "proj": 13.21,
+     "actual": 30.7,
+     "value_x": 5.79
+    },
+    {
+     "name": "Ben Sinnott",
+     "pos": "TE",
+     "team": "WAS",
+     "salary": 2500,
+     "proj": 0.78,
+     "actual": 14.2,
+     "value_x": 5.68
+    },
+    {
+     "name": "Myles Price",
+     "pos": "WR",
+     "team": "MIN",
+     "salary": 3000,
+     "proj": 2.4,
+     "actual": 16.1,
+     "value_x": 5.37
+    },
+    {
+     "name": "Gavin Bartholomew",
+     "pos": "TE",
+     "team": "MIN",
+     "salary": 2500,
+     "proj": 1.17,
+     "actual": 12.6,
+     "value_x": 5.04
+    },
+    {
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 6200,
+     "proj": 15.55,
+     "actual": 31.2,
+     "value_x": 5.03
+    },
+    {
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "team": "CIN",
+     "salary": 7200,
+     "proj": 23.02,
+     "actual": 36.16,
+     "value_x": 5.02
+    },
+    {
+     "name": "Deshaun Watson",
+     "pos": "QB",
+     "team": "CLE",
+     "salary": 5100,
+     "proj": 15.51,
+     "actual": 25.38,
+     "value_x": 4.98
+    },
+    {
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "team": "SF",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "Cam Skattebo",
+     "pos": "RB",
+     "team": "NYG",
+     "salary": 5500,
+     "proj": 12.54,
+     "actual": 27.2,
+     "value_x": 4.95
+    },
+    {
+     "name": "Jahmyr Gibbs",
+     "pos": "RB",
+     "team": "DET",
+     "salary": 9700,
+     "proj": 25.84,
+     "actual": 47.2,
+     "value_x": 4.87
+    },
+    {
+     "name": "Mark Andrews",
+     "pos": "TE",
+     "team": "BAL",
+     "salary": 3400,
+     "proj": 6.82,
+     "actual": 16.2,
+     "value_x": 4.76
+    },
+    {
+     "name": "Josh Cameron",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 3300,
+     "proj": 4.09,
+     "actual": 15.7,
+     "value_x": 4.76
+    },
+    {
+     "name": "Chuba Hubbard",
+     "pos": "RB",
+     "team": "CAR",
+     "salary": 7200,
+     "proj": 18.9,
+     "actual": 34.2,
+     "value_x": 4.75
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "pos": "WR",
+     "team": "SF",
+     "salary": 5500,
+     "proj": 0.0,
+     "actual": 25.9,
+     "value_x": 4.71
+    }
+   ]
+  },
+  {
+   "id": 156416,
+   "name": "Main",
+   "type": "classic",
+   "maxProjLineup": {
+    "proj": 137.0,
+    "actual": 164.2,
+    "players": [
+     "Josh Allen",
+     "Bijan Robinson",
+     "Chuba Hubbard",
+     "Justin Jefferson",
+     "Emmett Johnson",
+     "Travis Kelce",
+     "Jakobi Meyers",
+     "Tank Dell",
+     "Vikings"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 294.2,
+    "players": [
+     "Christian McCaffrey $8500",
+     "Patrick Mahomes $6000",
+     "Chuba Hubbard $7200",
+     "Parker Washington $6200",
+     "George Pickens $6300",
+     "Emmett Johnson $4700",
+     "Vikings $2800",
+     "Gavin Bartholomew $2500",
+     "Deebo Samuel Sr. $5500"
+    ]
+   },
+   "mustPlays": [
+    {
+     "name": "Christian McCaffrey",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Brock Purdy",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "George Kittle",
+     "salary": 6500,
+     "proj": 16.3,
+     "actual": 13.4,
+     "value_x": 2.06
+    }
+   ],
+   "core": [],
+   "sleepers": [
+    {
+     "name": "Brandin Cooks",
+     "salary": 3500,
+     "proj": 7.8,
+     "actual": null,
+     "value_x": 0.0
+    },
+    {
+     "name": "Jacob Cowing",
+     "salary": 3400,
+     "proj": 5.5,
+     "actual": 0.0,
+     "value_x": 0.0
+    }
+   ],
+   "fades": [
+    {
+     "name": "Mike Evans",
+     "salary": 6000,
+     "proj": 0.0,
+     "actual": null,
+     "value_x": 0.0
+    }
+   ],
+   "boomPlayers": [
+    {
+     "name": "Emmett Johnson",
+     "pos": "RB",
+     "team": "KC",
+     "salary": 4700,
+     "proj": 13.36,
+     "actual": 38.1,
+     "value_x": 8.11
+    },
+    {
+     "name": "George Pickens",
+     "pos": "WR",
+     "team": "DAL",
+     "salary": 6300,
+     "proj": 13.54,
+     "actual": 46.5,
+     "value_x": 7.38
+    },
+    {
+     "name": "Vikings",
+     "pos": "DST",
+     "team": "MIN",
+     "salary": 2800,
+     "proj": 7.32,
+     "actual": 18.0,
+     "value_x": 6.43
+    },
+    {
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "team": "KC",
+     "salary": 6000,
+     "proj": 19.46,
+     "actual": 38.42,
+     "value_x": 6.4
+    },
+    {
+     "name": "Dak Prescott",
+     "pos": "QB",
+     "team": "DAL",
+     "salary": 6400,
+     "proj": 19.71,
+     "actual": 38.42,
+     "value_x": 6.0
+    },
+    {
+     "name": "Christian McCaffrey",
+     "pos": "RB",
+     "team": "SF",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Myles Price",
+     "pos": "WR",
+     "team": "MIN",
+     "salary": 3000,
+     "proj": 3.92,
+     "actual": 16.1,
+     "value_x": 5.37
+    },
+    {
+     "name": "Gavin Bartholomew",
+     "pos": "TE",
+     "team": "MIN",
+     "salary": 2500,
+     "proj": 4.32,
+     "actual": 12.6,
+     "value_x": 5.04
+    },
+    {
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 6200,
+     "proj": 15.38,
+     "actual": 31.2,
+     "value_x": 5.03
+    },
+    {
+     "name": "Deshaun Watson",
+     "pos": "QB",
+     "team": "CLE",
+     "salary": 5100,
+     "proj": 15.42,
+     "actual": 25.38,
+     "value_x": 4.98
+    },
+    {
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "team": "SF",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "Josh Cameron",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 3300,
+     "proj": 3.88,
+     "actual": 15.7,
+     "value_x": 4.76
+    },
+    {
+     "name": "Chuba Hubbard",
+     "pos": "RB",
+     "team": "CAR",
+     "salary": 7200,
+     "proj": 19.18,
+     "actual": 34.2,
+     "value_x": 4.75
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "pos": "WR",
+     "team": "SF",
+     "salary": 5500,
+     "proj": 0.0,
+     "actual": 25.9,
+     "value_x": 4.71
+    },
+    {
+     "name": "Blake Corum",
+     "pos": "RB",
+     "team": "LAR",
+     "salary": 5100,
+     "proj": 11.2,
+     "actual": 23.9,
+     "value_x": 4.69
+    },
+    {
+     "name": "Trevor Lawrence",
+     "pos": "QB",
+     "team": "JAX",
+     "salary": 6600,
+     "proj": 20.98,
+     "actual": 30.78,
+     "value_x": 4.66
+    },
+    {
+     "name": "Dolphins",
+     "pos": "DST",
+     "team": "MIA",
+     "salary": 2600,
+     "proj": 5.7,
+     "actual": 12.0,
+     "value_x": 4.62
+    },
+    {
+     "name": "Jalen Tolbert",
+     "pos": "WR",
+     "team": "MIA",
+     "salary": 3000,
+     "proj": 1.57,
+     "actual": 12.9,
+     "value_x": 4.3
+    },
+    {
+     "name": "Rams",
+     "pos": "DST",
+     "team": "LAR",
+     "salary": 3800,
+     "proj": 8.51,
+     "actual": 16.0,
+     "value_x": 4.21
+    },
+    {
+     "name": "Cam Ward",
+     "pos": "QB",
+     "team": "TEN",
+     "salary": 4800,
+     "proj": 13.09,
+     "actual": 20.14,
+     "value_x": 4.2
+    }
+   ]
+  },
+  {
+   "id": 156417,
+   "name": "Early Only",
+   "type": "classic",
+   "maxProjLineup": {
+    "proj": 137.0,
+    "actual": 164.2,
+    "players": [
+     "Josh Allen",
+     "Bijan Robinson",
+     "Chuba Hubbard",
+     "Justin Jefferson",
+     "Emmett Johnson",
+     "Travis Kelce",
+     "Jakobi Meyers",
+     "Tank Dell",
+     "Vikings"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 243.3,
+    "players": [
+     "Patrick Mahomes $6000",
+     "Chuba Hubbard $7200",
+     "Parker Washington $6200",
+     "Nico Collins $6900",
+     "Emmett Johnson $4700",
+     "Tony Pollard $6000",
+     "Harold Fannin Jr. $4900",
+     "Vikings $2800",
+     "Jordyn Tyson $5000"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Emmett Johnson",
+     "pos": "RB",
+     "team": "KC",
+     "salary": 4700,
+     "proj": 13.36,
+     "actual": 38.1,
+     "value_x": 8.11
+    },
+    {
+     "name": "Vikings",
+     "pos": "DST",
+     "team": "MIN",
+     "salary": 2800,
+     "proj": 7.32,
+     "actual": 18.0,
+     "value_x": 6.43
+    },
+    {
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "team": "KC",
+     "salary": 6000,
+     "proj": 19.46,
+     "actual": 38.42,
+     "value_x": 6.4
+    },
+    {
+     "name": "Myles Price",
+     "pos": "WR",
+     "team": "MIN",
+     "salary": 3000,
+     "proj": 3.92,
+     "actual": 16.1,
+     "value_x": 5.37
+    },
+    {
+     "name": "Gavin Bartholomew",
+     "pos": "TE",
+     "team": "MIN",
+     "salary": 2500,
+     "proj": 4.32,
+     "actual": 12.6,
+     "value_x": 5.04
+    },
+    {
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 6200,
+     "proj": 15.38,
+     "actual": 31.2,
+     "value_x": 5.03
+    },
+    {
+     "name": "Deshaun Watson",
+     "pos": "QB",
+     "team": "CLE",
+     "salary": 5100,
+     "proj": 15.42,
+     "actual": 25.38,
+     "value_x": 4.98
+    },
+    {
+     "name": "Josh Cameron",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 3300,
+     "proj": 3.88,
+     "actual": 15.7,
+     "value_x": 4.76
+    },
+    {
+     "name": "Chuba Hubbard",
+     "pos": "RB",
+     "team": "CAR",
+     "salary": 7200,
+     "proj": 19.18,
+     "actual": 34.2,
+     "value_x": 4.75
+    },
+    {
+     "name": "Trevor Lawrence",
+     "pos": "QB",
+     "team": "JAX",
+     "salary": 6600,
+     "proj": 20.98,
+     "actual": 30.78,
+     "value_x": 4.66
+    },
+    {
+     "name": "Dolphins",
+     "pos": "DST",
+     "team": "MIA",
+     "salary": 2600,
+     "proj": 5.7,
+     "actual": 12.0,
+     "value_x": 4.62
+    },
+    {
+     "name": "Jalen Tolbert",
+     "pos": "WR",
+     "team": "MIA",
+     "salary": 3000,
+     "proj": 1.57,
+     "actual": 12.9,
+     "value_x": 4.3
+    },
+    {
+     "name": "Cam Ward",
+     "pos": "QB",
+     "team": "TEN",
+     "salary": 4800,
+     "proj": 13.09,
+     "actual": 20.14,
+     "value_x": 4.2
+    },
+    {
+     "name": "Cyrus Allen",
+     "pos": "WR",
+     "team": "KC",
+     "salary": 3000,
+     "proj": 2.7,
+     "actual": 12.4,
+     "value_x": 4.13
+    },
+    {
+     "name": "Elic Ayomanor",
+     "pos": "WR",
+     "team": "TEN",
+     "salary": 3200,
+     "proj": 6.49,
+     "actual": 12.9,
+     "value_x": 4.03
+    },
+    {
+     "name": "Colts",
+     "pos": "DST",
+     "team": "IND",
+     "salary": 3000,
+     "proj": 7.03,
+     "actual": 12.0,
+     "value_x": 4.0
+    },
+    {
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "team": "TEN",
+     "salary": 6000,
+     "proj": 12.53,
+     "actual": 23.9,
+     "value_x": 3.98
+    },
+    {
+     "name": "C.J. Stroud",
+     "pos": "QB",
+     "team": "HOU",
+     "salary": 5900,
+     "proj": 18.74,
+     "actual": 21.44,
+     "value_x": 3.63
+    },
+    {
+     "name": "Nico Collins",
+     "pos": "WR",
+     "team": "HOU",
+     "salary": 6900,
+     "proj": 14.27,
+     "actual": 24.4,
+     "value_x": 3.54
+    },
+    {
+     "name": "James Cook III",
+     "pos": "RB",
+     "team": "BUF",
+     "salary": 7400,
+     "proj": 19.54,
+     "actual": 24.7,
+     "value_x": 3.34
+    }
+   ]
+  },
+  {
+   "id": 156418,
+   "name": "Sun-Mon",
+   "type": "classic",
+   "maxProjLineup": {
+    "proj": 138.8,
+    "actual": 165.1,
+    "players": [
+     "Josh Allen",
+     "Bijan Robinson",
+     "Ja'Marr Chase",
+     "Justin Jefferson",
+     "Emmett Johnson",
+     "Travis Kelce",
+     "Jakobi Meyers",
+     "Colby Parkinson",
+     "Vikings"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 294.2,
+    "players": [
+     "Christian McCaffrey $8500",
+     "Patrick Mahomes $6000",
+     "Chuba Hubbard $7200",
+     "Parker Washington $6200",
+     "George Pickens $6300",
+     "Emmett Johnson $4700",
+     "Vikings $2800",
+     "Gavin Bartholomew $2500",
+     "Deebo Samuel Sr. $5500"
+    ]
+   },
+   "mustPlays": [
+    {
+     "name": "Christian McCaffrey",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Brock Purdy",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "George Kittle",
+     "salary": 6500,
+     "proj": 16.3,
+     "actual": 13.4,
+     "value_x": 2.06
+    }
+   ],
+   "core": [],
+   "sleepers": [
+    {
+     "name": "Brandin Cooks",
+     "salary": 3500,
+     "proj": 7.8,
+     "actual": null,
+     "value_x": 0.0
+    },
+    {
+     "name": "Jacob Cowing",
+     "salary": 3400,
+     "proj": 5.5,
+     "actual": 0.0,
+     "value_x": 0.0
+    }
+   ],
+   "fades": [
+    {
+     "name": "Mike Evans",
+     "salary": 6000,
+     "proj": 0.0,
+     "actual": null,
+     "value_x": 0.0
+    }
+   ],
+   "boomPlayers": [
+    {
+     "name": "Emmett Johnson",
+     "pos": "RB",
+     "team": "KC",
+     "salary": 4700,
+     "proj": 13.36,
+     "actual": 38.1,
+     "value_x": 8.11
+    },
+    {
+     "name": "George Pickens",
+     "pos": "WR",
+     "team": "DAL",
+     "salary": 6300,
+     "proj": 13.54,
+     "actual": 46.5,
+     "value_x": 7.38
+    },
+    {
+     "name": "Vikings",
+     "pos": "DST",
+     "team": "MIN",
+     "salary": 2800,
+     "proj": 7.32,
+     "actual": 18.0,
+     "value_x": 6.43
+    },
+    {
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "team": "KC",
+     "salary": 6000,
+     "proj": 19.46,
+     "actual": 38.42,
+     "value_x": 6.4
+    },
+    {
+     "name": "Dak Prescott",
+     "pos": "QB",
+     "team": "DAL",
+     "salary": 6400,
+     "proj": 19.71,
+     "actual": 38.42,
+     "value_x": 6.0
+    },
+    {
+     "name": "Christian McCaffrey",
+     "pos": "RB",
+     "team": "SF",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Myles Price",
+     "pos": "WR",
+     "team": "MIN",
+     "salary": 3000,
+     "proj": 3.92,
+     "actual": 16.1,
+     "value_x": 5.37
+    },
+    {
+     "name": "Gavin Bartholomew",
+     "pos": "TE",
+     "team": "MIN",
+     "salary": 2500,
+     "proj": 4.32,
+     "actual": 12.6,
+     "value_x": 5.04
+    },
+    {
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 6200,
+     "proj": 15.38,
+     "actual": 31.2,
+     "value_x": 5.03
+    },
+    {
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "team": "CIN",
+     "salary": 7200,
+     "proj": 23.1,
+     "actual": 36.16,
+     "value_x": 5.02
+    },
+    {
+     "name": "Deshaun Watson",
+     "pos": "QB",
+     "team": "CLE",
+     "salary": 5100,
+     "proj": 15.42,
+     "actual": 25.38,
+     "value_x": 4.98
+    },
+    {
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "team": "SF",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "Mark Andrews",
+     "pos": "TE",
+     "team": "BAL",
+     "salary": 3400,
+     "proj": 6.8,
+     "actual": 16.2,
+     "value_x": 4.76
+    },
+    {
+     "name": "Josh Cameron",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 3300,
+     "proj": 3.88,
+     "actual": 15.7,
+     "value_x": 4.76
+    },
+    {
+     "name": "Chuba Hubbard",
+     "pos": "RB",
+     "team": "CAR",
+     "salary": 7200,
+     "proj": 19.18,
+     "actual": 34.2,
+     "value_x": 4.75
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "pos": "WR",
+     "team": "SF",
+     "salary": 5500,
+     "proj": 0.0,
+     "actual": 25.9,
+     "value_x": 4.71
+    },
+    {
+     "name": "Blake Corum",
+     "pos": "RB",
+     "team": "LAR",
+     "salary": 5100,
+     "proj": 11.2,
+     "actual": 23.9,
+     "value_x": 4.69
+    },
+    {
+     "name": "Trevor Lawrence",
+     "pos": "QB",
+     "team": "JAX",
+     "salary": 6600,
+     "proj": 20.98,
+     "actual": 30.78,
+     "value_x": 4.66
+    },
+    {
+     "name": "Dolphins",
+     "pos": "DST",
+     "team": "MIA",
+     "salary": 2600,
+     "proj": 5.7,
+     "actual": 12.0,
+     "value_x": 4.62
+    },
+    {
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "team": "CIN",
+     "salary": 8100,
+     "proj": 22.02,
+     "actual": 37.1,
+     "value_x": 4.58
+    }
+   ]
+  },
+  {
+   "id": 156419,
+   "name": "Afternoon Only",
+   "type": "classic",
+   "maxProjLineup": {
+    "proj": 127.2,
+    "actual": 124.7,
+    "players": [
+     "Jaxon Smith-Njigba",
+     "CeeDee Lamb",
+     "Brock Purdy",
+     "Kyren Williams",
+     "Ashton Jeanty",
+     "Colby Parkinson",
+     "Seahawks",
+     "Michael Mayer",
+     "CJ Daniels"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 246.0,
+    "players": [
+     "Jaxon Smith-Njigba $9300",
+     "Christian McCaffrey $8500",
+     "Dak Prescott $6400",
+     "George Pickens $6300",
+     "Blake Corum $5100",
+     "Raiders $2400",
+     "Davis Allen $2700",
+     "Xavier Smith $3000",
+     "Deebo Samuel Sr. $5500"
+    ]
+   },
+   "mustPlays": [
+    {
+     "name": "Christian McCaffrey",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Brock Purdy",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "George Kittle",
+     "salary": 6500,
+     "proj": 16.3,
+     "actual": 13.4,
+     "value_x": 2.06
+    }
+   ],
+   "core": [],
+   "sleepers": [
+    {
+     "name": "Jacob Cowing",
+     "salary": 3400,
+     "proj": 5.5,
+     "actual": 0.0,
+     "value_x": 0.0
+    }
+   ],
+   "fades": [
+    {
+     "name": "Mike Evans",
+     "salary": 6000,
+     "proj": 0.0,
+     "actual": null,
+     "value_x": 0.0
+    }
+   ],
+   "boomPlayers": [
+    {
+     "name": "George Pickens",
+     "pos": "WR",
+     "team": "DAL",
+     "salary": 6300,
+     "proj": 13.64,
+     "actual": 46.5,
+     "value_x": 7.38
+    },
+    {
+     "name": "Dak Prescott",
+     "pos": "QB",
+     "team": "DAL",
+     "salary": 6400,
+     "proj": 19.75,
+     "actual": 38.42,
+     "value_x": 6.0
+    },
+    {
+     "name": "Christian McCaffrey",
+     "pos": "RB",
+     "team": "SF",
+     "salary": 8500,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 5.8
+    },
+    {
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "team": "SF",
+     "salary": 7000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 4.95
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "pos": "WR",
+     "team": "SF",
+     "salary": 5500,
+     "proj": 0.0,
+     "actual": 25.9,
+     "value_x": 4.71
+    },
+    {
+     "name": "Blake Corum",
+     "pos": "RB",
+     "team": "LAR",
+     "salary": 5100,
+     "proj": 11.21,
+     "actual": 23.9,
+     "value_x": 4.69
+    },
+    {
+     "name": "Rams",
+     "pos": "DST",
+     "team": "LAR",
+     "salary": 3800,
+     "proj": 8.6,
+     "actual": 16.0,
+     "value_x": 4.21
+    },
+    {
+     "name": "Xavier Smith",
+     "pos": "WR",
+     "team": "LAR",
+     "salary": 3000,
+     "proj": 2.5,
+     "actual": 12.0,
+     "value_x": 4.0
+    },
+    {
+     "name": "Jaxon Smith-Njigba",
+     "pos": "WR",
+     "team": "SEA",
+     "salary": 9300,
+     "proj": 23.61,
+     "actual": 34.1,
+     "value_x": 3.67
+    },
+    {
+     "name": "Matthew Stafford",
+     "pos": "QB",
+     "team": "LAR",
+     "salary": 6200,
+     "proj": 16.91,
+     "actual": 20.76,
+     "value_x": 3.35
+    },
+    {
+     "name": "CeeDee Lamb",
+     "pos": "WR",
+     "team": "DAL",
+     "salary": 8800,
+     "proj": 22.21,
+     "actual": 20.2,
+     "value_x": 2.3
+    }
+   ]
+  },
+  {
+   "id": 156420,
+   "name": "Primetime",
+   "type": "classic",
+   "maxProjLineup": {
+    "proj": 130.6,
+    "actual": 134.0,
+    "players": [
+     "Joe Burrow",
+     "Ja'Marr Chase",
+     "Tee Higgins",
+     "Jaylen Warren",
+     "Derrick Henry",
+     "Germie Bernard",
+     "Pat Freiermuth",
+     "Darnell Washington",
+     "Chargers"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 193.3,
+    "players": [
+     "Joe Burrow $7200",
+     "Ja'Marr Chase $8100",
+     "Derrick Henry $6500",
+     "Chase Brown $6400",
+     "DK Metcalf $5400",
+     "Omarion Hampton $4800",
+     "Tre' Harris $3900",
+     "Mark Andrews $3400",
+     "Chargers $2300"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "team": "CIN",
+     "salary": 7200,
+     "proj": 23.16,
+     "actual": 36.16,
+     "value_x": 5.02
+    },
+    {
+     "name": "Mark Andrews",
+     "pos": "TE",
+     "team": "BAL",
+     "salary": 3400,
+     "proj": 6.78,
+     "actual": 16.2,
+     "value_x": 4.76
+    },
+    {
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "team": "CIN",
+     "salary": 8100,
+     "proj": 21.87,
+     "actual": 37.1,
+     "value_x": 4.58
+    },
+    {
+     "name": "Chase Brown",
+     "pos": "RB",
+     "team": "CIN",
+     "salary": 6400,
+     "proj": 15.0,
+     "actual": 28.3,
+     "value_x": 4.42
+    },
+    {
+     "name": "Omarion Hampton",
+     "pos": "RB",
+     "team": "LAC",
+     "salary": 4800,
+     "proj": 8.47,
+     "actual": 20.5,
+     "value_x": 4.27
+    },
+    {
+     "name": "Drew Sample",
+     "pos": "TE",
+     "team": "CIN",
+     "salary": 2500,
+     "proj": 2.52,
+     "actual": 10.5,
+     "value_x": 4.2
+    }
+   ]
+  },
+  {
+   "id": 156421,
+   "name": "WAS @ NYG",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 82.8,
+    "actual": 92.4,
+    "players": [
+     "CPT Jayden Daniels",
+     "Malik Nabers",
+     "Isaiah Likely",
+     "Dominic Zvada",
+     "Drew Stevens",
+     "Malachi Fields"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 142.7,
+    "players": [
+     "CPT Isaiah Likely $12300",
+     "Jayden Daniels $10000",
+     "Cam Skattebo $9000",
+     "Stefon Diggs $9200",
+     "Antonio Williams $7200",
+     "Ben Sinnott $1600"
+    ]
+   },
+   "mustPlays": [],
+   "core": [
+    {
+     "name": "Rachaad White",
+     "salary": 7600,
+     "proj": 12.0,
+     "actual": 6.2,
+     "value_x": 0.82
+    },
+    {
+     "name": "Jayden Daniels",
+     "salary": 10000,
+     "proj": 19.3,
+     "actual": 22.76,
+     "value_x": 2.28
+    }
+   ],
+   "sleepers": [
+    {
+     "name": "Antonio Williams",
+     "salary": 7200,
+     "proj": 5.8,
+     "actual": 12.2,
+     "value_x": 1.69
+    },
+    {
+     "name": "Austin Ekeler",
+     "salary": 4600,
+     "proj": 6.5,
+     "actual": 9.2,
+     "value_x": 2.0
+    }
+   ],
+   "fades": [
+    {
+     "name": "Stefon Diggs",
+     "salary": 9200,
+     "proj": 8.5,
+     "actual": 20.3,
+     "value_x": 2.21
+    },
+    {
+     "name": "Commanders",
+     "salary": 4400,
+     "proj": 5.81,
+     "actual": 5.0,
+     "value_x": 1.14
+    }
+   ],
+   "boomPlayers": [
+    {
+     "name": "Ben Sinnott",
+     "pos": "TE",
+     "team": "WAS",
+     "salary": 1600,
+     "proj": 0.78,
+     "actual": 14.2,
+     "value_x": 8.87
+    },
+    {
+     "name": "Isaiah Likely",
+     "pos": "TE",
+     "team": "NYG",
+     "salary": 8200,
+     "proj": 13.21,
+     "actual": 30.7,
+     "value_x": 3.74
+    },
+    {
+     "name": "Cam Skattebo",
+     "pos": "RB",
+     "team": "NYG",
+     "salary": 9000,
+     "proj": 12.54,
+     "actual": 27.2,
+     "value_x": 3.02
+    },
+    {
+     "name": "Jayden Daniels",
+     "pos": "QB",
+     "team": "WAS",
+     "salary": 10000,
+     "proj": 19.3,
+     "actual": 22.76,
+     "value_x": 2.28
+    },
+    {
+     "name": "Stefon Diggs",
+     "pos": "WR",
+     "team": "WAS",
+     "salary": 9200,
+     "proj": 8.5,
+     "actual": 20.3,
+     "value_x": 2.21
+    }
+   ]
+  },
+  {
+   "id": 156422,
+   "name": "NE vs DET",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 99.6,
+    "actual": 103.9,
+    "players": [
+     "CPT Drake Maye",
+     "Jahmyr Gibbs",
+     "Amon-Ra St. Brown",
+     "Jared Goff",
+     "Tyler Conklin",
+     "Jacob Saylors"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 152.6,
+    "players": [
+     "CPT Jahmyr Gibbs $18600",
+     "Amon-Ra St. Brown $10400",
+     "Jared Goff $10000",
+     "Lan Larison $3400",
+     "Lions $4000",
+     "Isaac TeSlaa $3000"
+    ]
+   },
+   "mustPlays": [
+    {
+     "name": "A.J. Brown",
+     "salary": 7800,
+     "proj": 11.62,
+     "actual": 4.7,
+     "value_x": 0.6
+    }
+   ],
+   "core": [
+    {
+     "name": "DeMario Douglas",
+     "salary": 6800,
+     "proj": 11.71,
+     "actual": 1.4,
+     "value_x": 0.21
+    },
+    {
+     "name": "Drake Maye",
+     "salary": 10800,
+     "proj": 21.91,
+     "actual": 3.02,
+     "value_x": 0.28
+    }
+   ],
+   "sleepers": [
+    {
+     "name": "Corey Kiner",
+     "salary": 7000,
+     "proj": 11.92,
+     "actual": 2.5,
+     "value_x": 0.36
+    },
+    {
+     "name": "Efton Chism III",
+     "salary": 4800,
+     "proj": 5.88,
+     "actual": 0.0,
+     "value_x": 0.0
+    },
+    {
+     "name": "Kyle Williams",
+     "salary": 2800,
+     "proj": 4.74,
+     "actual": 0.0,
+     "value_x": 0.0
+    },
+    {
+     "name": "Eli Raridon",
+     "salary": 4400,
+     "proj": 7.25,
+     "actual": 1.6,
+     "value_x": 0.36
+    },
+    {
+     "name": "Patriots",
+     "salary": 3600,
+     "proj": 4.5,
+     "actual": 2.0,
+     "value_x": 0.56
+    }
+   ],
+   "fades": [
+    {
+     "name": "Rhamondre Stevenson",
+     "salary": 8600,
+     "proj": 2.48,
+     "actual": 1.5,
+     "value_x": 0.17
+    },
+    {
+     "name": "TreVeyon Henderson",
+     "salary": 7600,
+     "proj": 0.0,
+     "actual": 0.0,
+     "value_x": 0.0
+    }
+   ],
+   "boomPlayers": [
+    {
+     "name": "Jahmyr Gibbs",
+     "pos": "RB",
+     "team": "DET",
+     "salary": 12400,
+     "proj": 25.64,
+     "actual": 47.2,
+     "value_x": 3.81
+    },
+    {
+     "name": "Jared Goff",
+     "pos": "QB",
+     "team": "DET",
+     "salary": 10000,
+     "proj": 19.17,
+     "actual": 25.42,
+     "value_x": 2.54
+    },
+    {
+     "name": "Amon-Ra St. Brown",
+     "pos": "WR",
+     "team": "DET",
+     "salary": 10400,
+     "proj": 20.81,
+     "actual": 25.8,
+     "value_x": 2.48
+    }
+   ]
+  },
+  {
+   "id": 156423,
+   "name": "MIA @ IND",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 79.4,
+    "actual": 70.7,
+    "players": [
+     "CPT Jonathan Taylor",
+     "Ollie Gordon II",
+     "Daniel Jones",
+     "Caleb Douglas",
+     "Spencer Shrader",
+     "Laquon Treadwell"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 89.0,
+    "players": [
+     "CPT Ollie Gordon II $14700",
+     "Kyle McCord $7600",
+     "Malik Washington $6800",
+     "Seth McGowan $8800",
+     "Dolphins $3600",
+     "Jalen Tolbert $1800"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "DJ Herman",
+     "pos": "RB",
+     "team": "MIA",
+     "salary": 200,
+     "proj": 1.24,
+     "actual": 2.0,
+     "value_x": 10.0
+    },
+    {
+     "name": "Drew Ogletree",
+     "pos": "TE",
+     "team": "IND",
+     "salary": 200,
+     "proj": 0.93,
+     "actual": 1.5,
+     "value_x": 7.5
+    },
+    {
+     "name": "Jalen Tolbert",
+     "pos": "WR",
+     "team": "MIA",
+     "salary": 1800,
+     "proj": 1.57,
+     "actual": 12.9,
+     "value_x": 7.17
+    },
+    {
+     "name": "Anthony Gould",
+     "pos": "WR",
+     "team": "IND",
+     "salary": 1000,
+     "proj": 4.11,
+     "actual": 4.8,
+     "value_x": 4.8
+    },
+    {
+     "name": "Laquon Treadwell",
+     "pos": "WR",
+     "team": "IND",
+     "salary": 2800,
+     "proj": 6.74,
+     "actual": 11.4,
+     "value_x": 4.07
+    }
+   ]
+  },
+  {
+   "id": 156424,
+   "name": "BUF @ NYJ",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 95.9,
+    "actual": 87.9,
+    "players": [
+     "CPT Josh Allen",
+     "James Cook III",
+     "Geno Smith",
+     "Tyler Bass",
+     "Jason Sanders",
+     "Kenyon Sadiq"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 119.8,
+    "players": [
+     "CPT James Cook III $15600",
+     "Josh Allen $11400",
+     "Garrett Wilson $9000",
+     "DJ Moore $7800",
+     "Jason Sanders $4800",
+     "Isaiah Williams $1200"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Isaiah Williams",
+     "pos": "WR",
+     "team": "NYJ",
+     "salary": 1200,
+     "proj": 2.44,
+     "actual": 6.4,
+     "value_x": 5.33
+    },
+    {
+     "name": "James Cook III",
+     "pos": "RB",
+     "team": "BUF",
+     "salary": 10400,
+     "proj": 19.54,
+     "actual": 24.7,
+     "value_x": 2.38
+    },
+    {
+     "name": "Josh Allen",
+     "pos": "QB",
+     "team": "BUF",
+     "salary": 11400,
+     "proj": 24.82,
+     "actual": 23.34,
+     "value_x": 2.05
+    }
+   ]
+  },
+  {
+   "id": 156425,
+   "name": "CAR @ NO",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 95.2,
+    "actual": 73.3,
+    "players": [
+     "CPT Tyler Shough",
+     "Chuba Hubbard",
+     "Bryce Young",
+     "Chris Olave",
+     "Charlie Smyth",
+     "Oscar Delp"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 119.5,
+    "players": [
+     "CPT Chuba Hubbard $15300",
+     "Tyler Shough $9600",
+     "Alvin Kamara $7000",
+     "Ryan Fitzgerald $5000",
+     "Tommy Tremble $3000",
+     "Jordyn Tyson $6800"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Chuba Hubbard",
+     "pos": "RB",
+     "team": "CAR",
+     "salary": 10200,
+     "proj": 19.18,
+     "actual": 34.2,
+     "value_x": 3.35
+    }
+   ]
+  },
+  {
+   "id": 156426,
+   "name": "KC @ ATL",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 100.1,
+    "actual": 136.3,
+    "players": [
+     "CPT Bijan Robinson",
+     "Patrick Mahomes",
+     "Drake London",
+     "Michael Penix Jr.",
+     "Emmett Johnson",
+     "Jaydn Ott"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 160.9,
+    "players": [
+     "CPT Emmett Johnson $6300",
+     "Bijan Robinson $11200",
+     "Patrick Mahomes $10000",
+     "Drake London $9600",
+     "Josh Downs $7000",
+     "Cyrus Allen $4000"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Emmett Johnson",
+     "pos": "RB",
+     "team": "KC",
+     "salary": 4200,
+     "proj": 13.36,
+     "actual": 38.1,
+     "value_x": 9.07
+    },
+    {
+     "name": "Jake Briningstool",
+     "pos": "TE",
+     "team": "KC",
+     "salary": 600,
+     "proj": 0.71,
+     "actual": 3.0,
+     "value_x": 5.0
+    },
+    {
+     "name": "Andrew Armstrong",
+     "pos": "WR",
+     "team": "KC",
+     "salary": 2400,
+     "proj": 0.65,
+     "actual": 11.3,
+     "value_x": 4.71
+    },
+    {
+     "name": "Chris Blair",
+     "pos": "WR",
+     "team": "ATL",
+     "salary": 800,
+     "proj": 1.42,
+     "actual": 3.6,
+     "value_x": 4.5
+    },
+    {
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "team": "KC",
+     "salary": 10000,
+     "proj": 19.46,
+     "actual": 38.42,
+     "value_x": 3.84
+    }
+   ]
+  },
+  {
+   "id": 156427,
+   "name": "MIN @ GB",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 89.3,
+    "actual": 74.8,
+    "players": [
+     "CPT Justin Jefferson",
+     "Jordan Love",
+     "Christian Watson",
+     "Matthew Golden",
+     "Vikings",
+     "Ben Yurosek"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 100.5,
+    "players": [
+     "CPT Vikings $5700",
+     "Justin Jefferson $9800",
+     "Matthew Golden $10000",
+     "Kirk Cousins $9400",
+     "Gavin Bartholomew $1600",
+     "Myles Price $1800"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Tai Felton",
+     "pos": "WR",
+     "team": "MIN",
+     "salary": 200,
+     "proj": 0.86,
+     "actual": 6.3,
+     "value_x": 31.5
+    },
+    {
+     "name": "Myles Price",
+     "pos": "WR",
+     "team": "MIN",
+     "salary": 1800,
+     "proj": 3.92,
+     "actual": 16.1,
+     "value_x": 8.94
+    },
+    {
+     "name": "J. Michael Sturdivant",
+     "pos": "WR",
+     "team": "GB",
+     "salary": 1200,
+     "proj": 0.25,
+     "actual": 10.7,
+     "value_x": 8.92
+    },
+    {
+     "name": "Gavin Bartholomew",
+     "pos": "TE",
+     "team": "MIN",
+     "salary": 1600,
+     "proj": 4.32,
+     "actual": 12.6,
+     "value_x": 7.87
+    },
+    {
+     "name": "Vikings",
+     "pos": "DST",
+     "team": "MIN",
+     "salary": 3800,
+     "proj": 7.32,
+     "actual": 18.0,
+     "value_x": 4.74
+    },
+    {
+     "name": "Ben Yurosek",
+     "pos": "TE",
+     "team": "MIN",
+     "salary": 400,
+     "proj": 3.02,
+     "actual": 1.7,
+     "value_x": 4.25
+    }
+   ]
+  },
+  {
+   "id": 156428,
+   "name": "HOU @ CLE",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 86.0,
+    "actual": 106.8,
+    "players": [
+     "CPT C.J. Stroud",
+     "Deshaun Watson",
+     "Nico Collins",
+     "KC Concepcion Jr.",
+     "Tank Dell",
+     "Dalton Schultz"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 125.8,
+    "players": [
+     "CPT Deshaun Watson $13500",
+     "C.J. Stroud $10000",
+     "Nico Collins $9800",
+     "Harold Fannin Jr. $7000",
+     "Xavier Hutchinson $5000",
+     "Andre Szmyt $4600"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Malachi Corley",
+     "pos": "WR",
+     "team": "CLE",
+     "salary": 800,
+     "proj": 0.23,
+     "actual": 6.7,
+     "value_x": 8.38
+    },
+    {
+     "name": "Dare Ogunbowale",
+     "pos": "RB",
+     "team": "HOU",
+     "salary": 400,
+     "proj": 0.3,
+     "actual": 2.5,
+     "value_x": 6.25
+    },
+    {
+     "name": "Deshaun Watson",
+     "pos": "QB",
+     "team": "CLE",
+     "salary": 9000,
+     "proj": 15.42,
+     "actual": 25.38,
+     "value_x": 2.82
+    },
+    {
+     "name": "Nico Collins",
+     "pos": "WR",
+     "team": "HOU",
+     "salary": 9800,
+     "proj": 14.27,
+     "actual": 24.4,
+     "value_x": 2.49
+    },
+    {
+     "name": "C.J. Stroud",
+     "pos": "QB",
+     "team": "HOU",
+     "salary": 10000,
+     "proj": 18.74,
+     "actual": 21.44,
+     "value_x": 2.14
+    }
+   ]
+  },
+  {
+   "id": 156429,
+   "name": "JAX @ TEN",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 90.4,
+    "actual": 112.2,
+    "players": [
+     "CPT Trevor Lawrence",
+     "Bhayshul Tuten",
+     "Parker Washington",
+     "Wan'Dale Robinson",
+     "Jakobi Meyers",
+     "Chimere Dike"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 153.2,
+    "players": [
+     "CPT Parker Washington $13800",
+     "Trevor Lawrence $10600",
+     "Tony Pollard $9000",
+     "Cam Little $5400",
+     "Joey Slye $5000",
+     "Josh Cameron $3200"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Daniel Bellinger",
+     "pos": "TE",
+     "team": "TEN",
+     "salary": 1200,
+     "proj": 3.25,
+     "actual": 8.6,
+     "value_x": 7.17
+    },
+    {
+     "name": "Josh Cameron",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 3200,
+     "proj": 3.88,
+     "actual": 15.7,
+     "value_x": 4.91
+    },
+    {
+     "name": "Parker Washington",
+     "pos": "WR",
+     "team": "JAX",
+     "salary": 9200,
+     "proj": 15.38,
+     "actual": 31.2,
+     "value_x": 3.39
+    },
+    {
+     "name": "Trevor Lawrence",
+     "pos": "QB",
+     "team": "JAX",
+     "salary": 10600,
+     "proj": 20.98,
+     "actual": 30.78,
+     "value_x": 2.9
+    },
+    {
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "team": "TEN",
+     "salary": 9000,
+     "proj": 12.53,
+     "actual": 23.9,
+     "value_x": 2.66
+    },
+    {
+     "name": "Cam Ward",
+     "pos": "QB",
+     "team": "TEN",
+     "salary": 8800,
+     "proj": 13.09,
+     "actual": 20.14,
+     "value_x": 2.29
+    },
+    {
+     "name": "Bhayshul Tuten",
+     "pos": "RB",
+     "team": "JAX",
+     "salary": 9600,
+     "proj": 16.05,
+     "actual": 20.3,
+     "value_x": 2.11
+    }
+   ]
+  },
+  {
+   "id": 156430,
+   "name": "SEA @ LV",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 89.4,
+    "actual": 100.2,
+    "players": [
+     "CPT Jaxon Smith-Njigba",
+     "Drew Lock",
+     "Ashton Jeanty",
+     "Jason Myers",
+     "Seahawks",
+     "Matt Gay"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 110.1,
+    "players": [
+     "CPT Jaxon Smith-Njigba $18300",
+     "Drew Lock $9000",
+     "Fernando Mendoza $8800",
+     "Seahawks $4400",
+     "Cooper Kupp $5200",
+     "Raiders $3400"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Connor Heyward",
+     "pos": "RB",
+     "team": "LV",
+     "salary": 200,
+     "proj": 0.76,
+     "actual": 2.6,
+     "value_x": 13.0
+    },
+    {
+     "name": "Jaxon Smith-Njigba",
+     "pos": "WR",
+     "team": "SEA",
+     "salary": 12200,
+     "proj": 23.61,
+     "actual": 34.1,
+     "value_x": 2.8
+    }
+   ]
+  },
+  {
+   "id": 156431,
+   "name": "LAR @ ARI",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 81.1,
+    "actual": 59.6,
+    "players": [
+     "CPT Kyren Williams",
+     "Matthew Stafford",
+     "Trey McBride",
+     "Rams",
+     "Colby Parkinson",
+     "CJ Daniels"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 104.4,
+    "players": [
+     "CPT Blake Corum $12300",
+     "Matthew Stafford $10600",
+     "Trey McBride $11000",
+     "Rams $5800",
+     "Konata Mumpfield $7000",
+     "Xavier Smith $800"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Xavier Smith",
+     "pos": "WR",
+     "team": "LAR",
+     "salary": 800,
+     "proj": 2.5,
+     "actual": 12.0,
+     "value_x": 15.0
+    },
+    {
+     "name": "Hunter Long",
+     "pos": "TE",
+     "team": "ARI",
+     "salary": 200,
+     "proj": 0.72,
+     "actual": 1.7,
+     "value_x": 8.5
+    },
+    {
+     "name": "Ronnie Rivers",
+     "pos": "RB",
+     "team": "LAR",
+     "salary": 1400,
+     "proj": 0.43,
+     "actual": 8.1,
+     "value_x": 5.79
+    },
+    {
+     "name": "Blake Corum",
+     "pos": "RB",
+     "team": "LAR",
+     "salary": 8200,
+     "proj": 11.21,
+     "actual": 23.9,
+     "value_x": 2.91
+    },
+    {
+     "name": "Matthew Stafford",
+     "pos": "QB",
+     "team": "LAR",
+     "salary": 10600,
+     "proj": 16.91,
+     "actual": 20.76,
+     "value_x": 1.96
+    }
+   ]
+  },
+  {
+   "id": 156432,
+   "name": "SF @ DAL",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 98.2,
+    "actual": 161.8,
+    "players": [
+     "CPT Dak Prescott",
+     "CeeDee Lamb",
+     "Brock Purdy",
+     "Christian McCaffrey",
+     "Luke Farrell",
+     "James Mitchell"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 205.0,
+    "players": [
+     "CPT George Pickens $13200",
+     "Christian McCaffrey $11400",
+     "Dak Prescott $10000",
+     "Ryan Flournoy $6800",
+     "Hunter Luepke $1400",
+     "Deebo Samuel Sr. $7000"
+    ]
+   },
+   "mustPlays": [
+    {
+     "name": "Christian McCaffrey",
+     "salary": 11400,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 4.32
+    },
+    {
+     "name": "Brock Purdy",
+     "salary": 11000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 3.15
+    },
+    {
+     "name": "George Kittle",
+     "salary": 9000,
+     "proj": 16.3,
+     "actual": 13.4,
+     "value_x": 1.49
+    }
+   ],
+   "core": [],
+   "sleepers": [
+    {
+     "name": "Jacob Cowing",
+     "salary": 2800,
+     "proj": 5.5,
+     "actual": 0.0,
+     "value_x": 0.0
+    }
+   ],
+   "fades": [
+    {
+     "name": "Mike Evans",
+     "salary": 8000,
+     "proj": 0.0,
+     "actual": null,
+     "value_x": 0.0
+    }
+   ],
+   "boomPlayers": [
+    {
+     "name": "George Pickens",
+     "pos": "WR",
+     "team": "DAL",
+     "salary": 8800,
+     "proj": 13.64,
+     "actual": 46.5,
+     "value_x": 5.28
+    },
+    {
+     "name": "Christian McCaffrey",
+     "pos": "RB",
+     "team": "SF",
+     "salary": 11400,
+     "proj": 21.5,
+     "actual": 49.3,
+     "value_x": 4.32
+    },
+    {
+     "name": "Dak Prescott",
+     "pos": "QB",
+     "team": "DAL",
+     "salary": 10000,
+     "proj": 19.75,
+     "actual": 38.42,
+     "value_x": 3.84
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "pos": "WR",
+     "team": "SF",
+     "salary": 7000,
+     "proj": 0.0,
+     "actual": 25.9,
+     "value_x": 3.7
+    },
+    {
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "team": "SF",
+     "salary": 11000,
+     "proj": 21.8,
+     "actual": 34.66,
+     "value_x": 3.15
+    },
+    {
+     "name": "CeeDee Lamb",
+     "pos": "WR",
+     "team": "DAL",
+     "salary": 11800,
+     "proj": 22.21,
+     "actual": 20.2,
+     "value_x": 1.71
+    }
+   ]
+  },
+  {
+   "id": 156433,
+   "name": "PIT @ CIN",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 99.9,
+    "actual": 119.0,
+    "players": [
+     "CPT Joe Burrow",
+     "Ja'Marr Chase",
+     "Jaylen Warren",
+     "Aaron Rodgers",
+     "Darnell Washington",
+     "Jack Endries"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 159.9,
+    "players": [
+     "CPT Ja'Marr Chase $16500",
+     "Joe Burrow $10600",
+     "Chase Brown $8400",
+     "DK Metcalf $7400",
+     "Samaje Perine $4400",
+     "Drew Sample $1600"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Drew Sample",
+     "pos": "TE",
+     "team": "CIN",
+     "salary": 1600,
+     "proj": 2.52,
+     "actual": 10.5,
+     "value_x": 6.56
+    },
+    {
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "team": "CIN",
+     "salary": 10600,
+     "proj": 23.16,
+     "actual": 36.16,
+     "value_x": 3.41
+    },
+    {
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "team": "CIN",
+     "salary": 11000,
+     "proj": 21.87,
+     "actual": 37.1,
+     "value_x": 3.37
+    },
+    {
+     "name": "Chase Brown",
+     "pos": "RB",
+     "team": "CIN",
+     "salary": 8400,
+     "proj": 15.0,
+     "actual": 28.3,
+     "value_x": 3.37
+    }
+   ]
+  },
+  {
+   "id": 156434,
+   "name": "LAC @ BAL",
+   "type": "showdown",
+   "maxProjLineup": {
+    "proj": 80.9,
+    "actual": 75.0,
+    "players": [
+     "CPT Derrick Henry",
+     "Zay Flowers",
+     "Jacoby Brissett",
+     "Justin Herbert",
+     "Ravens",
+     "KeAndre Lambert-Smith"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 106.8,
+    "players": [
+     "CPT Omarion Hampton $11700",
+     "Derrick Henry $10000",
+     "Justin Herbert $9000",
+     "Tre' Harris $6800",
+     "Cameron Dicker $5400",
+     "Mark Andrews $6400"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Josh Cuevas",
+     "pos": "TE",
+     "team": "BAL",
+     "salary": 1600,
+     "proj": 3.01,
+     "actual": 6.7,
+     "value_x": 4.19
+    },
+    {
+     "name": "Omarion Hampton",
+     "pos": "RB",
+     "team": "LAC",
+     "salary": 7800,
+     "proj": 8.59,
+     "actual": 20.5,
+     "value_x": 2.63
+    }
+   ]
+  },
+  {
+   "id": 156457,
+   "name": "Mon-Thu",
+   "type": "classic",
+   "maxProjLineup": {
+    "proj": 120.5,
+    "actual": 122.3,
+    "players": [
+     "C.J. Stroud",
+     "Nico Collins",
+     "Derrick Henry",
+     "Zay Flowers",
+     "Jonathan Taylor",
+     "Tank Dell",
+     "Dalton Schultz",
+     "Tre' Harris",
+     "Texans"
+    ]
+   },
+   "optimalLineup": {
+    "actual": 156.6,
+    "players": [
+     "C.J. Stroud $6000",
+     "Nico Collins $7000",
+     "Derrick Henry $6500",
+     "Omarion Hampton $4800",
+     "Xavier Hutchinson $4200",
+     "Tre' Harris $3900",
+     "Mark Andrews $3400",
+     "Seth McGowan $5000",
+     "Colts $2100"
+    ]
+   },
+   "mustPlays": [],
+   "core": [],
+   "sleepers": [],
+   "fades": [],
+   "boomPlayers": [
+    {
+     "name": "Colts",
+     "pos": "DST",
+     "team": "IND",
+     "salary": 2100,
+     "proj": 3.43,
+     "actual": 12.0,
+     "value_x": 5.71
+    },
+    {
+     "name": "Mark Andrews",
+     "pos": "TE",
+     "team": "BAL",
+     "salary": 3400,
+     "proj": 6.68,
+     "actual": 16.2,
+     "value_x": 4.76
+    },
+    {
+     "name": "Omarion Hampton",
+     "pos": "RB",
+     "team": "LAC",
+     "salary": 4800,
+     "proj": 8.59,
+     "actual": 20.5,
+     "value_x": 4.27
+    },
+    {
+     "name": "C.J. Stroud",
+     "pos": "QB",
+     "team": "HOU",
+     "salary": 6000,
+     "proj": 21.31,
+     "actual": 21.44,
+     "value_x": 3.57
+    },
+    {
+     "name": "Nico Collins",
+     "pos": "WR",
+     "team": "HOU",
+     "salary": 7000,
+     "proj": 16.61,
+     "actual": 24.4,
+     "value_x": 3.49
+    }
+   ]
+  }
+ ]
+}
