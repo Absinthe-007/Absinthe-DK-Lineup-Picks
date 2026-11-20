@@ -1,26 +1,8 @@
 {
- "updated": "2026-11-19T22:07+00:00",
+ "updated": "2026-11-20T02:34+00:00",
  "week": 11,
  "default": 156561,
  "slates": [
-  {
-   "id": 156774,
-   "name": "Thu-Mon",
-   "start": "2026-11-19T20:15",
-   "games": 13,
-   "featured": false,
-   "type": "classic",
-   "players": 681,
-   "matched": {
-    "sleeper": 663,
-    "espn": 490,
-    "fantasypros": 459,
-    "cbs": 365,
-    "numberfire": 466,
-    "dff": 121,
-    "props": 159
-   }
-  },
   {
    "id": 156561,
    "name": "Main",
@@ -31,12 +13,12 @@
    "players": 519,
    "matched": {
     "sleeper": 504,
-    "espn": 369,
+    "espn": 368,
     "fantasypros": 360,
     "cbs": 284,
     "numberfire": 350,
     "dff": 105,
-    "props": 121
+    "props": 126
    }
   },
   {
@@ -49,12 +31,12 @@
    "players": 630,
    "matched": {
     "sleeper": 612,
-    "espn": 450,
-    "fantasypros": 429,
+    "espn": 449,
+    "fantasypros": 430,
     "cbs": 340,
     "numberfire": 430,
     "dff": 112,
-    "props": 141
+    "props": 146
    }
   },
   {
@@ -67,8 +49,8 @@
    "players": 367,
    "matched": {
     "sleeper": 357,
-    "espn": 257,
-    "fantasypros": 254,
+    "espn": 256,
+    "fantasypros": 253,
     "cbs": 194,
     "numberfire": 247,
     "dff": 70,
@@ -86,11 +68,11 @@
    "matched": {
     "sleeper": 147,
     "espn": 112,
-    "fantasypros": 106,
+    "fantasypros": 107,
     "cbs": 90,
     "numberfire": 103,
     "dff": 35,
-    "props": 32
+    "props": 37
    }
   },
   {
@@ -104,11 +86,11 @@
    "matched": {
     "sleeper": 100,
     "espn": 74,
-    "fantasypros": 69,
+    "fantasypros": 70,
     "cbs": 58,
     "numberfire": 66,
     "dff": 25,
-    "props": 25
+    "props": 26
    }
   },
   {
@@ -122,28 +104,10 @@
    "matched": {
     "sleeper": 108,
     "espn": 81,
-    "fantasypros": 69,
+    "fantasypros": 70,
     "cbs": 56,
     "numberfire": 80,
     "dff": 7,
-    "props": 20
-   }
-  },
-  {
-   "id": 156781,
-   "name": "IND @ HOU",
-   "start": "2026-11-19T20:15",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 53,
-   "matched": {
-    "sleeper": 53,
-    "espn": 42,
-    "fantasypros": 32,
-    "cbs": 27,
-    "numberfire": 36,
-    "dff": 10,
     "props": 20
    }
   },
@@ -265,8 +229,8 @@
    "players": 55,
    "matched": {
     "sleeper": 52,
-    "espn": 42,
-    "fantasypros": 44,
+    "espn": 41,
+    "fantasypros": 43,
     "cbs": 35,
     "numberfire": 35,
     "dff": 10,
@@ -288,7 +252,7 @@
     "cbs": 34,
     "numberfire": 37,
     "dff": 10,
-    "props": 9
+    "props": 13
    }
   },
   {
@@ -302,11 +266,11 @@
    "matched": {
     "sleeper": 52,
     "espn": 38,
-    "fantasypros": 35,
+    "fantasypros": 36,
     "cbs": 31,
     "numberfire": 36,
     "dff": 13,
-    "props": 11
+    "props": 12
    }
   },
   {
@@ -338,7 +302,7 @@
    "matched": {
     "sleeper": 57,
     "espn": 46,
-    "fantasypros": 37,
+    "fantasypros": 38,
     "cbs": 31,
     "numberfire": 39,
     "dff": 3,
