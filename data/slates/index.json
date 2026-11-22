@@ -1,26 +1,8 @@
 {
- "updated": "2026-11-22T20:42+00:00",
+ "updated": "2026-11-22T21:12+00:00",
  "week": 11,
- "default": 156777,
+ "default": 156778,
  "slates": [
-  {
-   "id": 156777,
-   "name": "Afternoon Only",
-   "start": "2026-11-22T16:05",
-   "games": 3,
-   "featured": true,
-   "type": "classic",
-   "players": 151,
-   "matched": {
-    "sleeper": 147,
-    "espn": 112,
-    "fantasypros": 97,
-    "cbs": 83,
-    "numberfire": 104,
-    "dff": 34,
-    "props": 49
-   }
-  },
   {
    "id": 156778,
    "name": "Afternoon Turbo",
@@ -36,7 +18,7 @@
     "cbs": 55,
     "numberfire": 66,
     "dff": 25,
-    "props": 32
+    "props": 33
    }
   },
   {
@@ -51,7 +33,7 @@
     "sleeper": 107,
     "espn": 80,
     "fantasypros": 71,
-    "cbs": 55,
+    "cbs": 56,
     "numberfire": 80,
     "dff": 25,
     "props": 30
@@ -76,24 +58,6 @@
    }
   },
   {
-   "id": 156789,
-   "name": "NYJ @ LAC",
-   "start": "2026-11-22T16:05",
-   "games": 1,
-   "featured": false,
-   "type": "showdown",
-   "players": 51,
-   "matched": {
-    "sleeper": 49,
-    "espn": 40,
-    "fantasypros": 35,
-    "cbs": 30,
-    "numberfire": 38,
-    "dff": 10,
-    "props": 19
-   }
-  },
-  {
    "id": 156790,
    "name": "LV @ DEN",
    "start": "2026-11-22T16:25",
@@ -108,7 +72,7 @@
     "cbs": 30,
     "numberfire": 36,
     "dff": 14,
-    "props": 16
+    "props": 17
    }
   },
   {
@@ -141,7 +105,7 @@
     "sleeper": 56,
     "espn": 45,
     "fantasypros": 37,
-    "cbs": 30,
+    "cbs": 31,
     "numberfire": 39,
     "dff": 13,
     "props": 18
