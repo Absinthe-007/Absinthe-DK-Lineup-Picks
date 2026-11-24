@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T05:30+00:00",
+ "updated": "2026-11-24T22:37+00:00",
  "week": 12,
  "default": 157066,
  "slates": [
@@ -12,13 +12,13 @@
    "type": "classic",
    "players": 828,
    "matched": {
-    "sleeper": 814,
+    "sleeper": 809,
     "espn": 604,
-    "fantasypros": 306,
+    "fantasypros": 375,
     "cbs": 391,
-    "numberfire": 0,
-    "dff": 22,
-    "props": 80
+    "numberfire": 568,
+    "dff": 25,
+    "props": 124
    }
   },
   {
@@ -30,13 +30,13 @@
    "type": "classic",
    "players": 154,
    "matched": {
-    "sleeper": 152,
+    "sleeper": 149,
     "espn": 108,
-    "fantasypros": 58,
-    "cbs": 71,
-    "numberfire": 0,
+    "fantasypros": 68,
+    "cbs": 68,
+    "numberfire": 101,
     "dff": 0,
-    "props": 43
+    "props": 44
    }
   },
   {
@@ -48,13 +48,13 @@
    "type": "classic",
    "players": 104,
    "matched": {
-    "sleeper": 102,
+    "sleeper": 100,
     "espn": 76,
-    "fantasypros": 42,
-    "cbs": 51,
-    "numberfire": 0,
+    "fantasypros": 49,
+    "cbs": 48,
+    "numberfire": 66,
     "dff": 0,
-    "props": 26
+    "props": 27
    }
   },
   {
@@ -66,11 +66,11 @@
    "type": "classic",
    "players": 105,
    "matched": {
-    "sleeper": 102,
+    "sleeper": 100,
     "espn": 76,
-    "fantasypros": 39,
-    "cbs": 52,
-    "numberfire": 0,
+    "fantasypros": 46,
+    "cbs": 49,
+    "numberfire": 72,
     "dff": 0,
     "props": 31
    }
@@ -84,13 +84,13 @@
    "type": "classic",
    "players": 472,
    "matched": {
-    "sleeper": 463,
+    "sleeper": 461,
     "espn": 347,
-    "fantasypros": 175,
-    "cbs": 220,
-    "numberfire": 0,
+    "fantasypros": 216,
+    "cbs": 221,
+    "numberfire": 317,
     "dff": 0,
-    "props": 0
+    "props": 28
    }
   },
   {
@@ -104,10 +104,10 @@
    "matched": {
     "sleeper": 57,
     "espn": 42,
-    "fantasypros": 17,
-    "cbs": 29,
-    "numberfire": 0,
-    "dff": 22,
+    "fantasypros": 26,
+    "cbs": 30,
+    "numberfire": 40,
+    "dff": 26,
     "props": 20
    }
   },
@@ -120,11 +120,11 @@
    "type": "showdown",
    "players": 52,
    "matched": {
-    "sleeper": 52,
+    "sleeper": 51,
     "espn": 34,
-    "fantasypros": 16,
+    "fantasypros": 21,
     "cbs": 22,
-    "numberfire": 0,
+    "numberfire": 35,
     "dff": 0,
     "props": 19
    }
@@ -140,11 +140,11 @@
    "matched": {
     "sleeper": 52,
     "espn": 41,
-    "fantasypros": 22,
-    "cbs": 27,
-    "numberfire": 0,
+    "fantasypros": 27,
+    "cbs": 25,
+    "numberfire": 31,
     "dff": 0,
-    "props": 14
+    "props": 16
    }
   },
   {
@@ -156,13 +156,13 @@
    "type": "showdown",
    "players": 56,
    "matched": {
-    "sleeper": 55,
+    "sleeper": 53,
     "espn": 39,
-    "fantasypros": 20,
-    "cbs": 28,
-    "numberfire": 0,
+    "fantasypros": 26,
+    "cbs": 27,
+    "numberfire": 35,
     "dff": 0,
-    "props": 12
+    "props": 13
    }
   },
   {
@@ -170,17 +170,125 @@
    "name": "DEN @ PIT",
    "start": "2026-11-27T15:00",
    "games": 1,
-   "featured": false,
+   "featured": true,
    "type": "showdown",
    "players": 54,
    "matched": {
     "sleeper": 52,
     "espn": 41,
-    "fantasypros": 19,
-    "cbs": 28,
-    "numberfire": 0,
+    "fantasypros": 24,
+    "cbs": 26,
+    "numberfire": 37,
     "dff": 0,
-    "props": 19
+    "props": 18
+   }
+  },
+  {
+   "id": 157077,
+   "name": "NYG @ IND",
+   "start": "2026-11-29T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 55,
+   "matched": {
+    "sleeper": 54,
+    "espn": 41,
+    "fantasypros": 23,
+    "cbs": 27,
+    "numberfire": 27,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 157078,
+   "name": "NYJ @ MIA",
+   "start": "2026-11-29T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 53,
+   "matched": {
+    "sleeper": 52,
+    "espn": 43,
+    "fantasypros": 26,
+    "cbs": 29,
+    "numberfire": 36,
+    "dff": 0,
+    "props": 11
+   }
+  },
+  {
+   "id": 157079,
+   "name": "ATL @ MIN",
+   "start": "2026-11-29T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 52,
+   "matched": {
+    "sleeper": 51,
+    "espn": 39,
+    "fantasypros": 26,
+    "cbs": 26,
+    "numberfire": 34,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 157080,
+   "name": "NO @ CIN",
+   "start": "2026-11-29T13:00",
+   "games": 1,
+   "featured": true,
+   "type": "showdown",
+   "players": 54,
+   "matched": {
+    "sleeper": 51,
+    "espn": 36,
+    "fantasypros": 29,
+    "cbs": 26,
+    "numberfire": 39,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 157081,
+   "name": "BAL @ HOU",
+   "start": "2026-11-29T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 55,
+   "matched": {
+    "sleeper": 54,
+    "espn": 45,
+    "fantasypros": 27,
+    "cbs": 31,
+    "numberfire": 39,
+    "dff": 0,
+    "props": 0
+   }
+  },
+  {
+   "id": 157082,
+   "name": "TEN @ JAX",
+   "start": "2026-11-29T13:00",
+   "games": 1,
+   "featured": false,
+   "type": "showdown",
+   "players": 52,
+   "matched": {
+    "sleeper": 52,
+    "espn": 35,
+    "fantasypros": 26,
+    "cbs": 22,
+    "numberfire": 32,
+    "dff": 0,
+    "props": 0
    }
   }
  ]

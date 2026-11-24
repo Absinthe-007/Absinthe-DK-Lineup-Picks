@@ -105,3 +105,9 @@ injury opening, matchup, weather, ownership), which sources were closest, and wh
 - sleepers: Brandin Cooks None (0.0x), Jacob Cowing 0.0 (0.0x)
 - Boom players: Emmett Johnson $4700 38.1 pts (proj 13.36), George Pickens $6300 46.5 pts (proj 13.54), Vikings $2800 18.0 pts (proj 7.32), Patrick Mahomes $6000 38.42 pts (proj 19.46), Dak Prescott $6400 38.42 pts (proj 19.71), Christian McCaffrey $8500 49.3 pts (proj 21.5), Myles Price $3000 16.1 pts (proj 3.92), Gavin Bartholomew $2500 12.6 pts (proj 4.32), Parker Washington $6200 31.2 pts (proj 15.38), Deshaun Watson $5100 25.38 pts (proj 15.42)
 - Source MAE so far: blend 4.885, sleeper 4.893, dff 4.929, espn 4.998, fantasypros 5.023, cbs 5.209, dkavg 5.32, numberfire 5.381, props 5.385
+
+## Week 11 results (auto-graded 2026-11-24T22:36+00:00)
+- Max-points lineup: projected 143.9, scored 159.8 (hindsight optimal 249.9)
+- sleepers: Bears 16.0 (4.32x)
+- Boom players: Ted Hurst III $3000 22.6 pts (proj 2.95), Mitchell Evans $2500 15.4 pts (proj 3.18), Jonah Coleman $6300 37.9 pts (proj 17.83), Dak Prescott $6700 38.9 pts (proj 23.5), Sterling Shepard $3000 16.4 pts (proj 0.27), Travis Kelce $4700 25.4 pts (proj 11.97), Ashton Jeanty $5500 27.9 pts (proj 12.87), Fernando Mendoza $5000 23.88 pts (proj 12.9), Rashod Bateman $3200 14.7 pts (proj 3.01), Emmett Johnson $6000 27.3 pts (proj 21.0)
+- Source MAE so far: sleeper 4.828, blend 4.844, dff 4.937, espn 4.938, fantasypros 4.979, cbs 5.134, dkavg 5.248, props 5.257, numberfire 5.295
