@@ -1,26 +1,8 @@
 {
- "updated": "2026-11-26T22:56+00:00",
+ "updated": "2026-11-27T03:47+00:00",
  "week": 12,
  "default": 157066,
  "slates": [
-  {
-   "id": 157065,
-   "name": "Thu-Fri",
-   "start": "2026-11-26T20:20",
-   "games": 2,
-   "featured": false,
-   "type": "classic",
-   "players": 106,
-   "matched": {
-    "sleeper": 100,
-    "espn": 75,
-    "fantasypros": 64,
-    "cbs": 50,
-    "numberfire": 73,
-    "dff": 26,
-    "props": 35
-   }
-  },
   {
    "id": 157066,
    "name": "Main",
@@ -36,7 +18,7 @@
     "cbs": 225,
     "numberfire": 327,
     "dff": 96,
-    "props": 123
+    "props": 122
    }
   },
   {
@@ -54,7 +36,7 @@
     "cbs": 276,
     "numberfire": 401,
     "dff": 121,
-    "props": 154
+    "props": 153
    }
   },
   {
@@ -90,7 +72,7 @@
     "cbs": 74,
     "numberfire": 114,
     "dff": 35,
-    "props": 38
+    "props": 37
    }
   },
   {
@@ -108,7 +90,7 @@
     "cbs": 49,
     "numberfire": 76,
     "dff": 25,
-    "props": 29
+    "props": 28
    }
   },
   {
@@ -130,24 +112,6 @@
    }
   },
   {
-   "id": 157075,
-   "name": "KC @ BUF",
-   "start": "2026-11-26T20:20",
-   "games": 1,
-   "featured": true,
-   "type": "showdown",
-   "players": 56,
-   "matched": {
-    "sleeper": 53,
-    "espn": 39,
-    "fantasypros": 31,
-    "cbs": 27,
-    "numberfire": 35,
-    "dff": 14,
-    "props": 19
-   }
-  },
-  {
    "id": 157076,
    "name": "DEN @ PIT",
    "start": "2026-11-27T15:00",
@@ -161,7 +125,7 @@
     "fantasypros": 37,
     "cbs": 27,
     "numberfire": 38,
-    "dff": 15,
+    "dff": 10,
     "props": 20
    }
   },
@@ -213,7 +177,7 @@
     "sleeper": 51,
     "espn": 39,
     "fantasypros": 37,
-    "cbs": 26,
+    "cbs": 27,
     "numberfire": 35,
     "dff": 11,
     "props": 16
@@ -267,7 +231,7 @@
     "sleeper": 52,
     "espn": 35,
     "fantasypros": 36,
-    "cbs": 23,
+    "cbs": 22,
     "numberfire": 34,
     "dff": 10,
     "props": 17
@@ -324,7 +288,7 @@
     "cbs": 24,
     "numberfire": 40,
     "dff": 12,
-    "props": 17
+    "props": 16
    }
   },
   {
